@@ -164,9 +164,9 @@ namespace UI.Consola
             usuario.State = BusinessEntity.States.Modified;
             UsuarioNegocio.Save(usuario);
             }
-            catch(FormatException fee)
+            catch(FormatException fe)
             {
-                Console.WriteLine("\nError: El ID ingresado debe ser un número entero\n" + fee.Message);
+                Console.WriteLine("\nError: El ID ingresado debe ser un número entero\n" + fe.Message);
             }
             catch (Exception ex)
             {
