@@ -145,7 +145,7 @@ namespace UI.Consola
             Console.Write("Ingrese el ID del usuario a modificar: ");
             int ID = int.Parse(Console.ReadLine());
             Usuario usuario = UsuarioNegocio.GetOne(ID);
-            Console.WriteLine("\nLos datos actuales del usuario son:");
+            Console.WriteLine("\nLos datos actuales del usuario son: ");
             this.MostrarDatos(UsuarioNegocio.GetOne(ID));
 
             Console.WriteLine("\nIngrese los nuevos valores: ");
@@ -164,9 +164,9 @@ namespace UI.Consola
             usuario.State = BusinessEntity.States.Modified;
             UsuarioNegocio.Save(usuario);
             }
-            catch(FormatException fe)
+            catch(FormatException fee)
             {
-                Console.WriteLine("\nError: El ID ingresado debe ser un número entero\n" + fe.Message);
+                Console.WriteLine("\nError: El ID ingresado debe ser un número entero\n" + fee.Message);
             }
             catch (Exception ex)
             {
