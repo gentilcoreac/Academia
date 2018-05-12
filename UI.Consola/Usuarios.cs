@@ -120,8 +120,8 @@ namespace UI.Consola
             {
             Console.Clear();
             Console.WriteLine("Ingrese el ID del usuario a consultar: ");
-                int ID = int.Parse(Console.ReadLine());
-                this.MostrarDatos(UsuarioNegocio.GetOne(ID));
+            int ID = int.Parse(Console.ReadLine());
+            this.MostrarDatos(UsuarioNegocio.GetOne(ID));
             }
             catch (FormatException fe)
             {
@@ -145,8 +145,10 @@ namespace UI.Consola
             Console.Write("Ingrese el ID del usuario a modificar: ");
             int ID = int.Parse(Console.ReadLine());
             Usuario usuario = UsuarioNegocio.GetOne(ID);
+            Console.WriteLine("\nLos datos actuales del usuario son:");
+            this.MostrarDatos(UsuarioNegocio.GetOne(ID));
 
-            Console.Write("Ingrese los nuevos valores: ");
+            Console.WriteLine("\nIngrese los nuevos valores: ");
             Console.Write("Nombre: ");
             usuario.Nombre = Console.ReadLine();
             Console.Write("Apellido: ");
