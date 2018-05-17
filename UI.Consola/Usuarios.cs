@@ -43,36 +43,23 @@ namespace UI.Consola
                 switch (opcion.Key)
                 {
                     case ConsoleKey.D1:
-                        this.ListadoGeneral();
-                        Console.WriteLine("\n\n(Presione una tecla para continuar)");
-                        Console.ReadKey();
+                        ListadoGeneral();
                         break;
 
                     case ConsoleKey.D2:
-                        this.Consultar();
+                        Consultar();
                         break;
 
                     case ConsoleKey.D3:
-                        Console.WriteLine("\n\nMETODO NO IMPLEMENTADO");
-
-                        //  Agregar();
-
-                        Console.WriteLine("\n\n(Presione una tecla para continuar)");
-                        Console.ReadKey();
+                        Agregar();
                         break;
 
                     case ConsoleKey.D4:
-                        this.Modificar();
-                        Console.WriteLine("\n\n(Presione una tecla para continuar)");
-                        Console.ReadKey();
+                        Modificar();
                         break;
 
                     case ConsoleKey.D5:
-                        Console.WriteLine("\n\nMETODO NO IMPLEMENTADO");
-
-                        // Eliminar();
-                        Console.WriteLine("\n\n(Presione una tecla para continuar)");
-                        Console.ReadKey();
+                        Eliminar();
                         break;
 
                     case ConsoleKey.D6:
@@ -93,12 +80,29 @@ namespace UI.Consola
 
         public void ListadoGeneral()
         {
-            Console.Clear();
-            Console.WriteLine("          Listado General \n");
-            foreach (Usuario usr in UsuarioNegocio.GetAll())
+            try
             {
-                MostrarDatos(usr);
+                Console.Clear();
+                Console.WriteLine("          Listado General \n");
+                foreach (Usuario usr in UsuarioNegocio.GetAll())
+                {
+                    MostrarDatos(usr);
+                }
             }
+            catch (FormatException fe)
+            {
+                Console.WriteLine("\nError: El ID ingresado debe ser un número entero\n" + fe.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("\nError: \n" + ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine("\nPresione una tecla para continuar ");
+                Console.ReadKey();
+            }
+
         }
 
         public void MostrarDatos(Usuario usr)
@@ -118,14 +122,10 @@ namespace UI.Consola
         {
             try
             {
-            Console.Clear();
-            Console.WriteLine("Ingrese el ID del usuario a consultar: ");
-            int ID = int.Parse(Console.ReadLine());
-            this.MostrarDatos(UsuarioNegocio.GetOne(ID));
-            }
-            catch (FormatException fe)
-            {
-                Console.WriteLine("\nError: El ID ingresado debe ser un número entero\n" + fe.Message);
+                Console.Clear();
+                Console.Write("Ingrese el ID del usuario a consultar: ");
+                int ID = int.Parse(Console.ReadLine());
+                this.MostrarDatos(UsuarioNegocio.GetOne(ID));
             }
             catch (Exception ex)
             {
@@ -141,30 +141,100 @@ namespace UI.Consola
         {
             try
             {
-            Console.Clear();
-            Console.Write("Ingrese el ID del usuario a modificar: ");
-            int ID = int.Parse(Console.ReadLine());
-            Usuario usuario = UsuarioNegocio.GetOne(ID);
-            Console.WriteLine("\nLos datos actuales del usuario son: ");
-            this.MostrarDatos(UsuarioNegocio.GetOne(ID));
+                Console.Clear();
+                Console.Write("Ingrese el ID del usuario a modificar: ");
+                int ID = int.Parse(Console.ReadLine());
+                Usuario usuario = UsuarioNegocio.GetOne(ID);
+                Console.WriteLine("\nLos datos actuales del usuario son: ");
+                this.MostrarDatos(UsuarioNegocio.GetOne(ID));
 
-            Console.WriteLine("\nIngrese los nuevos valores: ");
-            Console.Write("Nombre: ");
-            usuario.Nombre = Console.ReadLine();
-            Console.Write("Apellido: ");
-            usuario.Apellido = Console.ReadLine();
-            Console.Write("Nombre de usuario: ");
-            usuario.NombreUsuario = Console.ReadLine();
-            Console.Write("Clave: ");
-            usuario.Clave = Console.ReadLine();
-            Console.Write("Email: ");
-            usuario.Email = Console.ReadLine();
-            Console.Write("Habilitación de Usuario (1-Si / otro-No): ");
-            usuario.Habilitado = (Console.ReadLine()=="1");
-            usuario.State = BusinessEntity.States.Modified;
-            UsuarioNegocio.Save(usuario);
+                Console.WriteLine("\nIngrese los nuevos valores: ");
+                Console.Write("Nombre: ");
+                usuario.Nombre = Console.ReadLine();
+                Console.Write("Apellido: ");
+                usuario.Apellido = Console.ReadLine();
+                Console.Write("Nombre de usuario: ");
+                usuario.NombreUsuario = Console.ReadLine();
+                Console.Write("Clave: ");
+                usuario.Clave = Console.ReadLine();
+                Console.Write("Email: ");
+                usuario.Email = Console.ReadLine();
+                Console.Write("Habilitación de Usuario (1-Si / otro-No): ");
+                usuario.Habilitado = (Console.ReadLine()=="1");
+                usuario.State = BusinessEntity.States.Modified;
+                UsuarioNegocio.Save(usuario);
             }
             catch(FormatException fe)
+            {
+                Console.WriteLine("\nError: \n" + fe.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("\nError: \n" + ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine("\nPresione una tecla para continuar ");
+                Console.ReadKey();
+            }
+        }
+
+        public void Agregar()
+        {
+            try
+            {
+                Console.Clear();
+                Usuario usuario = new Usuario();
+
+                Console.Clear();
+                Console.WriteLine("Ingrese los valores del nuevo Usuario: ");
+                Console.Write("Nombre: ");
+                usuario.Nombre = Console.ReadLine();
+                Console.Write("Apellido: ");
+                usuario.Apellido = Console.ReadLine();
+                Console.Write("Nombre de usuario: ");
+                usuario.NombreUsuario = Console.ReadLine();
+                Console.Write("Clave: ");
+                usuario.Clave = Console.ReadLine();
+                Console.Write("Email: ");
+                usuario.Email = Console.ReadLine();
+                Console.Write("Habilitación de Usuario (1-Si / otro-No): ");
+                usuario.Habilitado = (Console.ReadLine() == "1");
+
+                UsuarioNegocio.Save(usuario);
+                usuario.State = BusinessEntity.States.New; 
+
+                Console.WriteLine("Se ha ingresado correctamente el Usuario con id {0}", usuario.ID);
+            }
+            catch (FormatException fe)
+            {
+                Console.WriteLine("\nError: El ID ingresado debe ser un número entero\n" + fe.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("\nError: \n" + ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine("\nPresione una tecla para continuar ");
+                Console.ReadKey();
+            }
+
+        }
+
+        public void Eliminar()
+        {
+            try
+            {
+                Console.Clear();
+
+                Console.Write("Ingrese ID del usuario a eliminar: ");
+                int ID = int.Parse(Console.ReadLine());
+                UsuarioNegocio.Delete(ID);
+                Console.Write("Eliminado correctamente");
+
+            }
+            catch (FormatException fe)
             {
                 Console.WriteLine("\nError: El ID ingresado debe ser un número entero\n" + fe.Message);
             }
