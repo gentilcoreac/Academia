@@ -89,10 +89,10 @@ namespace UI.Consola
                     MostrarDatos(usr);
                 }
             }
-            catch (FormatException fe)
-            {
-                Console.WriteLine("\nError: El ID ingresado debe ser un número entero\n" + fe.Message);
-            }
+/*           catch (FormatException fe)
+           {
+               Console.WriteLine("\nError: El ID ingresado debe ser un número entero\n" + fe.Message);
+           }*/
             catch (Exception ex)
             {
                 Console.WriteLine("\nError: \n" + ex.Message);
@@ -126,6 +126,10 @@ namespace UI.Consola
                 Console.Write("Ingrese el ID del usuario a consultar: ");
                 int ID = int.Parse(Console.ReadLine());
                 this.MostrarDatos(UsuarioNegocio.GetOne(ID));
+            }
+            catch (FormatException fe)
+            {
+                Console.WriteLine("\nError: El ID ingresado debe ser un número entero\n" + fe.Message);
             }
             catch (Exception ex)
             {
@@ -166,7 +170,7 @@ namespace UI.Consola
             }
             catch(FormatException fe)
             {
-                Console.WriteLine("\nError: \n" + fe.Message);
+                Console.WriteLine("\nError: El ID ingresado debe ser un número entero\n" + fe.Message);
             }
             catch (Exception ex)
             {
@@ -206,10 +210,10 @@ namespace UI.Consola
 
                 Console.WriteLine("Se ha ingresado correctamente el Usuario con id {0}", usuario.ID);
             }
-            catch (FormatException fe)
+ /*           catch (FormatException fe)
             {
                 Console.WriteLine("\nError: El ID ingresado debe ser un número entero\n" + fe.Message);
-            }
+            }*/
             catch (Exception ex)
             {
                 Console.WriteLine("\nError: \n" + ex.Message);
