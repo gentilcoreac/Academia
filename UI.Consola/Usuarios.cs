@@ -102,7 +102,6 @@ namespace UI.Consola
                 Console.WriteLine("\nPresione una tecla para continuar ");
                 Console.ReadKey();
             }
-
         }
 
         public void MostrarDatos(Usuario usr)
@@ -149,6 +148,7 @@ namespace UI.Consola
                 Console.Write("Ingrese el ID del usuario a modificar: ");
                 int ID = int.Parse(Console.ReadLine());
                 Usuario usuario = UsuarioNegocio.GetOne(ID);
+
                 Console.WriteLine("\nLos datos actuales del usuario son: ");
                 this.MostrarDatos(UsuarioNegocio.GetOne(ID));
 
@@ -163,7 +163,11 @@ namespace UI.Consola
                 usuario.Clave = Console.ReadLine();
                 Console.Write("Email: ");
                 usuario.Email = Console.ReadLine();
-                Console.Write("Habilitación de Usuario (1-Si / otro-No): ");
+				Console.Write("ID persona: ");
+				Persona persona = new Persona();
+				persona.ID = int.Parse(Console.ReadLine());
+				usuario.IDPersona = persona;
+				Console.Write("Habilitación de Usuario (1-Si / otro-No): ");
                 usuario.Habilitado = (Console.ReadLine()=="1");
                 usuario.State = BusinessEntity.States.Modified;
                 UsuarioNegocio.Save(usuario);
@@ -202,11 +206,15 @@ namespace UI.Consola
                 usuario.Clave = Console.ReadLine();
                 Console.Write("Email: ");
                 usuario.Email = Console.ReadLine();
-                Console.Write("Habilitación de Usuario (1-Si / otro-No): ");
+				Console.Write("ID persona: ");
+				Persona persona = new Persona();
+				persona.ID = int.Parse(Console.ReadLine());
+				usuario.IDPersona = persona;
+				Console.Write("Habilitación de Usuario (1-Si / otro-No): ");
                 usuario.Habilitado = (Console.ReadLine() == "1");
 
-                UsuarioNegocio.Save(usuario);
-                usuario.State = BusinessEntity.States.New; 
+				usuario.State = BusinessEntity.States.New;
+				UsuarioNegocio.Save(usuario); 
 
                 Console.WriteLine("Se ha ingresado correctamente el Usuario con id {0}", usuario.ID);
             }
@@ -234,7 +242,7 @@ namespace UI.Consola
 
                 Console.Write("Ingrese ID del usuario a eliminar: ");
                 int ID = int.Parse(Console.ReadLine());
-                UsuarioNegocio.Delete(ID);
+				UsuarioNegocio.Delete(ID);
                 Console.Write("Eliminado correctamente");
 
             }

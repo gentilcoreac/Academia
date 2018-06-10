@@ -2,32 +2,45 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Data.Database
 {
     public class Adapter
     {
-        //string ServerName = "DESKTOP-VDVRD36\SQLEXPRESSACG";
-        //string DataBaseName = "Academia";
-        //private string UserName = "";
-        //private string Secret = "";
-        /*private SqlConnection sqlConnection = new SqlConnection("Data Source=DESKTOP-VDVRD36\\SQLEXPRESSACG" +
-                                                                "Initial Catalog=Academia" +
-                                                                 "Integrated Security=true;");
-*/
-        protected void OpenConnection()
-        {
-           // sqlConnection.Open();
-        }
 
-        protected void CloseConnection()
-        {
-         //   sqlConnection.Close();
-        }
+			//private SqlConnection sqlConnection = new SqlConnection("ConnectionString;");
 
-        protected SqlDataReader ExecuteReader(String commandText)
-        {
-            throw new Exception("Metodo no implementado");
-        }
-    }
-}
+			//Clave por defecto a utlizar para la cadena de conexion
+			const string consKeyDefaultCnnString = "ConnStringLocal";
+			#region Propiedades
+			private SqlConnection _SqlConn;
+			public SqlConnection SqlConn
+			{
+				get { return _SqlConn; }
+				set { _SqlConn = value; }
+			}
+			#endregion
+		
+			#region Metodos
+			protected void OpenConnection()
+			{
+				string temp = ConfigurationManager.ConnectionStrings[consKeyDefaultCnnString].ConnectionString;
+				SqlConn = new SqlConnection(temp);
+				SqlConn.Open();
+			}
+
+			protected void CloseConnection()
+			{
+				SqlConn.Close();
+				SqlConn = null;
+			}
+
+			protected SqlDataReader ExecuteReader(String commandText)
+			{
+				throw new Exception("Metodo no implementado");
+			}
+			#endregion
+
+		}
+	}

@@ -8,15 +8,18 @@ namespace Business.Entities
 {
     public class Usuario : BusinessEntity
     {
+
         private string _NombreUsuario;
         private string _Clave;
         private string _Nombre;
         private string _Apellido;
         private string _Email;
         private bool _Habilitado;
+		private Persona _IDPersona;
 
 
-        public string NombreUsuario
+		#region Properties
+		public string NombreUsuario
         {
             get { return _NombreUsuario; }
             set { _NombreUsuario = value; }
@@ -51,6 +54,12 @@ namespace Business.Entities
             get { return _Habilitado; }
             set { _Habilitado = value; }
         }
+		public Persona IDPersona
+		{
+			get { return _IDPersona; }
+			set { _IDPersona = value; }
+		}
+		#endregion
 
-    }
+	}
 }

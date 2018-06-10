@@ -33,15 +33,22 @@ namespace Business.Logic
 
         public List<Usuario> GetAll()
         {
-            return UsuarioData.GetAll();
-        }
+			return UsuarioData.GetAll();
+        } 
 
+
+		/*
+		 * CONSULTAR QUE BENEFICIOS TIENE EL METODO SAVE (QUE INVOLUCRA EL STATE) CONTRA EL AGREGAR
+			YO CREO QUE UTILIZANDO UN METODO PARA INSERTAR, OTRO PARA BORRAR Y OTRO PARA ACTUALIZAR PODRIAMOS
+			VALIDAR TODAS LAS REGLAS DE NEGOICO EN CADA UNO.
+			pOR ESO MI DUDA ES PARA QUE TE SERVIRIA EL STATE (luego se utiliza en BD)
+		*/
         public void Save(Usuario usuario)
         {
             UsuarioData.Save(usuario);
         }
-    
-        public void Delete(int id)
+
+		public void Delete(int id)
         {
             UsuarioData.Delete(id);
         }
