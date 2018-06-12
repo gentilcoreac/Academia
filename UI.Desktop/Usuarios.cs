@@ -34,7 +34,6 @@ namespace UI.Desktop
             UsuarioLogic ul = new UsuarioLogic();
             this.dgvUsuarios.AutoGenerateColumns = false;
             this.dgvUsuarios.DataSource = ul.GetAll();
-            
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)

@@ -50,8 +50,52 @@ namespace Data.Database
 			}
 			return listaUsuarios;
 		}
+		public Business.Entities.Usuario GetLoggedUser(string usuario, string contrasenia)
+		{
+			Usuario oUsr = new Usuario();
+			try
+			{	
+				//Esto reemplazarlo por un SP
 
-        public Business.Entities.Usuario GetOne(int ID)
+				this.OpenConnection();
+				SqlCommand cmdUsuarios = new SqlCommand("" +
+					"select  id_usuario,nombre_usuario,clave,habilitado," +
+					"		 nombre,apellido,email," +
+					"		 cambia_clave,id_persona " +
+					"from usuarios " +
+					"where nombre_usuario=@nombreUsuario and clave= @contrasenia", SqlConn);
+				cmdUsuarios.Parameters.Add("@nombreUsuario", SqlDbType.VarChar,50).Value = usuario;
+				cmdUsuarios.Parameters.Add("@contrasenia", SqlDbType.VarChar,50).Value = contrasenia;
+				SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
+				if (drUsuarios.Read())
+				{
+					oUsr.ID = (int)drUsuarios["id_usuario"];
+					oUsr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
+					oUsr.Clave = (string)drUsuarios["clave"];
+					oUsr.Nombre = (string)drUsuarios["nombre"];
+					oUsr.Apellido = (string)drUsuarios["apellido"];
+					oUsr.Email = drUsuarios["email"].ToString();
+					oUsr.Habilitado = (bool)drUsuarios["habilitado"];
+					Persona oPersona = new Persona();
+					oPersona.ID = (int)drUsuarios["id_persona"];
+					oUsr.IDPersona = oPersona;
+				}
+				drUsuarios.Close();
+			}
+			catch (Exception Ex)
+			{
+				Exception Excepcion = new Exception("Error al buscar el usuario", Ex);
+				throw Excepcion;
+			}
+			finally
+			{
+				this.CloseConnection();
+			}
+			return oUsr;
+		}
+
+
+		public Business.Entities.Usuario GetOne(int ID)
 		{
 			Usuario oUsr = new Usuario();
 			try

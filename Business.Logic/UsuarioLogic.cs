@@ -57,5 +57,9 @@ namespace Business.Logic
         {
             UsuarioData.Delete(id);
         }*/
+		public Business.Entities.Usuario GetLoggedUser(string usuario,string contrasenia)
+		{
+			return UsuarioData.GetLoggedUser(usuario, contrasenia);
+		}
     }
 }
