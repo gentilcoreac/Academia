@@ -31,13 +31,16 @@
 			this.menuPrincipal = new System.Windows.Forms.MenuStrip();
 			this.toolStripMenuItem_Archivo = new System.Windows.Forms.ToolStripMenuItem();
 			this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripMenuItem_gestion = new System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripMenuItem_usuarios = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuPrincipal.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// menuPrincipal
 			// 
 			this.menuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem_Archivo});
+            this.toolStripMenuItem_Archivo,
+            this.ToolStripMenuItem_gestion});
 			this.menuPrincipal.Location = new System.Drawing.Point(0, 0);
 			this.menuPrincipal.Name = "menuPrincipal";
 			this.menuPrincipal.Size = new System.Drawing.Size(800, 24);
@@ -59,6 +62,21 @@
 			this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.salirToolStripMenuItem.Text = "Salir";
 			this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+			// 
+			// ToolStripMenuItem_gestion
+			// 
+			this.ToolStripMenuItem_gestion.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItem_usuarios});
+			this.ToolStripMenuItem_gestion.Name = "ToolStripMenuItem_gestion";
+			this.ToolStripMenuItem_gestion.Size = new System.Drawing.Size(59, 20);
+			this.ToolStripMenuItem_gestion.Text = "Gestión";
+			// 
+			// ToolStripMenuItem_usuarios
+			// 
+			this.ToolStripMenuItem_usuarios.Name = "ToolStripMenuItem_usuarios";
+			this.ToolStripMenuItem_usuarios.Size = new System.Drawing.Size(180, 22);
+			this.ToolStripMenuItem_usuarios.Text = "Usuarios";
+			this.ToolStripMenuItem_usuarios.Click += new System.EventHandler(this.ToolStripMenuItem_usuarios_Click);
 			// 
 			// FormMain
 			// 
@@ -85,5 +103,7 @@
 		private System.Windows.Forms.MenuStrip menuPrincipal;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_Archivo;
 		private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_gestion;
+		private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_usuarios;
 	}
 }

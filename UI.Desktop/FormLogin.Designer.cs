@@ -65,6 +65,8 @@
 			// 
 			this.textBox_Contrasenia.Location = new System.Drawing.Point(174, 148);
 			this.textBox_Contrasenia.Name = "textBox_Contrasenia";
+			this.textBox_Contrasenia.PasswordChar = '*';
+			this.textBox_Contrasenia.ShortcutsEnabled = false;
 			this.textBox_Contrasenia.Size = new System.Drawing.Size(193, 20);
 			this.textBox_Contrasenia.TabIndex = 3;
 			// 

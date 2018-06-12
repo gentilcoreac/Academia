@@ -12,9 +12,9 @@ using Business.Logic;
 
 namespace UI.Desktop
 {
-    public partial class Usuarios : Form
+    public partial class FormUsuarios : Form
     {
-        public Usuarios()
+        public FormUsuarios()
         {
             InitializeComponent();
         }

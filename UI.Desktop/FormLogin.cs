@@ -27,14 +27,6 @@ namespace UI.Desktop
 		}
 		#endregion
 
-		#region Disparadores
-		private void button_Ingresar_Click(object sender, EventArgs e)
-		{
-			validaIngreso();
-		}
-
-		#endregion
-
 		#region Metodos
 		public void validaIngreso()
 		{
@@ -72,13 +64,15 @@ namespace UI.Desktop
 
 		#endregion
 
+		#region Disparadores
+		private void button_Ingresar_Click(object sender, EventArgs e)
+		{
+			validaIngreso();
+		}
+
 		private void FormLogin_Shown(object sender, EventArgs e)
 		{
-			FormLogin appLogin = new FormLogin();
-			if (appLogin.ShowDialog() != DialogResult.OK)
-			{
-				this.Dispose();
-			}
 		}
+		#endregion
 	}
 }

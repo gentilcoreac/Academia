@@ -35,7 +35,16 @@ namespace UI.Desktop
 		private void FormMain_Shown(object sender, EventArgs e)
 		{
 			FormLogin appLogin = new FormLogin();
-			appLogin.ShowDialog();
+			if (appLogin.ShowDialog() != DialogResult.OK)
+			{
+				this.Dispose();
+			}
+		}
+
+		private void ToolStripMenuItem_usuarios_Click(object sender, EventArgs e)
+		{
+			FormUsuarios appUsuarios = new FormUsuarios();
+			appUsuarios.ShowDialog();
 		}
 	}
 }

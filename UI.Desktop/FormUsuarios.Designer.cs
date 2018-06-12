@@ -1,6 +1,6 @@
 ﻿namespace UI.Desktop
 {
-    partial class Usuarios
+    partial class FormUsuarios
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
 			System.Windows.Forms.ToolStripButton tsbEditar;
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Usuarios));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUsuarios));
 			this.dgvUsuarios = new System.Windows.Forms.DataGridView();
 			this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -215,13 +215,13 @@
 			this.tsbEliminar.Text = "Eliminar";
 			this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
 			// 
-			// Usuarios
+			// FormUsuarios
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(662, 360);
 			this.Controls.Add(this.tcUsuarios);
-			this.Name = "Usuarios";
+			this.Name = "FormUsuarios";
 			this.Text = "Usuarios";
 			this.Load += new System.EventHandler(this.Usuarios_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
