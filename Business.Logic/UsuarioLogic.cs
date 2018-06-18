@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Data.Database;
 using Business.Entities;
+using System.Data;
 
 namespace Business.Logic
 {
@@ -26,15 +27,19 @@ namespace Business.Logic
         {
             return UsuarioData.GetOne(usuario);
         }*/
+
         public Usuario GetOne(int ID)
         {
             return UsuarioData.GetOne(ID);
         }
 
-        public List<Usuario> GetAll()
-        {
-			return UsuarioData.GetAll();
-        } 
+		public List<Usuario> GetAll()
+		{
+			//return UsuarioData.GetAll();
+			List<Usuario> ListaUsuarios = UsuarioData.GetAll();
+			return ListaUsuarios;
+		}
+
 
 
 		/*
@@ -43,7 +48,7 @@ namespace Business.Logic
 			VALIDAR TODAS LAS REGLAS DE NEGOICO EN CADA UNO.
 			pOR ESO MI DUDA ES PARA QUE TE SERVIRIA EL STATE (luego se utiliza en BD)
 		*/
-        public void Save(Usuario usuario)
+		public void Save(Usuario usuario)
         {
             UsuarioData.Save(usuario);
         }

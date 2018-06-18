@@ -21,7 +21,7 @@ namespace Data.Database
 					"		 cambia_clave,id_persona " +
 					"from usuarios", SqlConn);
 				SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
-				if (drUsuarios.Read())
+				while (drUsuarios.Read())
 				{
 					Usuario oUsr = new Usuario();
 					oUsr.ID = (int)drUsuarios["id_usuario"];
@@ -67,7 +67,7 @@ namespace Data.Database
 				cmdUsuarios.Parameters.Add("@nombreUsuario", SqlDbType.VarChar,50).Value = usuario;
 				cmdUsuarios.Parameters.Add("@contrasenia", SqlDbType.VarChar,50).Value = contrasenia;
 				SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
-				if (drUsuarios.Read())
+				if (drUsuarios != null && drUsuarios.Read())
 				{
 					oUsr.ID = (int)drUsuarios["id_usuario"];
 					oUsr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
@@ -109,7 +109,7 @@ namespace Data.Database
 					"where id_usuario = @id", SqlConn);
 				cmdUsuarios.Parameters.Add("@id", SqlDbType.Int).Value = ID;
 				SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
-				if (drUsuarios.Read())
+				if (drUsuarios != null && drUsuarios.Read())
 				{
 					oUsr.ID = (int)drUsuarios["id_usuario"];
 					oUsr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
