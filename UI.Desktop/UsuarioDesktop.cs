@@ -128,39 +128,37 @@ namespace UI.Desktop
 			inválido debe retornar false e informar al usuario utilizando el método
 			de Notificar que definimos anteriormente, y si es todo válido debe
 			llamar retornar true.*/
-			if (!(String.IsNullOrEmpty(this.txtApellido.Text) ||
-				String.IsNullOrEmpty(this.txtNombre.Text)	||
-				String.IsNullOrEmpty(this.txtUsuario.Text)	||
-				String.IsNullOrEmpty(this.txtEmail.Text)	||
-				String.IsNullOrEmpty(this.txtClave.Text)) 		
-			//	&& (this.txtClave.Text.Length >= 8 && this.txtClave.Text == this.txtConfirmarClave.Text) 
-	//		&& (Util.Campo.IsValidEmail(this.txtEmail.Text))
-	)
+
+			if (String.IsNullOrEmpty(this.txtApellido.Text) ||
+				String.IsNullOrEmpty(this.txtNombre.Text) ||
+				String.IsNullOrEmpty(this.txtUsuario.Text) ||
+				String.IsNullOrEmpty(this.txtEmail.Text) ||
+				String.IsNullOrEmpty(this.txtClave.Text))
 			{
-				return true;
-			}else
+				this.Notificar("Por favor, complete todos los campos"
+						, "Cuidado, revisar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				return false;
+			} else if (this.txtClave.Text.Length < 8)
 			{
+				this.Notificar("La contraseña debe tener 8 o más caracteres"
+						, "Cuidado, revisar", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				return false;
 			}
-
-
-
-			/*			if (!(String.IsNullOrEmpty(this.txtApellido.Text) ||
-				String.IsNullOrEmpty(this.txtNombre.Text)	||
-				String.IsNullOrEmpty(this.txtUsuario.Text)	||
-				String.IsNullOrEmpty(this.txtEmail.Text)	||
-				String.IsNullOrEmpty(this.txtClave.Text)	||
-				String.IsNullOrEmpty(this.txtConfirmarClave.Text))          
-			&& (this.txtClave.Text.Length >= 8 && this.txtClave.Text == this.txtConfirmarClave.Text) 
-			&& (Util.Campo.IsValidEmail(this.txtEmail.Text)))
+			else if (this.txtClave.Text != this.txtConfirmarClave.Text )
+			{
+				this.Notificar("No coincide la clave con su clave de confirmación"
+						, "Cuidado, revisar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				return false;
+			}
+			else if (!Util.Campo.IsValidEmail(this.txtEmail.Text))
+			{
+				this.Notificar("Formato de email incorrecto"
+						, "Cuidado, revisar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				return false;
+			} else
 			{
 				return true;
-			}else
-			{
-				return false;
-			}*/
-
-
+			}
 		}
 
 
@@ -182,21 +180,19 @@ namespace UI.Desktop
 
 		private void btnAceptar_Click(object sender, EventArgs e)
 		{
-			
-			
 			try
 			{
-				if (this.Validar())
+				if (Modo == UsuarioDesktop.ModoForm.Baja || this.Validar())
 				{
 					this.GuardarCambios();
 					this.Dispose();
-					MessageBox.Show("Usuario ingresado correctamente", "Nuevo usuario"
+					this.Notificar("Operación realizada correctamente", "Operacón correcta"
 									, MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show("Error al ingresar un Usuario \n" + ex, "Error en login"
+				this.Notificar("Error al ingresar un Usuario \n" + ex, "Error en login"
 								, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 

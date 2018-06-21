@@ -72,13 +72,6 @@ namespace UI.Desktop
 			UsuarioDesktop usuarioDesktop = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Baja);
 			usuarioDesktop.ShowDialog();
 			this.Listar();
-			//if (MessageBox.Show("Confirmar para eliminar el Usuario", "Eliminar usuario",
-			//	MessageBoxButtons.YesNo, MessageBoxIcon.Question,
-			//	MessageBoxDefaultButton.Button1) == DialogResult.Yes)
-			//{
-
-			//}
-
 		}
     }
 }
