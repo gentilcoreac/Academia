@@ -63,10 +63,15 @@ namespace UI.Desktop
 			switch (Modo)
 			{
 				case UsuarioDesktop.ModoForm.Alta:
+					this.Text = "Agregar usuario";
+					this.btnAceptar.Text = "Agregar";
+					break;
 				case UsuarioDesktop.ModoForm.Modificacion:
-					this.btnAceptar.Text = "Guardar";
+					this.Text = "Actualizar datos del usuario";
+					this.btnAceptar.Text = "Acualizar";
 					break;
 				case UsuarioDesktop.ModoForm.Baja:
+					this.Text = "Eliminar usuario";
 					this.btnAceptar.Text = "Eliminar";
 					break;
 				case UsuarioDesktop.ModoForm.Consulta:

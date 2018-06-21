@@ -88,7 +88,7 @@
 			this.panel_Principal.Name = "panel_Principal";
 			this.panel_Principal.RowCount = 1;
 			this.panel_Principal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-			this.panel_Principal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+			this.panel_Principal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 426F));
 			this.panel_Principal.Size = new System.Drawing.Size(800, 426);
 			this.panel_Principal.TabIndex = 3;
 			// 
@@ -102,7 +102,7 @@
 			this.IsMdiContainer = true;
 			this.MainMenuStrip = this.menuPrincipal;
 			this.Name = "FormMain";
-			this.Text = "FormMain";
+			this.Text = "Academia ";
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Load += new System.EventHandler(this.FormMain_Load);
 			this.Shown += new System.EventHandler(this.FormMain_Shown);

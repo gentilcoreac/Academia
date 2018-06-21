@@ -51,8 +51,7 @@ namespace UI.Desktop
 			appUsuarios.TopLevel = false;
 			appUsuarios.AutoScroll = false;
 			this.panel_Principal.Controls.Add(appUsuarios);
-			appUsuarios.Show();
-			
+			appUsuarios.Show();			
 		}
 	}
 }

@@ -62,9 +62,6 @@ namespace UI.Desktop
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
 			UsuarioDesktop usuarioDesktop = new UsuarioDesktop(ApplicationForm.ModoForm.Alta);
-			//usuarioDesktop.TopLevel = false;
-			//usuarioDesktop.AutoScroll = false;
-			//this.panel_ABM.Controls.Add(usuarioDesktop);
 			usuarioDesktop.ShowDialog();
 			this.Listar();
 		}
