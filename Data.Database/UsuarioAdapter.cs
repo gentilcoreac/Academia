@@ -82,9 +82,9 @@ namespace Data.Database
 				}
 				drUsuarios.Close();
 			}
-			catch (Exception Ex)
+			catch (SqlException Ex)
 			{
-				Exception Excepcion = new Exception("Error al buscar el usuario", Ex);
+				Exception Excepcion = new Exception("Error al buscar el usuario\n", Ex);
 				throw Excepcion;
 			}
 			finally
@@ -164,7 +164,7 @@ namespace Data.Database
 				this.OpenConnection();
 				SqlCommand cmdInsertUsuario= new SqlCommand("" +
 					"INSERT [usuarios] ( nombre_usuario, clave, habilitado, nombre, apellido, email, id_persona) " +
-					"				 VALUES( @nombre_usuario, @clave, @habilitado, @nombre, @apellido, @email, @id_persona) "+
+					"				 VALUES( @nombre_usuario, @clave, @habilitado, @nombre, @apellido, @email, 2) "+
 					" select @@identity AS id_usuario", SqlConn);
 				cmdInsertUsuario.Parameters.Add("@nombre_usuario", SqlDbType.VarChar,50).Value = usuario.NombreUsuario;
 				cmdInsertUsuario.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = usuario.Clave;
@@ -172,9 +172,9 @@ namespace Data.Database
 				cmdInsertUsuario.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = usuario.Nombre;
 				cmdInsertUsuario.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = usuario.Apellido;
 				cmdInsertUsuario.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = usuario.Email;
-				cmdInsertUsuario.Parameters.Add("@id_persona", SqlDbType.Int).Value = usuario.IDPersona.ID;
+		//		cmdInsertUsuario.Parameters.Add("@id_persona", SqlDbType.Int).Value = usuario.IDPersona.ID;
 				usuario.ID = Decimal.ToInt32((decimal)cmdInsertUsuario.ExecuteScalar());
-				cmdInsertUsuario.ExecuteNonQuery();
+				//cmdInsertUsuario.ExecuteNonQuery();
 			}
 			catch (Exception Ex)
 			{

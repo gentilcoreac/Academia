@@ -12,8 +12,8 @@ using Business.Logic;
 
 namespace UI.Desktop
 {
-    public partial class FormUsuarios : Form
-    {
+    public partial class FormUsuarios : ApplicationForm
+	{
         public FormUsuarios()
         {
             InitializeComponent();
@@ -53,17 +53,35 @@ namespace UI.Desktop
 
         private void tsbEditar_Click(object sender, EventArgs e)
         {
-
-        }
+			int ID = ((Business.Entities.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
+			UsuarioDesktop usuarioDesktop = new UsuarioDesktop(ID,ApplicationForm.ModoForm.Modificacion);
+			usuarioDesktop.ShowDialog();
+			this.Listar();
+		}
 
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
+			UsuarioDesktop usuarioDesktop = new UsuarioDesktop(ApplicationForm.ModoForm.Alta);
+			//usuarioDesktop.TopLevel = false;
+			//usuarioDesktop.AutoScroll = false;
+			//this.panel_ABM.Controls.Add(usuarioDesktop);
+			usuarioDesktop.ShowDialog();
+			this.Listar();
+		}
 
-        }
+		private void tsbEliminar_Click(object sender, EventArgs e)
+		{
+			int ID = ((Business.Entities.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
+			UsuarioDesktop usuarioDesktop = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Baja);
+			usuarioDesktop.ShowDialog();
+			this.Listar();
+			//if (MessageBox.Show("Confirmar para eliminar el Usuario", "Eliminar usuario",
+			//	MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+			//	MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+			//{
 
-        private void tsbEliminar_Click(object sender, EventArgs e)
-        {
+			//}
 
-        }
+		}
     }
 }

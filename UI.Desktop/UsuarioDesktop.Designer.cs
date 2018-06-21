@@ -51,6 +51,7 @@
 			// 
 			// tableLayoutPanel1
 			// 
+			this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
 			this.tableLayoutPanel1.ColumnCount = 4;
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.27623F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.47538F));
@@ -130,7 +131,7 @@
 			// 
 			this.checkBox_Habilitado.Anchor = System.Windows.Forms.AnchorStyles.Right;
 			this.checkBox_Habilitado.AutoSize = true;
-			this.checkBox_Habilitado.Location = new System.Drawing.Point(234, 5);
+			this.checkBox_Habilitado.Location = new System.Drawing.Point(233, 5);
 			this.checkBox_Habilitado.Name = "checkBox_Habilitado";
 			this.checkBox_Habilitado.Size = new System.Drawing.Size(73, 17);
 			this.checkBox_Habilitado.TabIndex = 4;
@@ -141,7 +142,7 @@
 			// 
 			this.label_Apellido.Anchor = System.Windows.Forms.AnchorStyles.Right;
 			this.label_Apellido.AutoSize = true;
-			this.label_Apellido.Location = new System.Drawing.Point(263, 34);
+			this.label_Apellido.Location = new System.Drawing.Point(262, 34);
 			this.label_Apellido.Name = "label_Apellido";
 			this.label_Apellido.Size = new System.Drawing.Size(44, 13);
 			this.label_Apellido.TabIndex = 5;
@@ -151,7 +152,7 @@
 			// 
 			this.label_Usuario.Anchor = System.Windows.Forms.AnchorStyles.Right;
 			this.label_Usuario.AutoSize = true;
-			this.label_Usuario.Location = new System.Drawing.Point(264, 61);
+			this.label_Usuario.Location = new System.Drawing.Point(263, 61);
 			this.label_Usuario.Name = "label_Usuario";
 			this.label_Usuario.Size = new System.Drawing.Size(43, 13);
 			this.label_Usuario.TabIndex = 6;
@@ -161,7 +162,7 @@
 			// 
 			this.label_ConfirmarClave.Anchor = System.Windows.Forms.AnchorStyles.Right;
 			this.label_ConfirmarClave.AutoSize = true;
-			this.label_ConfirmarClave.Location = new System.Drawing.Point(227, 88);
+			this.label_ConfirmarClave.Location = new System.Drawing.Point(226, 88);
 			this.label_ConfirmarClave.Name = "label_ConfirmarClave";
 			this.label_ConfirmarClave.Size = new System.Drawing.Size(80, 13);
 			this.label_ConfirmarClave.TabIndex = 7;
@@ -169,72 +170,74 @@
 			// 
 			// txtID
 			// 
-			this.txtID.Location = new System.Drawing.Point(65, 3);
+			this.txtID.Location = new System.Drawing.Point(66, 4);
 			this.txtID.Name = "txtID";
 			this.txtID.ReadOnly = true;
-			this.txtID.Size = new System.Drawing.Size(155, 20);
+			this.txtID.Size = new System.Drawing.Size(153, 20);
 			this.txtID.TabIndex = 8;
 			// 
 			// txtNombre
 			// 
-			this.txtNombre.Location = new System.Drawing.Point(65, 30);
+			this.txtNombre.Location = new System.Drawing.Point(66, 31);
 			this.txtNombre.Name = "txtNombre";
-			this.txtNombre.Size = new System.Drawing.Size(155, 20);
+			this.txtNombre.Size = new System.Drawing.Size(153, 20);
 			this.txtNombre.TabIndex = 9;
 			// 
 			// txtEmail
 			// 
-			this.txtEmail.Location = new System.Drawing.Point(65, 57);
+			this.txtEmail.Location = new System.Drawing.Point(66, 58);
 			this.txtEmail.Name = "txtEmail";
-			this.txtEmail.Size = new System.Drawing.Size(155, 20);
+			this.txtEmail.Size = new System.Drawing.Size(153, 20);
 			this.txtEmail.TabIndex = 10;
 			// 
 			// txtClave
 			// 
-			this.txtClave.Location = new System.Drawing.Point(65, 84);
+			this.txtClave.Location = new System.Drawing.Point(66, 85);
 			this.txtClave.Name = "txtClave";
 			this.txtClave.PasswordChar = '*';
-			this.txtClave.Size = new System.Drawing.Size(155, 20);
+			this.txtClave.Size = new System.Drawing.Size(153, 20);
 			this.txtClave.TabIndex = 11;
 			// 
 			// txtApellido
 			// 
-			this.txtApellido.Location = new System.Drawing.Point(313, 30);
+			this.txtApellido.Location = new System.Drawing.Point(313, 31);
 			this.txtApellido.Name = "txtApellido";
-			this.txtApellido.Size = new System.Drawing.Size(151, 20);
+			this.txtApellido.Size = new System.Drawing.Size(150, 20);
 			this.txtApellido.TabIndex = 12;
 			// 
 			// txtUsuario
 			// 
-			this.txtUsuario.Location = new System.Drawing.Point(313, 57);
+			this.txtUsuario.Location = new System.Drawing.Point(313, 58);
 			this.txtUsuario.Name = "txtUsuario";
-			this.txtUsuario.Size = new System.Drawing.Size(151, 20);
+			this.txtUsuario.Size = new System.Drawing.Size(150, 20);
 			this.txtUsuario.TabIndex = 13;
 			// 
 			// txtConfirmarClave
 			// 
-			this.txtConfirmarClave.Location = new System.Drawing.Point(313, 84);
+			this.txtConfirmarClave.Location = new System.Drawing.Point(313, 85);
 			this.txtConfirmarClave.Name = "txtConfirmarClave";
-			this.txtConfirmarClave.Size = new System.Drawing.Size(151, 20);
+			this.txtConfirmarClave.Size = new System.Drawing.Size(150, 20);
 			this.txtConfirmarClave.TabIndex = 14;
 			// 
 			// btnAceptar
 			// 
-			this.btnAceptar.Location = new System.Drawing.Point(226, 111);
+			this.btnAceptar.Location = new System.Drawing.Point(226, 112);
 			this.btnAceptar.Name = "btnAceptar";
-			this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+			this.btnAceptar.Size = new System.Drawing.Size(75, 22);
 			this.btnAceptar.TabIndex = 15;
 			this.btnAceptar.Text = "Aceptar";
 			this.btnAceptar.UseVisualStyleBackColor = true;
+			this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
 			// 
 			// btnCancelar
 			// 
-			this.btnCancelar.Location = new System.Drawing.Point(313, 111);
+			this.btnCancelar.Location = new System.Drawing.Point(313, 112);
 			this.btnCancelar.Name = "btnCancelar";
-			this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+			this.btnCancelar.Size = new System.Drawing.Size(75, 22);
 			this.btnCancelar.TabIndex = 16;
 			this.btnCancelar.Text = "Cancelar";
 			this.btnCancelar.UseVisualStyleBackColor = true;
+			this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
 			// 
 			// UsuarioDesktop
 			// 

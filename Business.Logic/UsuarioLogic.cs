@@ -35,9 +35,7 @@ namespace Business.Logic
 
 		public List<Usuario> GetAll()
 		{
-			//return UsuarioData.GetAll();
-			List<Usuario> ListaUsuarios = UsuarioData.GetAll();
-			return ListaUsuarios;
+			return UsuarioData.GetAll();
 		}
 
 

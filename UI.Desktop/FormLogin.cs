@@ -31,28 +31,35 @@ namespace UI.Desktop
 		public void validaIngreso()
 		{
 			UsuarioLogic ul = new UsuarioLogic();
-			if (validaCampos())
+			try
 			{
-				string usuario = textBox_Usuario.Text;
-				string contrasenia = textBox_Contrasenia.Text;
-				Usuario = new Business.Entities.Usuario();
-				Usuario = ul.GetLoggedUser(usuario, contrasenia);
-
-				/*	MessageBox.Show("Usuario y/o contraseña correctos" + Usuario.Apellido, "Login"
-						, MessageBoxButtons.OK, MessageBoxIcon.Error);
-						*/
-				if (Usuario !=null && Usuario.NombreUsuario==usuario && Usuario.Clave==contrasenia)
+				if (validaCampos())
 				{
-					this.DialogResult = DialogResult.OK;
-				}
-				else
-				{
-					MessageBox.Show("Usuario y/o contraseña incorrectos", "Login"
-						, MessageBoxButtons.OK, MessageBoxIcon.Error);
+					string usuario = textBox_Usuario.Text;
+					string contrasenia = textBox_Contrasenia.Text;
+					Usuario = new Business.Entities.Usuario();
+					Usuario = ul.GetLoggedUser(usuario, contrasenia);
 
-					//Se podria crear una clase/metodo en "Util" que sea NOTIFICAR y se le pasen como parametros los textos.
-					//Asi podemos estandarizar un mensaje con imagen ,texto, logo, etc889
+					/*	MessageBox.Show("Usuario y/o contraseña correctos" + Usuario.Apellido, "Login"
+							, MessageBoxButtons.OK, MessageBoxIcon.Error);
+							*/
+					if (Usuario != null && Usuario.NombreUsuario == usuario && Usuario.Clave == contrasenia)
+					{
+						this.DialogResult = DialogResult.OK;
+					}
+					else
+					{
+						MessageBox.Show("Usuario y/o contraseña incorrectos", "Login"
+							, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+						//Se podria crear una clase/metodo en "Util" que sea NOTIFICAR y se le pasen como parametros los textos.
+						//Asi podemos estandarizar un mensaje con imagen ,texto, logo, etc889
+					}
 				}
+			}catch(Exception ex)
+			{
+				MessageBox.Show("Error al ingresar al sistema \n"+ex, "Error en login"
+								, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
 

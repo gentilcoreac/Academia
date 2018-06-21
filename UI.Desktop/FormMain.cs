@@ -43,8 +43,16 @@ namespace UI.Desktop
 
 		private void ToolStripMenuItem_usuarios_Click(object sender, EventArgs e)
 		{
+			//			forma de la catedra 
+			//			FormUsuarios appUsuarios = new FormUsuarios();
+			//			appUsuarios.ShowDialog();
+
 			FormUsuarios appUsuarios = new FormUsuarios();
-			appUsuarios.ShowDialog();
+			appUsuarios.TopLevel = false;
+			appUsuarios.AutoScroll = false;
+			this.panel_Principal.Controls.Add(appUsuarios);
+			appUsuarios.Show();
+			
 		}
 	}
 }

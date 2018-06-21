@@ -33,6 +33,7 @@
 			this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.ToolStripMenuItem_gestion = new System.Windows.Forms.ToolStripMenuItem();
 			this.ToolStripMenuItem_usuarios = new System.Windows.Forms.ToolStripMenuItem();
+			this.panel_Principal = new System.Windows.Forms.TableLayoutPanel();
 			this.menuPrincipal.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -59,7 +60,7 @@
 			// salirToolStripMenuItem
 			// 
 			this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-			this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
 			this.salirToolStripMenuItem.Text = "Salir";
 			this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
 			// 
@@ -74,15 +75,29 @@
 			// ToolStripMenuItem_usuarios
 			// 
 			this.ToolStripMenuItem_usuarios.Name = "ToolStripMenuItem_usuarios";
-			this.ToolStripMenuItem_usuarios.Size = new System.Drawing.Size(180, 22);
+			this.ToolStripMenuItem_usuarios.Size = new System.Drawing.Size(119, 22);
 			this.ToolStripMenuItem_usuarios.Text = "Usuarios";
 			this.ToolStripMenuItem_usuarios.Click += new System.EventHandler(this.ToolStripMenuItem_usuarios_Click);
+			// 
+			// panel_Principal
+			// 
+			this.panel_Principal.ColumnCount = 1;
+			this.panel_Principal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			this.panel_Principal.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel_Principal.Location = new System.Drawing.Point(0, 24);
+			this.panel_Principal.Name = "panel_Principal";
+			this.panel_Principal.RowCount = 1;
+			this.panel_Principal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			this.panel_Principal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+			this.panel_Principal.Size = new System.Drawing.Size(800, 426);
+			this.panel_Principal.TabIndex = 3;
 			// 
 			// FormMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.panel_Principal);
 			this.Controls.Add(this.menuPrincipal);
 			this.IsMdiContainer = true;
 			this.MainMenuStrip = this.menuPrincipal;
@@ -105,5 +120,6 @@
 		private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_gestion;
 		private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_usuarios;
+		private System.Windows.Forms.TableLayoutPanel panel_Principal;
 	}
 }

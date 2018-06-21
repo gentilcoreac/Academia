@@ -85,9 +85,10 @@
 			this.label_Encabezado.AutoSize = true;
 			this.label_Encabezado.Location = new System.Drawing.Point(131, 26);
 			this.label_Encabezado.Name = "label_Encabezado";
-			this.label_Encabezado.Size = new System.Drawing.Size(202, 26);
+			this.label_Encabezado.Size = new System.Drawing.Size(230, 52);
 			this.label_Encabezado.TabIndex = 5;
-			this.label_Encabezado.Text = "¡Bienvenido al Sistema!\r\nPor favor digite su información de Ingreso";
+			this.label_Encabezado.Text = "¡Bienvenido al Sistema!\r\nPor favor digite su información de Ingreso\r\n\r\nESTA COMEN" +
+    "TADO LA PERSONA EN LA DB";
 			this.label_Encabezado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// FormLogin
