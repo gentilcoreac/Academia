@@ -11,9 +11,9 @@ namespace Business.Entities
         private string _Apellido;
         private string _Nombre;
         private string _Direccion;
-        private string _Email;
+        private string _EmailPersonal;
         private DateTime _FechaNacimiento;
-        private int _IDPlan;
+        private Plan _IDPlan;
         private int _Legajo;
         private string _Telefono;
         private TiposPersonas _TiposPersona;
@@ -45,17 +45,17 @@ namespace Business.Entities
             get { return _Direccion; }
             set { _Direccion = value; }
         }
-        public string Email
+        public string EmailPersonal
         {
-            get { return _Email; }
-            set { _Email = value; }
+            get { return _EmailPersonal; }
+            set { _EmailPersonal = value; }
         }
         public DateTime FechaNacimiento
         {
             get { return _FechaNacimiento; }
             set { _FechaNacimiento = value; }
         }
-        public int IDPlan
+        public Plan Plan_persona
         {
             get { return _IDPlan; }
             set { _IDPlan = value; }

@@ -162,11 +162,11 @@ namespace UI.Desktop
 		}
 
 
-		public void Notificar(string titulo, string mensaje, MessageBoxButtons botones, MessageBoxIcon icono)
+		public override void Notificar(string titulo, string mensaje, MessageBoxButtons botones, MessageBoxIcon icono)
 		{
 			MessageBox.Show(mensaje, titulo, botones, icono);
 		}
-		public void Notificar(string mensaje, MessageBoxButtons botones, MessageBoxIcon icono)
+		public override void Notificar(string mensaje, MessageBoxButtons botones, MessageBoxIcon icono)
 		{
 			this.Notificar(this.Text, mensaje, botones, icono);
 		}

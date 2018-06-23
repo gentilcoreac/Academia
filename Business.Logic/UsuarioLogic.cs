@@ -38,7 +38,11 @@ namespace Business.Logic
 			return UsuarioData.GetAll();
 		}
 
+		public List<Usuario> GetAll(string tipoBusqueda, string busqueda)
+		{
 
+			return UsuarioData.GetAll(tipoBusqueda, busqueda);
+		}
 
 		/*
 		 * CONSULTAR QUE BENEFICIOS TIENE EL METODO SAVE (QUE INVOLUCRA EL STATE) CONTRA EL AGREGAR

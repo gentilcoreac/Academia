@@ -44,6 +44,12 @@
 			this.tsUsuarios = new System.Windows.Forms.ToolStrip();
 			this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
 			this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
+			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+			this.comboBox_TipoBusqueda = new System.Windows.Forms.ToolStripComboBox();
+			this.toolStripTextBox_Usuario = new System.Windows.Forms.ToolStripTextBox();
+			this.btn_Buscar = new System.Windows.Forms.ToolStripButton();
+			this.lbl_Buscar = new System.Windows.Forms.ToolStripLabel();
+			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			tsbEditar = new System.Windows.Forms.ToolStripButton();
 			((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
 			this.tcUsuarios.ContentPanel.SuspendLayout();
@@ -193,10 +199,16 @@
 			this.tsUsuarios.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbNuevo,
             tsbEditar,
-            this.tsbEliminar});
+            this.tsbEliminar,
+            this.toolStripSeparator1,
+            this.toolStripSeparator2,
+            this.lbl_Buscar,
+            this.comboBox_TipoBusqueda,
+            this.toolStripTextBox_Usuario,
+            this.btn_Buscar});
 			this.tsUsuarios.Location = new System.Drawing.Point(3, 0);
 			this.tsUsuarios.Name = "tsUsuarios";
-			this.tsUsuarios.Size = new System.Drawing.Size(81, 25);
+			this.tsUsuarios.Size = new System.Drawing.Size(404, 25);
 			this.tsUsuarios.TabIndex = 0;
 			// 
 			// tsbNuevo
@@ -219,6 +231,43 @@
 			this.tsbEliminar.Size = new System.Drawing.Size(23, 22);
 			this.tsbEliminar.Text = "Eliminar";
 			this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
+			// 
+			// toolStripSeparator1
+			// 
+			this.toolStripSeparator1.Name = "toolStripSeparator1";
+			this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+			// 
+			// comboBox_TipoBusqueda
+			// 
+			this.comboBox_TipoBusqueda.Name = "comboBox_TipoBusqueda";
+			this.comboBox_TipoBusqueda.Size = new System.Drawing.Size(121, 25);
+			// 
+			// toolStripTextBox_Usuario
+			// 
+			this.toolStripTextBox_Usuario.Name = "toolStripTextBox_Usuario";
+			this.toolStripTextBox_Usuario.Size = new System.Drawing.Size(100, 25);
+			this.toolStripTextBox_Usuario.Tag = "";
+			this.toolStripTextBox_Usuario.ToolTipText = "Valor buscado";
+			// 
+			// btn_Buscar
+			// 
+			this.btn_Buscar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.btn_Buscar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Buscar.Image")));
+			this.btn_Buscar.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.btn_Buscar.Name = "btn_Buscar";
+			this.btn_Buscar.Size = new System.Drawing.Size(23, 22);
+			this.btn_Buscar.Click += new System.EventHandler(this.toolStripButton1_Click);
+			// 
+			// lbl_Buscar
+			// 
+			this.lbl_Buscar.Name = "lbl_Buscar";
+			this.lbl_Buscar.Size = new System.Drawing.Size(63, 22);
+			this.lbl_Buscar.Text = "Buscar por";
+			// 
+			// toolStripSeparator2
+			// 
+			this.toolStripSeparator2.Name = "toolStripSeparator2";
+			this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
 			// 
 			// FormUsuarios
 			// 
@@ -259,6 +308,12 @@
         private System.Windows.Forms.ToolStripButton tsbEliminar;
 		private System.Windows.Forms.Button btnActualizar;
 		private System.Windows.Forms.Button btnSalir;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+		private System.Windows.Forms.ToolStripComboBox comboBox_TipoBusqueda;
+		private System.Windows.Forms.ToolStripButton btn_Buscar;
+		private System.Windows.Forms.ToolStripTextBox toolStripTextBox_Usuario;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+		private System.Windows.Forms.ToolStripLabel lbl_Buscar;
 	}
 }
 

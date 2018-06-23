@@ -15,9 +15,9 @@ namespace Data.Database
 			try
 			{
 				this.OpenConnection();
-				SqlCommand cmdUsuarios = new SqlCommand("" +
+				SqlCommand cmdUsuarios = new SqlCommand(
 					"select  id_usuario,nombre_usuario,clave,habilitado," +
-					"		 nombre,apellido,email," +
+					"		 nombre,apellido,email_usuario," +
 					"		 cambia_clave,id_persona " +
 					"from usuarios", SqlConn);
 				SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
@@ -29,7 +29,7 @@ namespace Data.Database
 					oUsr.Clave = (string)drUsuarios["clave"];
 					oUsr.Nombre = (string)drUsuarios["nombre"];
 					oUsr.Apellido = (string)drUsuarios["apellido"];
-					oUsr.Email = drUsuarios["email"].ToString();
+					oUsr.Email = drUsuarios["email_usuario"].ToString();
 					oUsr.Habilitado = (bool)drUsuarios["habilitado"];
 
 					Persona oPersona = new Persona();
@@ -50,6 +50,114 @@ namespace Data.Database
 			}
 			return listaUsuarios;
 		}
+
+		
+		public List<Usuario> GetAll(string tipoBusqueda, string valorBuscado)
+		{
+			List<Usuario> listaUsuarios = new List<Usuario>();
+			try
+			{
+				this.OpenConnection();
+				SqlCommand cmdUsuarios = null;
+				switch (tipoBusqueda)
+				{
+					case "ID":
+							cmdUsuarios = new SqlCommand(
+									"select  id_usuario,nombre_usuario,clave,habilitado," +
+									"		 nombre,apellido,email_usuario," +
+									"		 cambia_clave,id_persona " +
+									"from usuarios " +
+									"where id_usuario like '%'+@id+'%'", SqlConn);
+									cmdUsuarios.Parameters.Add("@id", SqlDbType.Int).Value = int.Parse(valorBuscado);
+							break;
+					case "Nombre":
+							cmdUsuarios = new SqlCommand(
+									"select  id_usuario,nombre_usuario,clave,habilitado," +
+									"		 nombre,apellido,email_usuario," +
+									"		 cambia_clave,id_persona " +
+									"from usuarios " +
+									"where nombre like  '%'+@nombre+'%' ", SqlConn);
+							cmdUsuarios.Parameters.Add("@nombre", SqlDbType.VarChar).Value = valorBuscado;
+						break;
+					case "Apellido":
+							cmdUsuarios = new SqlCommand(
+									"select  id_usuario,nombre_usuario,clave,habilitado," +
+									"		 nombre,apellido,email_usuario," +
+									"		 cambia_clave,id_persona " +
+									"from usuarios " +
+									"where apellido like '%'+@apellido+'%'", SqlConn);
+							cmdUsuarios.Parameters.Add("@apellido", SqlDbType.VarChar,50).Value = valorBuscado;
+						break;
+
+					case "Usuario":
+							cmdUsuarios = new SqlCommand(
+									"select  id_usuario,nombre_usuario,clave,habilitado," +
+									"		 nombre,apellido,email_usuario," +
+									"		 cambia_clave,id_persona " +
+									"from usuarios " +
+									"where nombre_usuario like '%'+@nombre_usuario+'%'", SqlConn);
+							cmdUsuarios.Parameters.Add("@nombre_usuario", SqlDbType.VarChar,50).Value = valorBuscado;
+							break;
+					case "Email":
+							cmdUsuarios = new SqlCommand(
+									"select  id_usuario,nombre_usuario,clave,habilitado," +
+									"		 nombre,apellido,email_usuario," +
+									"		 cambia_clave,id_persona " +
+									"from usuarios " +
+									"where email_usuario like '%'+@email_usuario+'%' ", SqlConn);
+							cmdUsuarios.Parameters.Add("@email_usuario", SqlDbType.VarChar).Value = valorBuscado;
+						break;
+					case "Habilitado":
+							cmdUsuarios = new SqlCommand(
+									"select  id_usuario,nombre_usuario,clave,habilitado," +
+									"		 nombre,apellido,email_usuario," +
+									"		 cambia_clave,id_persona " +
+									"from usuarios " +
+									"where habilitado like '%'+@habilitado+'%' ", SqlConn);
+							cmdUsuarios.Parameters.Add("@habilitado", SqlDbType.VarChar).Value = valorBuscado;
+						break;
+					case "Todos":
+							cmdUsuarios = new SqlCommand(
+									"select  id_usuario,nombre_usuario,clave,habilitado," +
+									"		 nombre,apellido,email_usuario," +
+									"		 cambia_clave,id_persona " +
+									"from usuarios ", SqlConn);
+						break;
+					default:
+							break;
+				}
+				SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
+				while (drUsuarios!=null && drUsuarios.Read())
+				{
+					Usuario oUsr = new Usuario();
+					oUsr.ID = (int)drUsuarios["id_usuario"];
+					oUsr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
+					oUsr.Clave = (string)drUsuarios["clave"];
+					oUsr.Nombre = (string)drUsuarios["nombre"];
+					oUsr.Apellido = (string)drUsuarios["apellido"];
+					oUsr.Email = drUsuarios["email_usuario"].ToString();
+					oUsr.Habilitado = (bool)drUsuarios["habilitado"];
+
+					Persona oPersona = new Persona();
+					oPersona.ID = (int)drUsuarios["id_persona"];
+					oUsr.IDPersona = oPersona;
+					listaUsuarios.Add(oUsr);
+				}
+				drUsuarios.Close();
+			}
+			catch (Exception Ex)
+			{
+				Exception Excepcion = new Exception("Error al recuperar los usuarios", Ex);
+				throw Excepcion;
+			}
+			finally
+			{
+				this.CloseConnection();
+			}
+			return listaUsuarios;
+		}
+
+
 		public Business.Entities.Usuario GetLoggedUser(string usuario, string contrasenia)
 		{
 			Usuario oUsr = new Usuario();
@@ -60,7 +168,7 @@ namespace Data.Database
 				this.OpenConnection();
 				SqlCommand cmdUsuarios = new SqlCommand("" +
 					"select  id_usuario,nombre_usuario,clave,habilitado," +
-					"		 nombre,apellido,email," +
+					"		 nombre,apellido,email_usuario," +
 					"		 cambia_clave,id_persona " +
 					"from usuarios " +
 					"where nombre_usuario=@nombreUsuario and clave= @contrasenia", SqlConn);
@@ -74,7 +182,7 @@ namespace Data.Database
 					oUsr.Clave = (string)drUsuarios["clave"];
 					oUsr.Nombre = (string)drUsuarios["nombre"];
 					oUsr.Apellido = (string)drUsuarios["apellido"];
-					oUsr.Email = drUsuarios["email"].ToString();
+					oUsr.Email = drUsuarios["email_usuario"].ToString();
 					oUsr.Habilitado = (bool)drUsuarios["habilitado"];
 					Persona oPersona = new Persona();
 					oPersona.ID = (int)drUsuarios["id_persona"];
@@ -103,7 +211,7 @@ namespace Data.Database
 				this.OpenConnection();
 				SqlCommand cmdUsuarios = new SqlCommand("" +
 					"select  id_usuario,nombre_usuario,clave,habilitado," +
-					"		 nombre,apellido,email," +
+					"		 nombre,apellido,email_usuario," +
 					"		 cambia_clave,id_persona " +
 					"from usuarios " +
 					"where id_usuario = @id", SqlConn);
@@ -116,7 +224,7 @@ namespace Data.Database
 					oUsr.Clave = (string)drUsuarios["clave"];
 					oUsr.Nombre = (string)drUsuarios["nombre"];
 					oUsr.Apellido = (string)drUsuarios["apellido"];
-					oUsr.Email = drUsuarios["email"].ToString();
+					oUsr.Email = drUsuarios["email_usuario"].ToString();
 					oUsr.Habilitado = (bool)drUsuarios["habilitado"];
 					Persona oPersona = new Persona();
 					oPersona.ID = (int)drUsuarios["id_persona"];
@@ -163,9 +271,12 @@ namespace Data.Database
 			{
 				this.OpenConnection();
 				SqlCommand cmdInsertUsuario= new SqlCommand("" +
-					"INSERT [usuarios] ( nombre_usuario, clave, habilitado, nombre, apellido, email, id_persona) " +
+					"INSERT [usuarios] ( nombre_usuario, clave, habilitado, nombre, apellido, email_usuario, id_persona) " +
 					"				 VALUES( @nombre_usuario, @clave, @habilitado, @nombre, @apellido, @email, 2) "+
 					" select @@identity AS id_usuario", SqlConn);
+				////////////////////////////////////////////////////////////////////////////////////////////////
+				////////////////////////////////ATENCION AL INSERT ID_PERSONA///////////////////////////////////
+				////////////////////////////////////////////////////////////////////////////////////////////////
 				cmdInsertUsuario.Parameters.Add("@nombre_usuario", SqlDbType.VarChar,50).Value = usuario.NombreUsuario;
 				cmdInsertUsuario.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = usuario.Clave;
 				cmdInsertUsuario.Parameters.Add("@habilitado", SqlDbType.Bit).Value = usuario.Habilitado;
@@ -199,7 +310,7 @@ namespace Data.Database
 							",habilitado = @habilitado			"+
 							",nombre = @nombre					"+
 							",apellido = @apellido				"+
-							",email = @email					"+
+							",email_usuario = @email			" +
 							",id_persona = @id_persona			"+
 					"WHERE id_usuario = @idusuario_aActualizar"
 					, SqlConn);

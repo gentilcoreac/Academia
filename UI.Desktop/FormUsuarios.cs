@@ -14,27 +14,55 @@ namespace UI.Desktop
 {
     public partial class FormUsuarios : ApplicationForm
 	{
-        public FormUsuarios()
+		public FormUsuarios()
         {
             InitializeComponent();
         }
 
-        private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
+
+		public enum ValoresABuscar
+		{	
+			Todos,
+			ID,
+			Nombre,
+			Apellido,
+			Usuario,
+			Email,
+			Habilitado
+		}
+
+		private void CompletarComboBox()
+		{
+			foreach (var item in Enum.GetValues(typeof(ValoresABuscar)))
+			{
+				comboBox_TipoBusqueda.Items.Add(item);
+			}
+			comboBox_TipoBusqueda.SelectedIndex = 0;
+		}
+
+		public void Listar()
+		{
+			try
+			{
+				UsuarioLogic ul = new UsuarioLogic();
+				this.dgvUsuarios.AutoGenerateColumns = false;
+				this.dgvUsuarios.DataSource = ul.GetAll(comboBox_TipoBusqueda.SelectedItem.ToString(), toolStripTextBox_Usuario.Text);
+			}catch(Exception ex)
+			{
+				MessageBox.Show("Error al listar los usuarios\n" + ex);
+			}
+		}
+
+		private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
         {
 
         }
 
         private void Usuarios_Load(object sender, EventArgs e)
         {
-            Listar();
-        }
-
-        public void Listar()
-        {
-            UsuarioLogic ul = new UsuarioLogic();
-            this.dgvUsuarios.AutoGenerateColumns = false;
-            this.dgvUsuarios.DataSource = ul.GetAll();
-        }
+			CompletarComboBox();
+			Listar();
+		}
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
@@ -73,5 +101,10 @@ namespace UI.Desktop
 			usuarioDesktop.ShowDialog();
 			this.Listar();
 		}
-    }
+
+		private void toolStripButton1_Click(object sender, EventArgs e)
+		{
+			Listar();
+		}
+	}
 }
