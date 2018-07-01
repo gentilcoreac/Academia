@@ -27,8 +27,6 @@ namespace Data.Database
 					oUsr.ID = (int)drUsuarios["id_usuario"];
 					oUsr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
 					oUsr.Clave = (string)drUsuarios["clave"];
-					oUsr.Nombre = (string)drUsuarios["nombre"];
-					oUsr.Apellido = (string)drUsuarios["apellido"];
 					oUsr.Email = drUsuarios["email_usuario"].ToString();
 					oUsr.Habilitado = (bool)drUsuarios["habilitado"];
 
@@ -50,7 +48,6 @@ namespace Data.Database
 			}
 			return listaUsuarios;
 		}
-
 		
 		public List<Usuario> GetAll(string tipoBusqueda, string valorBuscado)
 		{
@@ -59,30 +56,32 @@ namespace Data.Database
 			{
 				this.OpenConnection();
 				SqlCommand cmdUsuarios = null;
+			
+
 				switch (tipoBusqueda)
 				{
 					case "ID":
 							cmdUsuarios = new SqlCommand(
 									"select  id_usuario,nombre_usuario,clave,habilitado," +
-									"		 nombre,apellido,email_usuario," +
+									"		 email_usuario," +
 									"		 cambia_clave,id_persona " +
 									"from usuarios " +
 									"where id_usuario like '%'+@id+'%'", SqlConn);
-									cmdUsuarios.Parameters.Add("@id", SqlDbType.Int).Value = int.Parse(valorBuscado);
+									cmdUsuarios.Parameters.Add("@id", SqlDbType.VarChar,50).Value = int.Parse(valorBuscado);
 							break;
 					case "Nombre":
 							cmdUsuarios = new SqlCommand(
 									"select  id_usuario,nombre_usuario,clave,habilitado," +
-									"		 nombre,apellido,email_usuario," +
+									"		 email_usuario," +
 									"		 cambia_clave,id_persona " +
 									"from usuarios " +
 									"where nombre like  '%'+@nombre+'%' ", SqlConn);
-							cmdUsuarios.Parameters.Add("@nombre", SqlDbType.VarChar).Value = valorBuscado;
+							cmdUsuarios.Parameters.Add("@nombre", SqlDbType.VarChar,50).Value = valorBuscado;
 						break;
 					case "Apellido":
 							cmdUsuarios = new SqlCommand(
 									"select  id_usuario,nombre_usuario,clave,habilitado," +
-									"		 nombre,apellido,email_usuario," +
+									"		 email_usuario," +
 									"		 cambia_clave,id_persona " +
 									"from usuarios " +
 									"where apellido like '%'+@apellido+'%'", SqlConn);
@@ -92,7 +91,7 @@ namespace Data.Database
 					case "Usuario":
 							cmdUsuarios = new SqlCommand(
 									"select  id_usuario,nombre_usuario,clave,habilitado," +
-									"		 nombre,apellido,email_usuario," +
+									"		 email_usuario," +
 									"		 cambia_clave,id_persona " +
 									"from usuarios " +
 									"where nombre_usuario like '%'+@nombre_usuario+'%'", SqlConn);
@@ -101,25 +100,25 @@ namespace Data.Database
 					case "Email":
 							cmdUsuarios = new SqlCommand(
 									"select  id_usuario,nombre_usuario,clave,habilitado," +
-									"		 nombre,apellido,email_usuario," +
+									"		 email_usuario," +
 									"		 cambia_clave,id_persona " +
 									"from usuarios " +
 									"where email_usuario like '%'+@email_usuario+'%' ", SqlConn);
-							cmdUsuarios.Parameters.Add("@email_usuario", SqlDbType.VarChar).Value = valorBuscado;
+							cmdUsuarios.Parameters.Add("@email_usuario", SqlDbType.VarChar,50).Value = valorBuscado;
 						break;
 					case "Habilitado":
 							cmdUsuarios = new SqlCommand(
 									"select  id_usuario,nombre_usuario,clave,habilitado," +
-									"		 nombre,apellido,email_usuario," +
+									"		 email_usuario," +
 									"		 cambia_clave,id_persona " +
 									"from usuarios " +
 									"where habilitado like '%'+@habilitado+'%' ", SqlConn);
-							cmdUsuarios.Parameters.Add("@habilitado", SqlDbType.VarChar).Value = valorBuscado;
+							cmdUsuarios.Parameters.Add("@habilitado", SqlDbType.VarChar,50).Value = valorBuscado;
 						break;
 					case "Todos":
 							cmdUsuarios = new SqlCommand(
 									"select  id_usuario,nombre_usuario,clave,habilitado," +
-									"		 nombre,apellido,email_usuario," +
+									"		 email_usuario," +
 									"		 cambia_clave,id_persona " +
 									"from usuarios ", SqlConn);
 						break;
@@ -133,8 +132,6 @@ namespace Data.Database
 					oUsr.ID = (int)drUsuarios["id_usuario"];
 					oUsr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
 					oUsr.Clave = (string)drUsuarios["clave"];
-					oUsr.Nombre = (string)drUsuarios["nombre"];
-					oUsr.Apellido = (string)drUsuarios["apellido"];
 					oUsr.Email = drUsuarios["email_usuario"].ToString();
 					oUsr.Habilitado = (bool)drUsuarios["habilitado"];
 
@@ -168,7 +165,7 @@ namespace Data.Database
 				this.OpenConnection();
 				SqlCommand cmdUsuarios = new SqlCommand("" +
 					"select  id_usuario,nombre_usuario,clave,habilitado," +
-					"		 nombre,apellido,email_usuario," +
+					"		 email_usuario," +
 					"		 cambia_clave,id_persona " +
 					"from usuarios " +
 					"where nombre_usuario=@nombreUsuario and clave= @contrasenia", SqlConn);
@@ -180,8 +177,6 @@ namespace Data.Database
 					oUsr.ID = (int)drUsuarios["id_usuario"];
 					oUsr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
 					oUsr.Clave = (string)drUsuarios["clave"];
-					oUsr.Nombre = (string)drUsuarios["nombre"];
-					oUsr.Apellido = (string)drUsuarios["apellido"];
 					oUsr.Email = drUsuarios["email_usuario"].ToString();
 					oUsr.Habilitado = (bool)drUsuarios["habilitado"];
 					Persona oPersona = new Persona();
@@ -211,7 +206,7 @@ namespace Data.Database
 				this.OpenConnection();
 				SqlCommand cmdUsuarios = new SqlCommand("" +
 					"select  id_usuario,nombre_usuario,clave,habilitado," +
-					"		 nombre,apellido,email_usuario," +
+					"		 email_usuario," +
 					"		 cambia_clave,id_persona " +
 					"from usuarios " +
 					"where id_usuario = @id", SqlConn);
@@ -222,8 +217,6 @@ namespace Data.Database
 					oUsr.ID = (int)drUsuarios["id_usuario"];
 					oUsr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
 					oUsr.Clave = (string)drUsuarios["clave"];
-					oUsr.Nombre = (string)drUsuarios["nombre"];
-					oUsr.Apellido = (string)drUsuarios["apellido"];
 					oUsr.Email = drUsuarios["email_usuario"].ToString();
 					oUsr.Habilitado = (bool)drUsuarios["habilitado"];
 					Persona oPersona = new Persona();
@@ -244,8 +237,10 @@ namespace Data.Database
 			return oUsr;
 		}
 
-
-        public void Delete(int ID)
+		/// <summary>
+		///	Borra sólo usuario //////////////////////////////////////REVISAR SI QUEDO DE MAS EL DELETE,¿¿EL OTRO SI ES NULL FUNCA??
+		/// </summary>
+		public void Delete(int ID)
         {
 			try
 			{
@@ -265,25 +260,78 @@ namespace Data.Database
 			}
 		}
 
+		/// <summary>
+		///	Borra usuario y persona
+		/// </summary>
+		public void Delete(Usuario usuario)		
+		{
+			try
+			{
+				this.OpenConnection();
+				SqlCommand cmdDeleteUsuario = new SqlCommand(""+
+									  " BEGIN TRY    												"
+									+ "	BEGIN TRAN													"
+									+ "		delete from usuarios where id_usuario = @id_usuario		"
+									+ "		delete from personas where id_persona = @id_persona		"
+									+ "    COMMIT TRAN												"
+									+ "END TRY														"
+									+ "BEGIN CATCH													"
+									+ "    IF(@@TRANCOUNT > 0)										"
+									+ "        ROLLBACK TRAN;										"
+									+ "    THROW; -- raise error to the client						"
+									+ "END CATCH													"
+									, SqlConn);
+				cmdDeleteUsuario.Parameters.Add("@id_usuario", SqlDbType.Int).Value = usuario.ID;
+				cmdDeleteUsuario.Parameters.Add("@id_persona", SqlDbType.Int).Value = usuario.IDPersona.ID;
+				cmdDeleteUsuario.ExecuteNonQuery();
+			}
+			catch (Exception Ex)
+			{
+				Exception Excepcion = new Exception("Error al borrar el usuario", Ex);
+				throw Excepcion;
+			}
+			finally
+			{
+				this.CloseConnection();
+			}
+		}
+
 		public void Agregar(Usuario usuario)
 		{
 			try
 			{
 				this.OpenConnection();
 				SqlCommand cmdInsertUsuario= new SqlCommand("" +
-					"INSERT [usuarios] ( nombre_usuario, clave, habilitado, nombre, apellido, email_usuario, id_persona) " +
-					"				 VALUES( @nombre_usuario, @clave, @habilitado, @nombre, @apellido, @email, 2) "+
-					" select @@identity AS id_usuario", SqlConn);
-				////////////////////////////////////////////////////////////////////////////////////////////////
-				////////////////////////////////ATENCION AL INSERT ID_PERSONA///////////////////////////////////
-				////////////////////////////////////////////////////////////////////////////////////////////////
+					  " BEGIN TRY    																													"
+					+ "	BEGIN TRAN																														"
+					+ "			INSERT personas( nombre, apellido, direccion, telefono, fecha_nac, legajo, tipo_persona, id_plan, email_personal)		"
+					+ "				   VALUES( @nombre, @apellido, @direccion, @telefono, @fecha_nac, @legajo, @tipo_persona, @id_plan, @email_personal)"
+					+ "			DECLARE @ID_PERSONA_RECIEN_INSERTADO AS INT																				"
+					+ "			SELECT @ID_PERSONA_RECIEN_INSERTADO =@@IDENTITY																			"
+					+ "			INSERT [usuarios]( nombre_usuario,  clave,  habilitado,  email_usuario, id_persona) 									"
+					+ "				       VALUES( @nombre_usuario, @clave, @habilitado, @email,		@ID_PERSONA_RECIEN_INSERTADO) 					"
+					+ "    COMMIT TRAN																													"
+					+ "END TRY																															"
+					+ "BEGIN CATCH																														"
+					+ "    IF(@@TRANCOUNT > 0)																											"
+					+ "        ROLLBACK;	THROW;																											"
+					+ "END CATCH																														"
+					+" select @@identity AS id_usuario", SqlConn);
+
+				cmdInsertUsuario.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = usuario.IDPersona.Nombre;
+				cmdInsertUsuario.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = usuario.IDPersona.Apellido;
+				cmdInsertUsuario.Parameters.Add("@direccion", SqlDbType.VarChar, 50).Value = usuario.IDPersona.Direccion;
+				cmdInsertUsuario.Parameters.Add("@telefono", SqlDbType.VarChar, 50).Value = usuario.IDPersona.Telefono;
+				cmdInsertUsuario.Parameters.Add("@fecha_nac", SqlDbType.DateTime).Value = usuario.IDPersona.FechaNacimiento;
+				cmdInsertUsuario.Parameters.Add("@legajo", SqlDbType.Int).Value = usuario.IDPersona.Legajo;
+				cmdInsertUsuario.Parameters.Add("@tipo_persona", SqlDbType.Int).Value = usuario.IDPersona.TiposPersona;
+				cmdInsertUsuario.Parameters.Add("@email_personal", SqlDbType.VarChar, 50).Value = usuario.IDPersona.EmailPersonal;
+				cmdInsertUsuario.Parameters.Add("@id_plan", SqlDbType.Int).Value = usuario.IDPersona.Plan_persona.ID;
+
 				cmdInsertUsuario.Parameters.Add("@nombre_usuario", SqlDbType.VarChar,50).Value = usuario.NombreUsuario;
 				cmdInsertUsuario.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = usuario.Clave;
 				cmdInsertUsuario.Parameters.Add("@habilitado", SqlDbType.Bit).Value = usuario.Habilitado;
-				cmdInsertUsuario.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = usuario.Nombre;
-				cmdInsertUsuario.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = usuario.Apellido;
 				cmdInsertUsuario.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = usuario.Email;
-		//		cmdInsertUsuario.Parameters.Add("@id_persona", SqlDbType.Int).Value = usuario.IDPersona.ID;
 				usuario.ID = Decimal.ToInt32((decimal)cmdInsertUsuario.ExecuteScalar());
 				//cmdInsertUsuario.ExecuteNonQuery();
 			}
@@ -304,21 +352,48 @@ namespace Data.Database
 			{
 				this.OpenConnection();
 				SqlCommand cmdUpdateUsuario = new SqlCommand("" +
-					"UPDATE[dbo].[usuarios] SET					"+
-							"nombre_usuario = @nombre_usuario	"+
-							",clave = @clave					"+
-							",habilitado = @habilitado			"+
-							",nombre = @nombre					"+
-							",apellido = @apellido				"+
-							",email_usuario = @email			" +
-							",id_persona = @id_persona			"+
-					"WHERE id_usuario = @idusuario_aActualizar"
+						  "BEGIN TRY    										"
+						+ "	BEGIN TRAN											"
+						+ "		UPDATE personas	SET								"
+						+ "			 nombre	=@nombre							"
+						+ "			,apellido =@apellido						"
+						+ "			,direccion =@direccion						"
+						+ "			,telefono =@telefono						"
+						+ "			,fecha_nac =@fecha_nac						"
+						+ "			,legajo =@legajo							"
+						+ "			,tipo_persona =@tipo_persona				"
+						+ "			,id_plan =@id_plan							"
+						+ "			,email_personal =@email_personal			"
+						+ "		WHERE id_persona=@id_persona					"
+						+ "		UPDATE[dbo].[usuarios] SET						"
+						+ "			nombre_usuario = @nombre_usuario			"
+						+ "			,clave = @clave								"
+						+ "			,habilitado = @habilitado					"
+						+ "			,email_usuario = @email						"
+						+ "			,id_persona = @id_persona					"
+						+ "		WHERE id_usuario = @idusuario_aActualizar		"
+						+ "    COMMIT TRAN										"
+						+ "END TRY												"
+						+ "BEGIN CATCH											"
+						+ "    IF(@@TRANCOUNT > 0)								"
+						+ "        ROLLBACK TRAN								"
+						+ "		;THROW;											"
+						+ "END CATCH											"
 					, SqlConn);
+
+				cmdUpdateUsuario.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = usuario.IDPersona.Nombre;
+				cmdUpdateUsuario.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = usuario.IDPersona.Apellido;
+				cmdUpdateUsuario.Parameters.Add("@direccion", SqlDbType.VarChar, 50).Value = usuario.IDPersona.Direccion;
+				cmdUpdateUsuario.Parameters.Add("@telefono", SqlDbType.VarChar, 50).Value = usuario.IDPersona.Telefono;
+				cmdUpdateUsuario.Parameters.Add("@fecha_nac", SqlDbType.DateTime).Value = usuario.IDPersona.FechaNacimiento;
+				cmdUpdateUsuario.Parameters.Add("@legajo", SqlDbType.Int).Value = usuario.IDPersona.Legajo;
+				cmdUpdateUsuario.Parameters.Add("@tipo_persona", SqlDbType.Int).Value = usuario.IDPersona.TiposPersona;
+				cmdUpdateUsuario.Parameters.Add("@email_personal", SqlDbType.VarChar, 50).Value = usuario.IDPersona.EmailPersonal;
+				cmdUpdateUsuario.Parameters.Add("@id_plan", SqlDbType.Int).Value = usuario.IDPersona.Plan_persona.ID;
+
 				cmdUpdateUsuario.Parameters.Add("@nombre_usuario", SqlDbType.VarChar).Value = usuario.NombreUsuario;
 				cmdUpdateUsuario.Parameters.Add("@clave", SqlDbType.VarChar).Value = usuario.Clave;
 				cmdUpdateUsuario.Parameters.Add("@habilitado", SqlDbType.Bit).Value = usuario.Habilitado;
-				cmdUpdateUsuario.Parameters.Add("@nombre", SqlDbType.VarChar).Value = usuario.Nombre;
-				cmdUpdateUsuario.Parameters.Add("@apellido", SqlDbType.VarChar).Value = usuario.Apellido;
 				cmdUpdateUsuario.Parameters.Add("@email", SqlDbType.VarChar).Value = usuario.Email;
 				cmdUpdateUsuario.Parameters.Add("@id_persona", SqlDbType.Int).Value = usuario.IDPersona.ID;
 				cmdUpdateUsuario.Parameters.Add("@idusuario_aActualizar", SqlDbType.Int).Value = usuario.ID;
@@ -344,7 +419,7 @@ namespace Data.Database
             }
             else if (usuario.State == BusinessEntity.States.Deleted)
             {
-                this.Delete(usuario.ID);
+                this.Delete(usuario);
             }
             else if (usuario.State == BusinessEntity.States.Modified)
             {

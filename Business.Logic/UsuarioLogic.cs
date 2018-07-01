@@ -40,7 +40,6 @@ namespace Business.Logic
 
 		public List<Usuario> GetAll(string tipoBusqueda, string busqueda)
 		{
-
 			return UsuarioData.GetAll(tipoBusqueda, busqueda);
 		}
 

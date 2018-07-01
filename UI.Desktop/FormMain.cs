@@ -53,5 +53,14 @@ namespace UI.Desktop
 			this.panel_Principal.Controls.Add(appUsuarios);
 			appUsuarios.Show();			
 		}
+
+		private void ToolStripMenuItem_personas_Click(object sender, EventArgs e)
+		{
+			FormPersonas appPersonas = new FormPersonas();
+			appPersonas.TopLevel = false;
+			appPersonas.AutoScroll = false;
+			this.panel_Principal.Controls.Add(appPersonas);
+			appPersonas.Show();
+		}
 	}
 }

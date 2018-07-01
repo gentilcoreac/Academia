@@ -13,23 +13,19 @@ namespace Business.Entities
         private string _Direccion;
         private string _EmailPersonal;
         private DateTime _FechaNacimiento;
-        private Plan _IDPlan;
+        private Plan _PlanPersona;
         private int _Legajo;
         private string _Telefono;
         private TiposPersonas _TiposPersona;
-
+		private Usuario _Usuario;
 
         public enum TiposPersonas
         {
-            Administrador,
-            Docente,
-            Persona
+            Administrador=1,
+            Docente=2,
+            Alumno=3
         }
-        public TiposPersonas TiposPersona
-        {
-            get { return _TiposPersona; }
-            set { _TiposPersona = value; }
-        }
+
         public string Apellido
         {
             get { return _Apellido; }
@@ -57,8 +53,8 @@ namespace Business.Entities
         }
         public Plan Plan_persona
         {
-            get { return _IDPlan; }
-            set { _IDPlan = value; }
+            get { return _PlanPersona; }
+            set { _PlanPersona = value; }
         }
         public int Legajo
         {
@@ -70,6 +66,16 @@ namespace Business.Entities
             get { return _Telefono; }
             set { _Telefono = value; }
         }
+		public TiposPersonas TiposPersona
+		{
+			get { return _TiposPersona; }
+			set { _TiposPersona = value; }
+		}
 
-    }
+		public Usuario UsuarioPersona
+		{
+			get{ return _Usuario; }
+			set { _Usuario= value;}
+		}
+	}
 }

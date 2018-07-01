@@ -33,18 +33,21 @@
 			this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.ToolStripMenuItem_gestion = new System.Windows.Forms.ToolStripMenuItem();
 			this.ToolStripMenuItem_usuarios = new System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripMenuItem_personas = new System.Windows.Forms.ToolStripMenuItem();
 			this.panel_Principal = new System.Windows.Forms.TableLayoutPanel();
 			this.menuPrincipal.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// menuPrincipal
 			// 
+			this.menuPrincipal.Font = new System.Drawing.Font("Verdana", 9F);
 			this.menuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem_Archivo,
             this.ToolStripMenuItem_gestion});
 			this.menuPrincipal.Location = new System.Drawing.Point(0, 0);
 			this.menuPrincipal.Name = "menuPrincipal";
-			this.menuPrincipal.Size = new System.Drawing.Size(800, 24);
+			this.menuPrincipal.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+			this.menuPrincipal.Size = new System.Drawing.Size(933, 24);
 			this.menuPrincipal.TabIndex = 1;
 			this.menuPrincipal.Text = "menuStrip1";
 			// 
@@ -60,14 +63,15 @@
 			// salirToolStripMenuItem
 			// 
 			this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-			this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+			this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.salirToolStripMenuItem.Text = "Salir";
 			this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
 			// 
 			// ToolStripMenuItem_gestion
 			// 
 			this.ToolStripMenuItem_gestion.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripMenuItem_usuarios});
+            this.ToolStripMenuItem_usuarios,
+            this.ToolStripMenuItem_personas});
 			this.ToolStripMenuItem_gestion.Name = "ToolStripMenuItem_gestion";
 			this.ToolStripMenuItem_gestion.Size = new System.Drawing.Size(59, 20);
 			this.ToolStripMenuItem_gestion.Text = "Gestión";
@@ -75,9 +79,16 @@
 			// ToolStripMenuItem_usuarios
 			// 
 			this.ToolStripMenuItem_usuarios.Name = "ToolStripMenuItem_usuarios";
-			this.ToolStripMenuItem_usuarios.Size = new System.Drawing.Size(119, 22);
+			this.ToolStripMenuItem_usuarios.Size = new System.Drawing.Size(180, 22);
 			this.ToolStripMenuItem_usuarios.Text = "Usuarios";
 			this.ToolStripMenuItem_usuarios.Click += new System.EventHandler(this.ToolStripMenuItem_usuarios_Click);
+			// 
+			// ToolStripMenuItem_personas
+			// 
+			this.ToolStripMenuItem_personas.Name = "ToolStripMenuItem_personas";
+			this.ToolStripMenuItem_personas.Size = new System.Drawing.Size(180, 22);
+			this.ToolStripMenuItem_personas.Text = "Personas";
+			this.ToolStripMenuItem_personas.Click += new System.EventHandler(this.ToolStripMenuItem_personas_Click);
 			// 
 			// panel_Principal
 			// 
@@ -89,16 +100,18 @@
 			this.panel_Principal.RowCount = 1;
 			this.panel_Principal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
 			this.panel_Principal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 426F));
-			this.panel_Principal.Size = new System.Drawing.Size(800, 426);
+			this.panel_Principal.Size = new System.Drawing.Size(933, 426);
 			this.panel_Principal.TabIndex = 3;
 			// 
 			// FormMain
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.BackColor = System.Drawing.Color.White;
+			this.ClientSize = new System.Drawing.Size(933, 450);
 			this.Controls.Add(this.panel_Principal);
 			this.Controls.Add(this.menuPrincipal);
+			this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.IsMdiContainer = true;
 			this.MainMenuStrip = this.menuPrincipal;
 			this.Name = "FormMain";
@@ -121,5 +134,6 @@
 		private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_gestion;
 		private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_usuarios;
 		private System.Windows.Forms.TableLayoutPanel panel_Principal;
+		private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_personas;
 	}
 }

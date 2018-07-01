@@ -12,25 +12,27 @@ using Business.Logic;
 
 namespace UI.Desktop
 {
-    public partial class FormUsuarios : ApplicationForm
+	public partial class FormUsuarios : ApplicationForm
 	{
-		public FormUsuarios()
-        {
-            InitializeComponent();
-        }
-
-
-		public enum ValoresABuscar
-		{	
+		#region Propiedades
+		protected enum ValoresABuscar
+		{
 			Todos,
 			ID,
-			Nombre,
-			Apellido,
 			Usuario,
 			Email,
 			Habilitado
 		}
+		#endregion
 
+		#region Constructores
+		public FormUsuarios()
+		{
+			InitializeComponent();
+		}
+		#endregion
+
+		#region Metodos
 		private void CompletarComboBox()
 		{
 			foreach (var item in Enum.GetValues(typeof(ValoresABuscar)))
@@ -47,12 +49,14 @@ namespace UI.Desktop
 				UsuarioLogic ul = new UsuarioLogic();
 				this.dgvUsuarios.AutoGenerateColumns = false;
 				this.dgvUsuarios.DataSource = ul.GetAll(comboBox_TipoBusqueda.SelectedItem.ToString(), toolStripTextBox_Usuario.Text);
-			}catch(Exception ex)
+			} catch (Exception ex)
 			{
 				MessageBox.Show("Error al listar los usuarios\n" + ex);
 			}
 		}
+		#endregion
 
+		#region Disparadores
 		private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
         {
 
@@ -74,11 +78,6 @@ namespace UI.Desktop
             this.Close();
         }
 
-        private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void tsbEditar_Click(object sender, EventArgs e)
         {
 			int ID = ((Business.Entities.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
@@ -89,9 +88,9 @@ namespace UI.Desktop
 
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
-			UsuarioDesktop usuarioDesktop = new UsuarioDesktop(ApplicationForm.ModoForm.Alta);
-			usuarioDesktop.ShowDialog();
-			this.Listar();
+				UsuarioDesktop usuarioDesktop = new UsuarioDesktop(ApplicationForm.ModoForm.Alta);
+				usuarioDesktop.ShowDialog();
+				this.Listar();
 		}
 
 		private void tsbEliminar_Click(object sender, EventArgs e)
@@ -106,5 +105,7 @@ namespace UI.Desktop
 		{
 			Listar();
 		}
+
+		#endregion
 	}
 }

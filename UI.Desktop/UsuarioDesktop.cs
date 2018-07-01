@@ -32,7 +32,7 @@ namespace UI.Desktop
 		}
 
 		///Internamente setea a ModoForm en el modo enviado, este constructor servirá para las altas.
-		public UsuarioDesktop(ModoForm modo):this()
+		public UsuarioDesktop(ModoForm modo) : this()
 		{
 			Modo = modo;
 		}
@@ -41,12 +41,13 @@ namespace UI.Desktop
 		{
 			/*Seteamos el modo que ha sido especificado el form.	*Instanciamos un nuevo objeto de UsuarioLogic 	
 			 *Utilizamos el método GetOne para recuperar la entidad Usuario. *Asignamos a la propiedad UsuarioActual e invocaremos al método MapearDeDatos.*/
-			 
+
 			Modo = modo;
 			UsuarioLogic usuarioLogic = new UsuarioLogic();
 			UsuarioActual = usuarioLogic.GetOne(ID);
 			MapearDeDatos();
 		}
+		
 		#endregion
 
 		#region Metodos
@@ -54,8 +55,6 @@ namespace UI.Desktop
 		{
 			this.txtID.Text = this.UsuarioActual.ID.ToString();
 			this.checkBox_Habilitado.Checked = this.UsuarioActual.Habilitado;
-			this.txtNombre.Text = this.UsuarioActual.Nombre;
-			this.txtApellido.Text = this.UsuarioActual.Apellido;
 			this.txtEmail.Text = this.UsuarioActual.Email;
 			this.txtClave.Text = this.UsuarioActual.Clave;
 			this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;
@@ -85,23 +84,21 @@ namespace UI.Desktop
 			if (this.Modo == UsuarioDesktop.ModoForm.Alta)
 			{
 				UsuarioActual = new Usuario();
-				this.UsuarioActual.Apellido = this.txtApellido.Text;
-				this.UsuarioActual.Nombre = this.txtUsuario.Text;
 				this.UsuarioActual.NombreUsuario = this.txtUsuario.Text;
 				this.UsuarioActual.Email = this.txtEmail.Text;
 				this.UsuarioActual.Clave = this.txtClave.Text;
 				this.UsuarioActual.Habilitado = this.checkBox_Habilitado.Checked;
+				//this.UsuarioActual.IDPersona = PersonaActual;					
 				this.UsuarioActual.State = Usuario.States.New;
 			}
 			if (this.Modo == UsuarioDesktop.ModoForm.Modificacion)
 			{
 				this.UsuarioActual.ID = Convert.ToInt32(this.txtID.Text);
-				this.UsuarioActual.Apellido = this.txtApellido.Text;
-				this.UsuarioActual.Nombre = this.txtUsuario.Text;
 				this.UsuarioActual.NombreUsuario = this.txtUsuario.Text;
 				this.UsuarioActual.Email = this.txtEmail.Text;
 				this.UsuarioActual.Clave = this.txtClave.Text;
 				this.UsuarioActual.Habilitado = this.checkBox_Habilitado.Checked;
+				//this.UsuarioActual.IDPersona = PersonaActual;					
 				this.UsuarioActual.State = Usuario.States.Modified;
 			}
 			if (this.Modo == UsuarioDesktop.ModoForm.Baja)
@@ -129,9 +126,7 @@ namespace UI.Desktop
 			de Notificar que definimos anteriormente, y si es todo válido debe
 			llamar retornar true.*/
 
-			if (String.IsNullOrEmpty(this.txtApellido.Text) ||
-				String.IsNullOrEmpty(this.txtNombre.Text) ||
-				String.IsNullOrEmpty(this.txtUsuario.Text) ||
+			if (String.IsNullOrEmpty(this.txtUsuario.Text) ||
 				String.IsNullOrEmpty(this.txtEmail.Text) ||
 				String.IsNullOrEmpty(this.txtClave.Text))
 			{
@@ -173,11 +168,7 @@ namespace UI.Desktop
 
 		#endregion
 
-		private void label1_Click(object sender, EventArgs e)
-		{
-
-		}
-
+		#region Disparadores
 		private void btnAceptar_Click(object sender, EventArgs e)
 		{
 			try
@@ -192,15 +183,15 @@ namespace UI.Desktop
 			}
 			catch (Exception ex)
 			{
-				this.Notificar("Error al ingresar un Usuario \n" + ex, "Error en login"
+				this.Notificar("Error en el ABMC", "Error en ABMC de un Usuario \n" + ex
 								, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
-
 		}
-
 		private void btnCancelar_Click(object sender, EventArgs e)
 		{
 			this.Dispose();
 		}
+
+		#endregion
 	}
 }

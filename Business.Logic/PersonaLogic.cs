@@ -8,13 +8,13 @@ using Business.Entities;
 
 namespace Business.Logic
 {
-	public class PersonaLogic: BusinessLogic
+	public class PersonaLogic : BusinessLogic
 	{
-		public PersonaAdapter _usuarioData;
+		public PersonaAdapter _personaData;
 		public PersonaAdapter PersonaData
 		{
-			get { return _usuarioData; }
-			set { _usuarioData = value; }
+			get { return _personaData; }
+			set { _personaData = value; }
 		}
 		public PersonaLogic()
 		{
@@ -25,6 +25,28 @@ namespace Business.Logic
 		//{
 		//	return PersonaData.getOne(ID);
 		//}
+		public List<Persona> GetAll()
+		{
+			return PersonaData.GetAll();
+		} 
 
+		public Persona GetOne(int ID)
+		{
+			return PersonaData.GetOne(ID);
+		}
+		public List<Persona> GetAll(string tipoBusqueda, string busqueda)
+		{
+			return PersonaData.GetAll(tipoBusqueda, busqueda);
+		}
+
+		public void Save(Persona persona)
+		{
+			PersonaData.Save(persona);
+		}
+
+		public void Delete(int id)
+		{
+			PersonaData.Delete(id);
+		}
 	}
 }
