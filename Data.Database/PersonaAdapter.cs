@@ -376,16 +376,17 @@ namespace Data.Database
 				+ "	BEGIN TRAN													"
 				+ "		delete from usuarios where id_persona = @id_persona		"
 				+ "		delete from personas where id_persona = @id_persona		"
-				+ "    COMMIT TRAN												"
+				+ "COMMIT TRAN													"
 				+ "END TRY														"
 				+ "BEGIN CATCH													"
 				+ "    IF(@@TRANCOUNT > 0)										"
-				+ "        ROLLBACK TRAN;										"
-				+ "    THROW; -- raise error to the client						"
+				+ "        ROLLBACK TRAN										"
+				+ "		;THROW;													"
 				+ "END CATCH													"
 									, SqlConn);
-				//cmdDeleteUsuario.Parameters.Add("@id_usuario", SqlDbType.Int).Value = ID;
+				cmdDeleteUsuario.Parameters.Add("@id_usuario", SqlDbType.Int).Value = ID;
 				cmdDeleteUsuario.Parameters.Add("@id_persona", SqlDbType.Int).Value = ID;
+				cmdDeleteUsuario.ExecuteNonQuery();
 			}
 			catch (Exception Ex)
 			{

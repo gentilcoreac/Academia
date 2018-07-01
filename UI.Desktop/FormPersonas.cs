@@ -181,7 +181,7 @@ namespace UI.Desktop
 			}
 			if (this.Modo == FormPersonas.ModoForm.Baja)
 			{
-				this.PersonaActual.State = Persona.States.Deleted;
+				PersonaActual.State = Persona.States.Deleted;
 			}
 		}
 
@@ -354,17 +354,22 @@ namespace UI.Desktop
 		{
 			try
 			{
-					this.LimpiarCampos();
-					panel_ABMPersona.Visible = true;
-					int ID = ((Business.Entities.Persona)this.dgv_Personas.SelectedRows[0].DataBoundItem).ID;
+				int ID = ((Business.Entities.Persona)this.dgv_Personas.SelectedRows[0].DataBoundItem).ID;
+				if (MessageBox.Show("¿Estas seguro que deseas borrarlo? \nSe borrará la persona y el usuario correspondiente\nNo podras deshacerlo.", "Confirmar"
+							, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+					== System.Windows.Forms.DialogResult.Yes)
+				{
 					Modo = FormPersonas.ModoForm.Baja;
 					PersonaLogic personaLogic = new PersonaLogic();
-					PersonaActual = personaLogic.GetOne(ID);
-					this.MapearDeDatos();		
+					personaLogic.Delete(ID);
+					this.Notificar("Operacón correcta", "Operación realizada correctamente"
+									, MessageBoxButtons.OK, MessageBoxIcon.Information);
+					this.Listar();
+				}
 			}
 			catch (Exception ex)
 			{
-				Notificar("Error al eliminar", "Error al eliminar un usuario \n\n" + ex
+				Notificar("Error al eliminar", "Error al eliminar la persona \n\n" + ex
 				, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
@@ -373,12 +378,13 @@ namespace UI.Desktop
 		{
 			try
 			{
-				if (Modo == FormPersonas.ModoForm.Baja || this.Validar())
+				if (this.Validar())
 				{
-					this.GuardarCambios();
-					//this.Dispose();
-					this.Notificar("Operacón correcta","Operación realizada correctamente"
-									, MessageBoxButtons.OK, MessageBoxIcon.Information);
+						this.GuardarCambios();
+						//this.Dispose();
+						this.Notificar("Operacón correcta", "Operación realizada correctamente"
+										, MessageBoxButtons.OK, MessageBoxIcon.Information);					
+						this.Listar();
 				}
 			}
 			catch (Exception ex)
