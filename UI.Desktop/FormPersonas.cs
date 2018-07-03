@@ -319,8 +319,8 @@ namespace UI.Desktop
 			try
 			{
 				this.LimpiarCampos();
-				panel_ABMPersona.Visible = true;
 				Modo = ApplicationForm.ModoForm.Alta;
+				panel_ABMPersona.Visible = true;
 				this.Listar();
 			}
 			catch(Exception ex)

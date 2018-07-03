@@ -46,7 +46,7 @@ namespace UI.Desktop
 			//			forma de la catedra 
 			//			FormUsuarios appUsuarios = new FormUsuarios();
 			//			appUsuarios.ShowDialog();
-
+			panel_Principal.Controls.Clear();
 			FormUsuarios appUsuarios = new FormUsuarios();
 			appUsuarios.TopLevel = false;
 			appUsuarios.AutoScroll = false;
@@ -56,6 +56,7 @@ namespace UI.Desktop
 
 		private void ToolStripMenuItem_personas_Click(object sender, EventArgs e)
 		{
+			panel_Principal.Controls.Clear();
 			FormPersonas appPersonas = new FormPersonas();
 			appPersonas.TopLevel = false;
 			appPersonas.AutoScroll = false;

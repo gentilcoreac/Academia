@@ -56,14 +56,14 @@
 			this.toolStripMenuItem_Archivo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.salirToolStripMenuItem});
 			this.toolStripMenuItem_Archivo.Name = "toolStripMenuItem_Archivo";
-			this.toolStripMenuItem_Archivo.Size = new System.Drawing.Size(60, 20);
+			this.toolStripMenuItem_Archivo.Size = new System.Drawing.Size(64, 20);
 			this.toolStripMenuItem_Archivo.Text = "Archivo";
 			this.toolStripMenuItem_Archivo.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
 			// 
 			// salirToolStripMenuItem
 			// 
 			this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-			this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.salirToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
 			this.salirToolStripMenuItem.Text = "Salir";
 			this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
 			// 
@@ -73,20 +73,20 @@
             this.ToolStripMenuItem_usuarios,
             this.ToolStripMenuItem_personas});
 			this.ToolStripMenuItem_gestion.Name = "ToolStripMenuItem_gestion";
-			this.ToolStripMenuItem_gestion.Size = new System.Drawing.Size(59, 20);
+			this.ToolStripMenuItem_gestion.Size = new System.Drawing.Size(67, 20);
 			this.ToolStripMenuItem_gestion.Text = "Gestión";
 			// 
 			// ToolStripMenuItem_usuarios
 			// 
 			this.ToolStripMenuItem_usuarios.Name = "ToolStripMenuItem_usuarios";
-			this.ToolStripMenuItem_usuarios.Size = new System.Drawing.Size(180, 22);
+			this.ToolStripMenuItem_usuarios.Size = new System.Drawing.Size(133, 22);
 			this.ToolStripMenuItem_usuarios.Text = "Usuarios";
 			this.ToolStripMenuItem_usuarios.Click += new System.EventHandler(this.ToolStripMenuItem_usuarios_Click);
 			// 
 			// ToolStripMenuItem_personas
 			// 
 			this.ToolStripMenuItem_personas.Name = "ToolStripMenuItem_personas";
-			this.ToolStripMenuItem_personas.Size = new System.Drawing.Size(180, 22);
+			this.ToolStripMenuItem_personas.Size = new System.Drawing.Size(133, 22);
 			this.ToolStripMenuItem_personas.Text = "Personas";
 			this.ToolStripMenuItem_personas.Click += new System.EventHandler(this.ToolStripMenuItem_personas_Click);
 			// 
