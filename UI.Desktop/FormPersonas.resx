@@ -169,6 +169,9 @@
   <metadata name="Clave.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="Usuario_Email.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="Habilitado.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -187,15 +190,15 @@
   <data name="tsbEliminar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGzSURBVDhPlVK/SwJRHI+ItvoroqWtpaXpEFFEELHVwO1A
-        SOFCqEVM0K2cHAThCNp0cMhBpSWNUMShIcGhwUkPEX/cOd2n9z3f6akV9oEP977vfT6f977v3Q5BVVUQ
-        jYJhvf4TJHy7u8brbdAwEWn8nrjZLoREL1eXkI8PDCPRHG8VQLCG/NtMILG5szWAs14ul3VFUWZs/DyZ
-        TE65bQ6rmb7WdqbTKaLRKOx2OxwOBxKJBPr9/kzTNIHblwHWXSnEvERZltHtdtHpdBCJRBAOhzEajb4A
-        7PGIeQiRl4s6FostQonD4RBerxetVovqcy7fBFt8SKVSyGQyKwHEUCiEUqlE4wsu3wRblPL5PILB+T2Y
-        5l6vB7fbjXa7TfNnXP4zBoOB5vf7jTaazSZqtRpEUTTb+mB3sMulmxiPxyfsuZR0Og1BEOB0Oo2XsNls
-        qFQqFNDQdf2Qy1fBkvfZ8T7j8TgCgQAajYbRBrt5FItFeDwe5HI5mnvkllWwdH+1WoXP5zN6Nvs3SS/g
-        crkoRGf/wxG3LcGO/pRMJpHNZjfMJiVJQqFQoFOI3LYEE9TXDb9Tvf8GUB4MwiBxJNkAAAAASUVORK5C
-        YII=
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAG0SURBVDhPlVK/SwJRHI+ItvoroqWtpaXpEFFEELHVwE0Q
+        UrgQahETzq2cHAThCHLSwUEHkZY0wkMcGhIcGpxURPx1Tvfpfc93enoV9YEP977vfT6f977v3Q5hPp+D
+        qBcM2/WvIOHr3TVebkO6iUjjN+nmbyEker66hHx8oBuJxvhPAQRzyL/NBBIbO5sDOBulUkkbDAYLNi5N
+        p9NTblvCbKavuZ3ZbIZYLAa73Q6HwwFJktDv9xeqqgrcvg4w70ohxiXKsoxut4tOp4NoNIpIJILxePwJ
+        YI9HLEOIvFzV8Xh8FUocjUbwer1otVpUn3O5FWzxIZVKIZPJbAQQw+EwKpUKjS+43Aq2KBYKBYRCy3sw
+        zL1eD263G+12m+bPuPx7DIdD1e/36200m03U63UEg0GjrXd2B7tcasVkMjlhzzVIp9MQBAFOp1N/CZvN
+        hmq1SgGKpmmHXL4JlrzPjveRSCQQCASgKIreBrt5lMtleDwe5PN5mnvklk2wdH+tVoPP59N7Nvo3SC/g
+        crmQy+U09j8ccdsa7OhPyWQS2WzWYjYoiiKKxSKdIshtazBBY9vwM+f3XxJQDJ4xCut8AAAAAElFTkSu
+        QmCC
 </value>
   </data>
   <data name="btn_Buscar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -281,45 +284,6 @@
         8PDw8PDw8OgN1lnn/7tbAvmN36IZAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="ID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="legajo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="nombre.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="apellido.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="fechaNacimiento.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="direccion.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="telefono.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="emailPersonal.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="tipo_persona.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="desc_plan.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Usuario.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Clave.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Habilitado.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>
   </metadata>

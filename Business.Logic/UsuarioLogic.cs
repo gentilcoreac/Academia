@@ -9,29 +9,29 @@ using System.Data;
 
 namespace Business.Logic
 {
-    public class UsuarioLogic:BusinessLogic
-    {
+	public class UsuarioLogic : BusinessLogic
+	{
 
-        public UsuarioAdapter _usuarioData;
-        public UsuarioAdapter UsuarioData
-        {
-            get { return _usuarioData; }
-            set { _usuarioData = value; }
-        }
-        public UsuarioLogic()
-        {
-            UsuarioData = new UsuarioAdapter();
-        }
+		public UsuarioAdapter _usuarioData;
+		public UsuarioAdapter UsuarioData
+		{
+			get { return _usuarioData; }
+			set { _usuarioData = value; }
+		}
+		public UsuarioLogic()
+		{
+			UsuarioData = new UsuarioAdapter();
+		}
 
-        /*public Usuario GetOne(Usuario usuario)
+		/*public Usuario GetOne(Usuario usuario)
         {
             return UsuarioData.GetOne(usuario);
         }*/
 
-        public Usuario GetOne(int ID)
-        {
-            return UsuarioData.GetOne(ID);
-        }
+		public Usuario GetOne(int ID)
+		{
+			return UsuarioData.GetOne(ID);
+		}
 
 		public List<Usuario> GetAll()
 		{
@@ -50,22 +50,27 @@ namespace Business.Logic
 			pOR ESO MI DUDA ES PARA QUE TE SERVIRIA EL STATE (luego se utiliza en BD)
 		*/
 		public void Save(Usuario usuario)
-        {
-            UsuarioData.Save(usuario);
-        }
+		{
+			UsuarioData.Save(usuario);
+		}
 
 		public void Delete(int id)
-        {
-            UsuarioData.Delete(id);
-        }
-        /*
+		{
+			UsuarioData.Delete(id);
+		}
+		/*
         public void Delete(Usuario usuario)
         {
             UsuarioData.Delete(id);
         }*/
-		public Business.Entities.Usuario GetLoggedUser(string usuario,string contrasenia)
+		public Business.Entities.Usuario GetLoggedUser(string usuario, string contrasenia)
 		{
 			return UsuarioData.GetLoggedUser(usuario, contrasenia);
+		}
+
+		public int GetMaxID()
+		{
+			return UsuarioData.GetMaxID();
 		}
     }
 }

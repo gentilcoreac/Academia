@@ -41,7 +41,7 @@
 			this.label_ID = new System.Windows.Forms.Label();
 			this.label_Email = new System.Windows.Forms.Label();
 			this.label_Clave = new System.Windows.Forms.Label();
-			this.txtID = new System.Windows.Forms.TextBox();
+			this.txtID_Usuario = new System.Windows.Forms.TextBox();
 			this.txtEmail = new System.Windows.Forms.TextBox();
 			this.txtClave = new System.Windows.Forms.TextBox();
 			this.label_Usuario = new System.Windows.Forms.Label();
@@ -66,7 +66,7 @@
 			this.txt_Apellido = new System.Windows.Forms.TextBox();
 			this.txt_Nombre = new System.Windows.Forms.TextBox();
 			this.txt_Legajo = new System.Windows.Forms.TextBox();
-			this.txt_ID = new System.Windows.Forms.TextBox();
+			this.txt_ID_Persona = new System.Windows.Forms.TextBox();
 			this.lbl_Nombre = new System.Windows.Forms.Label();
 			this.lbl_Legajo = new System.Windows.Forms.Label();
 			this.lbl_ID = new System.Windows.Forms.Label();
@@ -79,7 +79,7 @@
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.lbl_Buscar = new System.Windows.Forms.ToolStripLabel();
 			this.comboBox_TipoBusqueda = new System.Windows.Forms.ToolStripComboBox();
-			this.toolStripTextBox_Usuario = new System.Windows.Forms.ToolStripTextBox();
+			this.toolStripTextBox_Persona = new System.Windows.Forms.ToolStripTextBox();
 			this.btn_Buscar = new System.Windows.Forms.ToolStripButton();
 			this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -93,6 +93,7 @@
 			this.desc_plan = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Usuario_Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Habilitado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
 			tsbEditar = new System.Windows.Forms.ToolStripButton();
 			this.tc_Personas.ContentPanel.SuspendLayout();
@@ -174,7 +175,7 @@
 			this.panel_ABMPersona.Controls.Add(this.label_ID);
 			this.panel_ABMPersona.Controls.Add(this.label_Email);
 			this.panel_ABMPersona.Controls.Add(this.label_Clave);
-			this.panel_ABMPersona.Controls.Add(this.txtID);
+			this.panel_ABMPersona.Controls.Add(this.txtID_Usuario);
 			this.panel_ABMPersona.Controls.Add(this.txtEmail);
 			this.panel_ABMPersona.Controls.Add(this.txtClave);
 			this.panel_ABMPersona.Controls.Add(this.label_Usuario);
@@ -199,7 +200,7 @@
 			this.panel_ABMPersona.Controls.Add(this.txt_Apellido);
 			this.panel_ABMPersona.Controls.Add(this.txt_Nombre);
 			this.panel_ABMPersona.Controls.Add(this.txt_Legajo);
-			this.panel_ABMPersona.Controls.Add(this.txt_ID);
+			this.panel_ABMPersona.Controls.Add(this.txt_ID_Persona);
 			this.panel_ABMPersona.Controls.Add(this.lbl_Nombre);
 			this.panel_ABMPersona.Controls.Add(this.lbl_Legajo);
 			this.panel_ABMPersona.Controls.Add(this.lbl_ID);
@@ -259,7 +260,6 @@
 			this.label_ID.Size = new System.Drawing.Size(21, 13);
 			this.label_ID.TabIndex = 23;
 			this.label_ID.Text = "ID";
-			this.label_ID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// label_Email
 			// 
@@ -271,7 +271,6 @@
 			this.label_Email.Size = new System.Drawing.Size(61, 13);
 			this.label_Email.TabIndex = 24;
 			this.label_Email.Text = "Email Usr";
-			this.label_Email.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// label_Clave
 			// 
@@ -283,16 +282,15 @@
 			this.label_Clave.Size = new System.Drawing.Size(40, 13);
 			this.label_Clave.TabIndex = 25;
 			this.label_Clave.Text = "Clave";
-			this.label_Clave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
-			// txtID
+			// txtID_Usuario
 			// 
-			this.txtID.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtID.Location = new System.Drawing.Point(529, 34);
-			this.txtID.Name = "txtID";
-			this.txtID.ReadOnly = true;
-			this.txtID.Size = new System.Drawing.Size(100, 21);
-			this.txtID.TabIndex = 29;
+			this.txtID_Usuario.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtID_Usuario.Location = new System.Drawing.Point(529, 34);
+			this.txtID_Usuario.Name = "txtID_Usuario";
+			this.txtID_Usuario.ReadOnly = true;
+			this.txtID_Usuario.Size = new System.Drawing.Size(100, 21);
+			this.txtID_Usuario.TabIndex = 11;
 			// 
 			// txtEmail
 			// 
@@ -300,7 +298,7 @@
 			this.txtEmail.Location = new System.Drawing.Point(529, 86);
 			this.txtEmail.Name = "txtEmail";
 			this.txtEmail.Size = new System.Drawing.Size(100, 21);
-			this.txtEmail.TabIndex = 30;
+			this.txtEmail.TabIndex = 13;
 			// 
 			// txtClave
 			// 
@@ -309,7 +307,7 @@
 			this.txtClave.Name = "txtClave";
 			this.txtClave.PasswordChar = '*';
 			this.txtClave.Size = new System.Drawing.Size(100, 21);
-			this.txtClave.TabIndex = 31;
+			this.txtClave.TabIndex = 14;
 			// 
 			// label_Usuario
 			// 
@@ -321,7 +319,6 @@
 			this.label_Usuario.Size = new System.Drawing.Size(50, 13);
 			this.label_Usuario.TabIndex = 27;
 			this.label_Usuario.Text = "Usuario";
-			this.label_Usuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// txtUsuario
 			// 
@@ -329,7 +326,7 @@
 			this.txtUsuario.Location = new System.Drawing.Point(529, 60);
 			this.txtUsuario.Name = "txtUsuario";
 			this.txtUsuario.Size = new System.Drawing.Size(100, 21);
-			this.txtUsuario.TabIndex = 32;
+			this.txtUsuario.TabIndex = 12;
 			// 
 			// txtConfirmarClave
 			// 
@@ -337,7 +334,7 @@
 			this.txtConfirmarClave.Location = new System.Drawing.Point(529, 138);
 			this.txtConfirmarClave.Name = "txtConfirmarClave";
 			this.txtConfirmarClave.Size = new System.Drawing.Size(100, 21);
-			this.txtConfirmarClave.TabIndex = 33;
+			this.txtConfirmarClave.TabIndex = 15;
 			// 
 			// label_ConfirmarClave
 			// 
@@ -349,7 +346,6 @@
 			this.label_ConfirmarClave.Size = new System.Drawing.Size(99, 13);
 			this.label_ConfirmarClave.TabIndex = 28;
 			this.label_ConfirmarClave.Text = "Confirmar clave";
-			this.label_ConfirmarClave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// checkBox_Habilitado
 			// 
@@ -357,20 +353,21 @@
 			this.checkBox_Habilitado.AutoSize = true;
 			this.checkBox_Habilitado.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.checkBox_Habilitado.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.checkBox_Habilitado.Location = new System.Drawing.Point(529, 165);
+			this.checkBox_Habilitado.Location = new System.Drawing.Point(441, 166);
 			this.checkBox_Habilitado.Name = "checkBox_Habilitado";
 			this.checkBox_Habilitado.Size = new System.Drawing.Size(82, 17);
-			this.checkBox_Habilitado.TabIndex = 26;
+			this.checkBox_Habilitado.TabIndex = 16;
 			this.checkBox_Habilitado.Text = "Habilitado";
+			this.checkBox_Habilitado.TextAlign = System.Drawing.ContentAlignment.TopLeft;
 			this.checkBox_Habilitado.UseVisualStyleBackColor = true;
 			// 
 			// btnAceptar
 			// 
 			this.btnAceptar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnAceptar.Location = new System.Drawing.Point(553, 188);
+			this.btnAceptar.Location = new System.Drawing.Point(554, 188);
 			this.btnAceptar.Name = "btnAceptar";
 			this.btnAceptar.Size = new System.Drawing.Size(75, 22);
-			this.btnAceptar.TabIndex = 22;
+			this.btnAceptar.TabIndex = 17;
 			this.btnAceptar.Text = "Aceptar";
 			this.btnAceptar.UseVisualStyleBackColor = true;
 			this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -382,7 +379,7 @@
 			this.comboBox_Plan.Location = new System.Drawing.Point(315, 34);
 			this.comboBox_Plan.Name = "comboBox_Plan";
 			this.comboBox_Plan.Size = new System.Drawing.Size(100, 21);
-			this.comboBox_Plan.TabIndex = 21;
+			this.comboBox_Plan.TabIndex = 8;
 			// 
 			// lbl_Plan
 			// 
@@ -410,10 +407,11 @@
 			// 
 			this.comboBox_TipoPersona.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.comboBox_TipoPersona.FormattingEnabled = true;
+			this.comboBox_TipoPersona.ItemHeight = 13;
 			this.comboBox_TipoPersona.Location = new System.Drawing.Point(315, 60);
 			this.comboBox_TipoPersona.Name = "comboBox_TipoPersona";
 			this.comboBox_TipoPersona.Size = new System.Drawing.Size(100, 21);
-			this.comboBox_TipoPersona.TabIndex = 18;
+			this.comboBox_TipoPersona.TabIndex = 9;
 			// 
 			// lbl_Email_personal
 			// 
@@ -431,7 +429,7 @@
 			this.txt_Email.Location = new System.Drawing.Point(97, 112);
 			this.txt_Email.Name = "txt_Email";
 			this.txt_Email.Size = new System.Drawing.Size(100, 21);
-			this.txt_Email.TabIndex = 16;
+			this.txt_Email.TabIndex = 4;
 			// 
 			// lbl_Telefono
 			// 
@@ -449,7 +447,7 @@
 			this.txt_Telefono.Location = new System.Drawing.Point(97, 190);
 			this.txt_Telefono.Name = "txt_Telefono";
 			this.txt_Telefono.Size = new System.Drawing.Size(100, 21);
-			this.txt_Telefono.TabIndex = 13;
+			this.txt_Telefono.TabIndex = 7;
 			// 
 			// txt_Direccion
 			// 
@@ -457,7 +455,7 @@
 			this.txt_Direccion.Location = new System.Drawing.Point(97, 164);
 			this.txt_Direccion.Name = "txt_Direccion";
 			this.txt_Direccion.Size = new System.Drawing.Size(100, 21);
-			this.txt_Direccion.TabIndex = 12;
+			this.txt_Direccion.TabIndex = 6;
 			// 
 			// lbl_Direccion
 			// 
@@ -475,7 +473,7 @@
 			this.txt_FechaNacimiento.Location = new System.Drawing.Point(97, 138);
 			this.txt_FechaNacimiento.Name = "txt_FechaNacimiento";
 			this.txt_FechaNacimiento.Size = new System.Drawing.Size(100, 21);
-			this.txt_FechaNacimiento.TabIndex = 10;
+			this.txt_FechaNacimiento.TabIndex = 5;
 			this.txt_FechaNacimiento.Click += new System.EventHandler(this.txt_FechaNacimiento_Click);
 			// 
 			// lbl_FechaNacimiento
@@ -505,7 +503,7 @@
 			this.txt_Apellido.Location = new System.Drawing.Point(97, 86);
 			this.txt_Apellido.Name = "txt_Apellido";
 			this.txt_Apellido.Size = new System.Drawing.Size(100, 21);
-			this.txt_Apellido.TabIndex = 6;
+			this.txt_Apellido.TabIndex = 3;
 			// 
 			// txt_Nombre
 			// 
@@ -513,7 +511,7 @@
 			this.txt_Nombre.Location = new System.Drawing.Point(97, 60);
 			this.txt_Nombre.Name = "txt_Nombre";
 			this.txt_Nombre.Size = new System.Drawing.Size(100, 21);
-			this.txt_Nombre.TabIndex = 5;
+			this.txt_Nombre.TabIndex = 2;
 			// 
 			// txt_Legajo
 			// 
@@ -521,16 +519,16 @@
 			this.txt_Legajo.Location = new System.Drawing.Point(315, 86);
 			this.txt_Legajo.Name = "txt_Legajo";
 			this.txt_Legajo.Size = new System.Drawing.Size(100, 21);
-			this.txt_Legajo.TabIndex = 4;
+			this.txt_Legajo.TabIndex = 10;
 			// 
-			// txt_ID
+			// txt_ID_Persona
 			// 
-			this.txt_ID.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_ID.Location = new System.Drawing.Point(97, 34);
-			this.txt_ID.Name = "txt_ID";
-			this.txt_ID.ReadOnly = true;
-			this.txt_ID.Size = new System.Drawing.Size(100, 21);
-			this.txt_ID.TabIndex = 3;
+			this.txt_ID_Persona.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_ID_Persona.Location = new System.Drawing.Point(97, 34);
+			this.txt_ID_Persona.Name = "txt_ID_Persona";
+			this.txt_ID_Persona.ReadOnly = true;
+			this.txt_ID_Persona.Size = new System.Drawing.Size(100, 21);
+			this.txt_ID_Persona.TabIndex = 1;
 			// 
 			// lbl_Nombre
 			// 
@@ -586,6 +584,7 @@
             this.desc_plan,
             this.Usuario,
             this.Clave,
+            this.Usuario_Email,
             this.Habilitado});
 			this.panel_Personas.SetColumnSpan(this.dgv_Personas, 2);
 			this.dgv_Personas.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -619,7 +618,7 @@
             this.toolStripSeparator1,
             this.lbl_Buscar,
             this.comboBox_TipoBusqueda,
-            this.toolStripTextBox_Usuario,
+            this.toolStripTextBox_Persona,
             this.btn_Buscar});
 			this.toolStrip1.Location = new System.Drawing.Point(3, 0);
 			this.toolStrip1.Name = "toolStrip1";
@@ -672,14 +671,14 @@
 			this.comboBox_TipoBusqueda.Name = "comboBox_TipoBusqueda";
 			this.comboBox_TipoBusqueda.Size = new System.Drawing.Size(120, 25);
 			// 
-			// toolStripTextBox_Usuario
+			// toolStripTextBox_Persona
 			// 
-			this.toolStripTextBox_Usuario.AutoSize = false;
-			this.toolStripTextBox_Usuario.Font = new System.Drawing.Font("Verdana", 8.25F);
-			this.toolStripTextBox_Usuario.Name = "toolStripTextBox_Usuario";
-			this.toolStripTextBox_Usuario.Size = new System.Drawing.Size(100, 21);
-			this.toolStripTextBox_Usuario.Tag = "";
-			this.toolStripTextBox_Usuario.ToolTipText = "Palabra a buscar";
+			this.toolStripTextBox_Persona.AutoSize = false;
+			this.toolStripTextBox_Persona.Font = new System.Drawing.Font("Verdana", 8.25F);
+			this.toolStripTextBox_Persona.Name = "toolStripTextBox_Persona";
+			this.toolStripTextBox_Persona.Size = new System.Drawing.Size(100, 21);
+			this.toolStripTextBox_Persona.Tag = "";
+			this.toolStripTextBox_Persona.ToolTipText = "Palabra a buscar";
 			// 
 			// btn_Buscar
 			// 
@@ -689,6 +688,7 @@
 			this.btn_Buscar.Name = "btn_Buscar";
 			this.btn_Buscar.Size = new System.Drawing.Size(23, 22);
 			this.btn_Buscar.ToolTipText = "Buscar";
+			this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
 			// 
 			// ID
 			// 
@@ -789,6 +789,13 @@
 			this.Clave.ToolTipText = "Datos para el sistema";
 			this.Clave.Width = 50;
 			// 
+			// Usuario_Email
+			// 
+			this.Usuario_Email.DataPropertyName = "UsuarioPersona.Email";
+			this.Usuario_Email.HeaderText = "Usuario email";
+			this.Usuario_Email.Name = "Usuario_Email";
+			this.Usuario_Email.ReadOnly = true;
+			// 
 			// Habilitado
 			// 
 			this.Habilitado.DataPropertyName = "UsuarioPersona.Habilitado";
@@ -836,7 +843,7 @@
 		private System.Windows.Forms.ToolStripButton tsbEliminar;
 		private System.Windows.Forms.ToolStripLabel lbl_Buscar;
 		private System.Windows.Forms.ToolStripComboBox comboBox_TipoBusqueda;
-		private System.Windows.Forms.ToolStripTextBox toolStripTextBox_Usuario;
+		private System.Windows.Forms.ToolStripTextBox toolStripTextBox_Persona;
 		private System.Windows.Forms.ToolStripButton btn_Buscar;
 		private System.Windows.Forms.Panel panel_ABMPersona;
 		private System.Windows.Forms.Label lbl_FechaNacimiento;
@@ -844,7 +851,7 @@
 		private System.Windows.Forms.TextBox txt_Apellido;
 		private System.Windows.Forms.TextBox txt_Nombre;
 		private System.Windows.Forms.TextBox txt_Legajo;
-		private System.Windows.Forms.TextBox txt_ID;
+		private System.Windows.Forms.TextBox txt_ID_Persona;
 		private System.Windows.Forms.Label lbl_Nombre;
 		private System.Windows.Forms.Label lbl_Legajo;
 		private System.Windows.Forms.Label lbl_ID;
@@ -863,7 +870,7 @@
 		private System.Windows.Forms.Label label_ID;
 		private System.Windows.Forms.Label label_Email;
 		private System.Windows.Forms.Label label_Clave;
-		private System.Windows.Forms.TextBox txtID;
+		private System.Windows.Forms.TextBox txtID_Usuario;
 		private System.Windows.Forms.TextBox txtEmail;
 		private System.Windows.Forms.TextBox txtClave;
 		private System.Windows.Forms.Label label_Usuario;
@@ -888,6 +895,7 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn desc_plan;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Clave;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Usuario_Email;
 		private System.Windows.Forms.DataGridViewCheckBoxColumn Habilitado;
 	}
 }

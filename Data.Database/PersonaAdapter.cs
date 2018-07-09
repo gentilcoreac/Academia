@@ -17,35 +17,32 @@ namespace Data.Database
 			List<Persona> listaPersonas = new List<Persona>();
 			try
 			{
+				string consultaSelectFrom = "SELECT 							  "
+					+ "	per.id_persona,										  "
+					+ "	per.nombre,											  "
+					+ "	per.apellido,										  "
+					+ "	per.direccion,										  "
+					+ "	per.email_personal,									  "
+					+ "	per.telefono,										  "
+					+ "	per.fecha_nac,										  "
+					+ "	per.legajo,											  "
+					+ "	per.tipo_persona,									  "
+					+ "	per.id_plan,										  "
+					+ "	pl.id_plan,											  "
+					+ "	pl.id_especialidad,									  "
+					+ "	pl.desc_plan,										  "
+					+ "	u.id_usuario,										  "
+					+ "	u.nombre_usuario,									  "
+					+ "	u.clave,											  "
+					+ "	u.habilitado,										  "
+					+ "	u.email_usuario,									  "
+					+ "	u.cambia_clave,										  "
+					+ "	u.id_persona										  "
+					+ "FROM personas per										  "
+					+ " INNER JOIN usuarios u  ON per.id_persona = u.id_persona "
+					+ " INNER JOIN planes pl   ON pl.id_plan = per.id_plan      ";
 				this.OpenConnection();
-				SqlCommand cmdPersonas = new SqlCommand("" 
-					+"SELECT 												  "
-					+"	per.id_persona,										  "
-					+"	per.nombre,											  "
-					+"	per.apellido,										  "
-					+"	per.direccion,										  "
-					+"	per.email_personal,									  "
-					+"	per.telefono,										  "
-					+"	per.fecha_nac,										  "
-					+"	per.legajo,											  "
-					+"	per.tipo_persona,									  "
-					+"	per.id_plan,										  "
-					+"	pl.id_plan,											  "
-					+"	pl.id_especialidad,									  "
-					+"	pl.desc_plan,										  "
-					+"	u.id_usuario,										  "
-					+"	u.nombre_usuario,									  "
-					+"	u.clave,											  "
-					+"	u.habilitado,										  "
-					+"	u.email_usuario,									  "
-					+"	u.cambia_clave,										  "
-					+"	u.id_persona										  "
-					+"FROM personas per										  "
-					+" INNER JOIN usuarios u  ON per.id_persona = u.id_persona "
-					+" INNER JOIN planes pl   ON pl.id_plan = per.id_plan      ", SqlConn);
-				//////////////////////////////////////////////////////////
-				///////SE ESTAN CONSULTANDO TABLAS DE MÁS , REVISAR///////
-				////////////////////////////////////////////////////////// 
+				SqlCommand cmdPersonas = new SqlCommand(consultaSelectFrom, SqlConn);
 				SqlDataReader drPersonas = cmdPersonas.ExecuteReader();
 				while (drPersonas.Read())
 				{
@@ -99,14 +96,7 @@ namespace Data.Database
 			try
 			{
 				this.OpenConnection();
-				SqlCommand cmdPersonas = null;
-				//switch (tipoBusqueda)
-				//{
-				//	case "ID": break;
-				//}
-
-				cmdPersonas = new SqlCommand("" 
-					+"SELECT 												  "
+				string consulta_SelectFrom = "SELECT 						  "
 					+ "	per.id_persona,										  "
 					+ "	per.nombre,											  "
 					+ "	per.apellido,										  "
@@ -116,7 +106,6 @@ namespace Data.Database
 					+ "	per.fecha_nac,										  "
 					+ "	per.legajo,											  "
 					+ "	per.tipo_persona,									  "
-					+ "	per.id_plan,										  "
 					+ "	pl.id_plan,											  "
 					+ "	pl.id_especialidad,									  "
 					+ "	pl.desc_plan,										  "
@@ -127,9 +116,87 @@ namespace Data.Database
 					+ "	u.email_usuario,									  "
 					+ "	u.cambia_clave,										  "
 					+ "	u.id_persona										  "
-					+ "FROM personas per									  " 
-					+ " INNER JOIN usuarios u  ON per.id_persona = u.id_persona " 
-					+ " INNER JOIN planes pl   ON pl.id_plan = per.id_plan     ", SqlConn);
+					+ "FROM personas per									  "
+					+ " INNER JOIN usuarios u  ON per.id_persona = u.id_persona "
+					+ " INNER JOIN planes pl   ON pl.id_plan = per.id_plan     ";
+				SqlCommand cmdPersonas = null;
+				switch (tipoBusqueda)
+				{
+					case "Todos":
+								cmdPersonas = new SqlCommand(consulta_SelectFrom, SqlConn);						
+								break;
+
+					case "ID":
+								cmdPersonas = new SqlCommand(consulta_SelectFrom
+														+ " WHERE per.id_persona like @ID+'%' ", SqlConn);
+								cmdPersonas.Parameters.Add("@ID", SqlDbType.VarChar, 50).Value = int.Parse(valorBuscado);
+								break;
+
+					case "Legajo":
+								cmdPersonas = new SqlCommand(consulta_SelectFrom
+														+ " WHERE per.legajo like @legajo+'%' ", SqlConn);
+								cmdPersonas.Parameters.Add("@legajo", SqlDbType.VarChar, 50).Value = int.Parse(valorBuscado);
+								break;
+
+					case "Nombre":
+								cmdPersonas = new SqlCommand(consulta_SelectFrom
+														+ " WHERE per.Nombre like @Nombre+'%' ", SqlConn);
+								cmdPersonas.Parameters.Add("@Nombre", SqlDbType.VarChar, 50).Value = valorBuscado;
+								break;
+
+					case "Apellido":
+								cmdPersonas = new SqlCommand(consulta_SelectFrom
+														+ " WHERE per.Apellido like @Apellido+'%' ", SqlConn);
+								cmdPersonas.Parameters.Add("@Apellido", SqlDbType.VarChar, 50).Value = valorBuscado;
+								break;
+					case "AñoNacimiento":
+								cmdPersonas = new SqlCommand(consulta_SelectFrom
+														+ " WHERE per.fecha_nac >=@AnioNac+'-01-01' AND per.fecha_nac <=@AnioNac+'-12-31' ", SqlConn);
+								cmdPersonas.Parameters.Add("@AnioNac", SqlDbType.VarChar, 50).Value = int.Parse(valorBuscado);
+								break;
+					case "Email_personal":
+								cmdPersonas = new SqlCommand(consulta_SelectFrom
+														+ " WHERE per.email_personal like @Email+'%' ", SqlConn);
+								cmdPersonas.Parameters.Add("@Email", SqlDbType.VarChar, 50).Value = valorBuscado;
+								break;
+					case "TipoPersona_ID":
+								cmdPersonas = new SqlCommand(consulta_SelectFrom
+														+ " WHERE per.tipo_persona = @TipoPersona ", SqlConn);
+								cmdPersonas.Parameters.Add("@TipoPersona", SqlDbType.VarChar, 50).Value = int.Parse(valorBuscado);
+								break;
+					case "Direccion":
+								cmdPersonas = new SqlCommand(consulta_SelectFrom
+														+ " WHERE per.Direccion like @Direccion+'%' ", SqlConn);
+								cmdPersonas.Parameters.Add("@Direccion", SqlDbType.VarChar, 50).Value = valorBuscado;
+								break;
+					case "Telefono":
+								cmdPersonas = new SqlCommand(consulta_SelectFrom
+														+ " WHERE per.Telefono like @Telefono+'%' ", SqlConn);
+								cmdPersonas.Parameters.Add("@Telefono", SqlDbType.VarChar, 50).Value = valorBuscado;
+								break;
+					case "Plan_ID":
+								cmdPersonas = new SqlCommand(consulta_SelectFrom
+														+ " WHERE pl.id_plan like @Plan+'%' ", SqlConn);
+								cmdPersonas.Parameters.Add("@Plan", SqlDbType.VarChar, 50).Value = int.Parse(valorBuscado);
+								break;
+					case "Plan_Descripcion":
+								cmdPersonas = new SqlCommand(consulta_SelectFrom
+														+ " WHERE pl.desc_plan like @desc_plan+'%' ", SqlConn);
+								cmdPersonas.Parameters.Add("@desc_plan", SqlDbType.VarChar, 50).Value = valorBuscado; 
+								break;
+					case "Usuario_nombre":
+								cmdPersonas = new SqlCommand(consulta_SelectFrom
+														+ " WHERE u.nombre_usuario like @nombre_usuario+'%' ", SqlConn);
+								cmdPersonas.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = valorBuscado;
+						break;
+					case "Usuario_email":
+								cmdPersonas = new SqlCommand(consulta_SelectFrom
+														+ " WHERE u.email_usuario like @email_usuario+'%' ", SqlConn);
+								cmdPersonas.Parameters.Add("@email_usuario", SqlDbType.VarChar, 50).Value = valorBuscado;
+								break;
+				}
+
+
 				SqlDataReader drPersonas = cmdPersonas.ExecuteReader();
 				while (drPersonas.Read())
 				{
@@ -241,8 +308,7 @@ namespace Data.Database
 			}
 			catch (Exception Ex)
 			{
-				Exception Excepcion = new Exception("Error al buscar la persona con su usuario y plan", Ex);
-				throw Excepcion;
+				throw new Exception("Error al buscar la persona con su usuario y plan", Ex);				
 			}
 			finally
 			{
@@ -250,6 +316,24 @@ namespace Data.Database
 			}
 			return oPer;
 		}
+		public int GetMaxID()
+		{
+			int id = -1;
+			try
+			{
+				this.OpenConnection();
+				SqlCommand sqlCommand = new SqlCommand("" 
+					+ " SELECT MAX(id_persona) AS MAX_ID_PERSONA		"
+					+ " FROM PERSONAS									", SqlConn);
+				id = (int)sqlCommand.ExecuteScalar();
+				return id;
+			}
+			catch (Exception ex)
+			{
+				throw new Exception("Error al obtener el máximo ID de las persona\n\n" + ex);
+			}
+		}
+
 
 		public void Agregar(Persona persona)
 		{
@@ -351,14 +435,13 @@ namespace Data.Database
 				cmdUpdatePersonas.Parameters.Add("@clave", SqlDbType.VarChar).Value = persona.UsuarioPersona.Clave;
 				cmdUpdatePersonas.Parameters.Add("@habilitado", SqlDbType.Bit).Value = persona.UsuarioPersona.Habilitado;
 				cmdUpdatePersonas.Parameters.Add("@email", SqlDbType.VarChar).Value = persona.UsuarioPersona.Email;
-				cmdUpdatePersonas.Parameters.Add("@id_persona", SqlDbType.Int).Value = persona.UsuarioPersona.IDPersona.ID;
+				cmdUpdatePersonas.Parameters.Add("@id_persona", SqlDbType.Int).Value = persona.ID;
 				cmdUpdatePersonas.Parameters.Add("@idusuario_aActualizar", SqlDbType.Int).Value = persona.UsuarioPersona.ID;
 				cmdUpdatePersonas.ExecuteNonQuery();
 			}
 			catch (Exception Ex)
 			{
-				Exception Excepcion = new Exception("Error al actualizar la persona y su usuario \n\n" + Ex, Ex);
-				throw Excepcion;
+				throw new Exception("Error al actualizar la persona y su usuario \n\n" + Ex, Ex);
 			}
 			finally
 			{
@@ -390,8 +473,7 @@ namespace Data.Database
 			}
 			catch (Exception Ex)
 			{
-				Exception Excepcion = new Exception("Error al borrar la persona\n\n", Ex);
-				throw Excepcion;
+				throw new Exception("Error al borrar la persona\n\n", Ex);
 			}
 			finally
 			{

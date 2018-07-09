@@ -58,6 +58,7 @@ namespace UI.Desktop
 			this.txtEmail.Text = this.UsuarioActual.Email;
 			this.txtClave.Text = this.UsuarioActual.Clave;
 			this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;
+			this.txtIDPersona.Text = this.UsuarioActual.IDPersona.ID.ToString();
 
 			switch (Modo)
 			{
@@ -88,6 +89,7 @@ namespace UI.Desktop
 				this.UsuarioActual.Email = this.txtEmail.Text;
 				this.UsuarioActual.Clave = this.txtClave.Text;
 				this.UsuarioActual.Habilitado = this.checkBox_Habilitado.Checked;
+				this.UsuarioActual.IDPersona.ID = int.Parse(this.txtIDPersona.Text);
 				//this.UsuarioActual.IDPersona = PersonaActual;					
 				this.UsuarioActual.State = Usuario.States.New;
 			}
@@ -98,6 +100,7 @@ namespace UI.Desktop
 				this.UsuarioActual.Email = this.txtEmail.Text;
 				this.UsuarioActual.Clave = this.txtClave.Text;
 				this.UsuarioActual.Habilitado = this.checkBox_Habilitado.Checked;
+				this.UsuarioActual.IDPersona.ID = int.Parse(this.txtIDPersona.Text);
 				//this.UsuarioActual.IDPersona = PersonaActual;					
 				this.UsuarioActual.State = Usuario.States.Modified;
 			}
@@ -126,9 +129,11 @@ namespace UI.Desktop
 			de Notificar que definimos anteriormente, y si es todo válido debe
 			llamar retornar true.*/
 
-			if (String.IsNullOrEmpty(this.txtUsuario.Text) ||
-				String.IsNullOrEmpty(this.txtEmail.Text) ||
-				String.IsNullOrEmpty(this.txtClave.Text))
+			if (String.IsNullOrEmpty(this.txtUsuario.Text)
+				|| String.IsNullOrEmpty(this.txtEmail.Text) 
+				|| String.IsNullOrEmpty(this.txtClave.Text)
+				//|| String.IsNullOrEmpty(this.txtIDPersona.Text)
+				)
 			{
 				this.Notificar("Por favor, complete todos los campos"
 						, "Cuidado, revisar", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -29,6 +29,25 @@ namespace UI.Desktop
 			get { return _PlanActual; }
 			set { _PlanActual = value; }
 		}
+
+		protected enum ValoresABuscar
+		{
+			Todos,
+			ID,
+			Legajo,
+			Nombre,
+			Apellido,
+			AñoNacimiento,
+			Direccion,
+			Telefono,
+			Email_personal,
+			TipoPersona_ID,
+			Plan_ID,
+			Plan_Descripcion,
+			Usuario_Nombre,
+			Usuario_Email
+		}
+
 		#endregion
 
 		#region Constructores
@@ -39,21 +58,7 @@ namespace UI.Desktop
 		#endregion
 		
 		#region Metodos
-		protected enum ValoresABuscar
-		{
-			Todos,
-			ID,
-			Legajo,
-			Nombre,
-			Apellido,
-			Nacimiento,
-			Email,
-			TipoPersona,
-			Direccion,
-			Telefono,
-			Tipo,
-			Usuario
-		}
+
 		private void CompletarComboBox()
 		{
 			//Combo busqueda
@@ -82,9 +87,9 @@ namespace UI.Desktop
 				PersonaLogic pl = new PersonaLogic();
 				this.dgv_Personas.AutoGenerateColumns = false;
 				//////////////////////////////////////////////////////////////////////////////////
-				////////this.dgv_Personas.DataSource = pl.GetAll(comboBox_TipoBusqueda.SelectedItem.ToString(), toolStripTextBox_Usuario.Text);
+				this.dgv_Personas.DataSource = pl.GetAll(comboBox_TipoBusqueda.SelectedItem.ToString(), toolStripTextBox_Persona.Text);
 				//////////////////////////////////////////////////////////////////////////////////
-				this.dgv_Personas.DataSource = pl.GetAll();
+				//this.dgv_Personas.DataSource = pl.GetAll();
 			}
 			catch (Exception ex)
 			{
@@ -94,7 +99,7 @@ namespace UI.Desktop
 
 		public override void MapearDeDatos()
 		{
-			txt_ID.Text = PersonaActual.ID.ToString();
+			txt_ID_Persona.Text = PersonaActual.ID.ToString();
 			txt_Nombre.Text = PersonaActual.Nombre;
 			txt_Apellido.Text = PersonaActual.Apellido;
 			txt_Email.Text = PersonaActual.EmailPersonal;
@@ -108,7 +113,7 @@ namespace UI.Desktop
 			comboBox_Plan.SelectedItem = PersonaActual.Plan_persona.Descripcion;
 			//comboBox_Plan.ValueMember = "ID";
 
-			txtID.Text = PersonaActual.UsuarioPersona.ID.ToString();
+			txtID_Usuario.Text = PersonaActual.UsuarioPersona.ID.ToString();
 			checkBox_Habilitado.Checked = PersonaActual.UsuarioPersona.Habilitado;
 			txtEmail.Text = PersonaActual.UsuarioPersona.Email;
 			txtClave.Text = PersonaActual.UsuarioPersona.Clave;
@@ -144,11 +149,9 @@ namespace UI.Desktop
 				PersonaActual.Legajo = int.Parse(this.txt_Legajo.Text);
 				PersonaActual.Telefono = this.txt_Telefono.Text;
 				PersonaActual.FechaNacimiento = DateTime.Parse(this.txt_FechaNacimiento.Text);
-				PersonaActual.TiposPersona = (Persona.TiposPersonas)(this.comboBox_TipoPersona.SelectedItem);
-				PersonaActual.Plan_persona = (Plan)this.comboBox_Plan.SelectedItem;
 
 				PersonaActual.TiposPersona = (Persona.TiposPersonas)comboBox_TipoPersona.SelectedItem;
-				PersonaActual.Plan_persona = (Plan)this.comboBox_Plan.SelectedItem;
+				PersonaActual.Plan_persona = (Plan)comboBox_Plan.SelectedItem;
 
 				Usuario usuario = new Usuario();
 				usuario.NombreUsuario = this.txtUsuario.Text;
@@ -161,18 +164,19 @@ namespace UI.Desktop
 			if (this.Modo == FormPersonas.ModoForm.Modificacion)
 			{
 				PersonaActual.State = Persona.States.Modified;
-				PersonaActual.ID = Convert.ToInt32(this.txt_ID.Text);
+				PersonaActual.ID = Convert.ToInt32(this.txt_ID_Persona.Text);
 				PersonaActual.Apellido = this.txt_Apellido.Text;
 				PersonaActual.Nombre = this.txt_Nombre.Text;
 				PersonaActual.Direccion = this.txt_Direccion.Text;
 				PersonaActual.EmailPersonal = this.txt_Email.Text;
 				PersonaActual.Legajo = int.Parse(this.txt_Legajo.Text);
 				PersonaActual.Telefono = this.txt_Telefono.Text;
+				PersonaActual.FechaNacimiento = DateTime.Parse(this.txt_FechaNacimiento.Text);
 
 				PersonaActual.TiposPersona = (Persona.TiposPersonas)comboBox_TipoPersona.SelectedItem;
 				PersonaActual.Plan_persona = (Plan)this.comboBox_Plan.SelectedItem;
 				
-				PersonaActual.UsuarioPersona.ID = Convert.ToInt32(this.txtID.Text);
+				PersonaActual.UsuarioPersona.ID = Convert.ToInt32(this.txtID_Usuario.Text);
 				PersonaActual.UsuarioPersona.NombreUsuario = this.txtUsuario.Text;
 				PersonaActual.UsuarioPersona.Email = this.txtEmail.Text;
 				PersonaActual.UsuarioPersona.Clave = this.txtClave.Text;
@@ -261,7 +265,7 @@ namespace UI.Desktop
 			comboBox_Plan.Text = "";
 			txt_Telefono.Text = "";
 			comboBox_TipoPersona.Text = "";
-			txtID.Text = "";
+			txtID_Usuario.Text = "";
 			checkBox_Habilitado.Checked = true;
 			txtEmail.Text = "";
 			txtClave.Text = "";
@@ -272,8 +276,8 @@ namespace UI.Desktop
 		#region Disparadores
 		private void FormPersona_Load(object sender, EventArgs e)
 		{
-			Listar();
 			CompletarComboBox();
+			Listar();
 		}
 
 		private void btn_Actualizar_Click(object sender, EventArgs e)
@@ -307,7 +311,7 @@ namespace UI.Desktop
 		}
 
 		///Llama al metodo de Util para que se permita utilizar las relaciones de la POO en una datagridview. 
-		///Ya que esta si no, no permite realizar Persona.Plan.Descripcion (permite Persona.Nombre)
+		///Ya que si no esta, no permitiria realizar Persona.Plan.Descripcion (permitiria solo Persona.Nombre)
 		private void dgv_Personas_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
 		{
 			Util.FormatoCelda.FormatoCeldaParaObjects(sender,e, this.dgv_Personas);
@@ -321,6 +325,10 @@ namespace UI.Desktop
 				this.LimpiarCampos();
 				Modo = ApplicationForm.ModoForm.Alta;
 				panel_ABMPersona.Visible = true;
+				PersonaLogic personaLogic = new PersonaLogic();
+				UsuarioLogic usuarioLogic = new UsuarioLogic();
+				txt_ID_Persona.Text = (personaLogic.GetMaxID()+1).ToString();
+				txtID_Usuario.Text = (usuarioLogic.GetMaxID()+1).ToString();
 				this.Listar();
 			}
 			catch(Exception ex)
@@ -354,8 +362,9 @@ namespace UI.Desktop
 		{
 			try
 			{
+				LimpiarCampos();
 				int ID = ((Business.Entities.Persona)this.dgv_Personas.SelectedRows[0].DataBoundItem).ID;
-				if (MessageBox.Show("¿Estas seguro que deseas borrarlo? \nSe borrará la persona y el usuario correspondiente\nNo podras deshacerlo.", "Confirmar"
+				if (MessageBox.Show("¿Estas seguro que deseas borrarlo? \nSe borrará la persona y su usuario correspondiente seleccionada de la grilla\nNo podras deshacerlo.", "Advertencia"
 							, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 					== System.Windows.Forms.DialogResult.Yes)
 				{
@@ -393,6 +402,12 @@ namespace UI.Desktop
 								, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
+
 		#endregion
+
+		private void btn_Buscar_Click(object sender, EventArgs e)
+		{
+			Listar();
+		}
 	}
 }

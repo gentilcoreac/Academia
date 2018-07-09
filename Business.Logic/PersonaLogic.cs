@@ -48,5 +48,10 @@ namespace Business.Logic
 		{
 			PersonaData.Delete(id);
 		}
+
+		public int GetMaxID()
+		{
+			return PersonaData.GetMaxID();
+		}
 	}
 }

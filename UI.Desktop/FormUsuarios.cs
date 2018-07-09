@@ -106,6 +106,18 @@ namespace UI.Desktop
 			Listar();
 		}
 
+
+		#region Formato
+		///Llama al metodo de Util para que se permita utilizar las relaciones de la POO en una datagridview. 
+		///Ya que si no esta, no permitiria realizar Persona.Plan.Descripcion (permitiria solo Persona.Nombre)
+		private void dgvUsuarios_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+		{
+			Util.FormatoCelda.FormatoCeldaParaObjects(sender, e, this.dgvUsuarios);
+		}
+
 		#endregion
+
+		#endregion
+
 	}
 }

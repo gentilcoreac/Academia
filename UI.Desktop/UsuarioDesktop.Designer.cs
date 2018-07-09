@@ -42,6 +42,8 @@
 			this.btnAceptar = new System.Windows.Forms.Button();
 			this.btnCancelar = new System.Windows.Forms.Button();
 			this.checkBox_Habilitado = new System.Windows.Forms.CheckBox();
+			this.txtIDPersona = new System.Windows.Forms.TextBox();
+			this.lblIDPersona = new System.Windows.Forms.Label();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -60,13 +62,16 @@
 			this.tableLayoutPanel1.Controls.Add(this.txtUsuario, 1, 1);
 			this.tableLayoutPanel1.Controls.Add(this.txtConfirmarClave, 1, 4);
 			this.tableLayoutPanel1.Controls.Add(this.label_ConfirmarClave, 0, 4);
-			this.tableLayoutPanel1.Controls.Add(this.btnAceptar, 1, 7);
-			this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 0, 7);
 			this.tableLayoutPanel1.Controls.Add(this.checkBox_Habilitado, 0, 6);
+			this.tableLayoutPanel1.Controls.Add(this.btnAceptar, 1, 8);
+			this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 0, 8);
+			this.tableLayoutPanel1.Controls.Add(this.txtIDPersona, 1, 7);
+			this.tableLayoutPanel1.Controls.Add(this.lblIDPersona, 0, 7);
 			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-			this.tableLayoutPanel1.RowCount = 8;
+			this.tableLayoutPanel1.RowCount = 9;
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -75,14 +80,14 @@
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-			this.tableLayoutPanel1.Size = new System.Drawing.Size(302, 186);
+			this.tableLayoutPanel1.Size = new System.Drawing.Size(321, 205);
 			this.tableLayoutPanel1.TabIndex = 0;
 			// 
 			// label_ID
 			// 
 			this.label_ID.Anchor = System.Windows.Forms.AnchorStyles.Right;
 			this.label_ID.AutoSize = true;
-			this.label_ID.Location = new System.Drawing.Point(73, 6);
+			this.label_ID.Location = new System.Drawing.Point(79, 6);
 			this.label_ID.Name = "label_ID";
 			this.label_ID.Size = new System.Drawing.Size(18, 13);
 			this.label_ID.TabIndex = 0;
@@ -92,7 +97,7 @@
 			// 
 			this.label_Email.Anchor = System.Windows.Forms.AnchorStyles.Right;
 			this.label_Email.AutoSize = true;
-			this.label_Email.Location = new System.Drawing.Point(59, 58);
+			this.label_Email.Location = new System.Drawing.Point(65, 58);
 			this.label_Email.Name = "label_Email";
 			this.label_Email.Size = new System.Drawing.Size(32, 13);
 			this.label_Email.TabIndex = 2;
@@ -102,7 +107,7 @@
 			// 
 			this.label_Clave.Anchor = System.Windows.Forms.AnchorStyles.Right;
 			this.label_Clave.AutoSize = true;
-			this.label_Clave.Location = new System.Drawing.Point(57, 84);
+			this.label_Clave.Location = new System.Drawing.Point(63, 84);
 			this.label_Clave.Name = "label_Clave";
 			this.label_Clave.Size = new System.Drawing.Size(34, 13);
 			this.label_Clave.TabIndex = 3;
@@ -110,7 +115,7 @@
 			// 
 			// txtID
 			// 
-			this.txtID.Location = new System.Drawing.Point(97, 3);
+			this.txtID.Location = new System.Drawing.Point(103, 3);
 			this.txtID.Name = "txtID";
 			this.txtID.ReadOnly = true;
 			this.txtID.Size = new System.Drawing.Size(150, 20);
@@ -118,14 +123,14 @@
 			// 
 			// txtEmail
 			// 
-			this.txtEmail.Location = new System.Drawing.Point(97, 55);
+			this.txtEmail.Location = new System.Drawing.Point(103, 55);
 			this.txtEmail.Name = "txtEmail";
 			this.txtEmail.Size = new System.Drawing.Size(150, 20);
 			this.txtEmail.TabIndex = 10;
 			// 
 			// txtClave
 			// 
-			this.txtClave.Location = new System.Drawing.Point(97, 81);
+			this.txtClave.Location = new System.Drawing.Point(103, 81);
 			this.txtClave.Name = "txtClave";
 			this.txtClave.PasswordChar = '*';
 			this.txtClave.Size = new System.Drawing.Size(150, 20);
@@ -135,7 +140,7 @@
 			// 
 			this.label_Usuario.Anchor = System.Windows.Forms.AnchorStyles.Right;
 			this.label_Usuario.AutoSize = true;
-			this.label_Usuario.Location = new System.Drawing.Point(48, 32);
+			this.label_Usuario.Location = new System.Drawing.Point(54, 32);
 			this.label_Usuario.Name = "label_Usuario";
 			this.label_Usuario.Size = new System.Drawing.Size(43, 13);
 			this.label_Usuario.TabIndex = 6;
@@ -143,14 +148,14 @@
 			// 
 			// txtUsuario
 			// 
-			this.txtUsuario.Location = new System.Drawing.Point(97, 29);
+			this.txtUsuario.Location = new System.Drawing.Point(103, 29);
 			this.txtUsuario.Name = "txtUsuario";
 			this.txtUsuario.Size = new System.Drawing.Size(150, 20);
 			this.txtUsuario.TabIndex = 13;
 			// 
 			// txtConfirmarClave
 			// 
-			this.txtConfirmarClave.Location = new System.Drawing.Point(97, 107);
+			this.txtConfirmarClave.Location = new System.Drawing.Point(103, 107);
 			this.txtConfirmarClave.Name = "txtConfirmarClave";
 			this.txtConfirmarClave.Size = new System.Drawing.Size(150, 20);
 			this.txtConfirmarClave.TabIndex = 14;
@@ -159,7 +164,7 @@
 			// 
 			this.label_ConfirmarClave.Anchor = System.Windows.Forms.AnchorStyles.Right;
 			this.label_ConfirmarClave.AutoSize = true;
-			this.label_ConfirmarClave.Location = new System.Drawing.Point(11, 110);
+			this.label_ConfirmarClave.Location = new System.Drawing.Point(17, 110);
 			this.label_ConfirmarClave.Name = "label_ConfirmarClave";
 			this.label_ConfirmarClave.Size = new System.Drawing.Size(80, 13);
 			this.label_ConfirmarClave.TabIndex = 7;
@@ -167,9 +172,9 @@
 			// 
 			// btnAceptar
 			// 
-			this.btnAceptar.Location = new System.Drawing.Point(97, 156);
+			this.btnAceptar.Location = new System.Drawing.Point(103, 182);
 			this.btnAceptar.Name = "btnAceptar";
-			this.btnAceptar.Size = new System.Drawing.Size(75, 22);
+			this.btnAceptar.Size = new System.Drawing.Size(75, 20);
 			this.btnAceptar.TabIndex = 15;
 			this.btnAceptar.Text = "Aceptar";
 			this.btnAceptar.UseVisualStyleBackColor = true;
@@ -177,9 +182,9 @@
 			// 
 			// btnCancelar
 			// 
-			this.btnCancelar.Location = new System.Drawing.Point(3, 156);
+			this.btnCancelar.Location = new System.Drawing.Point(3, 182);
 			this.btnCancelar.Name = "btnCancelar";
-			this.btnCancelar.Size = new System.Drawing.Size(75, 22);
+			this.btnCancelar.Size = new System.Drawing.Size(75, 20);
 			this.btnCancelar.TabIndex = 16;
 			this.btnCancelar.Text = "Cancelar";
 			this.btnCancelar.UseVisualStyleBackColor = true;
@@ -190,18 +195,34 @@
 			this.checkBox_Habilitado.Anchor = System.Windows.Forms.AnchorStyles.Right;
 			this.checkBox_Habilitado.AutoSize = true;
 			this.checkBox_Habilitado.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.checkBox_Habilitado.Location = new System.Drawing.Point(18, 133);
+			this.checkBox_Habilitado.Location = new System.Drawing.Point(24, 133);
 			this.checkBox_Habilitado.Name = "checkBox_Habilitado";
 			this.checkBox_Habilitado.Size = new System.Drawing.Size(73, 17);
 			this.checkBox_Habilitado.TabIndex = 4;
 			this.checkBox_Habilitado.Text = "Habilitado";
 			this.checkBox_Habilitado.UseVisualStyleBackColor = true;
 			// 
+			// txtIDPersona
+			// 
+			this.txtIDPersona.Location = new System.Drawing.Point(103, 156);
+			this.txtIDPersona.Name = "txtIDPersona";
+			this.txtIDPersona.Size = new System.Drawing.Size(150, 20);
+			this.txtIDPersona.TabIndex = 17;
+			// 
+			// lblIDPersona
+			// 
+			this.lblIDPersona.AutoSize = true;
+			this.lblIDPersona.Location = new System.Drawing.Point(3, 153);
+			this.lblIDPersona.Name = "lblIDPersona";
+			this.lblIDPersona.Size = new System.Drawing.Size(60, 13);
+			this.lblIDPersona.TabIndex = 18;
+			this.lblIDPersona.Text = "ID Persona";
+			// 
 			// UsuarioDesktop
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(302, 186);
+			this.ClientSize = new System.Drawing.Size(321, 205);
 			this.Controls.Add(this.tableLayoutPanel1);
 			this.Name = "UsuarioDesktop";
 			this.Text = "";
@@ -227,5 +248,7 @@
 		private System.Windows.Forms.Button btnAceptar;
 		private System.Windows.Forms.Button btnCancelar;
 		private System.Windows.Forms.CheckBox checkBox_Habilitado;
+		private System.Windows.Forms.TextBox txtIDPersona;
+		private System.Windows.Forms.Label lblIDPersona;
 	}
 }
