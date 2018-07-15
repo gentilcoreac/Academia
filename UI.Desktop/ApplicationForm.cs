@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Business.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +22,14 @@ namespace UI.Desktop
 		#endregion
 
 		#region Propiedades
+		private static Usuario _UsuarioLogueado;
+		public static Usuario UsuarioLogueado
+		{
+			get { return _UsuarioLogueado; }
+			set { _UsuarioLogueado = value; }
+		}
+		
+
 		public enum ModoForm{Alta, Baja, Modificacion, Consulta};
 
 		private ModoForm _Modo;

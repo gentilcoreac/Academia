@@ -12,38 +12,38 @@ using System.Windows.Forms;
 
 namespace UI.Desktop
 {
-	public partial class FormLogin : Form
+	public partial class FormLogin : ApplicationForm
 	{
 		public FormLogin()
 		{
 			InitializeComponent();
 		}
 		#region Propiedades
-		private Business.Entities.Usuario _Usuario;
-		public Business.Entities.Usuario Usuario
-		{
-			get { return _Usuario; }
-			set { _Usuario = value; }
-		}
+		////////////////////////////////////////private Business.Entities.Usuario _Usuario;
+		////////////////////////////////////////public Business.Entities.Usuario Usuario
+		////////////////////////////////////////{
+		////////////////////////////////////////	get { return _Usuario; }
+		////////////////////////////////////////	set { _Usuario = value; }
+		////////////////////////////////////////}
 		#endregion
 
 		#region Metodos
-		public void validaIngreso()
+		public void ValidaIngreso()
 		{
 			UsuarioLogic ul = new UsuarioLogic();
 			try
 			{
-				if (validaCampos())
+				if (ValidaCampos())
 				{
 					string usuario = textBox_Usuario.Text;
 					string contrasenia = textBox_Contrasenia.Text;
-					Usuario = new Business.Entities.Usuario();
-					Usuario = ul.GetLoggedUser(usuario, contrasenia);
+					UsuarioLogueado = new Business.Entities.Usuario();
+					UsuarioLogueado = ul.GetLoggedUser(usuario, contrasenia);
 
 					/*	MessageBox.Show("Usuario y/o contraseña correctos" + Usuario.Apellido, "Login"
 							, MessageBoxButtons.OK, MessageBoxIcon.Error);
 							*/
-					if (Usuario != null && Usuario.NombreUsuario == usuario && Usuario.Clave == contrasenia)
+					if (UsuarioLogueado != null && UsuarioLogueado.NombreUsuario == usuario && UsuarioLogueado.Clave == contrasenia)
 					{
 						this.DialogResult = DialogResult.OK;
 					}
@@ -63,7 +63,7 @@ namespace UI.Desktop
 			}
 		}
 
-		private Boolean validaCampos()
+		private Boolean ValidaCampos()
 		{
 				return !string.IsNullOrEmpty(textBox_Usuario.Text)
 				   && !string.IsNullOrEmpty(textBox_Contrasenia.Text);
@@ -74,7 +74,7 @@ namespace UI.Desktop
 		#region Disparadores
 		private void button_Ingresar_Click(object sender, EventArgs e)
 		{
-			validaIngreso();
+			ValidaIngreso();
 		}
 
 		private void FormLogin_Shown(object sender, EventArgs e)

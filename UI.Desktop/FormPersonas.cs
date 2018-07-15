@@ -86,10 +86,7 @@ namespace UI.Desktop
 			{
 				PersonaLogic pl = new PersonaLogic();
 				this.dgv_Personas.AutoGenerateColumns = false;
-				//////////////////////////////////////////////////////////////////////////////////
 				this.dgv_Personas.DataSource = pl.GetAll(comboBox_TipoBusqueda.SelectedItem.ToString(), toolStripTextBox_Persona.Text);
-				//////////////////////////////////////////////////////////////////////////////////
-				//this.dgv_Personas.DataSource = pl.GetAll();
 			}
 			catch (Exception ex)
 			{
@@ -106,8 +103,8 @@ namespace UI.Desktop
 			txt_Direccion.Text = PersonaActual.Direccion;
 			txt_Telefono.Text = PersonaActual.Telefono;
 			txt_FechaNacimiento.Text = PersonaActual.FechaNacimiento.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
-			txt_Legajo.Text = PersonaActual.Legajo.ToString();
-			txt_Legajo.Text = PersonaActual.TiposPersona!=Persona.TiposPersonas.Administrador ? PersonaActual.Legajo.ToString() : "";
+			//si no es administrador se le pone al legajo vacio
+			txt_Legajo.Text = PersonaActual.TiposPersona!=Persona.TiposPersonas.Administrador ? PersonaActual.Legajo.ToString() : "-";
 		  //comboBox_TipoPersona.ValueMember = "ID";
 			comboBox_TipoPersona.SelectedItem = PersonaActual.TiposPersona;
 			comboBox_Plan.SelectedItem = PersonaActual.Plan_persona.Descripcion;
@@ -262,9 +259,9 @@ namespace UI.Desktop
 			txt_Email.Text = "";
 			txt_FechaNacimiento.Text = "";
 			txt_Legajo.Text = "";
-			comboBox_Plan.Text = "";
+			//comboBox_Plan.Text = "";
 			txt_Telefono.Text = "";
-			comboBox_TipoPersona.Text = "";
+			//comboBox_TipoPersona.Text = "";
 			txtID_Usuario.Text = "";
 			checkBox_Habilitado.Checked = true;
 			txtEmail.Text = "";
@@ -403,11 +400,12 @@ namespace UI.Desktop
 			}
 		}
 
-		#endregion
-
 		private void btn_Buscar_Click(object sender, EventArgs e)
 		{
 			Listar();
 		}
+
+		#endregion
+
 	}
 }

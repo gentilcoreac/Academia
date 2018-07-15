@@ -143,11 +143,25 @@ namespace Data.Database
 
 				this.OpenConnection();
 				SqlCommand cmdUsuarios = new SqlCommand("" +
-					"select  id_usuario,nombre_usuario,clave,habilitado," +
-					"		 email_usuario," +
-					"		 cambia_clave,id_persona " +
-					"from usuarios " +
-					"where nombre_usuario=@nombreUsuario and clave= @contrasenia", SqlConn);
+					  "select   u.id_usuario								 "
+					+ "		,u.nombre_usuario								 "
+					+ "		,u.clave										 "
+					+ "		,u.habilitado									 "
+					+ "		,u.email_usuario								 "
+					+ "		,u.cambia_clave									 "
+					+ "		,p.id_persona									 "
+					+ "		,p.apellido										 "
+					+ "		,p.nombre										 "
+					+ "		,p.id_plan										 "
+					+ "		,p.legajo										 "
+					+ "		,p.direccion									 "
+					+ "		,p.email_personal								 "
+					+ "		,p.fecha_nac									 "
+					+ "		,p.tipo_persona									 "
+					+ "		,p.telefono										 "
+					+ "from usuarios	u									 "
+					+ "	inner join personas p	on u.id_persona=p.id_persona "
+					+ "where nombre_usuario=@nombreUsuario and clave=@contrasenia		 ", SqlConn);
 				cmdUsuarios.Parameters.Add("@nombreUsuario", SqlDbType.VarChar,50).Value = usuario;
 				cmdUsuarios.Parameters.Add("@contrasenia", SqlDbType.VarChar,50).Value = contrasenia;
 				SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
@@ -158,9 +172,18 @@ namespace Data.Database
 					oUsr.Clave = (string)drUsuarios["clave"];
 					oUsr.Email = drUsuarios["email_usuario"].ToString();
 					oUsr.Habilitado = (bool)drUsuarios["habilitado"];
-					Persona oPersona = new Persona();
-					oPersona.ID = (int)drUsuarios["id_persona"];
-					oUsr.IDPersona = oPersona;
+
+					Persona oPer = new Persona();
+					oPer.ID = (int)drUsuarios["id_persona"];
+					oPer.Apellido = (string)drUsuarios["apellido"];
+					oPer.Nombre = (string)drUsuarios["nombre"];
+					oPer.Direccion = (string)drUsuarios["direccion"];
+					oPer.EmailPersonal = (string)drUsuarios["email_personal"];
+					oPer.FechaNacimiento = (DateTime)drUsuarios["fecha_nac"];
+					oPer.Legajo = (int)drUsuarios["legajo"];
+					oPer.Telefono = (string)drUsuarios["telefono"];
+
+					oUsr.IDPersona = oPer;
 				}
 				drUsuarios.Close();
 			}

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Business.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,21 +11,20 @@ using System.Windows.Forms;
 
 namespace UI.Desktop
 {
-	public partial class FormMain : Form
+	public partial class FormMain : ApplicationForm
 	{
 		public FormMain()
 		{
 			InitializeComponent();
-		}
+		} 
+
 
 		private void FormMain_Load(object sender, EventArgs e)
 		{
-
-		}
+		} 
 
 		private void toolStripMenuItem1_Click(object sender, EventArgs e)
 		{
-
 		}
 
 		private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -35,7 +35,12 @@ namespace UI.Desktop
 		private void FormMain_Shown(object sender, EventArgs e)
 		{
 			FormLogin appLogin = new FormLogin();
-			if (appLogin.ShowDialog() != DialogResult.OK)
+			if (appLogin.ShowDialog() == DialogResult.OK)
+			{
+				VistaDeUsuario();
+				SetUsuarioLogueado();
+			}
+			else
 			{
 				this.Dispose();
 			}
@@ -43,9 +48,6 @@ namespace UI.Desktop
 
 		private void ToolStripMenuItem_usuarios_Click(object sender, EventArgs e)
 		{
-			//			forma de la catedra 
-			//			FormUsuarios appUsuarios = new FormUsuarios();
-			//			appUsuarios.ShowDialog();
 			panel_Principal.Controls.Clear();
 			FormUsuarios appUsuarios = new FormUsuarios();
 			appUsuarios.TopLevel = false;
@@ -62,6 +64,40 @@ namespace UI.Desktop
 			appPersonas.AutoScroll = false;
 			this.panel_Principal.Controls.Add(appPersonas);
 			appPersonas.Show();
+		}
+
+		private void SetUsuarioLogueado()
+		{
+			lbl_HEADER_PRUEBA.Visible = true;
+			lbl_HEADER_PRUEBA.Enabled = true;
+			lbl_HEADER_PRUEBA.Text = UsuarioLogueado.NombreUsuario;
+			lbl_tipopersona.Text = UsuarioLogueado.IDPersona.TiposPersona.ToString();
+		}
+
+		private Boolean EsAdministrador()
+		{
+			if (UsuarioLogueado.IDPersona.TiposPersona.Equals(Persona.TiposPersonas.Administrador))
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+
+		private void VistaDeUsuario()
+		{
+			if (EsAdministrador())
+			{
+				this.ToolStripMenuItem_usuarios.Visible = false;
+				this.ToolStripMenuItem_personas.Visible = false;
+			}
+			else
+			{
+				this.ToolStripMenuItem_usuarios.Visible = true;
+				this.ToolStripMenuItem_personas.Visible = true;
+			}
 		}
 	}
 }

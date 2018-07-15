@@ -32,11 +32,6 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUsuarios));
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-			this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.ID_Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.habilitado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
 			this.tcUsuarios = new System.Windows.Forms.ToolStripContainer();
 			this.tlUsuarios = new System.Windows.Forms.TableLayoutPanel();
 			this.btnActualizar = new System.Windows.Forms.Button();
@@ -51,6 +46,12 @@
 			this.comboBox_TipoBusqueda = new System.Windows.Forms.ToolStripComboBox();
 			this.toolStripTextBox_Usuario = new System.Windows.Forms.ToolStripTextBox();
 			this.btn_Buscar = new System.Windows.Forms.ToolStripButton();
+			this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ID_Persona = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.habilitado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
 			tsbEditar = new System.Windows.Forms.ToolStripButton();
 			((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
 			this.tcUsuarios.ContentPanel.SuspendLayout();
@@ -82,8 +83,9 @@
 			this.dgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.usuario,
+            this.Clave,
             this.email,
-            this.ID_Usuario,
+            this.ID_Persona,
             this.habilitado});
 			this.tlUsuarios.SetColumnSpan(this.dgvUsuarios, 2);
 			this.dgvUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -95,45 +97,6 @@
 			this.dgvUsuarios.Size = new System.Drawing.Size(914, 218);
 			this.dgvUsuarios.TabIndex = 0;
 			this.dgvUsuarios.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvUsuarios_CellFormatting);
-			// 
-			// id
-			// 
-			this.id.DataPropertyName = "ID";
-			this.id.HeaderText = "ID";
-			this.id.Name = "id";
-			this.id.ReadOnly = true;
-			this.id.Width = 85;
-			// 
-			// usuario
-			// 
-			this.usuario.DataPropertyName = "NombreUsuario";
-			this.usuario.HeaderText = "Usuario";
-			this.usuario.Name = "usuario";
-			this.usuario.ReadOnly = true;
-			this.usuario.Width = 115;
-			// 
-			// email
-			// 
-			this.email.DataPropertyName = "Email";
-			this.email.HeaderText = "Email usuario";
-			this.email.Name = "email";
-			this.email.ReadOnly = true;
-			this.email.Width = 130;
-			// 
-			// ID_Usuario
-			// 
-			this.ID_Usuario.DataPropertyName = "IDPersona.ID";
-			this.ID_Usuario.HeaderText = "Usuario ID";
-			this.ID_Usuario.Name = "ID_Usuario";
-			this.ID_Usuario.ReadOnly = true;
-			// 
-			// habilitado
-			// 
-			this.habilitado.DataPropertyName = "Habilitado";
-			this.habilitado.HeaderText = "Habilitado";
-			this.habilitado.Name = "habilitado";
-			this.habilitado.ReadOnly = true;
-			this.habilitado.Width = 75;
 			// 
 			// tcUsuarios
 			// 
@@ -290,6 +253,52 @@
 			this.btn_Buscar.ToolTipText = "Buscar";
 			this.btn_Buscar.Click += new System.EventHandler(this.toolStripButton1_Click);
 			// 
+			// id
+			// 
+			this.id.DataPropertyName = "ID";
+			this.id.HeaderText = "ID";
+			this.id.Name = "id";
+			this.id.ReadOnly = true;
+			this.id.Width = 85;
+			// 
+			// usuario
+			// 
+			this.usuario.DataPropertyName = "NombreUsuario";
+			this.usuario.HeaderText = "Usuario";
+			this.usuario.Name = "usuario";
+			this.usuario.ReadOnly = true;
+			this.usuario.Width = 115;
+			// 
+			// Clave
+			// 
+			this.Clave.DataPropertyName = "clave";
+			this.Clave.HeaderText = "Clave";
+			this.Clave.Name = "Clave";
+			this.Clave.ReadOnly = true;
+			// 
+			// email
+			// 
+			this.email.DataPropertyName = "Email";
+			this.email.HeaderText = "Email usuario";
+			this.email.Name = "email";
+			this.email.ReadOnly = true;
+			this.email.Width = 130;
+			// 
+			// ID_Persona
+			// 
+			this.ID_Persona.DataPropertyName = "IDPersona.ID";
+			this.ID_Persona.HeaderText = "Persona ID";
+			this.ID_Persona.Name = "ID_Persona";
+			this.ID_Persona.ReadOnly = true;
+			// 
+			// habilitado
+			// 
+			this.habilitado.DataPropertyName = "Habilitado";
+			this.habilitado.HeaderText = "Habilitado";
+			this.habilitado.Name = "habilitado";
+			this.habilitado.ReadOnly = true;
+			this.habilitado.Width = 75;
+			// 
 			// FormUsuarios
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -332,8 +341,9 @@
 		private System.Windows.Forms.Panel panel_Usuarios;
 		private System.Windows.Forms.DataGridViewTextBoxColumn id;
 		private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Clave;
 		private System.Windows.Forms.DataGridViewTextBoxColumn email;
-		private System.Windows.Forms.DataGridViewTextBoxColumn ID_Usuario;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ID_Persona;
 		private System.Windows.Forms.DataGridViewCheckBoxColumn habilitado;
 	}
 }

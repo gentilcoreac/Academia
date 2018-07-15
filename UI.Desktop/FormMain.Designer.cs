@@ -35,7 +35,10 @@
 			this.ToolStripMenuItem_usuarios = new System.Windows.Forms.ToolStripMenuItem();
 			this.ToolStripMenuItem_personas = new System.Windows.Forms.ToolStripMenuItem();
 			this.panel_Principal = new System.Windows.Forms.TableLayoutPanel();
+			this.lbl_HEADER_PRUEBA = new System.Windows.Forms.Label();
+			this.lbl_tipopersona = new System.Windows.Forms.Label();
 			this.menuPrincipal.SuspendLayout();
+			this.panel_Principal.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// menuPrincipal
@@ -63,7 +66,7 @@
 			// salirToolStripMenuItem
 			// 
 			this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-			this.salirToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
+			this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.salirToolStripMenuItem.Text = "Salir";
 			this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
 			// 
@@ -79,14 +82,14 @@
 			// ToolStripMenuItem_usuarios
 			// 
 			this.ToolStripMenuItem_usuarios.Name = "ToolStripMenuItem_usuarios";
-			this.ToolStripMenuItem_usuarios.Size = new System.Drawing.Size(133, 22);
+			this.ToolStripMenuItem_usuarios.Size = new System.Drawing.Size(180, 22);
 			this.ToolStripMenuItem_usuarios.Text = "Usuarios";
 			this.ToolStripMenuItem_usuarios.Click += new System.EventHandler(this.ToolStripMenuItem_usuarios_Click);
 			// 
 			// ToolStripMenuItem_personas
 			// 
 			this.ToolStripMenuItem_personas.Name = "ToolStripMenuItem_personas";
-			this.ToolStripMenuItem_personas.Size = new System.Drawing.Size(133, 22);
+			this.ToolStripMenuItem_personas.Size = new System.Drawing.Size(180, 22);
 			this.ToolStripMenuItem_personas.Text = "Personas";
 			this.ToolStripMenuItem_personas.Click += new System.EventHandler(this.ToolStripMenuItem_personas_Click);
 			// 
@@ -94,6 +97,7 @@
 			// 
 			this.panel_Principal.ColumnCount = 1;
 			this.panel_Principal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			this.panel_Principal.Controls.Add(this.lbl_HEADER_PRUEBA, 0, 0);
 			this.panel_Principal.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel_Principal.Location = new System.Drawing.Point(0, 24);
 			this.panel_Principal.Name = "panel_Principal";
@@ -103,12 +107,33 @@
 			this.panel_Principal.Size = new System.Drawing.Size(933, 426);
 			this.panel_Principal.TabIndex = 3;
 			// 
+			// lbl_HEADER_PRUEBA
+			// 
+			this.lbl_HEADER_PRUEBA.AutoSize = true;
+			this.lbl_HEADER_PRUEBA.Enabled = false;
+			this.lbl_HEADER_PRUEBA.Location = new System.Drawing.Point(3, 0);
+			this.lbl_HEADER_PRUEBA.Name = "lbl_HEADER_PRUEBA";
+			this.lbl_HEADER_PRUEBA.Size = new System.Drawing.Size(159, 13);
+			this.lbl_HEADER_PRUEBA.TabIndex = 5;
+			this.lbl_HEADER_PRUEBA.Text = "Label para NombreUsuario";
+			this.lbl_HEADER_PRUEBA.Visible = false;
+			// 
+			// lbl_tipopersona
+			// 
+			this.lbl_tipopersona.AutoSize = true;
+			this.lbl_tipopersona.Location = new System.Drawing.Point(285, 8);
+			this.lbl_tipopersona.Name = "lbl_tipopersona";
+			this.lbl_tipopersona.Size = new System.Drawing.Size(41, 13);
+			this.lbl_tipopersona.TabIndex = 5;
+			this.lbl_tipopersona.Text = "label1";
+			// 
 			// FormMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(933, 450);
+			this.Controls.Add(this.lbl_tipopersona);
 			this.Controls.Add(this.panel_Principal);
 			this.Controls.Add(this.menuPrincipal);
 			this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -121,6 +146,8 @@
 			this.Shown += new System.EventHandler(this.FormMain_Shown);
 			this.menuPrincipal.ResumeLayout(false);
 			this.menuPrincipal.PerformLayout();
+			this.panel_Principal.ResumeLayout(false);
+			this.panel_Principal.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -135,5 +162,7 @@
 		private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_usuarios;
 		private System.Windows.Forms.TableLayoutPanel panel_Principal;
 		private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_personas;
+		private System.Windows.Forms.Label lbl_HEADER_PRUEBA;
+		private System.Windows.Forms.Label lbl_tipopersona;
 	}
 }
