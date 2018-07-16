@@ -161,7 +161,7 @@ namespace Data.Database
 					+ "		,p.telefono										 "
 					+ "from usuarios	u									 "
 					+ "	inner join personas p	on u.id_persona=p.id_persona "
-					+ "where nombre_usuario=@nombreUsuario and clave=@contrasenia		 ", SqlConn);
+					+ "where nombre_usuario=@nombreUsuario and clave=@contrasenia and u.habilitado=1	 ", SqlConn);
 				cmdUsuarios.Parameters.Add("@nombreUsuario", SqlDbType.VarChar,50).Value = usuario;
 				cmdUsuarios.Parameters.Add("@contrasenia", SqlDbType.VarChar,50).Value = contrasenia;
 				SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
@@ -182,6 +182,7 @@ namespace Data.Database
 					oPer.FechaNacimiento = (DateTime)drUsuarios["fecha_nac"];
 					oPer.Legajo = (int)drUsuarios["legajo"];
 					oPer.Telefono = (string)drUsuarios["telefono"];
+					oPer.TiposPersona = (Persona.TiposPersonas)drUsuarios["tipo_persona"];
 
 					oUsr.IDPersona = oPer;
 				}

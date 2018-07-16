@@ -43,12 +43,6 @@ namespace Business.Logic
 			return UsuarioData.GetAll(tipoBusqueda, busqueda);
 		}
 
-		/*
-		 * CONSULTAR QUE BENEFICIOS TIENE EL METODO SAVE (QUE INVOLUCRA EL STATE) CONTRA EL AGREGAR
-			YO CREO QUE UTILIZANDO UN METODO PARA INSERTAR, OTRO PARA BORRAR Y OTRO PARA ACTUALIZAR PODRIAMOS
-			VALIDAR TODAS LAS REGLAS DE NEGOICO EN CADA UNO.
-			pOR ESO MI DUDA ES PARA QUE TE SERVIRIA EL STATE (luego se utiliza en BD)
-		*/
 		public void Save(Usuario usuario)
 		{
 			UsuarioData.Save(usuario);
@@ -58,11 +52,7 @@ namespace Business.Logic
 		{
 			UsuarioData.Delete(id);
 		}
-		/*
-        public void Delete(Usuario usuario)
-        {
-            UsuarioData.Delete(id);
-        }*/
+
 		public Business.Entities.Usuario GetLoggedUser(string usuario, string contrasenia)
 		{
 			return UsuarioData.GetLoggedUser(usuario, contrasenia);
@@ -71,6 +61,17 @@ namespace Business.Logic
 		public int GetMaxID()
 		{
 			return UsuarioData.GetMaxID();
+		}
+		public Boolean EsAdministrador(Usuario usrLogueado)
+		{
+			if (usrLogueado.IDPersona.TiposPersona.Equals(Persona.TiposPersonas.Administrador))
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
 		}
     }
 }

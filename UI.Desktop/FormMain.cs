@@ -1,4 +1,5 @@
 ﻿using Business.Entities;
+using Business.Logic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,10 +23,7 @@ namespace UI.Desktop
 		private void FormMain_Load(object sender, EventArgs e)
 		{
 		} 
-
-		private void toolStripMenuItem1_Click(object sender, EventArgs e)
-		{
-		}
+		
 
 		private void salirToolStripMenuItem_Click(object sender, EventArgs e)
 		{
@@ -37,7 +35,6 @@ namespace UI.Desktop
 			FormLogin appLogin = new FormLogin();
 			if (appLogin.ShowDialog() == DialogResult.OK)
 			{
-				VistaDeUsuario();
 				SetUsuarioLogueado();
 			}
 			else
@@ -68,36 +65,7 @@ namespace UI.Desktop
 
 		private void SetUsuarioLogueado()
 		{
-			lbl_HEADER_PRUEBA.Visible = true;
-			lbl_HEADER_PRUEBA.Enabled = true;
-			lbl_HEADER_PRUEBA.Text = UsuarioLogueado.NombreUsuario;
-			lbl_tipopersona.Text = UsuarioLogueado.IDPersona.TiposPersona.ToString();
-		}
-
-		private Boolean EsAdministrador()
-		{
-			if (UsuarioLogueado.IDPersona.TiposPersona.Equals(Persona.TiposPersonas.Administrador))
-			{
-				return true;
-			}
-			else
-			{
-				return false;
-			}
-		}
-
-		private void VistaDeUsuario()
-		{
-			if (EsAdministrador())
-			{
-				this.ToolStripMenuItem_usuarios.Visible = false;
-				this.ToolStripMenuItem_personas.Visible = false;
-			}
-			else
-			{
-				this.ToolStripMenuItem_usuarios.Visible = true;
-				this.ToolStripMenuItem_personas.Visible = true;
-			}
+			this.Text="Academia   |   Usuario: " +UsuarioLogueado.NombreUsuario + ", Tipo: "+ UsuarioLogueado.IDPersona.TiposPersona.ToString()  ;
 		}
 	}
 }

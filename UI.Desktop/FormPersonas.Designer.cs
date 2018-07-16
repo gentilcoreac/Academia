@@ -32,7 +32,7 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPersonas));
 			this.tc_Personas = new System.Windows.Forms.ToolStripContainer();
 			this.panel_Personas = new System.Windows.Forms.TableLayoutPanel();
-			this.btn_Salir = new System.Windows.Forms.Button();
+			this.btn_Actualizar = new System.Windows.Forms.Button();
 			this.panel_ABMPersona = new System.Windows.Forms.Panel();
 			this.calendar_Nacimiento_ventana = new System.Windows.Forms.MonthCalendar();
 			this.lbl_Cabecera3 = new System.Windows.Forms.Label();
@@ -71,16 +71,6 @@
 			this.lbl_Legajo = new System.Windows.Forms.Label();
 			this.lbl_ID = new System.Windows.Forms.Label();
 			this.dgv_Personas = new System.Windows.Forms.DataGridView();
-			this.btn_Actualizar = new System.Windows.Forms.Button();
-			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-			this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
-			this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
-			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-			this.lbl_Buscar = new System.Windows.Forms.ToolStripLabel();
-			this.comboBox_TipoBusqueda = new System.Windows.Forms.ToolStripComboBox();
-			this.toolStripTextBox_Persona = new System.Windows.Forms.ToolStripTextBox();
-			this.btn_Buscar = new System.Windows.Forms.ToolStripButton();
 			this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -95,6 +85,15 @@
 			this.Clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Usuario_Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Habilitado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+			this.toolStripCabeceraABMC = new System.Windows.Forms.ToolStrip();
+			this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
+			this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
+			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+			this.lbl_Buscar = new System.Windows.Forms.ToolStripLabel();
+			this.comboBox_TipoBusqueda = new System.Windows.Forms.ToolStripComboBox();
+			this.toolStripTextBox_Persona = new System.Windows.Forms.ToolStripTextBox();
+			this.btn_Buscar = new System.Windows.Forms.ToolStripButton();
 			tsbEditar = new System.Windows.Forms.ToolStripButton();
 			this.tc_Personas.ContentPanel.SuspendLayout();
 			this.tc_Personas.TopToolStripPanel.SuspendLayout();
@@ -102,7 +101,7 @@
 			this.panel_Personas.SuspendLayout();
 			this.panel_ABMPersona.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgv_Personas)).BeginInit();
-			this.toolStrip1.SuspendLayout();
+			this.toolStripCabeceraABMC.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tsbEditar
@@ -132,39 +131,38 @@
 			// tc_Personas.TopToolStripPanel
 			// 
 			this.tc_Personas.TopToolStripPanel.BackColor = System.Drawing.Color.White;
-			this.tc_Personas.TopToolStripPanel.Controls.Add(this.toolStrip1);
+			this.tc_Personas.TopToolStripPanel.Controls.Add(this.toolStripCabeceraABMC);
 			// 
 			// panel_Personas
 			// 
 			this.panel_Personas.BackColor = System.Drawing.Color.White;
-			this.panel_Personas.ColumnCount = 2;
+			this.panel_Personas.ColumnCount = 1;
 			this.panel_Personas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-			this.panel_Personas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-			this.panel_Personas.Controls.Add(this.btn_Salir, 1, 2);
-			this.panel_Personas.Controls.Add(this.panel_ABMPersona, 0, 1);
-			this.panel_Personas.Controls.Add(this.dgv_Personas, 0, 0);
+			this.panel_Personas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
 			this.panel_Personas.Controls.Add(this.btn_Actualizar, 0, 2);
+			this.panel_Personas.Controls.Add(this.panel_ABMPersona, 0, 0);
+			this.panel_Personas.Controls.Add(this.dgv_Personas, 0, 1);
 			this.panel_Personas.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel_Personas.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.panel_Personas.Location = new System.Drawing.Point(0, 0);
 			this.panel_Personas.Name = "panel_Personas";
 			this.panel_Personas.RowCount = 3;
-			this.panel_Personas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.83459F));
-			this.panel_Personas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.16541F));
+			this.panel_Personas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.49624F));
+			this.panel_Personas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 61.50376F));
 			this.panel_Personas.RowStyles.Add(new System.Windows.Forms.RowStyle());
-			this.panel_Personas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
 			this.panel_Personas.Size = new System.Drawing.Size(1080, 695);
 			this.panel_Personas.TabIndex = 0;
 			// 
-			// btn_Salir
+			// btn_Actualizar
 			// 
-			this.btn_Salir.Location = new System.Drawing.Point(1002, 668);
-			this.btn_Salir.Name = "btn_Salir";
-			this.btn_Salir.Size = new System.Drawing.Size(75, 23);
-			this.btn_Salir.TabIndex = 2;
-			this.btn_Salir.Text = "Salir";
-			this.btn_Salir.UseVisualStyleBackColor = true;
-			this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
+			this.btn_Actualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btn_Actualizar.Location = new System.Drawing.Point(1002, 668);
+			this.btn_Actualizar.Name = "btn_Actualizar";
+			this.btn_Actualizar.Size = new System.Drawing.Size(75, 23);
+			this.btn_Actualizar.TabIndex = 1;
+			this.btn_Actualizar.Text = "Actualizar";
+			this.btn_Actualizar.UseVisualStyleBackColor = true;
+			this.btn_Actualizar.Click += new System.EventHandler(this.btn_Actualizar_Click);
 			// 
 			// panel_ABMPersona
 			// 
@@ -205,16 +203,16 @@
 			this.panel_ABMPersona.Controls.Add(this.lbl_Legajo);
 			this.panel_ABMPersona.Controls.Add(this.lbl_ID);
 			this.panel_ABMPersona.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel_ABMPersona.Location = new System.Drawing.Point(3, 228);
+			this.panel_ABMPersona.Location = new System.Drawing.Point(3, 3);
 			this.panel_ABMPersona.Name = "panel_ABMPersona";
-			this.panel_ABMPersona.Size = new System.Drawing.Size(993, 434);
+			this.panel_ABMPersona.Size = new System.Drawing.Size(1074, 250);
 			this.panel_ABMPersona.TabIndex = 3;
 			this.panel_ABMPersona.Visible = false;
 			// 
 			// calendar_Nacimiento_ventana
 			// 
 			this.calendar_Nacimiento_ventana.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.calendar_Nacimiento_ventana.Location = new System.Drawing.Point(209, 119);
+			this.calendar_Nacimiento_ventana.Location = new System.Drawing.Point(209, 59);
 			this.calendar_Nacimiento_ventana.Name = "calendar_Nacimiento_ventana";
 			this.calendar_Nacimiento_ventana.TabIndex = 38;
 			this.calendar_Nacimiento_ventana.Visible = false;
@@ -224,7 +222,7 @@
 			// 
 			this.lbl_Cabecera3.AutoSize = true;
 			this.lbl_Cabecera3.Font = new System.Drawing.Font("Verdana", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbl_Cabecera3.Location = new System.Drawing.Point(484, 8);
+			this.lbl_Cabecera3.Location = new System.Drawing.Point(571, 8);
 			this.lbl_Cabecera3.Name = "lbl_Cabecera3";
 			this.lbl_Cabecera3.Size = new System.Drawing.Size(145, 14);
 			this.lbl_Cabecera3.TabIndex = 37;
@@ -234,7 +232,7 @@
 			// 
 			this.lbl_Cabecera2.AutoSize = true;
 			this.lbl_Cabecera2.Font = new System.Drawing.Font("Verdana", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbl_Cabecera2.Location = new System.Drawing.Point(277, 8);
+			this.lbl_Cabecera2.Location = new System.Drawing.Point(317, 8);
 			this.lbl_Cabecera2.Name = "lbl_Cabecera2";
 			this.lbl_Cabecera2.Size = new System.Drawing.Size(138, 14);
 			this.lbl_Cabecera2.TabIndex = 36;
@@ -252,10 +250,10 @@
 			// 
 			// label_ID
 			// 
-			this.label_ID.Anchor = System.Windows.Forms.AnchorStyles.Right;
 			this.label_ID.AutoSize = true;
 			this.label_ID.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label_ID.Location = new System.Drawing.Point(502, 37);
+			this.label_ID.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.label_ID.Location = new System.Drawing.Point(589, 37);
 			this.label_ID.Name = "label_ID";
 			this.label_ID.Size = new System.Drawing.Size(21, 13);
 			this.label_ID.TabIndex = 23;
@@ -263,30 +261,28 @@
 			// 
 			// label_Email
 			// 
-			this.label_Email.Anchor = System.Windows.Forms.AnchorStyles.Right;
 			this.label_Email.AutoSize = true;
 			this.label_Email.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label_Email.Location = new System.Drawing.Point(462, 89);
+			this.label_Email.Location = new System.Drawing.Point(549, 89);
 			this.label_Email.Name = "label_Email";
 			this.label_Email.Size = new System.Drawing.Size(61, 13);
-			this.label_Email.TabIndex = 24;
+			this.label_Email.TabIndex = 25;
 			this.label_Email.Text = "Email Usr";
 			// 
 			// label_Clave
 			// 
-			this.label_Clave.Anchor = System.Windows.Forms.AnchorStyles.Right;
 			this.label_Clave.AutoSize = true;
 			this.label_Clave.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label_Clave.Location = new System.Drawing.Point(483, 115);
+			this.label_Clave.Location = new System.Drawing.Point(570, 115);
 			this.label_Clave.Name = "label_Clave";
 			this.label_Clave.Size = new System.Drawing.Size(40, 13);
-			this.label_Clave.TabIndex = 25;
+			this.label_Clave.TabIndex = 26;
 			this.label_Clave.Text = "Clave";
 			// 
 			// txtID_Usuario
 			// 
 			this.txtID_Usuario.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtID_Usuario.Location = new System.Drawing.Point(529, 34);
+			this.txtID_Usuario.Location = new System.Drawing.Point(616, 34);
 			this.txtID_Usuario.Name = "txtID_Usuario";
 			this.txtID_Usuario.ReadOnly = true;
 			this.txtID_Usuario.Size = new System.Drawing.Size(100, 21);
@@ -295,7 +291,7 @@
 			// txtEmail
 			// 
 			this.txtEmail.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtEmail.Location = new System.Drawing.Point(529, 86);
+			this.txtEmail.Location = new System.Drawing.Point(616, 86);
 			this.txtEmail.Name = "txtEmail";
 			this.txtEmail.Size = new System.Drawing.Size(100, 21);
 			this.txtEmail.TabIndex = 13;
@@ -303,7 +299,7 @@
 			// txtClave
 			// 
 			this.txtClave.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtClave.Location = new System.Drawing.Point(529, 112);
+			this.txtClave.Location = new System.Drawing.Point(616, 112);
 			this.txtClave.Name = "txtClave";
 			this.txtClave.PasswordChar = '*';
 			this.txtClave.Size = new System.Drawing.Size(100, 21);
@@ -311,19 +307,19 @@
 			// 
 			// label_Usuario
 			// 
-			this.label_Usuario.Anchor = System.Windows.Forms.AnchorStyles.Right;
 			this.label_Usuario.AutoSize = true;
 			this.label_Usuario.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label_Usuario.Location = new System.Drawing.Point(473, 63);
+			this.label_Usuario.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.label_Usuario.Location = new System.Drawing.Point(560, 63);
 			this.label_Usuario.Name = "label_Usuario";
 			this.label_Usuario.Size = new System.Drawing.Size(50, 13);
-			this.label_Usuario.TabIndex = 27;
+			this.label_Usuario.TabIndex = 24;
 			this.label_Usuario.Text = "Usuario";
 			// 
 			// txtUsuario
 			// 
 			this.txtUsuario.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtUsuario.Location = new System.Drawing.Point(529, 60);
+			this.txtUsuario.Location = new System.Drawing.Point(616, 60);
 			this.txtUsuario.Name = "txtUsuario";
 			this.txtUsuario.Size = new System.Drawing.Size(100, 21);
 			this.txtUsuario.TabIndex = 12;
@@ -331,29 +327,27 @@
 			// txtConfirmarClave
 			// 
 			this.txtConfirmarClave.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtConfirmarClave.Location = new System.Drawing.Point(529, 138);
+			this.txtConfirmarClave.Location = new System.Drawing.Point(616, 139);
 			this.txtConfirmarClave.Name = "txtConfirmarClave";
 			this.txtConfirmarClave.Size = new System.Drawing.Size(100, 21);
 			this.txtConfirmarClave.TabIndex = 15;
 			// 
 			// label_ConfirmarClave
 			// 
-			this.label_ConfirmarClave.Anchor = System.Windows.Forms.AnchorStyles.Right;
 			this.label_ConfirmarClave.AutoSize = true;
 			this.label_ConfirmarClave.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label_ConfirmarClave.Location = new System.Drawing.Point(424, 141);
+			this.label_ConfirmarClave.Location = new System.Drawing.Point(511, 142);
 			this.label_ConfirmarClave.Name = "label_ConfirmarClave";
 			this.label_ConfirmarClave.Size = new System.Drawing.Size(99, 13);
-			this.label_ConfirmarClave.TabIndex = 28;
+			this.label_ConfirmarClave.TabIndex = 27;
 			this.label_ConfirmarClave.Text = "Confirmar clave";
 			// 
 			// checkBox_Habilitado
 			// 
-			this.checkBox_Habilitado.Anchor = System.Windows.Forms.AnchorStyles.Right;
 			this.checkBox_Habilitado.AutoSize = true;
 			this.checkBox_Habilitado.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.checkBox_Habilitado.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.checkBox_Habilitado.Location = new System.Drawing.Point(441, 166);
+			this.checkBox_Habilitado.Location = new System.Drawing.Point(528, 178);
 			this.checkBox_Habilitado.Name = "checkBox_Habilitado";
 			this.checkBox_Habilitado.Size = new System.Drawing.Size(82, 17);
 			this.checkBox_Habilitado.TabIndex = 16;
@@ -364,7 +358,7 @@
 			// btnAceptar
 			// 
 			this.btnAceptar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnAceptar.Location = new System.Drawing.Point(554, 188);
+			this.btnAceptar.Location = new System.Drawing.Point(641, 206);
 			this.btnAceptar.Name = "btnAceptar";
 			this.btnAceptar.Size = new System.Drawing.Size(75, 22);
 			this.btnAceptar.TabIndex = 17;
@@ -376,7 +370,7 @@
 			// 
 			this.comboBox_Plan.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.comboBox_Plan.FormattingEnabled = true;
-			this.comboBox_Plan.Location = new System.Drawing.Point(315, 34);
+			this.comboBox_Plan.Location = new System.Drawing.Point(353, 34);
 			this.comboBox_Plan.Name = "comboBox_Plan";
 			this.comboBox_Plan.Size = new System.Drawing.Size(100, 21);
 			this.comboBox_Plan.TabIndex = 8;
@@ -386,7 +380,7 @@
 			this.lbl_Plan.AutoSize = true;
 			this.lbl_Plan.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbl_Plan.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.lbl_Plan.Location = new System.Drawing.Point(279, 37);
+			this.lbl_Plan.Location = new System.Drawing.Point(317, 37);
 			this.lbl_Plan.Name = "lbl_Plan";
 			this.lbl_Plan.Size = new System.Drawing.Size(31, 13);
 			this.lbl_Plan.TabIndex = 20;
@@ -397,10 +391,10 @@
 			// 
 			this.lbl_TipoPersona.AutoSize = true;
 			this.lbl_TipoPersona.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbl_TipoPersona.Location = new System.Drawing.Point(211, 63);
+			this.lbl_TipoPersona.Location = new System.Drawing.Point(249, 63);
 			this.lbl_TipoPersona.Name = "lbl_TipoPersona";
 			this.lbl_TipoPersona.Size = new System.Drawing.Size(99, 13);
-			this.lbl_TipoPersona.TabIndex = 19;
+			this.lbl_TipoPersona.TabIndex = 21;
 			this.lbl_TipoPersona.Text = "Tipo de persona";
 			// 
 			// comboBox_TipoPersona
@@ -408,7 +402,7 @@
 			this.comboBox_TipoPersona.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.comboBox_TipoPersona.FormattingEnabled = true;
 			this.comboBox_TipoPersona.ItemHeight = 13;
-			this.comboBox_TipoPersona.Location = new System.Drawing.Point(315, 60);
+			this.comboBox_TipoPersona.Location = new System.Drawing.Point(353, 60);
 			this.comboBox_TipoPersona.Name = "comboBox_TipoPersona";
 			this.comboBox_TipoPersona.Size = new System.Drawing.Size(100, 21);
 			this.comboBox_TipoPersona.TabIndex = 9;
@@ -516,7 +510,7 @@
 			// txt_Legajo
 			// 
 			this.txt_Legajo.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_Legajo.Location = new System.Drawing.Point(315, 86);
+			this.txt_Legajo.Location = new System.Drawing.Point(353, 86);
 			this.txt_Legajo.Name = "txt_Legajo";
 			this.txt_Legajo.Size = new System.Drawing.Size(100, 21);
 			this.txt_Legajo.TabIndex = 10;
@@ -546,10 +540,10 @@
 			this.lbl_Legajo.AutoSize = true;
 			this.lbl_Legajo.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbl_Legajo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.lbl_Legajo.Location = new System.Drawing.Point(265, 89);
+			this.lbl_Legajo.Location = new System.Drawing.Point(303, 89);
 			this.lbl_Legajo.Name = "lbl_Legajo";
 			this.lbl_Legajo.Size = new System.Drawing.Size(45, 13);
-			this.lbl_Legajo.TabIndex = 1;
+			this.lbl_Legajo.TabIndex = 22;
 			this.lbl_Legajo.Text = "Legajo";
 			this.lbl_Legajo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
@@ -586,109 +580,14 @@
             this.Clave,
             this.Usuario_Email,
             this.Habilitado});
-			this.panel_Personas.SetColumnSpan(this.dgv_Personas, 2);
 			this.dgv_Personas.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.dgv_Personas.Location = new System.Drawing.Point(3, 3);
+			this.dgv_Personas.Location = new System.Drawing.Point(3, 259);
 			this.dgv_Personas.Name = "dgv_Personas";
 			this.dgv_Personas.ReadOnly = true;
 			this.dgv_Personas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dgv_Personas.Size = new System.Drawing.Size(1074, 219);
+			this.dgv_Personas.Size = new System.Drawing.Size(1074, 403);
 			this.dgv_Personas.TabIndex = 0;
 			this.dgv_Personas.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_Personas_CellFormatting);
-			// 
-			// btn_Actualizar
-			// 
-			this.btn_Actualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btn_Actualizar.Location = new System.Drawing.Point(921, 668);
-			this.btn_Actualizar.Name = "btn_Actualizar";
-			this.btn_Actualizar.Size = new System.Drawing.Size(75, 23);
-			this.btn_Actualizar.TabIndex = 1;
-			this.btn_Actualizar.Text = "Actualizar";
-			this.btn_Actualizar.UseVisualStyleBackColor = true;
-			this.btn_Actualizar.Click += new System.EventHandler(this.btn_Actualizar_Click);
-			// 
-			// toolStrip1
-			// 
-			this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
-			this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbNuevo,
-            tsbEditar,
-            this.tsbEliminar,
-            this.toolStripSeparator2,
-            this.toolStripSeparator1,
-            this.lbl_Buscar,
-            this.comboBox_TipoBusqueda,
-            this.toolStripTextBox_Persona,
-            this.btn_Buscar});
-			this.toolStrip1.Location = new System.Drawing.Point(3, 0);
-			this.toolStrip1.Name = "toolStrip1";
-			this.toolStrip1.Size = new System.Drawing.Size(409, 25);
-			this.toolStrip1.TabIndex = 0;
-			// 
-			// tsbNuevo
-			// 
-			this.tsbNuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.tsbNuevo.Image = ((System.Drawing.Image)(resources.GetObject("tsbNuevo.Image")));
-			this.tsbNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.tsbNuevo.Name = "tsbNuevo";
-			this.tsbNuevo.Size = new System.Drawing.Size(23, 22);
-			this.tsbNuevo.Text = "Nuevo";
-			this.tsbNuevo.ToolTipText = "Nuevo";
-			this.tsbNuevo.Click += new System.EventHandler(this.tsbNuevo_Click);
-			// 
-			// tsbEliminar
-			// 
-			this.tsbEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.tsbEliminar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEliminar.Image")));
-			this.tsbEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.tsbEliminar.Name = "tsbEliminar";
-			this.tsbEliminar.Size = new System.Drawing.Size(23, 22);
-			this.tsbEliminar.Text = "Eliminar";
-			this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
-			// 
-			// toolStripSeparator2
-			// 
-			this.toolStripSeparator2.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.toolStripSeparator2.Name = "toolStripSeparator2";
-			this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-			// 
-			// toolStripSeparator1
-			// 
-			this.toolStripSeparator1.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.toolStripSeparator1.Name = "toolStripSeparator1";
-			this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-			// 
-			// lbl_Buscar
-			// 
-			this.lbl_Buscar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbl_Buscar.Name = "lbl_Buscar";
-			this.lbl_Buscar.Size = new System.Drawing.Size(69, 22);
-			this.lbl_Buscar.Text = "Buscar por";
-			// 
-			// comboBox_TipoBusqueda
-			// 
-			this.comboBox_TipoBusqueda.Font = new System.Drawing.Font("Verdana", 8.25F);
-			this.comboBox_TipoBusqueda.Name = "comboBox_TipoBusqueda";
-			this.comboBox_TipoBusqueda.Size = new System.Drawing.Size(120, 25);
-			// 
-			// toolStripTextBox_Persona
-			// 
-			this.toolStripTextBox_Persona.AutoSize = false;
-			this.toolStripTextBox_Persona.Font = new System.Drawing.Font("Verdana", 8.25F);
-			this.toolStripTextBox_Persona.Name = "toolStripTextBox_Persona";
-			this.toolStripTextBox_Persona.Size = new System.Drawing.Size(100, 21);
-			this.toolStripTextBox_Persona.Tag = "";
-			this.toolStripTextBox_Persona.ToolTipText = "Palabra a buscar";
-			// 
-			// btn_Buscar
-			// 
-			this.btn_Buscar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.btn_Buscar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Buscar.Image")));
-			this.btn_Buscar.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.btn_Buscar.Name = "btn_Buscar";
-			this.btn_Buscar.Size = new System.Drawing.Size(23, 22);
-			this.btn_Buscar.ToolTipText = "Buscar";
-			this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
 			// 
 			// ID
 			// 
@@ -805,6 +704,89 @@
 			this.Habilitado.ReadOnly = true;
 			this.Habilitado.Width = 70;
 			// 
+			// toolStripCabeceraABMC
+			// 
+			this.toolStripCabeceraABMC.Dock = System.Windows.Forms.DockStyle.None;
+			this.toolStripCabeceraABMC.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbNuevo,
+            tsbEditar,
+            this.tsbEliminar,
+            this.toolStripSeparator2,
+            this.toolStripSeparator1,
+            this.lbl_Buscar,
+            this.comboBox_TipoBusqueda,
+            this.toolStripTextBox_Persona,
+            this.btn_Buscar});
+			this.toolStripCabeceraABMC.Location = new System.Drawing.Point(3, 0);
+			this.toolStripCabeceraABMC.Name = "toolStripCabeceraABMC";
+			this.toolStripCabeceraABMC.Size = new System.Drawing.Size(409, 25);
+			this.toolStripCabeceraABMC.TabIndex = 0;
+			// 
+			// tsbNuevo
+			// 
+			this.tsbNuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.tsbNuevo.Image = ((System.Drawing.Image)(resources.GetObject("tsbNuevo.Image")));
+			this.tsbNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.tsbNuevo.Name = "tsbNuevo";
+			this.tsbNuevo.Size = new System.Drawing.Size(23, 22);
+			this.tsbNuevo.Text = "Nuevo";
+			this.tsbNuevo.ToolTipText = "Nuevo";
+			this.tsbNuevo.Click += new System.EventHandler(this.tsbNuevo_Click);
+			// 
+			// tsbEliminar
+			// 
+			this.tsbEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.tsbEliminar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEliminar.Image")));
+			this.tsbEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.tsbEliminar.Name = "tsbEliminar";
+			this.tsbEliminar.Size = new System.Drawing.Size(23, 22);
+			this.tsbEliminar.Text = "Eliminar";
+			this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
+			// 
+			// toolStripSeparator2
+			// 
+			this.toolStripSeparator2.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.toolStripSeparator2.Name = "toolStripSeparator2";
+			this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+			// 
+			// toolStripSeparator1
+			// 
+			this.toolStripSeparator1.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.toolStripSeparator1.Name = "toolStripSeparator1";
+			this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+			// 
+			// lbl_Buscar
+			// 
+			this.lbl_Buscar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbl_Buscar.Name = "lbl_Buscar";
+			this.lbl_Buscar.Size = new System.Drawing.Size(69, 22);
+			this.lbl_Buscar.Text = "Buscar por";
+			// 
+			// comboBox_TipoBusqueda
+			// 
+			this.comboBox_TipoBusqueda.Font = new System.Drawing.Font("Verdana", 8.25F);
+			this.comboBox_TipoBusqueda.Name = "comboBox_TipoBusqueda";
+			this.comboBox_TipoBusqueda.Size = new System.Drawing.Size(120, 25);
+			// 
+			// toolStripTextBox_Persona
+			// 
+			this.toolStripTextBox_Persona.AutoSize = false;
+			this.toolStripTextBox_Persona.Font = new System.Drawing.Font("Verdana", 8.25F);
+			this.toolStripTextBox_Persona.Name = "toolStripTextBox_Persona";
+			this.toolStripTextBox_Persona.Size = new System.Drawing.Size(100, 21);
+			this.toolStripTextBox_Persona.Tag = "";
+			this.toolStripTextBox_Persona.ToolTipText = "Palabra a buscar";
+			// 
+			// btn_Buscar
+			// 
+			this.btn_Buscar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.btn_Buscar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Buscar.Image")));
+			this.btn_Buscar.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.btn_Buscar.Name = "btn_Buscar";
+			this.btn_Buscar.Size = new System.Drawing.Size(23, 22);
+			this.btn_Buscar.ToolTipText = "Buscar";
+			this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
+			// 
 			// FormPersonas
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -824,8 +806,8 @@
 			this.panel_ABMPersona.ResumeLayout(false);
 			this.panel_ABMPersona.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgv_Personas)).EndInit();
-			this.toolStrip1.ResumeLayout(false);
-			this.toolStrip1.PerformLayout();
+			this.toolStripCabeceraABMC.ResumeLayout(false);
+			this.toolStripCabeceraABMC.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -835,8 +817,7 @@
 		private System.Windows.Forms.ToolStripContainer tc_Personas;
 		private System.Windows.Forms.TableLayoutPanel panel_Personas;
 		private System.Windows.Forms.DataGridView dgv_Personas;
-		private System.Windows.Forms.Button btn_Salir;
-		private System.Windows.Forms.ToolStrip toolStrip1;
+		private System.Windows.Forms.ToolStrip toolStripCabeceraABMC;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
 		private System.Windows.Forms.ToolStripButton tsbNuevo;

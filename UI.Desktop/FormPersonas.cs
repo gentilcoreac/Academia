@@ -84,14 +84,44 @@ namespace UI.Desktop
 		{
 			try
 			{
-				PersonaLogic pl = new PersonaLogic();
 				this.dgv_Personas.AutoGenerateColumns = false;
-				this.dgv_Personas.DataSource = pl.GetAll(comboBox_TipoBusqueda.SelectedItem.ToString(), toolStripTextBox_Persona.Text);
+				PersonaLogic pl = new PersonaLogic();
+				if (UsuarioLogueado.IDPersona.TiposPersona.Equals(Persona.TiposPersonas.Administrador))
+				{
+					this.dgv_Personas.DataSource = pl.GetAll(comboBox_TipoBusqueda.SelectedItem.ToString(), toolStripTextBox_Persona.Text);
+				}
+				else
+				{
+					this.dgv_Personas.DataSource = pl.GetAll("ID", UsuarioLogueado.IDPersona.ID.ToString());
+					VistaAlumnoYProfesor();
+				}
 			}
 			catch (Exception ex)
 			{
 				MessageBox.Show("Error al listar las personas\n"+ex);
 			}
+		}
+		private void VistaAlumnoYProfesor()
+		{
+			PersonaLogic personaLogic = new PersonaLogic();
+			PersonaActual = personaLogic.GetOne(UsuarioLogueado.IDPersona.ID);
+			Modo = FormPersonas.ModoForm.Modificacion;
+			MapearDeDatos();
+			EStablecerObjetosDisponibles();
+		}
+
+		private void EStablecerObjetosDisponibles()
+		{
+
+			toolStripCabeceraABMC.Visible = false;
+			panel_ABMPersona.Visible = true;
+			txt_Nombre.Enabled = false;
+			txt_Apellido.Enabled = false;
+			comboBox_TipoPersona.Enabled = false;
+			comboBox_Plan.Enabled = false;
+			txt_Legajo.Enabled = false;
+			txtUsuario.Enabled = false;
+			checkBox_Habilitado.Enabled = false;
 		}
 
 		public override void MapearDeDatos()
@@ -127,7 +157,7 @@ namespace UI.Desktop
 				case FormPersonas.ModoForm.Baja:
 					this.btnAceptar.Text = "Eliminar";
 					break;
-				case UsuarioDesktop.ModoForm.Consulta:
+				case FormPersonas.ModoForm.Consulta:
 					this.btnAceptar.Text = "Aceptar";
 					break;
 			}
@@ -268,6 +298,7 @@ namespace UI.Desktop
 			txtClave.Text = "";
 			txtUsuario.Text = "";
 		}
+
 		#endregion
 
 		#region Disparadores
@@ -368,8 +399,7 @@ namespace UI.Desktop
 					Modo = FormPersonas.ModoForm.Baja;
 					PersonaLogic personaLogic = new PersonaLogic();
 					personaLogic.Delete(ID);
-					this.Notificar("Operacón correcta", "Operación realizada correctamente"
-									, MessageBoxButtons.OK, MessageBoxIcon.Information);
+					this.Notificar("Operacón correcta", "Operación realizada correctamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					this.Listar();
 				}
 			}
@@ -387,9 +417,7 @@ namespace UI.Desktop
 				if (this.Validar())
 				{
 						this.GuardarCambios();
-						//this.Dispose();
-						this.Notificar("Operacón correcta", "Operación realizada correctamente"
-										, MessageBoxButtons.OK, MessageBoxIcon.Information);					
+						this.Notificar("Operacón correcta", "Operación realizada correctamente"	, MessageBoxButtons.OK, MessageBoxIcon.Information);					
 						this.Listar();
 				}
 			}
@@ -406,6 +434,5 @@ namespace UI.Desktop
 		}
 
 		#endregion
-
 	}
 }
