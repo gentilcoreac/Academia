@@ -56,5 +56,10 @@ namespace Util
 			}
 			return match.Groups[1].Value + domainName;
 		}
+
+		public static bool IsValidNumero(String cadena)
+		{
+			return Regex.IsMatch(cadena, "[1-9][0-9]*");
+		}
 	}
 }

@@ -56,9 +56,12 @@ namespace UI.Desktop
 			InitializeComponent();
 		}
 		#endregion
-		
-		#region Metodos
 
+		#region Metodos
+		/// <summary>
+		/// Completa los combo box de busqueda y de los ABM
+		/// </summary>
+		/// <remarks></remarks>
 		private void CompletarComboBox()
 		{
 			//Combo busqueda
@@ -79,7 +82,10 @@ namespace UI.Desktop
 			this.comboBox_TipoPersona.DisplayMember = "ID Persona";
 			this.comboBox_TipoPersona.DataSource = Enum.GetValues(typeof(Persona.TiposPersonas));
 		}
-
+		/// <summary>
+		/// Segun sea administrador o alumno/profesor el usuario que se ha logueado se listaran todos los datos de las personas o de la persona, respectivamente
+		/// </summary>
+		/// <remarks></remarks>
 		public void Listar()
 		{
 			try
@@ -88,7 +94,7 @@ namespace UI.Desktop
 				PersonaLogic pl = new PersonaLogic();
 				if (UsuarioLogueado.IDPersona.TiposPersona.Equals(Persona.TiposPersonas.Administrador))
 				{
-					this.dgv_Personas.DataSource = pl.GetAll(comboBox_TipoBusqueda.SelectedItem.ToString(), toolStripTextBox_Persona.Text);
+					this.dgv_Personas.DataSource = pl.GetAll(comboBox_TipoBusqueda.SelectedItem.ToString(), toolStripTextBox_Busqueda.Text);
 				}
 				else
 				{
@@ -101,6 +107,11 @@ namespace UI.Desktop
 				MessageBox.Show("Error al listar las personas\n"+ex);
 			}
 		}
+
+		/// <summary>
+		/// En caso que el usuario logueado sea alumno/profesor se establecerá la vista correspondiente para el mismo.
+		/// </summary>
+		/// <remarks></remarks>
 		private void VistaAlumnoYProfesor()
 		{
 			PersonaLogic personaLogic = new PersonaLogic();
@@ -110,20 +121,29 @@ namespace UI.Desktop
 			EStablecerObjetosDisponibles();
 		}
 
+		/// <summary>
+		/// En caso que sea alumno/profesor se le bloqueran ciertos campos para que no pueda modificarlos
+		/// </summary>
+		/// <remarks></remarks>
 		private void EStablecerObjetosDisponibles()
 		{
-
-			toolStripCabeceraABMC.Visible = false;
-			panel_ABMPersona.Visible = true;
+			toolStripCabeceraABMC.Visible = false; 
 			txt_Nombre.Enabled = false;
 			txt_Apellido.Enabled = false;
+			txt_FechaNacimiento.Enabled = false;
 			comboBox_TipoPersona.Enabled = false;
 			comboBox_Plan.Enabled = false;
 			txt_Legajo.Enabled = false;
 			txtUsuario.Enabled = false;
 			checkBox_Habilitado.Enabled = false;
+			txt_ID_Persona.Enabled = false;
+			txtID_Usuario.Enabled = false;
 		}
 
+		/// <summary>
+		/// Mapea los datos que estan en el objeto PersonaActual al formulario
+		/// </summary>
+		/// <remarks></remarks>
 		public override void MapearDeDatos()
 		{
 			txt_ID_Persona.Text = PersonaActual.ID.ToString();
@@ -163,6 +183,10 @@ namespace UI.Desktop
 			}
 		}
 
+		/// <summary>
+		/// Mapea los datos del formulario a la propiedad PersonaACtual
+		/// </summary>
+		/// <remarks></remarks>
 		public override void MapearADatos()
 		{
 			if (this.Modo == FormPersonas.ModoForm.Alta)
@@ -216,6 +240,7 @@ namespace UI.Desktop
 			}
 		}
 
+
 		public override void GuardarCambios()
 		{
 			this.MapearADatos();
@@ -223,6 +248,11 @@ namespace UI.Desktop
 			personaLogic.Save(PersonaActual);
 		}
 
+
+		/// <summary>
+		/// Valida que los campos no esten vacíos, que el email del usuario y el personal tenga el formato correcto, que la clave tenga mas de 8 caracteres
+		/// </summary>
+		/// <remarks></remarks>
 		public override bool Validar()
 		{
 			if (String.IsNullOrEmpty(this.txt_Apellido.Text) 
@@ -281,7 +311,11 @@ namespace UI.Desktop
 			this.Notificar(this.Text, mensaje, botones, icono);
 		}
 
-		private void LimpiarCampos()
+		/// <summary>
+		/// Sobrescribe todos los valores del formulario con valores vacios. (Limpia el formulario) 
+		/// </summary>
+		/// <remarks></remarks>
+		public override void LimpiarCampos()
 		{
 			txt_Apellido.Text = "";
 			txt_Nombre.Text = "";
@@ -289,9 +323,7 @@ namespace UI.Desktop
 			txt_Email.Text = "";
 			txt_FechaNacimiento.Text = "";
 			txt_Legajo.Text = "";
-			//comboBox_Plan.Text = "";
 			txt_Telefono.Text = "";
-			//comboBox_TipoPersona.Text = "";
 			txtID_Usuario.Text = "";
 			checkBox_Habilitado.Checked = true;
 			txtEmail.Text = "";
@@ -313,53 +345,19 @@ namespace UI.Desktop
 			Listar();
 		}
 
-		private void btn_Salir_Click(object sender, EventArgs e)
-		{
-			this.Dispose();
-		}
-
-		#region formato
-		///Para mostrar/ocultar el calendario
-		private void txt_FechaNacimiento_Click(object sender, EventArgs e)
-		{
-			if (calendar_Nacimiento_ventana.Visible == true)
-			{
-				calendar_Nacimiento_ventana.Visible = false;
-			}
-			else
-			{
-				calendar_Nacimiento_ventana.Visible = true;
-			}
-		}
-		///Muestra el textBox la fecha seleccionada en el calendario
-		private void calendar_Nacimiento_DateSelected(object sender, DateRangeEventArgs e)
-		{
-			txt_FechaNacimiento.Text = calendar_Nacimiento_ventana.SelectionStart.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
-			calendar_Nacimiento_ventana.Visible = false;
-		}
-
-		///Llama al metodo de Util para que se permita utilizar las relaciones de la POO en una datagridview. 
-		///Ya que si no esta, no permitiria realizar Persona.Plan.Descripcion (permitiria solo Persona.Nombre)
-		private void dgv_Personas_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-		{
-			Util.FormatoCelda.FormatoCeldaParaObjects(sender,e, this.dgv_Personas);
-		}
-		#endregion
-
 		private void tsbNuevo_Click(object sender, EventArgs e)
 		{
 			try
 			{
 				this.LimpiarCampos();
-				Modo = ApplicationForm.ModoForm.Alta;
-				panel_ABMPersona.Visible = true;
+				Modo = FormPersonas.ModoForm.Alta;
 				PersonaLogic personaLogic = new PersonaLogic();
 				UsuarioLogic usuarioLogic = new UsuarioLogic();
-				txt_ID_Persona.Text = (personaLogic.GetMaxID()+1).ToString();
-				txtID_Usuario.Text = (usuarioLogic.GetMaxID()+1).ToString();
+				txt_ID_Persona.Text = (personaLogic.GetMaxID() + 1).ToString();
+				txtID_Usuario.Text = (usuarioLogic.GetMaxID() + 1).ToString();
 				this.Listar();
 			}
-			catch(Exception ex)
+			catch (Exception ex)
 			{
 				this.Notificar("Error en alta", "Error al crear un usuario \n\n" + ex
 								, MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -376,8 +374,7 @@ namespace UI.Desktop
 				this.LimpiarCampos();
 				PersonaLogic personaLogic = new PersonaLogic();
 				PersonaActual = personaLogic.GetOne(ID);
-				this.MapearDeDatos();
-				panel_ABMPersona.Visible = true;
+				this.MapearDeDatos(); 
 			}
 			catch (Exception ex)
 			{
@@ -432,7 +429,36 @@ namespace UI.Desktop
 		{
 			Listar();
 		}
-
+		///Para mostrar/ocultar el calendario
+		private void txt_FechaNacimiento_Click(object sender, EventArgs e)
+		{
+			if (calendar_Nacimiento_ventana.Visible == true)
+			{
+				calendar_Nacimiento_ventana.Visible = false;
+			}
+			else
+			{
+				calendar_Nacimiento_ventana.Visible = true;
+			}
+		}
+		///Muestra en el textBox de la fecha lo que se haya seleccionado en el popup del calendario
+		private void calendar_Nacimiento_DateSelected(object sender, DateRangeEventArgs e)
+		{
+			txt_FechaNacimiento.Text = calendar_Nacimiento_ventana.SelectionStart.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
+			calendar_Nacimiento_ventana.Visible = false;
+		}
 		#endregion
+
+		#region Formato
+
+
+		///Llama al metodo que se dejó UTIL para que se permita utilizar las relaciones de la POO en una datagridview. 
+		///Ya que si no esta, no permitiria realizar Persona.Plan.Descripcion (permitiria solo Persona.Nombre)
+		private void dgv_Personas_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+		{
+			Util.FormatoCelda.FormatoCeldaParaObjects(sender, e, this.dgv_Personas);
+		}
+		#endregion
+
 	}
 }

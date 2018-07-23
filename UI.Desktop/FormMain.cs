@@ -22,8 +22,13 @@ namespace UI.Desktop
 
 		private void FormMain_Load(object sender, EventArgs e)
 		{
-		} 
-		
+		}
+
+
+		private void SetUsuarioLogueado()
+		{
+			this.Text = "Academia   |   Usuario " + UsuarioLogueado.IDPersona.TiposPersona.ToString() + ",  " + UsuarioLogueado.NombreUsuario;
+		}
 
 		private void salirToolStripMenuItem_Click(object sender, EventArgs e)
 		{
@@ -63,9 +68,19 @@ namespace UI.Desktop
 			appPersonas.Show();
 		}
 
-		private void SetUsuarioLogueado()
+		private void ToolStripMenuItem_materias_Click(object sender, EventArgs e)
 		{
-			this.Text="Academia   |   Usuario: " +UsuarioLogueado.NombreUsuario + ", Tipo: "+ UsuarioLogueado.IDPersona.TiposPersona.ToString()  ;
+			panel_Principal.Controls.Clear();
+			FormMaterias appMaterias = new FormMaterias();
+			appMaterias.TopLevel = false;
+			appMaterias.AutoScroll = false;
+			this.panel_Principal.Controls.Add(appMaterias);
+			appMaterias.Show();
+		}
+
+		private void ToolStripMenuItem_planes_Click(object sender, EventArgs e)
+		{
+			//CODIFICAR
 		}
 	}
 }

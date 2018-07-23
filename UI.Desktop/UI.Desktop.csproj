@@ -67,11 +67,23 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMaterias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMaterias.Designer.cs">
+      <DependentUpon>FormMaterias.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPersonas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormPersonas.Designer.cs">
       <DependentUpon>FormPersonas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPlanes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPlanes.Designer.cs">
+      <DependentUpon>FormPlanes.cs</DependentUpon>
     </Compile>
     <Compile Include="FormUsuarios.cs">
       <SubType>Form</SubType>
@@ -92,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMaterias.resx">
+      <DependentUpon>FormMaterias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPersonas.resx">
       <DependentUpon>FormPersonas.cs</DependentUpon>

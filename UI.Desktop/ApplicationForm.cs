@@ -55,6 +55,8 @@ namespace UI.Desktop
 			this.Notificar(this.Text, mensaje, botones, icono);
 		}
 
+		public virtual void LimpiarCampos() { }
+
 		#endregion
 	}
 }

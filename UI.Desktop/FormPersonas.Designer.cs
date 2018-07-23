@@ -92,7 +92,7 @@
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.lbl_Buscar = new System.Windows.Forms.ToolStripLabel();
 			this.comboBox_TipoBusqueda = new System.Windows.Forms.ToolStripComboBox();
-			this.toolStripTextBox_Persona = new System.Windows.Forms.ToolStripTextBox();
+			this.toolStripTextBox_Busqueda = new System.Windows.Forms.ToolStripTextBox();
 			this.btn_Buscar = new System.Windows.Forms.ToolStripButton();
 			tsbEditar = new System.Windows.Forms.ToolStripButton();
 			this.tc_Personas.ContentPanel.SuspendLayout();
@@ -207,7 +207,6 @@
 			this.panel_ABMPersona.Name = "panel_ABMPersona";
 			this.panel_ABMPersona.Size = new System.Drawing.Size(1074, 250);
 			this.panel_ABMPersona.TabIndex = 3;
-			this.panel_ABMPersona.Visible = false;
 			// 
 			// calendar_Nacimiento_ventana
 			// 
@@ -715,11 +714,11 @@
             this.toolStripSeparator1,
             this.lbl_Buscar,
             this.comboBox_TipoBusqueda,
-            this.toolStripTextBox_Persona,
+            this.toolStripTextBox_Busqueda,
             this.btn_Buscar});
 			this.toolStripCabeceraABMC.Location = new System.Drawing.Point(3, 0);
 			this.toolStripCabeceraABMC.Name = "toolStripCabeceraABMC";
-			this.toolStripCabeceraABMC.Size = new System.Drawing.Size(409, 25);
+			this.toolStripCabeceraABMC.Size = new System.Drawing.Size(440, 25);
 			this.toolStripCabeceraABMC.TabIndex = 0;
 			// 
 			// tsbNuevo
@@ -768,14 +767,14 @@
 			this.comboBox_TipoBusqueda.Name = "comboBox_TipoBusqueda";
 			this.comboBox_TipoBusqueda.Size = new System.Drawing.Size(120, 25);
 			// 
-			// toolStripTextBox_Persona
+			// toolStripTextBox_Busqueda
 			// 
-			this.toolStripTextBox_Persona.AutoSize = false;
-			this.toolStripTextBox_Persona.Font = new System.Drawing.Font("Verdana", 8.25F);
-			this.toolStripTextBox_Persona.Name = "toolStripTextBox_Persona";
-			this.toolStripTextBox_Persona.Size = new System.Drawing.Size(100, 21);
-			this.toolStripTextBox_Persona.Tag = "";
-			this.toolStripTextBox_Persona.ToolTipText = "Palabra a buscar";
+			this.toolStripTextBox_Busqueda.AutoSize = false;
+			this.toolStripTextBox_Busqueda.Font = new System.Drawing.Font("Verdana", 8.25F);
+			this.toolStripTextBox_Busqueda.Name = "toolStripTextBox_Busqueda";
+			this.toolStripTextBox_Busqueda.Size = new System.Drawing.Size(100, 21);
+			this.toolStripTextBox_Busqueda.Tag = "";
+			this.toolStripTextBox_Busqueda.ToolTipText = "Palabra a buscar";
 			// 
 			// btn_Buscar
 			// 
@@ -824,7 +823,7 @@
 		private System.Windows.Forms.ToolStripButton tsbEliminar;
 		private System.Windows.Forms.ToolStripLabel lbl_Buscar;
 		private System.Windows.Forms.ToolStripComboBox comboBox_TipoBusqueda;
-		private System.Windows.Forms.ToolStripTextBox toolStripTextBox_Persona;
+		private System.Windows.Forms.ToolStripTextBox toolStripTextBox_Busqueda;
 		private System.Windows.Forms.ToolStripButton btn_Buscar;
 		private System.Windows.Forms.Panel panel_ABMPersona;
 		private System.Windows.Forms.Label lbl_FechaNacimiento;

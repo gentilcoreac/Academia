@@ -11,7 +11,8 @@ namespace Business.Entities
         private string _Descripcion;
         private int _HSSemanales;
         private int _HSTotales;
-        private int _IDPlan;
+        //private int _IDPlan;
+		private Plan _Plan;
 
         public string Descripcion
         {
@@ -28,12 +29,16 @@ namespace Business.Entities
             get { return _HSTotales; }
             set { _HSTotales = value; }
         }
-        public int IDPlan
-        {
-            get { return _IDPlan ; }
-            set { _IDPlan = value ; }
-        }
-
+        //public int IDPlan
+        //{
+        //    get { return _IDPlan ; }
+        //    set { _IDPlan = value ; }
+        //}
+		public Plan Plan
+		{
+			get { return _Plan; }
+			set { _Plan = value; } 
+		}
 
     }
 }
