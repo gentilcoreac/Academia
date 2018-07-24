@@ -238,6 +238,7 @@ namespace Data.Database
 			return oUsr;
 		}
 
+
 		public int GetMaxID()
 		{
 			int id = -1;
@@ -377,6 +378,8 @@ namespace Data.Database
 				this.CloseConnection();
 			}
 		}
+
+
 
 		public void Save(Usuario usuario)
         {

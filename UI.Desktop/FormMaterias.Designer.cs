@@ -119,6 +119,7 @@
 			// 
 			// dgv_Materias
 			// 
+			this.dgv_Materias.BackgroundColor = System.Drawing.Color.White;
 			this.dgv_Materias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgv_Materias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID_Materia,
@@ -233,7 +234,7 @@
 			// 
 			// btnAceptar
 			// 
-			this.btnAceptar.Location = new System.Drawing.Point(401, 118);
+			this.btnAceptar.Location = new System.Drawing.Point(479, 119);
 			this.btnAceptar.Name = "btnAceptar";
 			this.btnAceptar.Size = new System.Drawing.Size(75, 23);
 			this.btnAceptar.TabIndex = 8;
@@ -263,10 +264,11 @@
 			// 
 			// comboBox_Plan
 			// 
+			this.comboBox_Plan.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.comboBox_Plan.FormattingEnabled = true;
 			this.comboBox_Plan.Location = new System.Drawing.Point(377, 40);
 			this.comboBox_Plan.Name = "comboBox_Plan";
-			this.comboBox_Plan.Size = new System.Drawing.Size(100, 21);
+			this.comboBox_Plan.Size = new System.Drawing.Size(177, 21);
 			this.comboBox_Plan.TabIndex = 7;
 			// 
 			// lbl_IDPlan

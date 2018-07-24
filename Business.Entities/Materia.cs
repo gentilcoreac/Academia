@@ -40,5 +40,5 @@ namespace Business.Entities
 			set { _Plan = value; } 
 		}
 
-    }
+	}
 }

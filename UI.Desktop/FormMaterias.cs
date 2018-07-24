@@ -53,20 +53,18 @@ namespace UI.Desktop
 
 		private void CompletarComboBox()
 		{
-			//Combo busqueda
+			////Combo busqueda
 			foreach (var item in Enum.GetValues(typeof(ValoresABuscar)))
 			{
 				comboBox_TipoBusqueda.Items.Add(item);
 			}
 			comboBox_TipoBusqueda.SelectedIndex = 0;
 
-
-			//Combo planes
+			////Combo planes
 			PlanLogic planLogic = new PlanLogic();
-			comboBox_Plan.DisplayMember = "Descripcion";
+			comboBox_Plan.DisplayMember = "ValorDelToString";
 			comboBox_Plan.ValueMember = "ID";
 			comboBox_Plan.DataSource = planLogic.GetAll();
-
 		}
 
 		private void Listar()
@@ -122,7 +120,7 @@ namespace UI.Desktop
 			txt_DescripcionMateria.Text = MateriaActual.Descripcion;
 			num_HSSemanales.Text = MateriaActual.HSSemanales.ToString();
 			num_HSTotales.Text = MateriaActual.HSTotales.ToString();
-			comboBox_Plan.SelectedItem = MateriaActual.Plan.Descripcion;
+			comboBox_Plan.SelectedValue = MateriaActual.Plan.ID;
 
 			switch (Modo)
 			{
@@ -164,7 +162,6 @@ namespace UI.Desktop
 				MateriaActual.HSTotales = Convert.ToInt32(num_HSTotales.Text);
 
 				MateriaActual.Plan = (Plan)comboBox_Plan.SelectedItem;
-
 			}
 			if (this.Modo == FormPersonas.ModoForm.Baja)
 			{
@@ -213,20 +210,12 @@ namespace UI.Desktop
 		}
 		#endregion
 
-		#region Formato
-		private void dgv_Materias_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-		{
-			Util.FormatoCelda.FormatoCeldaParaObjects(sender, e, this.dgv_Materias);
-		}
-		#endregion
-
 		#region Disparadores
 		private void FormMaterias_Load(object sender, EventArgs e)
 		{
 			CompletarComboBox();
 			Listar();
 		}
-		#endregion
 
 		private void tsbNuevo_Click(object sender, EventArgs e)
 		{
@@ -309,5 +298,14 @@ namespace UI.Desktop
 		{
 			Listar();
 		}
+		#endregion
+
+		#region Formato
+		private void dgv_Materias_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+		{
+			Util.FormatoCelda.FormatoCeldaParaObjects(sender, e, this.dgv_Materias);
+		}
+		#endregion
+
 	}
 }

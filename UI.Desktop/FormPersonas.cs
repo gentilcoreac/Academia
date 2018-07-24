@@ -71,9 +71,9 @@ namespace UI.Desktop
 			}
 			comboBox_TipoBusqueda.SelectedIndex = 0;
 
-			//Combo planes
+			////Combo planes
 			PlanLogic planLogic = new PlanLogic();
-			comboBox_Plan.DisplayMember = "Descripcion";
+			comboBox_Plan.DisplayMember = "ValorDelToString";
 			comboBox_Plan.ValueMember = "ID";
 			comboBox_Plan.DataSource = planLogic.GetAll();
 
@@ -154,11 +154,10 @@ namespace UI.Desktop
 			txt_Telefono.Text = PersonaActual.Telefono;
 			txt_FechaNacimiento.Text = PersonaActual.FechaNacimiento.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
 			//si no es administrador se le pone al legajo vacio
-			txt_Legajo.Text = PersonaActual.TiposPersona!=Persona.TiposPersonas.Administrador ? PersonaActual.Legajo.ToString() : "-";
-		  //comboBox_TipoPersona.ValueMember = "ID";
+			txt_Legajo.Text = PersonaActual.TiposPersona!=Persona.TiposPersonas.Administrador ? PersonaActual.Legajo.ToString() : "-1";
+
 			comboBox_TipoPersona.SelectedItem = PersonaActual.TiposPersona;
-			comboBox_Plan.SelectedItem = PersonaActual.Plan_persona.Descripcion;
-			//comboBox_Plan.ValueMember = "ID";
+			comboBox_Plan.SelectedValue = PersonaActual.Plan_persona.ID;
 
 			txtID_Usuario.Text = PersonaActual.UsuarioPersona.ID.ToString();
 			checkBox_Habilitado.Checked = PersonaActual.UsuarioPersona.Habilitado;
@@ -329,6 +328,7 @@ namespace UI.Desktop
 			txtEmail.Text = "";
 			txtClave.Text = "";
 			txtUsuario.Text = "";
+			txtConfirmarClave.Text = "";
 		}
 
 		#endregion

@@ -39,9 +39,9 @@
 			this.txtUsuario = new System.Windows.Forms.TextBox();
 			this.txtConfirmarClave = new System.Windows.Forms.TextBox();
 			this.label_ConfirmarClave = new System.Windows.Forms.Label();
+			this.checkBox_Habilitado = new System.Windows.Forms.CheckBox();
 			this.btnAceptar = new System.Windows.Forms.Button();
 			this.btnCancelar = new System.Windows.Forms.Button();
-			this.checkBox_Habilitado = new System.Windows.Forms.CheckBox();
 			this.txtIDPersona = new System.Windows.Forms.TextBox();
 			this.lblIDPersona = new System.Windows.Forms.Label();
 			this.tableLayoutPanel1.SuspendLayout();
@@ -170,6 +170,18 @@
 			this.label_ConfirmarClave.TabIndex = 7;
 			this.label_ConfirmarClave.Text = "Confirmar clave";
 			// 
+			// checkBox_Habilitado
+			// 
+			this.checkBox_Habilitado.Anchor = System.Windows.Forms.AnchorStyles.Right;
+			this.checkBox_Habilitado.AutoSize = true;
+			this.checkBox_Habilitado.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.checkBox_Habilitado.Location = new System.Drawing.Point(24, 133);
+			this.checkBox_Habilitado.Name = "checkBox_Habilitado";
+			this.checkBox_Habilitado.Size = new System.Drawing.Size(73, 17);
+			this.checkBox_Habilitado.TabIndex = 4;
+			this.checkBox_Habilitado.Text = "Habilitado";
+			this.checkBox_Habilitado.UseVisualStyleBackColor = true;
+			// 
 			// btnAceptar
 			// 
 			this.btnAceptar.Location = new System.Drawing.Point(103, 182);
@@ -189,18 +201,6 @@
 			this.btnCancelar.Text = "Cancelar";
 			this.btnCancelar.UseVisualStyleBackColor = true;
 			this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-			// 
-			// checkBox_Habilitado
-			// 
-			this.checkBox_Habilitado.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.checkBox_Habilitado.AutoSize = true;
-			this.checkBox_Habilitado.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.checkBox_Habilitado.Location = new System.Drawing.Point(24, 133);
-			this.checkBox_Habilitado.Name = "checkBox_Habilitado";
-			this.checkBox_Habilitado.Size = new System.Drawing.Size(73, 17);
-			this.checkBox_Habilitado.TabIndex = 4;
-			this.checkBox_Habilitado.Text = "Habilitado";
-			this.checkBox_Habilitado.UseVisualStyleBackColor = true;
 			// 
 			// txtIDPersona
 			// 

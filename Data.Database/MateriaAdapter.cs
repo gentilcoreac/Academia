@@ -227,7 +227,7 @@ namespace Data.Database
 							Plan oPlan = new Plan();
 							oPlan.ID = (int)oReader["id_plan"];
 							oPlan.Descripcion = (string)oReader["desc_plan"];
-							oMateria.Plan = oPlan;
+							oMateria.Plan = oPlan; 
 
 							// Agregamos el objeto a la coleccion de resultados
 							listaMateria.Add(oMateria);

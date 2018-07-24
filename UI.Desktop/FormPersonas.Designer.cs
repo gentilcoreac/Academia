@@ -32,7 +32,6 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPersonas));
 			this.tc_Personas = new System.Windows.Forms.ToolStripContainer();
 			this.panel_Personas = new System.Windows.Forms.TableLayoutPanel();
-			this.btn_Actualizar = new System.Windows.Forms.Button();
 			this.panel_ABMPersona = new System.Windows.Forms.Panel();
 			this.calendar_Nacimiento_ventana = new System.Windows.Forms.MonthCalendar();
 			this.lbl_Cabecera3 = new System.Windows.Forms.Label();
@@ -94,6 +93,7 @@
 			this.comboBox_TipoBusqueda = new System.Windows.Forms.ToolStripComboBox();
 			this.toolStripTextBox_Busqueda = new System.Windows.Forms.ToolStripTextBox();
 			this.btn_Buscar = new System.Windows.Forms.ToolStripButton();
+			this.btn_Actualizar = new System.Windows.Forms.Button();
 			tsbEditar = new System.Windows.Forms.ToolStripButton();
 			this.tc_Personas.ContentPanel.SuspendLayout();
 			this.tc_Personas.TopToolStripPanel.SuspendLayout();
@@ -140,8 +140,8 @@
 			this.panel_Personas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
 			this.panel_Personas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
 			this.panel_Personas.Controls.Add(this.btn_Actualizar, 0, 2);
-			this.panel_Personas.Controls.Add(this.panel_ABMPersona, 0, 0);
-			this.panel_Personas.Controls.Add(this.dgv_Personas, 0, 1);
+			this.panel_Personas.Controls.Add(this.panel_ABMPersona, 0, 1);
+			this.panel_Personas.Controls.Add(this.dgv_Personas, 0, 0);
 			this.panel_Personas.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel_Personas.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.panel_Personas.Location = new System.Drawing.Point(0, 0);
@@ -152,17 +152,6 @@
 			this.panel_Personas.RowStyles.Add(new System.Windows.Forms.RowStyle());
 			this.panel_Personas.Size = new System.Drawing.Size(1080, 695);
 			this.panel_Personas.TabIndex = 0;
-			// 
-			// btn_Actualizar
-			// 
-			this.btn_Actualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btn_Actualizar.Location = new System.Drawing.Point(1002, 668);
-			this.btn_Actualizar.Name = "btn_Actualizar";
-			this.btn_Actualizar.Size = new System.Drawing.Size(75, 23);
-			this.btn_Actualizar.TabIndex = 1;
-			this.btn_Actualizar.Text = "Actualizar";
-			this.btn_Actualizar.UseVisualStyleBackColor = true;
-			this.btn_Actualizar.Click += new System.EventHandler(this.btn_Actualizar_Click);
 			// 
 			// panel_ABMPersona
 			// 
@@ -203,9 +192,9 @@
 			this.panel_ABMPersona.Controls.Add(this.lbl_Legajo);
 			this.panel_ABMPersona.Controls.Add(this.lbl_ID);
 			this.panel_ABMPersona.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel_ABMPersona.Location = new System.Drawing.Point(3, 3);
+			this.panel_ABMPersona.Location = new System.Drawing.Point(3, 259);
 			this.panel_ABMPersona.Name = "panel_ABMPersona";
-			this.panel_ABMPersona.Size = new System.Drawing.Size(1074, 250);
+			this.panel_ABMPersona.Size = new System.Drawing.Size(1074, 403);
 			this.panel_ABMPersona.TabIndex = 3;
 			// 
 			// calendar_Nacimiento_ventana
@@ -580,11 +569,11 @@
             this.Usuario_Email,
             this.Habilitado});
 			this.dgv_Personas.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.dgv_Personas.Location = new System.Drawing.Point(3, 259);
+			this.dgv_Personas.Location = new System.Drawing.Point(3, 3);
 			this.dgv_Personas.Name = "dgv_Personas";
 			this.dgv_Personas.ReadOnly = true;
 			this.dgv_Personas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dgv_Personas.Size = new System.Drawing.Size(1074, 403);
+			this.dgv_Personas.Size = new System.Drawing.Size(1074, 250);
 			this.dgv_Personas.TabIndex = 0;
 			this.dgv_Personas.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_Personas_CellFormatting);
 			// 
@@ -718,7 +707,7 @@
             this.btn_Buscar});
 			this.toolStripCabeceraABMC.Location = new System.Drawing.Point(3, 0);
 			this.toolStripCabeceraABMC.Name = "toolStripCabeceraABMC";
-			this.toolStripCabeceraABMC.Size = new System.Drawing.Size(440, 25);
+			this.toolStripCabeceraABMC.Size = new System.Drawing.Size(409, 25);
 			this.toolStripCabeceraABMC.TabIndex = 0;
 			// 
 			// tsbNuevo
@@ -785,6 +774,17 @@
 			this.btn_Buscar.Size = new System.Drawing.Size(23, 22);
 			this.btn_Buscar.ToolTipText = "Buscar";
 			this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
+			// 
+			// btn_Actualizar
+			// 
+			this.btn_Actualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btn_Actualizar.Location = new System.Drawing.Point(1002, 668);
+			this.btn_Actualizar.Name = "btn_Actualizar";
+			this.btn_Actualizar.Size = new System.Drawing.Size(75, 23);
+			this.btn_Actualizar.TabIndex = 1;
+			this.btn_Actualizar.Text = "Actualizar";
+			this.btn_Actualizar.UseVisualStyleBackColor = true;
+			this.btn_Actualizar.Click += new System.EventHandler(this.btn_Actualizar_Click);
 			// 
 			// FormPersonas
 			// 
@@ -858,7 +858,6 @@
 		private System.Windows.Forms.TextBox txtConfirmarClave;
 		private System.Windows.Forms.Label label_ConfirmarClave;
 		private System.Windows.Forms.CheckBox checkBox_Habilitado;
-		private System.Windows.Forms.Button btn_Actualizar;
 		private System.Windows.Forms.Label lbl_Cabecera3;
 		private System.Windows.Forms.Label lbl_Cabecera2;
 		private System.Windows.Forms.Label lbl_Cabecera1;
@@ -877,5 +876,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Clave;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Usuario_Email;
 		private System.Windows.Forms.DataGridViewCheckBoxColumn Habilitado;
+		private System.Windows.Forms.Button btn_Actualizar;
 	}
 }

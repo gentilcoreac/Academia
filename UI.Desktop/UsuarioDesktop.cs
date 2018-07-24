@@ -135,25 +135,25 @@ namespace UI.Desktop
 				//|| String.IsNullOrEmpty(this.txtIDPersona.Text)
 				)
 			{
-				this.Notificar("Por favor, complete todos los campos"
-						, "Cuidado, revisar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				this.Notificar("Cuidado, revisar", "Por favor, complete todos los campos",
+						 MessageBoxButtons.OK, MessageBoxIcon.Information);
 				return false;
 			} else if (this.txtClave.Text.Length < 8)
 			{
-				this.Notificar("La contraseña debe tener 8 o más caracteres"
-						, "Cuidado, revisar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				this.Notificar("Cuidado, revisar","La contraseña debe tener 8 o más caracteres",
+						 MessageBoxButtons.OK, MessageBoxIcon.Information);
 				return false;
 			}
 			else if (this.txtClave.Text != this.txtConfirmarClave.Text )
 			{
-				this.Notificar("No coincide la clave con su clave de confirmación"
-						, "Cuidado, revisar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				this.Notificar("Cuidado, revisar", "No coincide la clave con su clave de confirmación",
+						  MessageBoxButtons.OK, MessageBoxIcon.Information);
 				return false;
 			}
 			else if (!Util.Campo.IsValidEmail(this.txtEmail.Text))
 			{
-				this.Notificar("Formato de email incorrecto"
-						, "Cuidado, revisar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				this.Notificar("Cuidado, revisar", "Formato de email incorrecto",
+						 MessageBoxButtons.OK, MessageBoxIcon.Information);
 				return false;
 			} else
 			{
