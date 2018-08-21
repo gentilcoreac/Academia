@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Business.Logic
 {
-	public class MateriaLogic
+	public class MateriaLogic: BusinessLogic
 	{
 		public MateriaAdapter _materiaData;
 		public MateriaAdapter MateriaData

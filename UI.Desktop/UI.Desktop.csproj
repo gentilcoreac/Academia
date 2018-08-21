@@ -55,6 +55,18 @@
     <Compile Include="ApplicationForm.Designer.cs">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCursos.Designer.cs">
+      <DependentUpon>FormCursos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInscripciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInscripciones.Designer.cs">
+      <DependentUpon>FormInscripciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +111,12 @@
     <Compile Include="UsuarioDesktop.Designer.cs">
       <DependentUpon>UsuarioDesktop.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormCursos.resx">
+      <DependentUpon>FormCursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInscripciones.resx">
+      <DependentUpon>FormInscripciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPersonas.resx">
       <DependentUpon>FormPersonas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPlanes.resx">
+      <DependentUpon>FormPlanes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUsuarios.resx">
       <DependentUpon>FormUsuarios.cs</DependentUpon>

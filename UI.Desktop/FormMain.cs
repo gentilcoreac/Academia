@@ -80,7 +80,42 @@ namespace UI.Desktop
 
 		private void ToolStripMenuItem_planes_Click(object sender, EventArgs e)
 		{
-			//CODIFICAR
+			panel_Principal.Controls.Clear();
+			FormPlanes appPlanes = new FormPlanes();
+			appPlanes.TopLevel = false;
+			appPlanes.AutoScroll = false;
+			this.panel_Principal.Controls.Add(appPlanes);
+			appPlanes.Show();
+		}
+
+		private void ToolStripMenuItem_Cursos_Click(object sender, EventArgs e)
+		{
+			panel_Principal.Controls.Clear();
+			FormPlanes appPlanes = new FormPlanes();
+			appPlanes.TopLevel = false;
+			appPlanes.AutoScroll = false;
+			this.panel_Principal.Controls.Add(appPlanes);
+			appPlanes.Show();
+		}
+
+		private void ToolStripMenuItem_Cursos_Click_1(object sender, EventArgs e)
+		{
+			panel_Principal.Controls.Clear();
+			FormCursos appCursos = new FormCursos();
+			appCursos.TopLevel = false;
+			appCursos.AutoScroll = false;
+			this.panel_Principal.Controls.Add(appCursos);
+			appCursos.Show();
+		}
+
+		private void ToolStripMenuItem_Inscripciones_Click(object sender, EventArgs e)
+		{
+			panel_Principal.Controls.Clear();
+			FormInscripciones appInscripciones = new FormInscripciones();
+			appInscripciones.TopLevel = false;
+			appInscripciones.AutoScroll = false;
+			this.panel_Principal.Controls.Add(appInscripciones);
+			appInscripciones.Show();
 		}
 	}
 }

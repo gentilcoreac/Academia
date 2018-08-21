@@ -34,11 +34,13 @@
 			this.ToolStripMenuItem_gestion = new System.Windows.Forms.ToolStripMenuItem();
 			this.ToolStripMenuItem_usuarios = new System.Windows.Forms.ToolStripMenuItem();
 			this.ToolStripMenuItem_personas = new System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripMenuItem_materias = new System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripMenuItem_planes = new System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripMenuItem_Cursos = new System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripMenuItem_Inscripciones = new System.Windows.Forms.ToolStripMenuItem();
 			this.panel_Principal = new System.Windows.Forms.TableLayoutPanel();
 			this.lbl_NombreUsuario = new System.Windows.Forms.Label();
 			this.lbl_tipopersona = new System.Windows.Forms.Label();
-			this.ToolStripMenuItem_materias = new System.Windows.Forms.ToolStripMenuItem();
-			this.ToolStripMenuItem_planes = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuPrincipal.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -76,7 +78,9 @@
             this.ToolStripMenuItem_usuarios,
             this.ToolStripMenuItem_personas,
             this.ToolStripMenuItem_materias,
-            this.ToolStripMenuItem_planes});
+            this.ToolStripMenuItem_planes,
+            this.ToolStripMenuItem_Cursos,
+            this.ToolStripMenuItem_Inscripciones});
 			this.ToolStripMenuItem_gestion.Name = "ToolStripMenuItem_gestion";
 			this.ToolStripMenuItem_gestion.Size = new System.Drawing.Size(67, 20);
 			this.ToolStripMenuItem_gestion.Text = "Gestión";
@@ -94,6 +98,34 @@
 			this.ToolStripMenuItem_personas.Size = new System.Drawing.Size(180, 22);
 			this.ToolStripMenuItem_personas.Text = "Personas";
 			this.ToolStripMenuItem_personas.Click += new System.EventHandler(this.ToolStripMenuItem_personas_Click);
+			// 
+			// ToolStripMenuItem_materias
+			// 
+			this.ToolStripMenuItem_materias.Name = "ToolStripMenuItem_materias";
+			this.ToolStripMenuItem_materias.Size = new System.Drawing.Size(180, 22);
+			this.ToolStripMenuItem_materias.Text = "Materias";
+			this.ToolStripMenuItem_materias.Click += new System.EventHandler(this.ToolStripMenuItem_materias_Click);
+			// 
+			// ToolStripMenuItem_planes
+			// 
+			this.ToolStripMenuItem_planes.Name = "ToolStripMenuItem_planes";
+			this.ToolStripMenuItem_planes.Size = new System.Drawing.Size(180, 22);
+			this.ToolStripMenuItem_planes.Text = "Planes";
+			this.ToolStripMenuItem_planes.Click += new System.EventHandler(this.ToolStripMenuItem_planes_Click);
+			// 
+			// ToolStripMenuItem_Cursos
+			// 
+			this.ToolStripMenuItem_Cursos.Name = "ToolStripMenuItem_Cursos";
+			this.ToolStripMenuItem_Cursos.Size = new System.Drawing.Size(180, 22);
+			this.ToolStripMenuItem_Cursos.Text = "Cursos";
+			this.ToolStripMenuItem_Cursos.Click += new System.EventHandler(this.ToolStripMenuItem_Cursos_Click_1);
+			// 
+			// ToolStripMenuItem_Inscripciones
+			// 
+			this.ToolStripMenuItem_Inscripciones.Name = "ToolStripMenuItem_Inscripciones";
+			this.ToolStripMenuItem_Inscripciones.Size = new System.Drawing.Size(180, 22);
+			this.ToolStripMenuItem_Inscripciones.Text = "Inscripciones";
+			this.ToolStripMenuItem_Inscripciones.Click += new System.EventHandler(this.ToolStripMenuItem_Inscripciones_Click);
 			// 
 			// panel_Principal
 			// 
@@ -129,20 +161,6 @@
 			this.lbl_tipopersona.TabIndex = 5;
 			this.lbl_tipopersona.Text = "lbl tipoPer";
 			this.lbl_tipopersona.Visible = false;
-			// 
-			// ToolStripMenuItem_materias
-			// 
-			this.ToolStripMenuItem_materias.Name = "ToolStripMenuItem_materias";
-			this.ToolStripMenuItem_materias.Size = new System.Drawing.Size(180, 22);
-			this.ToolStripMenuItem_materias.Text = "Materias";
-			this.ToolStripMenuItem_materias.Click += new System.EventHandler(this.ToolStripMenuItem_materias_Click);
-			// 
-			// ToolStripMenuItem_planes
-			// 
-			this.ToolStripMenuItem_planes.Name = "ToolStripMenuItem_planes";
-			this.ToolStripMenuItem_planes.Size = new System.Drawing.Size(180, 22);
-			this.ToolStripMenuItem_planes.Text = "Planes";
-			this.ToolStripMenuItem_planes.Click += new System.EventHandler(this.ToolStripMenuItem_planes_Click);
 			// 
 			// FormMain
 			// 
@@ -182,5 +200,7 @@
 		private System.Windows.Forms.Label lbl_tipopersona;
 		private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_materias;
 		private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_planes;
+		private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_Cursos;
+		private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_Inscripciones;
 	}
 }

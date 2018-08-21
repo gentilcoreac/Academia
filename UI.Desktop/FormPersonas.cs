@@ -458,6 +458,7 @@ namespace UI.Desktop
 		{
 			Util.FormatoCelda.FormatoCeldaParaObjects(sender, e, this.dgv_Personas);
 		}
+
 		#endregion
 
 	}

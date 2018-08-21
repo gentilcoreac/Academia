@@ -32,6 +32,7 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPersonas));
 			this.tc_Personas = new System.Windows.Forms.ToolStripContainer();
 			this.panel_Personas = new System.Windows.Forms.TableLayoutPanel();
+			this.btn_Actualizar = new System.Windows.Forms.Button();
 			this.panel_ABMPersona = new System.Windows.Forms.Panel();
 			this.calendar_Nacimiento_ventana = new System.Windows.Forms.MonthCalendar();
 			this.lbl_Cabecera3 = new System.Windows.Forms.Label();
@@ -93,7 +94,6 @@
 			this.comboBox_TipoBusqueda = new System.Windows.Forms.ToolStripComboBox();
 			this.toolStripTextBox_Busqueda = new System.Windows.Forms.ToolStripTextBox();
 			this.btn_Buscar = new System.Windows.Forms.ToolStripButton();
-			this.btn_Actualizar = new System.Windows.Forms.Button();
 			tsbEditar = new System.Windows.Forms.ToolStripButton();
 			this.tc_Personas.ContentPanel.SuspendLayout();
 			this.tc_Personas.TopToolStripPanel.SuspendLayout();
@@ -152,6 +152,17 @@
 			this.panel_Personas.RowStyles.Add(new System.Windows.Forms.RowStyle());
 			this.panel_Personas.Size = new System.Drawing.Size(1080, 695);
 			this.panel_Personas.TabIndex = 0;
+			// 
+			// btn_Actualizar
+			// 
+			this.btn_Actualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btn_Actualizar.Location = new System.Drawing.Point(1002, 668);
+			this.btn_Actualizar.Name = "btn_Actualizar";
+			this.btn_Actualizar.Size = new System.Drawing.Size(75, 23);
+			this.btn_Actualizar.TabIndex = 1;
+			this.btn_Actualizar.Text = "Actualizar";
+			this.btn_Actualizar.UseVisualStyleBackColor = true;
+			this.btn_Actualizar.Click += new System.EventHandler(this.btn_Actualizar_Click);
 			// 
 			// panel_ABMPersona
 			// 
@@ -707,7 +718,7 @@
             this.btn_Buscar});
 			this.toolStripCabeceraABMC.Location = new System.Drawing.Point(3, 0);
 			this.toolStripCabeceraABMC.Name = "toolStripCabeceraABMC";
-			this.toolStripCabeceraABMC.Size = new System.Drawing.Size(409, 25);
+			this.toolStripCabeceraABMC.Size = new System.Drawing.Size(440, 25);
 			this.toolStripCabeceraABMC.TabIndex = 0;
 			// 
 			// tsbNuevo
@@ -774,17 +785,6 @@
 			this.btn_Buscar.Size = new System.Drawing.Size(23, 22);
 			this.btn_Buscar.ToolTipText = "Buscar";
 			this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
-			// 
-			// btn_Actualizar
-			// 
-			this.btn_Actualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btn_Actualizar.Location = new System.Drawing.Point(1002, 668);
-			this.btn_Actualizar.Name = "btn_Actualizar";
-			this.btn_Actualizar.Size = new System.Drawing.Size(75, 23);
-			this.btn_Actualizar.TabIndex = 1;
-			this.btn_Actualizar.Text = "Actualizar";
-			this.btn_Actualizar.UseVisualStyleBackColor = true;
-			this.btn_Actualizar.Click += new System.EventHandler(this.btn_Actualizar_Click);
 			// 
 			// FormPersonas
 			// 

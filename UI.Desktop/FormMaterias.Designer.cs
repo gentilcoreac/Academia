@@ -90,11 +90,11 @@
 			// tsc_Materias.ContentPanel
 			// 
 			this.tsc_Materias.ContentPanel.Controls.Add(this.Panel_Materias);
-			this.tsc_Materias.ContentPanel.Size = new System.Drawing.Size(800, 425);
+			this.tsc_Materias.ContentPanel.Size = new System.Drawing.Size(933, 425);
 			this.tsc_Materias.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tsc_Materias.Location = new System.Drawing.Point(0, 0);
 			this.tsc_Materias.Name = "tsc_Materias";
-			this.tsc_Materias.Size = new System.Drawing.Size(800, 450);
+			this.tsc_Materias.Size = new System.Drawing.Size(933, 450);
 			this.tsc_Materias.TabIndex = 0;
 			this.tsc_Materias.Text = "toolStripContainer1";
 			// 
@@ -114,7 +114,7 @@
 			this.Panel_Materias.RowCount = 2;
 			this.Panel_Materias.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
 			this.Panel_Materias.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.Panel_Materias.Size = new System.Drawing.Size(800, 425);
+			this.Panel_Materias.Size = new System.Drawing.Size(933, 425);
 			this.Panel_Materias.TabIndex = 0;
 			// 
 			// dgv_Materias
@@ -133,7 +133,7 @@
 			this.dgv_Materias.MultiSelect = false;
 			this.dgv_Materias.Name = "dgv_Materias";
 			this.dgv_Materias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dgv_Materias.Size = new System.Drawing.Size(794, 206);
+			this.dgv_Materias.Size = new System.Drawing.Size(927, 206);
 			this.dgv_Materias.TabIndex = 43;
 			this.dgv_Materias.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_Materias_CellFormatting);
 			// 
@@ -201,42 +201,42 @@
 			this.panel_ABMMaterias.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel_ABMMaterias.Location = new System.Drawing.Point(3, 215);
 			this.panel_ABMMaterias.Name = "panel_ABMMaterias";
-			this.panel_ABMMaterias.Size = new System.Drawing.Size(794, 207);
+			this.panel_ABMMaterias.Size = new System.Drawing.Size(927, 207);
 			this.panel_ABMMaterias.TabIndex = 44;
 			// 
 			// num_HSTotales
 			// 
 			this.num_HSTotales.AccessibleDescription = resources.GetString("num_HSTotales.AccessibleDescription");
 			this.num_HSTotales.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.num_HSTotales.Location = new System.Drawing.Point(138, 122);
+			this.num_HSTotales.Location = new System.Drawing.Point(161, 122);
 			this.num_HSTotales.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
 			this.num_HSTotales.Name = "num_HSTotales";
-			this.num_HSTotales.Size = new System.Drawing.Size(100, 21);
+			this.num_HSTotales.Size = new System.Drawing.Size(117, 21);
 			this.num_HSTotales.TabIndex = 6;
 			// 
 			// num_HSSemanales
 			// 
 			this.num_HSSemanales.AccessibleDescription = resources.GetString("num_HSSemanales.AccessibleDescription");
 			this.num_HSSemanales.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.num_HSSemanales.Location = new System.Drawing.Point(138, 95);
+			this.num_HSSemanales.Location = new System.Drawing.Point(161, 95);
 			this.num_HSSemanales.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
 			this.num_HSSemanales.Name = "num_HSSemanales";
-			this.num_HSSemanales.Size = new System.Drawing.Size(100, 21);
+			this.num_HSSemanales.Size = new System.Drawing.Size(117, 21);
 			this.num_HSSemanales.TabIndex = 5;
 			// 
 			// btnAceptar
 			// 
-			this.btnAceptar.Location = new System.Drawing.Point(479, 119);
+			this.btnAceptar.Location = new System.Drawing.Point(559, 119);
 			this.btnAceptar.Name = "btnAceptar";
-			this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+			this.btnAceptar.Size = new System.Drawing.Size(87, 23);
 			this.btnAceptar.TabIndex = 8;
 			this.btnAceptar.Text = "Aceptar";
 			this.btnAceptar.UseVisualStyleBackColor = true;
@@ -246,7 +246,7 @@
 			// 
 			this.lbl_Cabecera_Plan.AutoSize = true;
 			this.lbl_Cabecera_Plan.Font = new System.Drawing.Font("Verdana", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbl_Cabecera_Plan.Location = new System.Drawing.Point(374, 11);
+			this.lbl_Cabecera_Plan.Location = new System.Drawing.Point(436, 11);
 			this.lbl_Cabecera_Plan.Name = "lbl_Cabecera_Plan";
 			this.lbl_Cabecera_Plan.Size = new System.Drawing.Size(75, 14);
 			this.lbl_Cabecera_Plan.TabIndex = 37;
@@ -256,7 +256,7 @@
 			// 
 			this.lbl_Cabecera.AutoSize = true;
 			this.lbl_Cabecera.Font = new System.Drawing.Font("Verdana", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbl_Cabecera.Location = new System.Drawing.Point(135, 11);
+			this.lbl_Cabecera.Location = new System.Drawing.Point(157, 11);
 			this.lbl_Cabecera.Name = "lbl_Cabecera";
 			this.lbl_Cabecera.Size = new System.Drawing.Size(95, 14);
 			this.lbl_Cabecera.TabIndex = 36;
@@ -266,16 +266,16 @@
 			// 
 			this.comboBox_Plan.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.comboBox_Plan.FormattingEnabled = true;
-			this.comboBox_Plan.Location = new System.Drawing.Point(377, 40);
+			this.comboBox_Plan.Location = new System.Drawing.Point(440, 40);
 			this.comboBox_Plan.Name = "comboBox_Plan";
-			this.comboBox_Plan.Size = new System.Drawing.Size(177, 21);
+			this.comboBox_Plan.Size = new System.Drawing.Size(206, 21);
 			this.comboBox_Plan.TabIndex = 7;
 			// 
 			// lbl_IDPlan
 			// 
 			this.lbl_IDPlan.AutoSize = true;
 			this.lbl_IDPlan.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbl_IDPlan.Location = new System.Drawing.Point(340, 43);
+			this.lbl_IDPlan.Location = new System.Drawing.Point(397, 43);
 			this.lbl_IDPlan.Name = "lbl_IDPlan";
 			this.lbl_IDPlan.Size = new System.Drawing.Size(31, 13);
 			this.lbl_IDPlan.TabIndex = 8;
@@ -285,7 +285,7 @@
 			// 
 			this.lbl_HSTotales.AutoSize = true;
 			this.lbl_HSTotales.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbl_HSTotales.Location = new System.Drawing.Point(44, 124);
+			this.lbl_HSTotales.Location = new System.Drawing.Point(51, 124);
 			this.lbl_HSTotales.Name = "lbl_HSTotales";
 			this.lbl_HSTotales.Size = new System.Drawing.Size(82, 13);
 			this.lbl_HSTotales.TabIndex = 6;
@@ -294,25 +294,25 @@
 			// txt_DescripcionMateria
 			// 
 			this.txt_DescripcionMateria.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_DescripcionMateria.Location = new System.Drawing.Point(138, 67);
+			this.txt_DescripcionMateria.Location = new System.Drawing.Point(161, 67);
 			this.txt_DescripcionMateria.Name = "txt_DescripcionMateria";
-			this.txt_DescripcionMateria.Size = new System.Drawing.Size(100, 21);
+			this.txt_DescripcionMateria.Size = new System.Drawing.Size(116, 21);
 			this.txt_DescripcionMateria.TabIndex = 4;
 			// 
 			// txt_IDMateria
 			// 
 			this.txt_IDMateria.Enabled = false;
 			this.txt_IDMateria.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_IDMateria.Location = new System.Drawing.Point(138, 40);
+			this.txt_IDMateria.Location = new System.Drawing.Point(161, 40);
 			this.txt_IDMateria.Name = "txt_IDMateria";
-			this.txt_IDMateria.Size = new System.Drawing.Size(100, 21);
+			this.txt_IDMateria.Size = new System.Drawing.Size(116, 21);
 			this.txt_IDMateria.TabIndex = 3;
 			// 
 			// lbl_HSSemanales
 			// 
 			this.lbl_HSSemanales.AutoSize = true;
 			this.lbl_HSSemanales.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbl_HSSemanales.Location = new System.Drawing.Point(21, 97);
+			this.lbl_HSSemanales.Location = new System.Drawing.Point(24, 97);
 			this.lbl_HSSemanales.Name = "lbl_HSSemanales";
 			this.lbl_HSSemanales.Size = new System.Drawing.Size(105, 13);
 			this.lbl_HSSemanales.TabIndex = 2;
@@ -322,7 +322,7 @@
 			// 
 			this.lbl_Descripcion.AutoSize = true;
 			this.lbl_Descripcion.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbl_Descripcion.Location = new System.Drawing.Point(49, 70);
+			this.lbl_Descripcion.Location = new System.Drawing.Point(57, 70);
 			this.lbl_Descripcion.Name = "lbl_Descripcion";
 			this.lbl_Descripcion.Size = new System.Drawing.Size(77, 13);
 			this.lbl_Descripcion.TabIndex = 1;
@@ -332,7 +332,7 @@
 			// 
 			this.lbl_ID.AutoSize = true;
 			this.lbl_ID.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbl_ID.Location = new System.Drawing.Point(59, 43);
+			this.lbl_ID.Location = new System.Drawing.Point(69, 43);
 			this.lbl_ID.Name = "lbl_ID";
 			this.lbl_ID.Size = new System.Drawing.Size(67, 13);
 			this.lbl_ID.TabIndex = 0;
@@ -423,11 +423,12 @@
 			// 
 			// FormMaterias
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
-			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.ClientSize = new System.Drawing.Size(933, 450);
 			this.Controls.Add(this.tsc_Materias);
+			this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "FormMaterias";
 			this.Text = "FormMaterias";
