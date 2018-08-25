@@ -1,6 +1,6 @@
 ﻿namespace UI.Desktop
 {
-	partial class FormInscripciones
+	partial class FormAdministracionDocente
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -28,9 +28,10 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdministracionDocente));
 			System.Windows.Forms.ToolStripButton tsbEditar;
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInscripciones));
 			this.toolStripContainer_Cursos = new System.Windows.Forms.ToolStripContainer();
+			this.tableLayoutPanel_ = new System.Windows.Forms.TableLayoutPanel();
 			this.tsUsuarios = new System.Windows.Forms.ToolStrip();
 			this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
 			this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
@@ -40,22 +41,12 @@
 			this.comboBox_TipoBusqueda = new System.Windows.Forms.ToolStripComboBox();
 			this.toolStripTextBox_Usuario = new System.Windows.Forms.ToolStripTextBox();
 			this.btn_Buscar = new System.Windows.Forms.ToolStripButton();
-			this.tableLayoutPanel_ = new System.Windows.Forms.TableLayoutPanel();
 			tsbEditar = new System.Windows.Forms.ToolStripButton();
 			this.toolStripContainer_Cursos.ContentPanel.SuspendLayout();
 			this.toolStripContainer_Cursos.TopToolStripPanel.SuspendLayout();
 			this.toolStripContainer_Cursos.SuspendLayout();
 			this.tsUsuarios.SuspendLayout();
 			this.SuspendLayout();
-			// 
-			// tsbEditar
-			// 
-			tsbEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			tsbEditar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEditar.Image")));
-			tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
-			tsbEditar.Name = "tsbEditar";
-			tsbEditar.Size = new System.Drawing.Size(23, 22);
-			tsbEditar.Text = "Editar";
 			// 
 			// toolStripContainer_Cursos
 			// 
@@ -68,12 +59,25 @@
 			this.toolStripContainer_Cursos.Location = new System.Drawing.Point(0, 0);
 			this.toolStripContainer_Cursos.Name = "toolStripContainer_Cursos";
 			this.toolStripContainer_Cursos.Size = new System.Drawing.Size(933, 450);
-			this.toolStripContainer_Cursos.TabIndex = 2;
+			this.toolStripContainer_Cursos.TabIndex = 3;
 			this.toolStripContainer_Cursos.Text = "toolStripContainer1";
 			// 
 			// toolStripContainer_Cursos.TopToolStripPanel
 			// 
 			this.toolStripContainer_Cursos.TopToolStripPanel.Controls.Add(this.tsUsuarios);
+			// 
+			// tableLayoutPanel_
+			// 
+			this.tableLayoutPanel_.ColumnCount = 1;
+			this.tableLayoutPanel_.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel_.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.tableLayoutPanel_.Location = new System.Drawing.Point(0, 0);
+			this.tableLayoutPanel_.Name = "tableLayoutPanel_";
+			this.tableLayoutPanel_.RowCount = 2;
+			this.tableLayoutPanel_.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel_.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel_.Size = new System.Drawing.Size(933, 425);
+			this.tableLayoutPanel_.TabIndex = 0;
 			// 
 			// tsUsuarios
 			// 
@@ -102,6 +106,15 @@
 			this.tsbNuevo.Size = new System.Drawing.Size(23, 22);
 			this.tsbNuevo.Text = "Nuevo";
 			this.tsbNuevo.ToolTipText = "Nuevo";
+			// 
+			// tsbEditar
+			// 
+			tsbEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			tsbEditar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEditar.Image")));
+			tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+			tsbEditar.Name = "tsbEditar";
+			tsbEditar.Size = new System.Drawing.Size(23, 22);
+			tsbEditar.Text = "Editar";
 			// 
 			// tsbEliminar
 			// 
@@ -153,20 +166,7 @@
 			this.btn_Buscar.Size = new System.Drawing.Size(23, 22);
 			this.btn_Buscar.ToolTipText = "Buscar";
 			// 
-			// tableLayoutPanel_
-			// 
-			this.tableLayoutPanel_.ColumnCount = 1;
-			this.tableLayoutPanel_.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel_.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tableLayoutPanel_.Location = new System.Drawing.Point(0, 0);
-			this.tableLayoutPanel_.Name = "tableLayoutPanel_";
-			this.tableLayoutPanel_.RowCount = 2;
-			this.tableLayoutPanel_.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel_.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel_.Size = new System.Drawing.Size(933, 425);
-			this.tableLayoutPanel_.TabIndex = 0;
-			// 
-			// FormInscripciones
+			// FormAdministracionDocente
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -175,8 +175,8 @@
 			this.Controls.Add(this.toolStripContainer_Cursos);
 			this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-			this.Name = "FormInscripciones";
-			this.Text = "FormInscripciones";
+			this.Name = "FormAdministracionDocente";
+			this.Text = "FormAdministracionDocente";
 			this.toolStripContainer_Cursos.ContentPanel.ResumeLayout(false);
 			this.toolStripContainer_Cursos.TopToolStripPanel.ResumeLayout(false);
 			this.toolStripContainer_Cursos.TopToolStripPanel.PerformLayout();
@@ -191,6 +191,7 @@
 		#endregion
 
 		private System.Windows.Forms.ToolStripContainer toolStripContainer_Cursos;
+		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_;
 		private System.Windows.Forms.ToolStrip tsUsuarios;
 		private System.Windows.Forms.ToolStripButton tsbNuevo;
 		private System.Windows.Forms.ToolStripButton tsbEliminar;
@@ -200,6 +201,5 @@
 		private System.Windows.Forms.ToolStripComboBox comboBox_TipoBusqueda;
 		private System.Windows.Forms.ToolStripTextBox toolStripTextBox_Usuario;
 		private System.Windows.Forms.ToolStripButton btn_Buscar;
-		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_;
 	}
 }

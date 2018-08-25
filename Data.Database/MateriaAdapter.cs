@@ -11,7 +11,6 @@ namespace Data.Database
 {
 	public class MateriaAdapter: Adapter
 	{
-
 		public List<Materia> GetAll(string tipoBusqueda, string valorBuscado)
 		{
 			List<Materia> listaMaterias = new List<Materia>();
@@ -192,6 +191,8 @@ namespace Data.Database
 			return listaMaterias;
 		}
 
+
+
 		public List<Materia> GetAll()
 		{
 			try
@@ -325,7 +326,7 @@ namespace Data.Database
 			}
 			catch (Exception ex)
 			{
-				throw new Exception("Error al obtener el máximo ID de las persona\n\n" + ex);
+				throw new Exception("Error al obtener el máximo ID de las materias \n\n" + ex);
 			}
 		}
 
@@ -363,7 +364,7 @@ namespace Data.Database
 			}
 			catch (Exception ex)
 			{
-				throw new Exception("Error al recuperar la materia ", ex);
+				throw new Exception("Error al agregar la materia \n\n", ex);
 			}
 			finally
 			{
@@ -406,7 +407,7 @@ namespace Data.Database
 			}
 			catch (Exception ex)
 			{
-				throw new Exception("Error al recuperar la materia ", ex);
+				throw new Exception("Error al actualizar la materia \n\n", ex);
 			}
 			finally
 			{
@@ -443,7 +444,7 @@ namespace Data.Database
 			}
 			catch (Exception ex)
 			{
-				throw new Exception("Error al recuperar la materia ", ex);
+				throw new Exception("Error al borrar la materia \n\n ", ex);
 			}
 			finally
 			{

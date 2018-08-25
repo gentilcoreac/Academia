@@ -29,5 +29,9 @@ namespace Business.Entities
             set { _IDPlan = value; }
         }
 
-    }
+		public override string ToString()
+		{
+			return string.Format("{0}-{1}-{2}", ID, Descripcion, IDPlan);
+		}
+	}
 }

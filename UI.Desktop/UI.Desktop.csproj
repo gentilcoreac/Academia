@@ -55,6 +55,18 @@
     <Compile Include="ApplicationForm.Designer.cs">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAdministracionDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdministracionDocente.Designer.cs">
+      <DependentUpon>FormAdministracionDocente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormComisiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormComisiones.Designer.cs">
+      <DependentUpon>FormComisiones.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCursos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +123,12 @@
     <Compile Include="UsuarioDesktop.Designer.cs">
       <DependentUpon>UsuarioDesktop.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormAdministracionDocente.resx">
+      <DependentUpon>FormAdministracionDocente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormComisiones.resx">
+      <DependentUpon>FormComisiones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCursos.resx">
       <DependentUpon>FormCursos.cs</DependentUpon>
     </EmbeddedResource>

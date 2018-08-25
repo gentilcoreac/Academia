@@ -28,8 +28,8 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPlanes));
 			System.Windows.Forms.ToolStripButton tsbEditar;
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPlanes));
 			this.ContentPanel = new System.Windows.Forms.ToolStripContentPanel();
 			this.BottomToolStripPanel = new System.Windows.Forms.ToolStripPanel();
 			this.TopToolStripPanel = new System.Windows.Forms.ToolStripPanel();
@@ -53,6 +53,15 @@
 			this.toolStripContainer_Planes.TopToolStripPanel.SuspendLayout();
 			this.toolStripContainer_Planes.SuspendLayout();
 			this.SuspendLayout();
+			// 
+			// tsbEditar
+			// 
+			tsbEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			tsbEditar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEditar.Image")));
+			tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+			tsbEditar.Name = "tsbEditar";
+			tsbEditar.Size = new System.Drawing.Size(23, 22);
+			tsbEditar.Text = "Editar";
 			// 
 			// ContentPanel
 			// 
@@ -101,15 +110,6 @@
 			this.tsbNuevo.Size = new System.Drawing.Size(23, 22);
 			this.tsbNuevo.Text = "Nuevo";
 			this.tsbNuevo.ToolTipText = "Nuevo";
-			// 
-			// tsbEditar
-			// 
-			tsbEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			tsbEditar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEditar.Image")));
-			tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
-			tsbEditar.Name = "tsbEditar";
-			tsbEditar.Size = new System.Drawing.Size(23, 22);
-			tsbEditar.Text = "Editar";
 			// 
 			// tsbEliminar
 			// 

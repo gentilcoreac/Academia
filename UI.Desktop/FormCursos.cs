@@ -22,6 +22,20 @@ namespace UI.Desktop
 			set { _CursoActual = value; }
 		}
 
+		private Comision _ComisionActual;
+		public Comision ComisionActual
+		{
+			get { return _ComisionActual; }
+			set { _ComisionActual = value; }
+		}
+
+		private Materia _MateriaActual;
+		public Materia MateriaActual
+		{
+			get { return _MateriaActual; }
+			set { _MateriaActual = value; }
+		}
+
 		protected enum ValoresABuscar
 		{
 			Todos,
@@ -31,7 +45,8 @@ namespace UI.Desktop
 			ID_Materia,
 			Descripcion_Materia,
 			ID_Comision,
-			Descripcion_Comision		
+			Descripcion_Comision,
+			Año_Especialidad
 		}
 
 		#endregion
@@ -51,16 +66,18 @@ namespace UI.Desktop
 			}
 			comboBox_TipoBusqueda.SelectedIndex = 0;
 
-			//////Combo planes
-			//PlanLogic planLogic = new PlanLogic();
-			//comboBox_Plan.DisplayMember = "ValorDelToString";
-			//comboBox_Plan.ValueMember = "ID";
-			//comboBox_Plan.DataSource = planLogic.GetAll();
+			////Combo Comision
+			ComisionLogic comisionnLogic = new ComisionLogic();
+			comboBox_Comision.DisplayMember = "ValorDelToString";
+			comboBox_Comision.ValueMember = "ID";
+			comboBox_Comision.DataSource = comisionnLogic.GetAll();
 
+			////Combo Materia
+			MateriaLogic materiaLogic = new MateriaLogic();
+			comboBox_Materia.DisplayMember = "ValorDelToString";
+			comboBox_Materia.ValueMember = "ID";
+			comboBox_Materia.DataSource = materiaLogic.GetAll();
 		}
-		#endregion
-
-		#region Metodos
 
 		/// <summary>
 		/// Segun sea administrador o alumno/profesor el usuario que se ha logueado se listaran todos los datos de las personas o de la persona, respectivamente
@@ -73,20 +90,111 @@ namespace UI.Desktop
 				dgv_Cursos.AutoGenerateColumns = false;
 				CursoLogic cl = new CursoLogic();
 				this.dgv_Cursos.DataSource = cl.GetAll();
-				//if(UsuarioLogueado.IDPersona.TiposPersona.Equals(Persona.TiposPersonas.Administrador))
-				//{
-				//	this.dgv_Personas.DataSource = pl.GetAll(comboBox_TipoBusqueda.SelectedItem.ToString(), toolStripTextBox_Busqueda.Text);
-				//}
-				//else
-				//{
-				//	this.dgv_Personas.DataSource = pl.GetAll("ID", UsuarioLogueado.IDPersona.ID.ToString());
-				//	VistaAlumnoYProfesor();
-				//}
+				if (UsuarioLogueado.IDPersona.TiposPersona.Equals(Persona.TiposPersonas.Administrador))
+				{
+					this.dgv_Cursos.DataSource = cl.GetAll(comboBox_TipoBusqueda.SelectedItem.ToString(), toolStripTextBox_Busqueda.Text);
+				}
+				else
+				{
+					this.dgv_Cursos.DataSource = cl.GetAll("MisCursos", UsuarioLogueado.IDPersona.ID.ToString());
+					//VistaAlumnoYProfesor();
+				}
 			}
 			catch (Exception ex)
 			{
 				Notificar("Advertencia","Error al listar los cursos\n" + ex, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
+		}
+
+		private void AsignarMaximoID()
+		{
+			CursoLogic cl = new CursoLogic();
+			txt_CursoID.Text= cl.GetMaxID().ToString();
+		}
+
+
+		public override void MapearDeDatos()
+		{
+			txt_CursoID.Text = CursoActual.ID.ToString();
+			numericUpDown_CursoAnioCalendario.Text = CursoActual.AnioCalendario.ToString();
+			numericUpDown_CursoCupo.Text = CursoActual.Cupo.ToString();
+			comboBox_Comision.SelectedValue = CursoActual.Comision.ID;
+			comboBox_Materia.SelectedValue = CursoActual.Materia.ID;
+
+			switch (Modo)
+			{
+				case FormPersonas.ModoForm.Alta:
+					this.btnAceptar.Text = "Agregar";
+					break;
+				case FormPersonas.ModoForm.Modificacion:
+					this.btnAceptar.Text = "Actualizar";
+					break;
+				case FormPersonas.ModoForm.Baja:
+					this.btnAceptar.Text = "Eliminar";
+					break;
+				case FormPersonas.ModoForm.Consulta:
+					this.btnAceptar.Text = "Aceptar";
+					break;
+			}
+		}
+
+
+		public override void MapearADatos()
+		{
+			if (this.Modo == FormCursos.ModoForm.Alta)
+			{
+				CursoActual = new Curso();
+				CursoActual.State = Materia.States.New;
+				CursoActual.ID = Convert.ToInt32(txt_CursoID.Text);
+				CursoActual.AnioCalendario = Convert.ToInt32(numericUpDown_CursoAnioCalendario.Text);
+				CursoActual.Cupo = Convert.ToInt32(numericUpDown_CursoCupo.Text);
+
+				CursoActual.Materia = (Materia)comboBox_Materia.SelectedItem;
+				CursoActual.Comision = (Comision)comboBox_Comision.SelectedItem;
+			}
+			if (this.Modo == FormCursos.ModoForm.Modificacion)
+			{
+				CursoActual.State = Materia.States.Modified;
+				CursoActual.ID = Convert.ToInt32(txt_CursoID.Text);
+				CursoActual.AnioCalendario = Convert.ToInt32(numericUpDown_CursoAnioCalendario.Text);
+				CursoActual.Cupo = Convert.ToInt32(numericUpDown_CursoCupo.Text);
+
+				CursoActual.Materia = (Materia)comboBox_Materia.SelectedItem;
+				CursoActual.Comision = (Comision)comboBox_Comision.SelectedItem;
+			}
+			if (this.Modo == FormCursos.ModoForm.Baja)
+			{
+				CursoActual.State = Curso.States.Deleted;
+			}	
+		}		
+
+
+		public override void GuardarCambios()
+		{
+			this.MapearADatos();
+			CursoLogic cursoLogic = new CursoLogic();
+			cursoLogic.Save(CursoActual);
+		}
+
+
+		public override bool Validar()
+		{
+			///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////**************VALIDAR**************////////////////////////////////////////
+			///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+			//////////////////////////if ( String.IsNullOrEmpty(this.num_HSSemanales.Text)
+			//////////////////////////	|| String.IsNullOrEmpty(this.num_HSTotales.Text))
+			//////////////////////////{
+			//////////////////////////	this.Notificar("Cuidado, revisar", "Por favor, complete todos los campos"
+			//////////////////////////			, MessageBoxButtons.OK, MessageBoxIcon.Information);
+			//////////////////////////	return false;
+			//////////////////////////}
+			//////////////////////////else
+			//////////////////////////{
+			return true;
+			//////////////////////////}
 		}
 
 
@@ -104,10 +212,11 @@ namespace UI.Desktop
 		#region Disparadores
 		private void FormCursos_Load(object sender, EventArgs e)
 		{
+			CompletarComboBox();
+			AsignarMaximoID();
 			Listar();
 		}
 		#endregion
-
 
 		#region Formato
 		///Llama al metodo que se dejó UTIL para que se permita utilizar las relaciones de la POO en una datagridview. 
@@ -119,5 +228,86 @@ namespace UI.Desktop
 
 		#endregion
 
+		private void tsbNuevo_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				LimpiarCampos();
+				Modo = FormCursos.ModoForm.Alta;
+				CursoLogic cursoLogic = new CursoLogic();
+				txt_CursoID.Text = (cursoLogic.GetMaxID() + 1).ToString();
+				Listar();
+			}
+			catch (Exception ex)
+			{
+				this.Notificar("Error en alta", "Error al crear un curso \n\n" + ex
+								, MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
+
+		private void tsbEliminar_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				LimpiarCampos();
+				int ID = ((Business.Entities.Curso)this.dgv_Cursos.SelectedRows[0].DataBoundItem).ID;
+				if (MessageBox.Show("¿Estas seguro que deseas borrarlo? \nSe borrará el curso seleccionado de la grilla y causará inestabilidades en el sistema\nNo podras deshacerlo.", "Advertencia"
+							, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+					== System.Windows.Forms.DialogResult.Yes)
+				{
+					Modo = FormCursos.ModoForm.Baja;
+					CursoLogic cursoLogic = new CursoLogic();
+					cursoLogic.Delete(ID);
+					this.Notificar("Operacón correcta", "Operación realizada correctamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					this.Listar();
+				}
+			}
+			catch (Exception ex)
+			{
+				Notificar("Error al eliminar", "Error al eliminar el curso \n\n" + ex
+				, MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
+
+		private void btnAceptar_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				if (this.Validar())
+				{
+					this.GuardarCambios();
+					this.Notificar("Operacón correcta", "Operación realizada correctamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					this.Listar();
+				}
+			}
+			catch (Exception ex)
+			{
+				this.Notificar("Error en el ABMC ", "Error en ABMC de un curso \n" + ex
+								, MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
+
+		private void tsbEditar_Click(object sender, EventArgs e)
+		{
+			//try
+			//{
+			//	int ID = ((Business.Entities.Curso)this.dgv_Cursos.SelectedRows[0].DataBoundItem).ID;
+			//	Modo = FormCursos.ModoForm.Modificacion;
+			//	this.LimpiarCampos();
+			//	CursoLogic cursoLogic = new CursoLogic();
+			//	CursoActual = cursoLogic.GetOne(ID);
+			//	this.MapearDeDatos();
+			//}
+			//catch (Exception ex)
+			//{
+			//	this.Notificar("Error en modificación", "Error al editar un curso \n\n" + ex
+			//	, MessageBoxButtons.OK, MessageBoxIcon.Error);
+			//}
+		}
+
+		private void btn_Buscar_Click(object sender, EventArgs e)
+		{
+			Listar();
+		}
 	}
 }

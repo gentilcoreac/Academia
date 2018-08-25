@@ -26,5 +26,25 @@ namespace Business.Logic
 		{
 			return CursoData.GetAll();
 		}
+
+		public List<Curso> GetAll(string tipoBusqueda, string valorBuscado)
+		{
+			return CursoData.GetAll(tipoBusqueda, valorBuscado);
+		}
+
+		public int GetMaxID()
+		{
+			return CursoData.GetMaxID();
+		}
+
+		public void Save(Curso curso)
+		{
+			CursoData.Save(curso);
+		}
+
+		public void Delete(int id)
+		{
+			CursoData.Delete(id);
+		}
 	}
 }

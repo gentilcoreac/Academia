@@ -50,5 +50,6 @@ namespace Business.Entities
 		//    get { return _IDMateria; }
 		//    set { _IDMateria = value; }
 		//}
+
 	}
 }

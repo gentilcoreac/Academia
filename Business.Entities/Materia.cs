@@ -40,5 +40,10 @@ namespace Business.Entities
 			set { _Plan = value; } 
 		}
 
+		public override string ToString()
+		{
+			return string.Format("{0}-{1}-{2}", ID, Descripcion, Plan.Descripcion);
+		}
+
 	}
 }

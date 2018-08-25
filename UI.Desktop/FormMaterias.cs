@@ -124,16 +124,16 @@ namespace UI.Desktop
 
 			switch (Modo)
 			{
-				case FormPersonas.ModoForm.Alta:
+				case FormMaterias.ModoForm.Alta:
 					this.btnAceptar.Text = "Agregar";
 					break;
-				case FormPersonas.ModoForm.Modificacion:
+				case FormMaterias.ModoForm.Modificacion:
 					this.btnAceptar.Text = "Actualizar";
 					break;
-				case FormPersonas.ModoForm.Baja:
+				case FormMaterias.ModoForm.Baja:
 					this.btnAceptar.Text = "Eliminar";
 					break;
-				case FormPersonas.ModoForm.Consulta:
+				case FormMaterias.ModoForm.Consulta:
 					this.btnAceptar.Text = "Aceptar";
 					break;
 			}
@@ -142,7 +142,7 @@ namespace UI.Desktop
 
 		public override void MapearADatos()
 		{
-			if (this.Modo == FormPersonas.ModoForm.Alta)
+			if (this.Modo == FormMaterias.ModoForm.Alta)
 			{
 				MateriaActual = new Materia();
 				MateriaActual.State = Materia.States.New;
@@ -153,9 +153,9 @@ namespace UI.Desktop
 
 				MateriaActual.Plan = (Plan)comboBox_Plan.SelectedItem;
 			}
-			if (this.Modo == FormPersonas.ModoForm.Modificacion)
+			if (this.Modo == FormMaterias.ModoForm.Modificacion)
 			{
-				MateriaActual.State = Persona.States.Modified;
+				MateriaActual.State = Materia.States.Modified;
 				MateriaActual.ID = Convert.ToInt32(txt_IDMateria.Text);
 				MateriaActual.Descripcion = txt_DescripcionMateria.Text;
 				MateriaActual.HSSemanales = Convert.ToInt32(num_HSSemanales.Text);
@@ -163,9 +163,9 @@ namespace UI.Desktop
 
 				MateriaActual.Plan = (Plan)comboBox_Plan.SelectedItem;
 			}
-			if (this.Modo == FormPersonas.ModoForm.Baja)
+			if (this.Modo == FormMaterias.ModoForm.Baja)
 			{
-				MateriaActual.State = Persona.States.Deleted;
+				MateriaActual.State = Materia.States.Deleted;
 			}
 		}
 
@@ -177,8 +177,7 @@ namespace UI.Desktop
 		}
 		public override bool Validar()
 		{
-			if (String.IsNullOrEmpty(this.txt_IDMateria.Text)
-				|| String.IsNullOrEmpty(this.txt_DescripcionMateria.Text)
+			if (String.IsNullOrEmpty(this.txt_DescripcionMateria.Text)
 				|| String.IsNullOrEmpty(this.num_HSSemanales.Text)
 				|| String.IsNullOrEmpty(this.num_HSTotales.Text))
 			{

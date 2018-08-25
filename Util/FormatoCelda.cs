@@ -54,7 +54,6 @@ namespace Util
 				propertyInfo = propertyType.GetProperty(propertyName);
 				retValue = propertyInfo.GetValue(property, null).ToString();
 			}
-
 			return retValue;
 		}
 	}
