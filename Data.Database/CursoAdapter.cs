@@ -92,7 +92,6 @@ namespace Data.Database
 												+ "	WHERE  per.id_persona = @valorBuscado ", SqlConn);
 						cmdCursos.Parameters.Add("@valorBuscado", SqlDbType.VarChar, 10).Value = valorBuscado;
 						break;
-
 				}
 
 				SqlDataReader drCursos = cmdCursos.ExecuteReader();
@@ -199,6 +198,72 @@ namespace Data.Database
 			}
 		}
 
+
+
+
+		public Curso GetOne(int ID_Curso_Buscado)
+		{
+			try
+			{
+				this.OpenConnection();
+
+				SqlCommand oCmd = new SqlCommand();
+				using (oCmd)
+				{
+					//asignamos la conexion de trabajo
+					oCmd.Connection = SqlConn;
+
+					//utilizamos stored procedures
+					oCmd.CommandType = CommandType.StoredProcedure;
+
+					//le indicamos cual stored procedure utilizar
+					oCmd.CommandText = "SP_CursosGetOne";
+
+					// Asignamos el parámetro para el stored procedure
+					oCmd.Parameters.AddWithValue("@id_curso", ID_Curso_Buscado);
+
+					Curso oCurso = new Curso(); 
+
+					// Ejecutamos el comando y retornamos los valores
+					SqlDataReader oReader = oCmd.ExecuteReader();
+					using (oReader)
+					{
+						if (oReader.Read())
+						{
+							oCurso.ID = Convert.ToInt32(oReader["id_curso"]);
+							oCurso.AnioCalendario = Convert.ToInt32(oReader["anio_calendario"]);
+							oCurso.Cupo = Convert.ToInt32(oReader["cupo"]);
+
+							Materia materia = new Materia();
+							materia.ID = Convert.ToInt32(oReader["id_materia"]);
+							materia.Descripcion = (string)oReader["desc_materia"];
+							oCurso.Materia = materia;
+
+							Comision comision = new Comision();
+							comision.ID = Convert.ToInt32(oReader["id_comision"]);
+							comision.Descripcion = (string)oReader["desc_comision"];
+
+							oCurso.Comision = comision;
+
+						}
+						// Retornamos los valores encontrados
+						return oCurso;
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				throw new Exception("Error al recuperar el curso", ex);
+			}
+			finally
+			{
+				// El Finally nos da siempre la oportunidad de liberar
+				// la memoria utilizada por los objetos 
+				this.CloseConnection();
+			}
+		}
+
+
 		public int GetMaxID()
 		{
 			int id = -1;
@@ -216,8 +281,6 @@ namespace Data.Database
 				throw new Exception("Error al obtener el máximo ID de los cursos \n\n" + ex);
 			}
 		}
-
-
 
 		public int Agregar(Curso curso)
 		{

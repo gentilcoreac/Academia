@@ -47,11 +47,19 @@
 			this.ContentPanel_Planes = new System.Windows.Forms.ToolStripContentPanel();
 			this.toolStripContainer_Planes = new System.Windows.Forms.ToolStripContainer();
 			this.tableLayoutPanel_ = new System.Windows.Forms.TableLayoutPanel();
+			this.dgv_Planes = new System.Windows.Forms.DataGridView();
+			this.ID_Plan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Plan_Especialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.EspecialidadDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.label_temporal = new System.Windows.Forms.Label();
 			tsbEditar = new System.Windows.Forms.ToolStripButton();
 			this.tsUsuarios.SuspendLayout();
 			this.toolStripContainer_Planes.ContentPanel.SuspendLayout();
 			this.toolStripContainer_Planes.TopToolStripPanel.SuspendLayout();
 			this.toolStripContainer_Planes.SuspendLayout();
+			this.tableLayoutPanel_.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dgv_Planes)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// tsbEditar
@@ -187,11 +195,11 @@
 			// toolStripContainer_Planes.ContentPanel
 			// 
 			this.toolStripContainer_Planes.ContentPanel.Controls.Add(this.tableLayoutPanel_);
-			this.toolStripContainer_Planes.ContentPanel.Size = new System.Drawing.Size(800, 425);
+			this.toolStripContainer_Planes.ContentPanel.Size = new System.Drawing.Size(933, 425);
 			this.toolStripContainer_Planes.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.toolStripContainer_Planes.Location = new System.Drawing.Point(0, 0);
 			this.toolStripContainer_Planes.Name = "toolStripContainer_Planes";
-			this.toolStripContainer_Planes.Size = new System.Drawing.Size(800, 450);
+			this.toolStripContainer_Planes.Size = new System.Drawing.Size(933, 450);
 			this.toolStripContainer_Planes.TabIndex = 0;
 			this.toolStripContainer_Planes.Text = "toolStripContainer1";
 			// 
@@ -204,24 +212,88 @@
 			this.tableLayoutPanel_.BackColor = System.Drawing.Color.White;
 			this.tableLayoutPanel_.ColumnCount = 1;
 			this.tableLayoutPanel_.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel_.Controls.Add(this.dgv_Planes, 0, 0);
+			this.tableLayoutPanel_.Controls.Add(this.label_temporal, 0, 1);
 			this.tableLayoutPanel_.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel_.Location = new System.Drawing.Point(0, 0);
 			this.tableLayoutPanel_.Name = "tableLayoutPanel_";
 			this.tableLayoutPanel_.RowCount = 2;
 			this.tableLayoutPanel_.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
 			this.tableLayoutPanel_.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel_.Size = new System.Drawing.Size(800, 425);
+			this.tableLayoutPanel_.Size = new System.Drawing.Size(933, 425);
 			this.tableLayoutPanel_.TabIndex = 0;
+			// 
+			// dgv_Planes
+			// 
+			this.dgv_Planes.AllowUserToAddRows = false;
+			this.dgv_Planes.AllowUserToDeleteRows = false;
+			this.dgv_Planes.BackgroundColor = System.Drawing.Color.White;
+			this.dgv_Planes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgv_Planes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID_Plan,
+            this.Descripcion,
+            this.Plan_Especialidad,
+            this.EspecialidadDescripcion});
+			this.dgv_Planes.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dgv_Planes.Location = new System.Drawing.Point(3, 3);
+			this.dgv_Planes.Name = "dgv_Planes";
+			this.dgv_Planes.ReadOnly = true;
+			this.dgv_Planes.Size = new System.Drawing.Size(927, 206);
+			this.dgv_Planes.TabIndex = 0;
+			this.dgv_Planes.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_Planes_CellFormatting);
+			// 
+			// ID_Plan
+			// 
+			this.ID_Plan.DataPropertyName = "ID";
+			this.ID_Plan.HeaderText = "ID Plan";
+			this.ID_Plan.Name = "ID_Plan";
+			this.ID_Plan.ReadOnly = true;
+			// 
+			// Descripcion
+			// 
+			this.Descripcion.DataPropertyName = "Descripcion";
+			this.Descripcion.HeaderText = "Descripcion";
+			this.Descripcion.Name = "Descripcion";
+			this.Descripcion.ReadOnly = true;
+			// 
+			// Plan_Especialidad
+			// 
+			this.Plan_Especialidad.DataPropertyName = "PlanEspecialidad.ID";
+			this.Plan_Especialidad.HeaderText = "ID Especialidad";
+			this.Plan_Especialidad.Name = "Plan_Especialidad";
+			this.Plan_Especialidad.ReadOnly = true;
+			this.Plan_Especialidad.Width = 170;
+			// 
+			// EspecialidadDescripcion
+			// 
+			this.EspecialidadDescripcion.DataPropertyName = "PlanEspecialidad.Descripcion";
+			this.EspecialidadDescripcion.HeaderText = "Descripcion Especialidad";
+			this.EspecialidadDescripcion.Name = "EspecialidadDescripcion";
+			this.EspecialidadDescripcion.ReadOnly = true;
+			this.EspecialidadDescripcion.Width = 190;
+			// 
+			// label_temporal
+			// 
+			this.label_temporal.AutoSize = true;
+			this.label_temporal.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label_temporal.ForeColor = System.Drawing.Color.Gray;
+			this.label_temporal.Location = new System.Drawing.Point(3, 212);
+			this.label_temporal.Name = "label_temporal";
+			this.label_temporal.Size = new System.Drawing.Size(182, 13);
+			this.label_temporal.TabIndex = 1;
+			this.label_temporal.Text = "ABM y Búsqueda en desarrollo";
 			// 
 			// FormPlanes
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.ClientSize = new System.Drawing.Size(933, 450);
 			this.Controls.Add(this.toolStripContainer_Planes);
+			this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "FormPlanes";
 			this.Text = "FormPlanes";
+			this.Load += new System.EventHandler(this.FormPlanes_Load);
 			this.tsUsuarios.ResumeLayout(false);
 			this.tsUsuarios.PerformLayout();
 			this.toolStripContainer_Planes.ContentPanel.ResumeLayout(false);
@@ -229,6 +301,9 @@
 			this.toolStripContainer_Planes.TopToolStripPanel.PerformLayout();
 			this.toolStripContainer_Planes.ResumeLayout(false);
 			this.toolStripContainer_Planes.PerformLayout();
+			this.tableLayoutPanel_.ResumeLayout(false);
+			this.tableLayoutPanel_.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dgv_Planes)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -252,5 +327,11 @@
 		private System.Windows.Forms.ToolStripContentPanel ContentPanel_Planes;
 		private System.Windows.Forms.ToolStripContainer toolStripContainer_Planes;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_;
+		private System.Windows.Forms.DataGridView dgv_Planes;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ID_Plan;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Plan_Especialidad;
+		private System.Windows.Forms.DataGridViewTextBoxColumn EspecialidadDescripcion;
+		private System.Windows.Forms.Label label_temporal;
 	}
 }

@@ -32,6 +32,12 @@ namespace Business.Logic
 			return CursoData.GetAll(tipoBusqueda, valorBuscado);
 		}
 
+		public Curso GetOne(int id)
+		{
+			return CursoData.GetOne(id);
+		}
+
+
 		public int GetMaxID()
 		{
 			return CursoData.GetMaxID();

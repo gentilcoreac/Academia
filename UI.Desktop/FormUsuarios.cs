@@ -68,16 +68,6 @@ namespace UI.Desktop
 			Listar();
 		}
 
-        private void btnActualizar_Click(object sender, EventArgs e)
-        {
-            Listar();
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void tsbEditar_Click(object sender, EventArgs e)
         {
 			int ID = ((Business.Entities.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;

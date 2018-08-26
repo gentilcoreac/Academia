@@ -40,8 +40,6 @@
 			this.habilitado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
 			this.tcUsuarios = new System.Windows.Forms.ToolStripContainer();
 			this.tlUsuarios = new System.Windows.Forms.TableLayoutPanel();
-			this.btnActualizar = new System.Windows.Forms.Button();
-			this.btnSalir = new System.Windows.Forms.Button();
 			this.panel_Usuarios = new System.Windows.Forms.Panel();
 			this.tsUsuarios = new System.Windows.Forms.ToolStrip();
 			this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
@@ -94,7 +92,7 @@
 			this.dgvUsuarios.Name = "dgvUsuarios";
 			this.dgvUsuarios.ReadOnly = true;
 			this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dgvUsuarios.Size = new System.Drawing.Size(914, 218);
+			this.dgvUsuarios.Size = new System.Drawing.Size(914, 233);
 			this.dgvUsuarios.TabIndex = 0;
 			this.dgvUsuarios.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvUsuarios_CellFormatting);
 			// 
@@ -175,8 +173,6 @@
 			this.tlUsuarios.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
 			this.tlUsuarios.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
 			this.tlUsuarios.Controls.Add(this.dgvUsuarios, 0, 0);
-			this.tlUsuarios.Controls.Add(this.btnActualizar, 0, 2);
-			this.tlUsuarios.Controls.Add(this.btnSalir, 1, 2);
 			this.tlUsuarios.Controls.Add(this.panel_Usuarios, 0, 1);
 			this.tlUsuarios.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.tlUsuarios.Location = new System.Drawing.Point(0, 0);
@@ -188,34 +184,13 @@
 			this.tlUsuarios.Size = new System.Drawing.Size(920, 450);
 			this.tlUsuarios.TabIndex = 0;
 			// 
-			// btnActualizar
-			// 
-			this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnActualizar.Location = new System.Drawing.Point(761, 423);
-			this.btnActualizar.Name = "btnActualizar";
-			this.btnActualizar.Size = new System.Drawing.Size(75, 23);
-			this.btnActualizar.TabIndex = 1;
-			this.btnActualizar.Text = "Actualizar";
-			this.btnActualizar.UseVisualStyleBackColor = true;
-			this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
-			// 
-			// btnSalir
-			// 
-			this.btnSalir.Location = new System.Drawing.Point(842, 423);
-			this.btnSalir.Name = "btnSalir";
-			this.btnSalir.Size = new System.Drawing.Size(75, 23);
-			this.btnSalir.TabIndex = 2;
-			this.btnSalir.Text = "Salir";
-			this.btnSalir.UseVisualStyleBackColor = true;
-			this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-			// 
 			// panel_Usuarios
 			// 
 			this.panel_Usuarios.BackColor = System.Drawing.Color.White;
 			this.panel_Usuarios.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel_Usuarios.Location = new System.Drawing.Point(3, 227);
+			this.panel_Usuarios.Location = new System.Drawing.Point(3, 242);
 			this.panel_Usuarios.Name = "panel_Usuarios";
-			this.panel_Usuarios.Size = new System.Drawing.Size(833, 190);
+			this.panel_Usuarios.Size = new System.Drawing.Size(833, 204);
 			this.panel_Usuarios.TabIndex = 3;
 			// 
 			// tsUsuarios
@@ -329,8 +304,6 @@
         private System.Windows.Forms.ToolStrip tsUsuarios;
         private System.Windows.Forms.DataGridView dgvUsuarios;
         private System.Windows.Forms.ToolStripButton tsbEliminar;
-		private System.Windows.Forms.Button btnActualizar;
-		private System.Windows.Forms.Button btnSalir;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
 		private System.Windows.Forms.ToolStripComboBox comboBox_TipoBusqueda;
 		private System.Windows.Forms.ToolStripButton btn_Buscar;

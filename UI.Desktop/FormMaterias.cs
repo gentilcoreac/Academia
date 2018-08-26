@@ -85,7 +85,7 @@ namespace UI.Desktop
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show("Error al listar las personas\n" + ex);
+				MessageBox.Show("Error al listar las materias\n" + ex);
 			}
 		}
 

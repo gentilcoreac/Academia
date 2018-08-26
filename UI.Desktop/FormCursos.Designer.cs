@@ -55,7 +55,7 @@
 			this.lbl_CursoCupo = new System.Windows.Forms.Label();
 			this.lbl_CursoID = new System.Windows.Forms.Label();
 			this.lbl_Cabecera = new System.Windows.Forms.Label();
-			this.tsUsuarios = new System.Windows.Forms.ToolStrip();
+			this.tsCursos = new System.Windows.Forms.ToolStrip();
 			this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
 			this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -75,7 +75,7 @@
 			this.panel_ABM_Cursos.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown_CursoAnioCalendario)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown_CursoCupo)).BeginInit();
-			this.tsUsuarios.SuspendLayout();
+			this.tsCursos.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tsbEditar
@@ -104,7 +104,7 @@
 			// 
 			// toolStripContainer_Cursos.TopToolStripPanel
 			// 
-			this.toolStripContainer_Cursos.TopToolStripPanel.Controls.Add(this.tsUsuarios);
+			this.toolStripContainer_Cursos.TopToolStripPanel.Controls.Add(this.tsCursos);
 			// 
 			// tableLayoutPanel_
 			// 
@@ -264,7 +264,7 @@
 			this.comboBox_Materia.FormattingEnabled = true;
 			this.comboBox_Materia.Location = new System.Drawing.Point(675, 37);
 			this.comboBox_Materia.Name = "comboBox_Materia";
-			this.comboBox_Materia.Size = new System.Drawing.Size(121, 21);
+			this.comboBox_Materia.Size = new System.Drawing.Size(191, 21);
 			this.comboBox_Materia.TabIndex = 48;
 			// 
 			// lbl_Materia
@@ -288,14 +288,24 @@
 			// 
 			// numericUpDown_CursoAnioCalendario
 			// 
-			this.numericUpDown_CursoAnioCalendario.Location = new System.Drawing.Point(131, 119);
+			this.numericUpDown_CursoAnioCalendario.Location = new System.Drawing.Point(131, 91);
+			this.numericUpDown_CursoAnioCalendario.Maximum = new decimal(new int[] {
+            3000,
+            0,
+            0,
+            0});
 			this.numericUpDown_CursoAnioCalendario.Name = "numericUpDown_CursoAnioCalendario";
 			this.numericUpDown_CursoAnioCalendario.Size = new System.Drawing.Size(79, 21);
 			this.numericUpDown_CursoAnioCalendario.TabIndex = 45;
+			this.numericUpDown_CursoAnioCalendario.Value = new decimal(new int[] {
+            1900,
+            0,
+            0,
+            0});
 			// 
 			// numericUpDown_CursoCupo
 			// 
-			this.numericUpDown_CursoCupo.Location = new System.Drawing.Point(131, 92);
+			this.numericUpDown_CursoCupo.Location = new System.Drawing.Point(131, 64);
 			this.numericUpDown_CursoCupo.Name = "numericUpDown_CursoCupo";
 			this.numericUpDown_CursoCupo.Size = new System.Drawing.Size(79, 21);
 			this.numericUpDown_CursoCupo.TabIndex = 44;
@@ -303,7 +313,7 @@
 			// lbl_CursoAnioCalendario
 			// 
 			this.lbl_CursoAnioCalendario.AutoSize = true;
-			this.lbl_CursoAnioCalendario.Location = new System.Drawing.Point(14, 121);
+			this.lbl_CursoAnioCalendario.Location = new System.Drawing.Point(14, 93);
 			this.lbl_CursoAnioCalendario.Name = "lbl_CursoAnioCalendario";
 			this.lbl_CursoAnioCalendario.Size = new System.Drawing.Size(92, 13);
 			this.lbl_CursoAnioCalendario.TabIndex = 42;
@@ -320,7 +330,7 @@
 			// lbl_CursoCupo
 			// 
 			this.lbl_CursoCupo.AutoSize = true;
-			this.lbl_CursoCupo.Location = new System.Drawing.Point(69, 94);
+			this.lbl_CursoCupo.Location = new System.Drawing.Point(69, 64);
 			this.lbl_CursoCupo.Name = "lbl_CursoCupo";
 			this.lbl_CursoCupo.Size = new System.Drawing.Size(37, 13);
 			this.lbl_CursoCupo.TabIndex = 40;
@@ -329,7 +339,7 @@
 			// lbl_CursoID
 			// 
 			this.lbl_CursoID.AutoSize = true;
-			this.lbl_CursoID.Location = new System.Drawing.Point(39, 40);
+			this.lbl_CursoID.Location = new System.Drawing.Point(47, 40);
 			this.lbl_CursoID.Name = "lbl_CursoID";
 			this.lbl_CursoID.Size = new System.Drawing.Size(59, 13);
 			this.lbl_CursoID.TabIndex = 38;
@@ -339,16 +349,16 @@
 			// 
 			this.lbl_Cabecera.AutoSize = true;
 			this.lbl_Cabecera.Font = new System.Drawing.Font("Verdana", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbl_Cabecera.Location = new System.Drawing.Point(39, 11);
+			this.lbl_Cabecera.Location = new System.Drawing.Point(47, 11);
 			this.lbl_Cabecera.Name = "lbl_Cabecera";
 			this.lbl_Cabecera.Size = new System.Drawing.Size(85, 14);
 			this.lbl_Cabecera.TabIndex = 37;
 			this.lbl_Cabecera.Text = "Datos Curso";
 			// 
-			// tsUsuarios
+			// tsCursos
 			// 
-			this.tsUsuarios.Dock = System.Windows.Forms.DockStyle.None;
-			this.tsUsuarios.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.tsCursos.Dock = System.Windows.Forms.DockStyle.None;
+			this.tsCursos.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbNuevo,
             tsbEditar,
             this.tsbEliminar,
@@ -358,10 +368,10 @@
             this.comboBox_TipoBusqueda,
             this.toolStripTextBox_Busqueda,
             this.btn_Buscar});
-			this.tsUsuarios.Location = new System.Drawing.Point(3, 0);
-			this.tsUsuarios.Name = "tsUsuarios";
-			this.tsUsuarios.Size = new System.Drawing.Size(410, 25);
-			this.tsUsuarios.TabIndex = 1;
+			this.tsCursos.Location = new System.Drawing.Point(4, 0);
+			this.tsCursos.Name = "tsCursos";
+			this.tsCursos.Size = new System.Drawing.Size(441, 25);
+			this.tsCursos.TabIndex = 1;
 			// 
 			// tsbNuevo
 			// 
@@ -430,6 +440,7 @@
 			// 
 			this.label_TextoAyudaMaterias.AutoSize = true;
 			this.label_TextoAyudaMaterias.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label_TextoAyudaMaterias.ForeColor = System.Drawing.SystemColors.ButtonShadow;
 			this.label_TextoAyudaMaterias.Location = new System.Drawing.Point(672, 73);
 			this.label_TextoAyudaMaterias.Name = "label_TextoAyudaMaterias";
 			this.label_TextoAyudaMaterias.Size = new System.Drawing.Size(194, 13);
@@ -440,6 +451,7 @@
 			// 
 			this.label_TextoAyudaComision.AutoSize = true;
 			this.label_TextoAyudaComision.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label_TextoAyudaComision.ForeColor = System.Drawing.SystemColors.ButtonShadow;
 			this.label_TextoAyudaComision.Location = new System.Drawing.Point(411, 73);
 			this.label_TextoAyudaComision.Name = "label_TextoAyudaComision";
 			this.label_TextoAyudaComision.Size = new System.Drawing.Size(138, 13);
@@ -470,8 +482,8 @@
 			this.panel_ABM_Cursos.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown_CursoAnioCalendario)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown_CursoCupo)).EndInit();
-			this.tsUsuarios.ResumeLayout(false);
-			this.tsUsuarios.PerformLayout();
+			this.tsCursos.ResumeLayout(false);
+			this.tsCursos.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -480,7 +492,7 @@
 
 		private System.Windows.Forms.ToolStripContainer toolStripContainer_Cursos;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_;
-		private System.Windows.Forms.ToolStrip tsUsuarios;
+		private System.Windows.Forms.ToolStrip tsCursos;
 		private System.Windows.Forms.ToolStripButton tsbNuevo;
 		private System.Windows.Forms.ToolStripButton tsbEliminar;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
