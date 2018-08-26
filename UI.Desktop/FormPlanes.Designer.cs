@@ -282,6 +282,7 @@
 			this.label_temporal.Size = new System.Drawing.Size(182, 13);
 			this.label_temporal.TabIndex = 1;
 			this.label_temporal.Text = "ABM y Búsqueda en desarrollo";
+			this.label_temporal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// FormPlanes
 			// 

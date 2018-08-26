@@ -32,6 +32,7 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormComisiones));
 			this.toolStripContainer_Cursos = new System.Windows.Forms.ToolStripContainer();
 			this.tableLayoutPanel_ = new System.Windows.Forms.TableLayoutPanel();
+			this.dgv_Comisiones = new System.Windows.Forms.DataGridView();
 			this.tsUsuarios = new System.Windows.Forms.ToolStrip();
 			this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
 			this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
@@ -41,10 +42,17 @@
 			this.comboBox_TipoBusqueda = new System.Windows.Forms.ToolStripComboBox();
 			this.toolStripTextBox_Usuario = new System.Windows.Forms.ToolStripTextBox();
 			this.btn_Buscar = new System.Windows.Forms.ToolStripButton();
+			this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.AnioEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.IDPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.label_temporal = new System.Windows.Forms.Label();
 			tsbEditar = new System.Windows.Forms.ToolStripButton();
 			this.toolStripContainer_Cursos.ContentPanel.SuspendLayout();
 			this.toolStripContainer_Cursos.TopToolStripPanel.SuspendLayout();
 			this.toolStripContainer_Cursos.SuspendLayout();
+			this.tableLayoutPanel_.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dgv_Comisiones)).BeginInit();
 			this.tsUsuarios.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -79,6 +87,8 @@
 			// 
 			this.tableLayoutPanel_.ColumnCount = 1;
 			this.tableLayoutPanel_.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel_.Controls.Add(this.dgv_Comisiones, 0, 0);
+			this.tableLayoutPanel_.Controls.Add(this.label_temporal, 0, 1);
 			this.tableLayoutPanel_.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel_.Location = new System.Drawing.Point(0, 0);
 			this.tableLayoutPanel_.Name = "tableLayoutPanel_";
@@ -87,6 +97,25 @@
 			this.tableLayoutPanel_.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
 			this.tableLayoutPanel_.Size = new System.Drawing.Size(933, 425);
 			this.tableLayoutPanel_.TabIndex = 0;
+			// 
+			// dgv_Comisiones
+			// 
+			this.dgv_Comisiones.AllowUserToAddRows = false;
+			this.dgv_Comisiones.AllowUserToDeleteRows = false;
+			this.dgv_Comisiones.BackgroundColor = System.Drawing.Color.White;
+			this.dgv_Comisiones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgv_Comisiones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Descripcion,
+            this.AnioEspecialidad,
+            this.IDPlan});
+			this.dgv_Comisiones.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dgv_Comisiones.Location = new System.Drawing.Point(3, 3);
+			this.dgv_Comisiones.Name = "dgv_Comisiones";
+			this.dgv_Comisiones.ReadOnly = true;
+			this.dgv_Comisiones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+			this.dgv_Comisiones.Size = new System.Drawing.Size(927, 206);
+			this.dgv_Comisiones.TabIndex = 0;
 			// 
 			// tsUsuarios
 			// 
@@ -166,6 +195,47 @@
 			this.btn_Buscar.Size = new System.Drawing.Size(23, 22);
 			this.btn_Buscar.ToolTipText = "Buscar";
 			// 
+			// ID
+			// 
+			this.ID.DataPropertyName = "ID";
+			this.ID.HeaderText = "ID";
+			this.ID.Name = "ID";
+			this.ID.ReadOnly = true;
+			// 
+			// Descripcion
+			// 
+			this.Descripcion.DataPropertyName = "Descripcion";
+			this.Descripcion.HeaderText = "Descripcion";
+			this.Descripcion.Name = "Descripcion";
+			this.Descripcion.ReadOnly = true;
+			// 
+			// AnioEspecialidad
+			// 
+			this.AnioEspecialidad.DataPropertyName = "AnioEspecialidad";
+			this.AnioEspecialidad.HeaderText = "Año especialidad";
+			this.AnioEspecialidad.Name = "AnioEspecialidad";
+			this.AnioEspecialidad.ReadOnly = true;
+			this.AnioEspecialidad.Width = 150;
+			// 
+			// IDPlan
+			// 
+			this.IDPlan.DataPropertyName = "IDPlan";
+			this.IDPlan.HeaderText = "ID Plan";
+			this.IDPlan.Name = "IDPlan";
+			this.IDPlan.ReadOnly = true;
+			// 
+			// label_temporal
+			// 
+			this.label_temporal.AutoSize = true;
+			this.label_temporal.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label_temporal.ForeColor = System.Drawing.SystemColors.WindowFrame;
+			this.label_temporal.Location = new System.Drawing.Point(3, 212);
+			this.label_temporal.Name = "label_temporal";
+			this.label_temporal.Size = new System.Drawing.Size(334, 26);
+			this.label_temporal.TabIndex = 1;
+			this.label_temporal.Text = "ABM, Búsqueda y formato de Util en tabla: en desarrollo \r\nNo se manejó comision.p" +
+    "lan\r\n";
+			// 
 			// FormComisiones
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -177,11 +247,15 @@
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "FormComisiones";
 			this.Text = "FormComisiones";
+			this.Load += new System.EventHandler(this.FormComisiones_Load);
 			this.toolStripContainer_Cursos.ContentPanel.ResumeLayout(false);
 			this.toolStripContainer_Cursos.TopToolStripPanel.ResumeLayout(false);
 			this.toolStripContainer_Cursos.TopToolStripPanel.PerformLayout();
 			this.toolStripContainer_Cursos.ResumeLayout(false);
 			this.toolStripContainer_Cursos.PerformLayout();
+			this.tableLayoutPanel_.ResumeLayout(false);
+			this.tableLayoutPanel_.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dgv_Comisiones)).EndInit();
 			this.tsUsuarios.ResumeLayout(false);
 			this.tsUsuarios.PerformLayout();
 			this.ResumeLayout(false);
@@ -201,5 +275,11 @@
 		private System.Windows.Forms.ToolStripComboBox comboBox_TipoBusqueda;
 		private System.Windows.Forms.ToolStripTextBox toolStripTextBox_Usuario;
 		private System.Windows.Forms.ToolStripButton btn_Buscar;
+		private System.Windows.Forms.DataGridView dgv_Comisiones;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+		private System.Windows.Forms.DataGridViewTextBoxColumn AnioEspecialidad;
+		private System.Windows.Forms.DataGridViewTextBoxColumn IDPlan;
+		private System.Windows.Forms.Label label_temporal;
 	}
 }

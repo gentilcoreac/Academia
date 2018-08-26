@@ -117,5 +117,15 @@ namespace UI.Desktop
 			this.panel_Principal.Controls.Add(appInscripciones);
 			appInscripciones.Show();
 		}
+
+		private void ToolStripMenuItem_Comisiones_Click(object sender, EventArgs e)
+		{
+			panel_Principal.Controls.Clear();
+			FormComisiones appComisiones = new FormComisiones();
+			appComisiones.TopLevel = false;
+			appComisiones.AutoScroll = false;
+			this.panel_Principal.Controls.Add(appComisiones);
+			appComisiones.Show();
+		}
 	}
 }

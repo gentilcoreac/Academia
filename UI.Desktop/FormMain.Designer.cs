@@ -37,10 +37,9 @@
 			this.ToolStripMenuItem_materias = new System.Windows.Forms.ToolStripMenuItem();
 			this.ToolStripMenuItem_planes = new System.Windows.Forms.ToolStripMenuItem();
 			this.ToolStripMenuItem_Cursos = new System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripMenuItem_Comisiones = new System.Windows.Forms.ToolStripMenuItem();
 			this.ToolStripMenuItem_Inscripciones = new System.Windows.Forms.ToolStripMenuItem();
 			this.panel_Principal = new System.Windows.Forms.TableLayoutPanel();
-			this.lbl_NombreUsuario = new System.Windows.Forms.Label();
-			this.lbl_tipopersona = new System.Windows.Forms.Label();
 			this.menuPrincipal.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -80,6 +79,7 @@
             this.ToolStripMenuItem_materias,
             this.ToolStripMenuItem_planes,
             this.ToolStripMenuItem_Cursos,
+            this.ToolStripMenuItem_Comisiones,
             this.ToolStripMenuItem_Inscripciones});
 			this.ToolStripMenuItem_gestion.Name = "ToolStripMenuItem_gestion";
 			this.ToolStripMenuItem_gestion.Size = new System.Drawing.Size(67, 20);
@@ -120,6 +120,13 @@
 			this.ToolStripMenuItem_Cursos.Text = "Cursos";
 			this.ToolStripMenuItem_Cursos.Click += new System.EventHandler(this.ToolStripMenuItem_Cursos_Click_1);
 			// 
+			// ToolStripMenuItem_Comisiones
+			// 
+			this.ToolStripMenuItem_Comisiones.Name = "ToolStripMenuItem_Comisiones";
+			this.ToolStripMenuItem_Comisiones.Size = new System.Drawing.Size(180, 22);
+			this.ToolStripMenuItem_Comisiones.Text = "Comisiones";
+			this.ToolStripMenuItem_Comisiones.Click += new System.EventHandler(this.ToolStripMenuItem_Comisiones_Click);
+			// 
 			// ToolStripMenuItem_Inscripciones
 			// 
 			this.ToolStripMenuItem_Inscripciones.Name = "ToolStripMenuItem_Inscripciones";
@@ -140,36 +147,12 @@
 			this.panel_Principal.Size = new System.Drawing.Size(933, 426);
 			this.panel_Principal.TabIndex = 3;
 			// 
-			// lbl_NombreUsuario
-			// 
-			this.lbl_NombreUsuario.AutoSize = true;
-			this.lbl_NombreUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.lbl_NombreUsuario.Location = new System.Drawing.Point(704, 8);
-			this.lbl_NombreUsuario.Name = "lbl_NombreUsuario";
-			this.lbl_NombreUsuario.Size = new System.Drawing.Size(159, 13);
-			this.lbl_NombreUsuario.TabIndex = 5;
-			this.lbl_NombreUsuario.Text = "Label para NombreUsuario";
-			this.lbl_NombreUsuario.Visible = false;
-			// 
-			// lbl_tipopersona
-			// 
-			this.lbl_tipopersona.AutoSize = true;
-			this.lbl_tipopersona.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.lbl_tipopersona.Location = new System.Drawing.Point(869, 8);
-			this.lbl_tipopersona.Name = "lbl_tipopersona";
-			this.lbl_tipopersona.Size = new System.Drawing.Size(64, 13);
-			this.lbl_tipopersona.TabIndex = 5;
-			this.lbl_tipopersona.Text = "lbl tipoPer";
-			this.lbl_tipopersona.Visible = false;
-			// 
 			// FormMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(933, 450);
-			this.Controls.Add(this.lbl_NombreUsuario);
-			this.Controls.Add(this.lbl_tipopersona);
 			this.Controls.Add(this.panel_Principal);
 			this.Controls.Add(this.menuPrincipal);
 			this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -196,11 +179,10 @@
 		private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_usuarios;
 		private System.Windows.Forms.TableLayoutPanel panel_Principal;
 		private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_personas;
-		private System.Windows.Forms.Label lbl_NombreUsuario;
-		private System.Windows.Forms.Label lbl_tipopersona;
 		private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_materias;
 		private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_planes;
 		private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_Cursos;
 		private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_Inscripciones;
+		private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_Comisiones;
 	}
 }
