@@ -133,6 +133,21 @@
         7BcZ+1Rz6uSeyqD/MzrYYzEdo0TiExPNuapZkvDpAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="ID_Inscripcion.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ID_Alumno.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ID_Curso.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Condicion.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Nota.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="tsUsuarios.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -148,15 +163,15 @@
   <data name="tsbEliminar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGzSURBVDhPlVK/SwJRHI+ItvoroqWtpaXpEFFEELHVwO1A
-        SOFCqEVMOLdychAECdp0cMhBpCWN8BCHGxIcGpz0EPHXOd2n9z3f6akV9YEP977vfT6f977v3Q5hNpuB
-        aBYMm/WvIOHb3TVeb8OmiUjjd/nmbyEkerm6RP74wDQSrfGfAgj2kH+bCSS2drYHcDZUVTU0TZuz8fNk
-        MjnltgXsZvra25lOp4jH43A6nXC5XJBlGf1+f67rusDtqwD7rhRiXWI+n0e320Wn00EsFkM0GsVoNPoE
-        sMcjFiFEXi7rRCKxDCUOh0P4/X60Wi2qz7l8G2zxIZ1OI5vNrgUQI5EIKpUKjS+4fBtsUSoWiwiHF/dg
-        mXu9HrxeL9rtNs2fcfn3GAwGejAYNNtoNpuo1+sQRdFqS2V3sMul2xiPxyfsubRMJgNBEOB2u82XcDgc
-        qFarFKAYhnHI5etgyfvseB/JZBKhUAiKophtsJtHuVyGz+dDoVCguUduWQdLD9ZqNQQCAbNnq3+L9AIe
-        jwdMY7D/4YjbVmBHf0qlUsjlcltmi5IkoVQq0SlEbluBCRqbhp85u/8CR2UNUrJnq5MAAAAASUVORK5C
-        YII=
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGySURBVDhPlVK/S0JRGI2ItvoroqWtpaXpIaKIIGLrC9we
+        CCm8EGoRE3QrJwdBeARtOjjkINKSRiji0JDg0OCkIuKPp9M73e95rz61wg4c3v3uO+fc+917dwi6roNo
+        Fgzr9Z8g4dvdNV5vA6aJSOP3+M12ISR6ubqEdnxgGolivFUAwRrybzOBxGJlawBntVarGb1eb8bGz+Px
+        +JTb5rCa6WttZzKZIBKJwG63w+FwIB6Po9vtzqbTqcTtywDrqhQiDlHTNLTbbbRaLYTDYYRCIQyHwy8A
+        ezxiHkLk5aKORqOLUOJgMIDX60Wj0aD6nMs3wX4+JJNJpNPplQBiMBhEsVik8QWXb4L9VHO5HAKB+TkI
+        c6fTgdvtRrPZpPkzLv8Z/X5/Ksuy2Ua9XkelUoGiKKKtD3YGu1y6idFodMKuq5dKpSBJEpxOp3kTNpsN
+        pVKJAmqGYRxy+SpY8j7b3mcsFoPf7wd7A2Yb7ORRKBTg8XiQzWZp7pFbVsHS5XK5DJ/PZ/Ys+hekG3C5
+        XLQTg72HI25bgm39KZFIIJPJbJgFVVVFPp+nXSjctgQTVNcNv1O//wb07g0iLO6D+QAAAABJRU5ErkJg
+        gg==
 </value>
   </data>
   <data name="btn_Buscar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -242,4 +257,19 @@
         8PDw8PDw8OgN1lnn/7tbAvmN36IZAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="ID_Inscripcion.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ID_Alumno.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ID_Curso.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Condicion.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Nota.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

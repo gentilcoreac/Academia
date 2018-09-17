@@ -51,5 +51,11 @@ namespace Business.Entities
 		//    set { _IDMateria = value; }
 		//}
 
+		public override string ToString()
+		{
+			return string.Format("{0}-{1}-{2}", ID, Comision.Descripcion, Materia.Descripcion);
+		}
+
+
 	}
 }

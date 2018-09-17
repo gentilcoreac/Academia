@@ -31,6 +31,20 @@
 			System.Windows.Forms.ToolStripButton tsbEditar;
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInscripciones));
 			this.toolStripContainer_Cursos = new System.Windows.Forms.ToolStripContainer();
+			this.tableLayoutPanel_ = new System.Windows.Forms.TableLayoutPanel();
+			this.dgv_AlumnoInscripcion = new System.Windows.Forms.DataGridView();
+			this.panel_ABM_Inscripciones = new System.Windows.Forms.Panel();
+			this.txt_Nota = new System.Windows.Forms.TextBox();
+			this.txt_Condicion = new System.Windows.Forms.TextBox();
+			this.txt_IDAlumno = new System.Windows.Forms.TextBox();
+			this.txt_ID_Inscripcion = new System.Windows.Forms.TextBox();
+			this.comboBox_Curso = new System.Windows.Forms.ComboBox();
+			this.btnAceptar = new System.Windows.Forms.Button();
+			this.lbl_Nota = new System.Windows.Forms.Label();
+			this.lbl_Condicion = new System.Windows.Forms.Label();
+			this.lbl_ID_Curso = new System.Windows.Forms.Label();
+			this.lbl_ID_Alumno = new System.Windows.Forms.Label();
+			this.lbl_ID_Inscripcion = new System.Windows.Forms.Label();
 			this.tsUsuarios = new System.Windows.Forms.ToolStrip();
 			this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
 			this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
@@ -40,11 +54,18 @@
 			this.comboBox_TipoBusqueda = new System.Windows.Forms.ToolStripComboBox();
 			this.toolStripTextBox_Usuario = new System.Windows.Forms.ToolStripTextBox();
 			this.btn_Buscar = new System.Windows.Forms.ToolStripButton();
-			this.tableLayoutPanel_ = new System.Windows.Forms.TableLayoutPanel();
+			this.ID_Inscripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ID_Alumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ID_Curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Condicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			tsbEditar = new System.Windows.Forms.ToolStripButton();
 			this.toolStripContainer_Cursos.ContentPanel.SuspendLayout();
 			this.toolStripContainer_Cursos.TopToolStripPanel.SuspendLayout();
 			this.toolStripContainer_Cursos.SuspendLayout();
+			this.tableLayoutPanel_.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dgv_AlumnoInscripcion)).BeginInit();
+			this.panel_ABM_Inscripciones.SuspendLayout();
 			this.tsUsuarios.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -74,6 +95,152 @@
 			// toolStripContainer_Cursos.TopToolStripPanel
 			// 
 			this.toolStripContainer_Cursos.TopToolStripPanel.Controls.Add(this.tsUsuarios);
+			// 
+			// tableLayoutPanel_
+			// 
+			this.tableLayoutPanel_.ColumnCount = 1;
+			this.tableLayoutPanel_.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel_.Controls.Add(this.dgv_AlumnoInscripcion, 0, 0);
+			this.tableLayoutPanel_.Controls.Add(this.panel_ABM_Inscripciones, 0, 1);
+			this.tableLayoutPanel_.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.tableLayoutPanel_.Location = new System.Drawing.Point(0, 0);
+			this.tableLayoutPanel_.Name = "tableLayoutPanel_";
+			this.tableLayoutPanel_.RowCount = 2;
+			this.tableLayoutPanel_.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel_.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel_.Size = new System.Drawing.Size(933, 425);
+			this.tableLayoutPanel_.TabIndex = 0;
+			// 
+			// dgv_AlumnoInscripcion
+			// 
+			this.dgv_AlumnoInscripcion.AllowUserToAddRows = false;
+			this.dgv_AlumnoInscripcion.AllowUserToDeleteRows = false;
+			this.dgv_AlumnoInscripcion.BackgroundColor = System.Drawing.Color.White;
+			this.dgv_AlumnoInscripcion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgv_AlumnoInscripcion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID_Inscripcion,
+            this.ID_Alumno,
+            this.ID_Curso,
+            this.Condicion,
+            this.Nota});
+			this.dgv_AlumnoInscripcion.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dgv_AlumnoInscripcion.Location = new System.Drawing.Point(3, 3);
+			this.dgv_AlumnoInscripcion.Name = "dgv_AlumnoInscripcion";
+			this.dgv_AlumnoInscripcion.ReadOnly = true;
+			this.dgv_AlumnoInscripcion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+			this.dgv_AlumnoInscripcion.Size = new System.Drawing.Size(927, 206);
+			this.dgv_AlumnoInscripcion.TabIndex = 0;
+			// 
+			// panel_ABM_Inscripciones
+			// 
+			this.panel_ABM_Inscripciones.Controls.Add(this.txt_Nota);
+			this.panel_ABM_Inscripciones.Controls.Add(this.txt_Condicion);
+			this.panel_ABM_Inscripciones.Controls.Add(this.txt_IDAlumno);
+			this.panel_ABM_Inscripciones.Controls.Add(this.txt_ID_Inscripcion);
+			this.panel_ABM_Inscripciones.Controls.Add(this.comboBox_Curso);
+			this.panel_ABM_Inscripciones.Controls.Add(this.btnAceptar);
+			this.panel_ABM_Inscripciones.Controls.Add(this.lbl_Nota);
+			this.panel_ABM_Inscripciones.Controls.Add(this.lbl_Condicion);
+			this.panel_ABM_Inscripciones.Controls.Add(this.lbl_ID_Curso);
+			this.panel_ABM_Inscripciones.Controls.Add(this.lbl_ID_Alumno);
+			this.panel_ABM_Inscripciones.Controls.Add(this.lbl_ID_Inscripcion);
+			this.panel_ABM_Inscripciones.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel_ABM_Inscripciones.Location = new System.Drawing.Point(3, 215);
+			this.panel_ABM_Inscripciones.Name = "panel_ABM_Inscripciones";
+			this.panel_ABM_Inscripciones.Size = new System.Drawing.Size(927, 207);
+			this.panel_ABM_Inscripciones.TabIndex = 1;
+			// 
+			// txt_Nota
+			// 
+			this.txt_Nota.Location = new System.Drawing.Point(132, 129);
+			this.txt_Nota.Name = "txt_Nota";
+			this.txt_Nota.Size = new System.Drawing.Size(100, 21);
+			this.txt_Nota.TabIndex = 10;
+			// 
+			// txt_Condicion
+			// 
+			this.txt_Condicion.Location = new System.Drawing.Point(132, 99);
+			this.txt_Condicion.Name = "txt_Condicion";
+			this.txt_Condicion.Size = new System.Drawing.Size(100, 21);
+			this.txt_Condicion.TabIndex = 9;
+			// 
+			// txt_IDAlumno
+			// 
+			this.txt_IDAlumno.Location = new System.Drawing.Point(132, 62);
+			this.txt_IDAlumno.Name = "txt_IDAlumno";
+			this.txt_IDAlumno.Size = new System.Drawing.Size(100, 21);
+			this.txt_IDAlumno.TabIndex = 8;
+			// 
+			// txt_ID_Inscripcion
+			// 
+			this.txt_ID_Inscripcion.Enabled = false;
+			this.txt_ID_Inscripcion.Location = new System.Drawing.Point(132, 25);
+			this.txt_ID_Inscripcion.Name = "txt_ID_Inscripcion";
+			this.txt_ID_Inscripcion.Size = new System.Drawing.Size(100, 21);
+			this.txt_ID_Inscripcion.TabIndex = 7;
+			// 
+			// comboBox_Curso
+			// 
+			this.comboBox_Curso.FormattingEnabled = true;
+			this.comboBox_Curso.Location = new System.Drawing.Point(395, 25);
+			this.comboBox_Curso.Name = "comboBox_Curso";
+			this.comboBox_Curso.Size = new System.Drawing.Size(243, 21);
+			this.comboBox_Curso.TabIndex = 6;
+			// 
+			// btnAceptar
+			// 
+			this.btnAceptar.Location = new System.Drawing.Point(525, 127);
+			this.btnAceptar.Name = "btnAceptar";
+			this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+			this.btnAceptar.TabIndex = 5;
+			this.btnAceptar.Text = "Aceptar";
+			this.btnAceptar.UseVisualStyleBackColor = true;
+			// 
+			// lbl_Nota
+			// 
+			this.lbl_Nota.AutoSize = true;
+			this.lbl_Nota.Location = new System.Drawing.Point(80, 132);
+			this.lbl_Nota.Name = "lbl_Nota";
+			this.lbl_Nota.Size = new System.Drawing.Size(33, 13);
+			this.lbl_Nota.TabIndex = 4;
+			this.lbl_Nota.Text = "Nota";
+			// 
+			// lbl_Condicion
+			// 
+			this.lbl_Condicion.AutoSize = true;
+			this.lbl_Condicion.Location = new System.Drawing.Point(50, 99);
+			this.lbl_Condicion.Name = "lbl_Condicion";
+			this.lbl_Condicion.Size = new System.Drawing.Size(63, 13);
+			this.lbl_Condicion.TabIndex = 3;
+			this.lbl_Condicion.Text = "Condicion";
+			// 
+			// lbl_ID_Curso
+			// 
+			this.lbl_ID_Curso.AutoSize = true;
+			this.lbl_ID_Curso.Location = new System.Drawing.Point(317, 28);
+			this.lbl_ID_Curso.Name = "lbl_ID_Curso";
+			this.lbl_ID_Curso.Size = new System.Drawing.Size(59, 13);
+			this.lbl_ID_Curso.TabIndex = 2;
+			this.lbl_ID_Curso.Text = "ID Curso";
+			// 
+			// lbl_ID_Alumno
+			// 
+			this.lbl_ID_Alumno.AutoSize = true;
+			this.lbl_ID_Alumno.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+			this.lbl_ID_Alumno.Location = new System.Drawing.Point(45, 65);
+			this.lbl_ID_Alumno.Name = "lbl_ID_Alumno";
+			this.lbl_ID_Alumno.Size = new System.Drawing.Size(68, 13);
+			this.lbl_ID_Alumno.TabIndex = 1;
+			this.lbl_ID_Alumno.Text = "ID Alumno";
+			// 
+			// lbl_ID_Inscripcion
+			// 
+			this.lbl_ID_Inscripcion.AutoSize = true;
+			this.lbl_ID_Inscripcion.Location = new System.Drawing.Point(26, 28);
+			this.lbl_ID_Inscripcion.Name = "lbl_ID_Inscripcion";
+			this.lbl_ID_Inscripcion.Size = new System.Drawing.Size(87, 13);
+			this.lbl_ID_Inscripcion.TabIndex = 0;
+			this.lbl_ID_Inscripcion.Text = "ID Inscripcion";
 			// 
 			// tsUsuarios
 			// 
@@ -153,18 +320,40 @@
 			this.btn_Buscar.Size = new System.Drawing.Size(23, 22);
 			this.btn_Buscar.ToolTipText = "Buscar";
 			// 
-			// tableLayoutPanel_
+			// ID_Inscripcion
 			// 
-			this.tableLayoutPanel_.ColumnCount = 1;
-			this.tableLayoutPanel_.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel_.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tableLayoutPanel_.Location = new System.Drawing.Point(0, 0);
-			this.tableLayoutPanel_.Name = "tableLayoutPanel_";
-			this.tableLayoutPanel_.RowCount = 2;
-			this.tableLayoutPanel_.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel_.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel_.Size = new System.Drawing.Size(933, 425);
-			this.tableLayoutPanel_.TabIndex = 0;
+			this.ID_Inscripcion.DataPropertyName = "ID";
+			this.ID_Inscripcion.HeaderText = "ID Inscripcion";
+			this.ID_Inscripcion.Name = "ID_Inscripcion";
+			this.ID_Inscripcion.ReadOnly = true;
+			// 
+			// ID_Alumno
+			// 
+			this.ID_Alumno.DataPropertyName = "IDAlumno.ID";
+			this.ID_Alumno.HeaderText = "ID Alumno";
+			this.ID_Alumno.Name = "ID_Alumno";
+			this.ID_Alumno.ReadOnly = true;
+			// 
+			// ID_Curso
+			// 
+			this.ID_Curso.DataPropertyName = "IDCurso";
+			this.ID_Curso.HeaderText = "ID Curso";
+			this.ID_Curso.Name = "ID_Curso";
+			this.ID_Curso.ReadOnly = true;
+			// 
+			// Condicion
+			// 
+			this.Condicion.DataPropertyName = "Condicion";
+			this.Condicion.HeaderText = "Condicion";
+			this.Condicion.Name = "Condicion";
+			this.Condicion.ReadOnly = true;
+			// 
+			// Nota
+			// 
+			this.Nota.DataPropertyName = "Nota";
+			this.Nota.HeaderText = "Nota";
+			this.Nota.Name = "Nota";
+			this.Nota.ReadOnly = true;
 			// 
 			// FormInscripciones
 			// 
@@ -177,11 +366,16 @@
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "FormInscripciones";
 			this.Text = "FormInscripciones";
+			this.Load += new System.EventHandler(this.FormInscripciones_Load);
 			this.toolStripContainer_Cursos.ContentPanel.ResumeLayout(false);
 			this.toolStripContainer_Cursos.TopToolStripPanel.ResumeLayout(false);
 			this.toolStripContainer_Cursos.TopToolStripPanel.PerformLayout();
 			this.toolStripContainer_Cursos.ResumeLayout(false);
 			this.toolStripContainer_Cursos.PerformLayout();
+			this.tableLayoutPanel_.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.dgv_AlumnoInscripcion)).EndInit();
+			this.panel_ABM_Inscripciones.ResumeLayout(false);
+			this.panel_ABM_Inscripciones.PerformLayout();
 			this.tsUsuarios.ResumeLayout(false);
 			this.tsUsuarios.PerformLayout();
 			this.ResumeLayout(false);
@@ -201,5 +395,23 @@
 		private System.Windows.Forms.ToolStripTextBox toolStripTextBox_Usuario;
 		private System.Windows.Forms.ToolStripButton btn_Buscar;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_;
+		private System.Windows.Forms.DataGridView dgv_AlumnoInscripcion;
+		private System.Windows.Forms.Panel panel_ABM_Inscripciones;
+		private System.Windows.Forms.ComboBox comboBox_Curso;
+		private System.Windows.Forms.Button btnAceptar;
+		private System.Windows.Forms.Label lbl_Nota;
+		private System.Windows.Forms.Label lbl_Condicion;
+		private System.Windows.Forms.Label lbl_ID_Curso;
+		private System.Windows.Forms.Label lbl_ID_Alumno;
+		private System.Windows.Forms.Label lbl_ID_Inscripcion;
+		private System.Windows.Forms.TextBox txt_Nota;
+		private System.Windows.Forms.TextBox txt_Condicion;
+		private System.Windows.Forms.TextBox txt_IDAlumno;
+		private System.Windows.Forms.TextBox txt_ID_Inscripcion;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ID_Inscripcion;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ID_Alumno;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ID_Curso;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Condicion;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Nota;
 	}
 }

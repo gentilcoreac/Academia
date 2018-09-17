@@ -41,6 +41,9 @@
 			this.IDMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.DescMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.panel_ABM_Cursos = new System.Windows.Forms.Panel();
+			this.label1 = new System.Windows.Forms.Label();
+			this.label_TextoAyudaComision = new System.Windows.Forms.Label();
+			this.label_TextoAyudaMaterias = new System.Windows.Forms.Label();
 			this.btnAceptar = new System.Windows.Forms.Button();
 			this.comboBox_Comision = new System.Windows.Forms.ComboBox();
 			this.lbl_Comision = new System.Windows.Forms.Label();
@@ -64,8 +67,6 @@
 			this.comboBox_TipoBusqueda = new System.Windows.Forms.ToolStripComboBox();
 			this.toolStripTextBox_Busqueda = new System.Windows.Forms.ToolStripTextBox();
 			this.btn_Buscar = new System.Windows.Forms.ToolStripButton();
-			this.label_TextoAyudaMaterias = new System.Windows.Forms.Label();
-			this.label_TextoAyudaComision = new System.Windows.Forms.Label();
 			tsbEditar = new System.Windows.Forms.ToolStripButton();
 			this.toolStripContainer_Cursos.ContentPanel.SuspendLayout();
 			this.toolStripContainer_Cursos.TopToolStripPanel.SuspendLayout();
@@ -200,6 +201,7 @@
 			// 
 			// panel_ABM_Cursos
 			// 
+			this.panel_ABM_Cursos.Controls.Add(this.label1);
 			this.panel_ABM_Cursos.Controls.Add(this.label_TextoAyudaComision);
 			this.panel_ABM_Cursos.Controls.Add(this.label_TextoAyudaMaterias);
 			this.panel_ABM_Cursos.Controls.Add(this.btnAceptar);
@@ -221,6 +223,37 @@
 			this.panel_ABM_Cursos.Name = "panel_ABM_Cursos";
 			this.panel_ABM_Cursos.Size = new System.Drawing.Size(928, 207);
 			this.panel_ABM_Cursos.TabIndex = 1;
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(464, 118);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(298, 26);
+			this.label1.TabIndex = 55;
+			this.label1.Text = "AYUDAR AL USUARIO Y FILTRARLE POR CARRERA \r\nPARA ASI LUEGO SELECCIONAR\r\n";
+			// 
+			// label_TextoAyudaComision
+			// 
+			this.label_TextoAyudaComision.AutoSize = true;
+			this.label_TextoAyudaComision.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label_TextoAyudaComision.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+			this.label_TextoAyudaComision.Location = new System.Drawing.Point(411, 73);
+			this.label_TextoAyudaComision.Name = "label_TextoAyudaComision";
+			this.label_TextoAyudaComision.Size = new System.Drawing.Size(138, 13);
+			this.label_TextoAyudaComision.TabIndex = 54;
+			this.label_TextoAyudaComision.Text = "ID, Descripcion, IDPlan";
+			// 
+			// label_TextoAyudaMaterias
+			// 
+			this.label_TextoAyudaMaterias.AutoSize = true;
+			this.label_TextoAyudaMaterias.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label_TextoAyudaMaterias.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+			this.label_TextoAyudaMaterias.Location = new System.Drawing.Point(672, 73);
+			this.label_TextoAyudaMaterias.Name = "label_TextoAyudaMaterias";
+			this.label_TextoAyudaMaterias.Size = new System.Drawing.Size(194, 13);
+			this.label_TextoAyudaMaterias.TabIndex = 53;
+			this.label_TextoAyudaMaterias.Text = "ID, Descripcion, Plan.Descripcion";
 			// 
 			// btnAceptar
 			// 
@@ -264,7 +297,7 @@
 			this.comboBox_Materia.FormattingEnabled = true;
 			this.comboBox_Materia.Location = new System.Drawing.Point(675, 37);
 			this.comboBox_Materia.Name = "comboBox_Materia";
-			this.comboBox_Materia.Size = new System.Drawing.Size(191, 21);
+			this.comboBox_Materia.Size = new System.Drawing.Size(229, 21);
 			this.comboBox_Materia.TabIndex = 48;
 			// 
 			// lbl_Materia
@@ -368,9 +401,9 @@
             this.comboBox_TipoBusqueda,
             this.toolStripTextBox_Busqueda,
             this.btn_Buscar});
-			this.tsCursos.Location = new System.Drawing.Point(4, 0);
+			this.tsCursos.Location = new System.Drawing.Point(3, 0);
 			this.tsCursos.Name = "tsCursos";
-			this.tsCursos.Size = new System.Drawing.Size(441, 25);
+			this.tsCursos.Size = new System.Drawing.Size(410, 25);
 			this.tsCursos.TabIndex = 1;
 			// 
 			// tsbNuevo
@@ -435,28 +468,6 @@
 			this.btn_Buscar.Size = new System.Drawing.Size(23, 22);
 			this.btn_Buscar.ToolTipText = "Buscar";
 			this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
-			// 
-			// label_TextoAyudaMaterias
-			// 
-			this.label_TextoAyudaMaterias.AutoSize = true;
-			this.label_TextoAyudaMaterias.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label_TextoAyudaMaterias.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-			this.label_TextoAyudaMaterias.Location = new System.Drawing.Point(672, 73);
-			this.label_TextoAyudaMaterias.Name = "label_TextoAyudaMaterias";
-			this.label_TextoAyudaMaterias.Size = new System.Drawing.Size(194, 13);
-			this.label_TextoAyudaMaterias.TabIndex = 53;
-			this.label_TextoAyudaMaterias.Text = "ID, Descripcion, Plan.Descripcion";
-			// 
-			// label_TextoAyudaComision
-			// 
-			this.label_TextoAyudaComision.AutoSize = true;
-			this.label_TextoAyudaComision.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label_TextoAyudaComision.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-			this.label_TextoAyudaComision.Location = new System.Drawing.Point(411, 73);
-			this.label_TextoAyudaComision.Name = "label_TextoAyudaComision";
-			this.label_TextoAyudaComision.Size = new System.Drawing.Size(138, 13);
-			this.label_TextoAyudaComision.TabIndex = 54;
-			this.label_TextoAyudaComision.Text = "ID, Descripcion, IDPlan";
 			// 
 			// FormCursos
 			// 
@@ -526,5 +537,6 @@
 		private System.Windows.Forms.Button btnAceptar;
 		private System.Windows.Forms.Label label_TextoAyudaComision;
 		private System.Windows.Forms.Label label_TextoAyudaMaterias;
+		private System.Windows.Forms.Label label1;
 	}
 }
