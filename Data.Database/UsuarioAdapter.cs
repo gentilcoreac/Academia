@@ -15,32 +15,34 @@ namespace Data.Database
 			try
 			{
 				this.OpenConnection();
-				SqlCommand cmdUsuarios = new SqlCommand(
-					"select  id_usuario,nombre_usuario,clave,habilitado," +
-					"		 nombre,apellido,email_usuario," +
-					"		 cambia_clave,id_persona " +
-					"from usuarios", SqlConn);
-				SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
-				while (drUsuarios.Read())
-				{
-					Usuario oUsr = new Usuario();
-					oUsr.ID = (int)drUsuarios["id_usuario"];
-					oUsr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
-					oUsr.Clave = (string)drUsuarios["clave"];
-					oUsr.Email = drUsuarios["email_usuario"].ToString();
-					oUsr.Habilitado = (bool)drUsuarios["habilitado"];
+                SqlCommand cmdUsuarios = new SqlCommand(
+                    "select  id_usuario,nombre_usuario,clave,habilitado," +
+                    "		 email_usuario, id_persona " +
+                    "from usuarios", SqlConn);
 
-					Persona oPersona = new Persona();
-					oPersona.ID = (int)drUsuarios["id_persona"];
-					oUsr.IDPersona = oPersona;
-					listaUsuarios.Add(oUsr);
-				}
-				drUsuarios.Close();
-			}
-			catch (Exception Ex)
+                SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
+                while (drUsuarios.Read())
+                {
+                    Usuario oUsr = new Usuario();
+                    oUsr.ID = (int)drUsuarios["id_usuario"];
+                    oUsr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
+                    oUsr.Clave = (string)drUsuarios["clave"];
+                    oUsr.Email = (string)drUsuarios["email_usuario"];
+                    oUsr.Habilitado = (bool)drUsuarios["habilitado"];
+
+                    Persona oPersona = new Persona();
+                    oPersona.ID = (int)drUsuarios["id_persona"];
+                    oUsr.IDPersona = oPersona;
+                    listaUsuarios.Add(oUsr);
+                }
+                drUsuarios.Close();
+            }
+            catch (Exception Ex)
 			{
-				throw new Exception("Error al recuperar los usuarios", Ex);
-			}
+                //throw new Exception("Error al recuperar los usuarios", Ex);
+                System.Exception argEx = new System.Exception("Error al recuperar los usuarios", Ex);
+                throw argEx;
+            }
 			finally
 			{
 				this.CloseConnection();
@@ -293,8 +295,8 @@ namespace Data.Database
 				SqlCommand cmdDeleteUsuario = new SqlCommand(""+
 									  " BEGIN TRY    												"
 									+ "	BEGIN TRAN													"
-									+ "		delete from usuarios where id_usuario = @id_usuario		"
-									+ "		delete from personas where id_persona = @id_persona		"
+									+ "		delete from usuarios where id_usuario = @id_usuario;	"
+									+ "		delete from personas where id_persona = @id_persona;	"
 									+ "    COMMIT TRAN												"
 									+ "END TRY														"
 									+ "BEGIN CATCH													"
