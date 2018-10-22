@@ -11,8 +11,8 @@ namespace Business.Entities
 
         private string _NombreUsuario;
         private string _Clave;
-        private string _Nombre;
-        private string _Apellido;
+        //private string _Nombre;
+        //private string _Apellido;
         private string _Email;
         private bool _Habilitado;
 		private Persona _IDPersona;
@@ -31,17 +31,17 @@ namespace Business.Entities
             set { _Clave = value; }
         }
 
-        public string Nombre
-        {
-            get { return _Nombre; }
-            set { _Nombre = value; }
-        }
+        //public string Nombre
+        //{
+        //    get { return _Nombre; }
+        //    set { _Nombre = value; }
+        //}
 
-        public string Apellido
-        {
-            get { return _Apellido; }
-            set { _Apellido = value; }
-        }
+        //public string Apellido
+        //{
+        //    get { return _Apellido; }
+        //    set { _Apellido = value; }
+        //}
 
         public string Email
         {
