@@ -163,15 +163,15 @@
   <data name="tsbEliminar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGySURBVDhPlVK/S0JRGI2ItvoroqWtpaXpIaKIIGLrC9we
-        CCm8EGoRE3QrJwdBeARtOjjkINKSRiji0JDg0OCkIuKPp9M73e95rz61wg4c3v3uO+fc+917dwi6roNo
-        Fgzr9Z8g4dvdNV5vA6aJSOP3+M12ISR6ubqEdnxgGolivFUAwRrybzOBxGJlawBntVarGb1eb8bGz+Px
-        +JTb5rCa6WttZzKZIBKJwG63w+FwIB6Po9vtzqbTqcTtywDrqhQiDlHTNLTbbbRaLYTDYYRCIQyHwy8A
-        ezxiHkLk5aKORqOLUOJgMIDX60Wj0aD6nMs3wX4+JJNJpNPplQBiMBhEsVik8QWXb4L9VHO5HAKB+TkI
-        c6fTgdvtRrPZpPkzLv8Z/X5/Ksuy2Ua9XkelUoGiKKKtD3YGu1y6idFodMKuq5dKpSBJEpxOp3kTNpsN
-        pVKJAmqGYRxy+SpY8j7b3mcsFoPf7wd7A2Yb7ORRKBTg8XiQzWZp7pFbVsHS5XK5DJ/PZ/Ys+hekG3C5
-        XLQTg72HI25bgm39KZFIIJPJbJgFVVVFPp+nXSjctgQTVNcNv1O//wb07g0iLO6D+QAAAABJRU5ErkJg
-        gg==
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAG0SURBVDhPlVK/SwJRHI+ItvoroqWtpaVJRBQRRGy9wE0Q
+        UrgQahETzq2cHAThCNoUdMhBJIc0QhGHhgSHBic9RPw93af3Pd/p6VXYBz7c+773+Xze+753O4TpdAqi
+        VjBs1n+ChG9313i9DWgmIo3fpZvtQkj0cnUJ+fhAMxL18VYBBGPIv80EEus7GwM4a+VyWVUUZc7Gz+Px
+        +JTbFjCa6WtsZzKZIBKJwGazwW63Q5Ik9Hq9+Ww2s3D7KsC4K4XolyjLMjqdDtrtNsLhMEKhEIbD4ReA
+        PR6xCCHycllHo9FlKHEwGMDj8aDZbFJ9zuVmsMWHRCKBVCq1FkAMBoMoFos0vuByM9iimM1mEQgs7kE3
+        d7tduFwutFotmj/j8p/R7/dngiBobTQaDVSrVfj9fr2tD3YHu1xqxmg0OmHPpSSTSVgsFjgcDu0lrFYr
+        SqUSBdRVVT3k8nWw5H12vM9YLAafz4d6va61wW4ehUIBbrcbmUyG5h65ZR0sXahUKvB6vVrPev866QWc
+        TidyuZzK/ocjbluBHf0pHo8jnU6bzDpFUUQ+n6dT+LltBSaobRp+5/T+G3lSDNpN4qMRAAAAAElFTkSu
+        QmCC
 </value>
   </data>
   <data name="btn_Buscar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -257,19 +257,4 @@
         8PDw8PDw8OgN1lnn/7tbAvmN36IZAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="ID_Inscripcion.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ID_Alumno.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ID_Curso.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Condicion.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Nota.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>

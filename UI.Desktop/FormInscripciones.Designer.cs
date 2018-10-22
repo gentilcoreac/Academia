@@ -47,12 +47,15 @@
 			this.lbl_ID_Inscripcion = new System.Windows.Forms.Label();
 			this.tsUsuarios = new System.Windows.Forms.ToolStrip();
 			this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
+			this.toolStripLabel_NuevaInscripcion = new System.Windows.Forms.ToolStripLabel();
+			this.toolStripLabel_EditarInscripcion = new System.Windows.Forms.ToolStripLabel();
 			this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
+			this.toolStripLabel_EliminarInscripcion = new System.Windows.Forms.ToolStripLabel();
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			this.lbl_Buscar = new System.Windows.Forms.ToolStripLabel();
 			this.comboBox_TipoBusqueda = new System.Windows.Forms.ToolStripComboBox();
-			this.toolStripTextBox_Usuario = new System.Windows.Forms.ToolStripTextBox();
+			this.toolStripTextBox_Busqueda = new System.Windows.Forms.ToolStripTextBox();
 			this.btn_Buscar = new System.Windows.Forms.ToolStripButton();
 			this.ID_Inscripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ID_Alumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,6 +80,7 @@
 			tsbEditar.Name = "tsbEditar";
 			tsbEditar.Size = new System.Drawing.Size(23, 22);
 			tsbEditar.Text = "Editar";
+			tsbEditar.Click += new System.EventHandler(this.tsbEditar_Click);
 			// 
 			// toolStripContainer_Cursos
 			// 
@@ -130,6 +134,7 @@
 			this.dgv_AlumnoInscripcion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgv_AlumnoInscripcion.Size = new System.Drawing.Size(927, 206);
 			this.dgv_AlumnoInscripcion.TabIndex = 0;
+			this.dgv_AlumnoInscripcion.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_AlumnoInscripcion_CellFormatting);
 			// 
 			// panel_ABM_Inscripciones
 			// 
@@ -195,6 +200,7 @@
 			this.btnAceptar.TabIndex = 5;
 			this.btnAceptar.Text = "Aceptar";
 			this.btnAceptar.UseVisualStyleBackColor = true;
+			this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
 			// 
 			// lbl_Nota
 			// 
@@ -226,7 +232,7 @@
 			// lbl_ID_Alumno
 			// 
 			this.lbl_ID_Alumno.AutoSize = true;
-			this.lbl_ID_Alumno.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+			this.lbl_ID_Alumno.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
 			this.lbl_ID_Alumno.Location = new System.Drawing.Point(45, 65);
 			this.lbl_ID_Alumno.Name = "lbl_ID_Alumno";
 			this.lbl_ID_Alumno.Size = new System.Drawing.Size(68, 13);
@@ -247,17 +253,20 @@
 			this.tsUsuarios.Dock = System.Windows.Forms.DockStyle.None;
 			this.tsUsuarios.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbNuevo,
+            this.toolStripLabel_NuevaInscripcion,
             tsbEditar,
+            this.toolStripLabel_EditarInscripcion,
             this.tsbEliminar,
+            this.toolStripLabel_EliminarInscripcion,
             this.toolStripSeparator1,
             this.toolStripSeparator2,
             this.lbl_Buscar,
             this.comboBox_TipoBusqueda,
-            this.toolStripTextBox_Usuario,
+            this.toolStripTextBox_Busqueda,
             this.btn_Buscar});
 			this.tsUsuarios.Location = new System.Drawing.Point(3, 0);
 			this.tsUsuarios.Name = "tsUsuarios";
-			this.tsUsuarios.Size = new System.Drawing.Size(410, 25);
+			this.tsUsuarios.Size = new System.Drawing.Size(772, 25);
 			this.tsUsuarios.TabIndex = 1;
 			// 
 			// tsbNuevo
@@ -269,6 +278,19 @@
 			this.tsbNuevo.Size = new System.Drawing.Size(23, 22);
 			this.tsbNuevo.Text = "Nuevo";
 			this.tsbNuevo.ToolTipText = "Nuevo";
+			this.tsbNuevo.Click += new System.EventHandler(this.tsbNuevo_Click);
+			// 
+			// toolStripLabel_NuevaInscripcion
+			// 
+			this.toolStripLabel_NuevaInscripcion.Name = "toolStripLabel_NuevaInscripcion";
+			this.toolStripLabel_NuevaInscripcion.Size = new System.Drawing.Size(153, 22);
+			this.toolStripLabel_NuevaInscripcion.Text = "Inscribirme a nueva materia";
+			// 
+			// toolStripLabel_EditarInscripcion
+			// 
+			this.toolStripLabel_EditarInscripcion.Name = "toolStripLabel_EditarInscripcion";
+			this.toolStripLabel_EditarInscripcion.Size = new System.Drawing.Size(98, 22);
+			this.toolStripLabel_EditarInscripcion.Text = "Editar inscripción";
 			// 
 			// tsbEliminar
 			// 
@@ -278,6 +300,13 @@
 			this.tsbEliminar.Name = "tsbEliminar";
 			this.tsbEliminar.Size = new System.Drawing.Size(23, 22);
 			this.tsbEliminar.Text = "Eliminar";
+			this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
+			// 
+			// toolStripLabel_EliminarInscripcion
+			// 
+			this.toolStripLabel_EliminarInscripcion.Name = "toolStripLabel_EliminarInscripcion";
+			this.toolStripLabel_EliminarInscripcion.Size = new System.Drawing.Size(111, 22);
+			this.toolStripLabel_EliminarInscripcion.Text = "Eliminar inscripción";
 			// 
 			// toolStripSeparator1
 			// 
@@ -302,14 +331,14 @@
 			this.comboBox_TipoBusqueda.Name = "comboBox_TipoBusqueda";
 			this.comboBox_TipoBusqueda.Size = new System.Drawing.Size(121, 25);
 			// 
-			// toolStripTextBox_Usuario
+			// toolStripTextBox_Busqueda
 			// 
-			this.toolStripTextBox_Usuario.AutoSize = false;
-			this.toolStripTextBox_Usuario.Font = new System.Drawing.Font("Verdana", 8.25F);
-			this.toolStripTextBox_Usuario.Name = "toolStripTextBox_Usuario";
-			this.toolStripTextBox_Usuario.Size = new System.Drawing.Size(100, 21);
-			this.toolStripTextBox_Usuario.Tag = "";
-			this.toolStripTextBox_Usuario.ToolTipText = "Palabra a buscar";
+			this.toolStripTextBox_Busqueda.AutoSize = false;
+			this.toolStripTextBox_Busqueda.Font = new System.Drawing.Font("Verdana", 8.25F);
+			this.toolStripTextBox_Busqueda.Name = "toolStripTextBox_Busqueda";
+			this.toolStripTextBox_Busqueda.Size = new System.Drawing.Size(100, 21);
+			this.toolStripTextBox_Busqueda.Tag = "";
+			this.toolStripTextBox_Busqueda.ToolTipText = "Palabra a buscar";
 			// 
 			// btn_Buscar
 			// 
@@ -319,6 +348,7 @@
 			this.btn_Buscar.Name = "btn_Buscar";
 			this.btn_Buscar.Size = new System.Drawing.Size(23, 22);
 			this.btn_Buscar.ToolTipText = "Buscar";
+			this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
 			// 
 			// ID_Inscripcion
 			// 
@@ -340,6 +370,7 @@
 			this.ID_Curso.HeaderText = "ID Curso";
 			this.ID_Curso.Name = "ID_Curso";
 			this.ID_Curso.ReadOnly = true;
+			this.ID_Curso.Width = 200;
 			// 
 			// Condicion
 			// 
@@ -392,7 +423,7 @@
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
 		private System.Windows.Forms.ToolStripLabel lbl_Buscar;
 		private System.Windows.Forms.ToolStripComboBox comboBox_TipoBusqueda;
-		private System.Windows.Forms.ToolStripTextBox toolStripTextBox_Usuario;
+		private System.Windows.Forms.ToolStripTextBox toolStripTextBox_Busqueda;
 		private System.Windows.Forms.ToolStripButton btn_Buscar;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_;
 		private System.Windows.Forms.DataGridView dgv_AlumnoInscripcion;
@@ -408,6 +439,9 @@
 		private System.Windows.Forms.TextBox txt_Condicion;
 		private System.Windows.Forms.TextBox txt_IDAlumno;
 		private System.Windows.Forms.TextBox txt_ID_Inscripcion;
+		private System.Windows.Forms.ToolStripLabel toolStripLabel_NuevaInscripcion;
+		private System.Windows.Forms.ToolStripLabel toolStripLabel_EditarInscripcion;
+		private System.Windows.Forms.ToolStripLabel toolStripLabel_EliminarInscripcion;
 		private System.Windows.Forms.DataGridViewTextBoxColumn ID_Inscripcion;
 		private System.Windows.Forms.DataGridViewTextBoxColumn ID_Alumno;
 		private System.Windows.Forms.DataGridViewTextBoxColumn ID_Curso;
