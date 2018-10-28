@@ -51,9 +51,7 @@ namespace UI.Desktop
 					{
 						MessageBox.Show("Usuario y/o contraseña incorrectos", "Login"
 							, MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-						//Se podria crear una clase/metodo en "Util" que sea NOTIFICAR y se le pasen como parametros los textos.
-						//Asi podemos estandarizar un mensaje con imagen ,texto, logo, etc889
+						
 					}
 				}
 			}catch(Exception ex)

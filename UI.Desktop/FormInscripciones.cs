@@ -290,14 +290,14 @@ namespace UI.Desktop
 			{
 				LimpiarCampos();
 				int ID = ((Business.Entities.AlumnoInscripcion)this.dgv_AlumnoInscripcion.SelectedRows[0].DataBoundItem).ID;
-				if (MessageBox.Show("¿Estas seguro que deseas borrarlo? \nSe borrará la inscripcion seleccionada de la grilla y causará inestabilidades en el sistema\nNo podras deshacerlo.", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+				if (MessageBox.Show("¿Estas seguro que deseas borrarlo? \nSe borrará la inscripcion seleccionada de la grilla\nNo podras deshacerlo.", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 					== System.Windows.Forms.DialogResult.Yes)
 				{
 					Modo = FormInscripciones.ModoForm.Baja;
 					AlumnoInscripcionLogic inscripcionLogic = new AlumnoInscripcionLogic();
 					if (!inscripcionLogic.ValidaFechaInscripcion(UsuarioLogueado))
 					{
-						this.Notificar("Finalizó la inscripción", "Disculpe, pero la fecha de para modificar inscripciones ha finalizado"
+						this.Notificar("Finalizó la inscripción", "Disculpe, pero la fecha para modificar inscripciones ha finalizado"
 										, MessageBoxButtons.OK, MessageBoxIcon.Information);
 					}
 					else
@@ -323,7 +323,7 @@ namespace UI.Desktop
 				if (this.Validar())
 				{
 					this.GuardarCambios();
-					this.Notificar("Operacón correcta", "Operación realizada correctamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					this.Notificar("Operacón correcta", "Operación realizada correctamente\n Materia: "+ AlumnoInscripcionctual.IDCurso.ToString() , MessageBoxButtons.OK, MessageBoxIcon.Information);
 					this.Listar();
 				}
 			}

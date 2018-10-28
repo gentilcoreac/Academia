@@ -28,8 +28,8 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.ToolStripButton tsbEditar;
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPersonas));
+			System.Windows.Forms.ToolStripButton tsbEditar;
 			this.tc_Personas = new System.Windows.Forms.ToolStripContainer();
 			this.panel_Personas = new System.Windows.Forms.TableLayoutPanel();
 			this.btn_Actualizar = new System.Windows.Forms.Button();
@@ -71,6 +71,15 @@
 			this.lbl_Legajo = new System.Windows.Forms.Label();
 			this.lbl_ID = new System.Windows.Forms.Label();
 			this.dgv_Personas = new System.Windows.Forms.DataGridView();
+			this.toolStripCabeceraABMC = new System.Windows.Forms.ToolStrip();
+			this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
+			this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
+			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+			this.lbl_Buscar = new System.Windows.Forms.ToolStripLabel();
+			this.comboBox_TipoBusqueda = new System.Windows.Forms.ToolStripComboBox();
+			this.toolStripTextBox_Busqueda = new System.Windows.Forms.ToolStripTextBox();
+			this.btn_Buscar = new System.Windows.Forms.ToolStripButton();
 			this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,18 +91,8 @@
 			this.tipo_persona = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.desc_plan = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Usuario_Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Habilitado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-			this.toolStripCabeceraABMC = new System.Windows.Forms.ToolStrip();
-			this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
-			this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
-			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-			this.lbl_Buscar = new System.Windows.Forms.ToolStripLabel();
-			this.comboBox_TipoBusqueda = new System.Windows.Forms.ToolStripComboBox();
-			this.toolStripTextBox_Busqueda = new System.Windows.Forms.ToolStripTextBox();
-			this.btn_Buscar = new System.Windows.Forms.ToolStripButton();
 			tsbEditar = new System.Windows.Forms.ToolStripButton();
 			this.tc_Personas.ContentPanel.SuspendLayout();
 			this.tc_Personas.TopToolStripPanel.SuspendLayout();
@@ -103,16 +102,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.dgv_Personas)).BeginInit();
 			this.toolStripCabeceraABMC.SuspendLayout();
 			this.SuspendLayout();
-			// 
-			// tsbEditar
-			// 
-			tsbEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			tsbEditar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEditar.Image")));
-			tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
-			tsbEditar.Name = "tsbEditar";
-			tsbEditar.Size = new System.Drawing.Size(23, 22);
-			tsbEditar.Text = "Editar";
-			tsbEditar.Click += new System.EventHandler(this.tsbEditar_Click);
 			// 
 			// tc_Personas
 			// 
@@ -211,7 +200,7 @@
 			// calendar_Nacimiento_ventana
 			// 
 			this.calendar_Nacimiento_ventana.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.calendar_Nacimiento_ventana.Location = new System.Drawing.Point(209, 59);
+			this.calendar_Nacimiento_ventana.Location = new System.Drawing.Point(238, 60);
 			this.calendar_Nacimiento_ventana.Name = "calendar_Nacimiento_ventana";
 			this.calendar_Nacimiento_ventana.TabIndex = 38;
 			this.calendar_Nacimiento_ventana.Visible = false;
@@ -221,7 +210,7 @@
 			// 
 			this.lbl_Cabecera3.AutoSize = true;
 			this.lbl_Cabecera3.Font = new System.Drawing.Font("Verdana", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbl_Cabecera3.Location = new System.Drawing.Point(571, 8);
+			this.lbl_Cabecera3.Location = new System.Drawing.Point(603, 8);
 			this.lbl_Cabecera3.Name = "lbl_Cabecera3";
 			this.lbl_Cabecera3.Size = new System.Drawing.Size(145, 14);
 			this.lbl_Cabecera3.TabIndex = 37;
@@ -252,7 +241,7 @@
 			this.label_ID.AutoSize = true;
 			this.label_ID.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label_ID.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.label_ID.Location = new System.Drawing.Point(589, 37);
+			this.label_ID.Location = new System.Drawing.Point(621, 37);
 			this.label_ID.Name = "label_ID";
 			this.label_ID.Size = new System.Drawing.Size(21, 13);
 			this.label_ID.TabIndex = 23;
@@ -262,7 +251,7 @@
 			// 
 			this.label_Email.AutoSize = true;
 			this.label_Email.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label_Email.Location = new System.Drawing.Point(549, 89);
+			this.label_Email.Location = new System.Drawing.Point(581, 89);
 			this.label_Email.Name = "label_Email";
 			this.label_Email.Size = new System.Drawing.Size(61, 13);
 			this.label_Email.TabIndex = 25;
@@ -272,7 +261,7 @@
 			// 
 			this.label_Clave.AutoSize = true;
 			this.label_Clave.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label_Clave.Location = new System.Drawing.Point(570, 115);
+			this.label_Clave.Location = new System.Drawing.Point(602, 115);
 			this.label_Clave.Name = "label_Clave";
 			this.label_Clave.Size = new System.Drawing.Size(40, 13);
 			this.label_Clave.TabIndex = 26;
@@ -281,27 +270,27 @@
 			// txtID_Usuario
 			// 
 			this.txtID_Usuario.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtID_Usuario.Location = new System.Drawing.Point(616, 34);
+			this.txtID_Usuario.Location = new System.Drawing.Point(648, 34);
 			this.txtID_Usuario.Name = "txtID_Usuario";
 			this.txtID_Usuario.ReadOnly = true;
-			this.txtID_Usuario.Size = new System.Drawing.Size(100, 21);
+			this.txtID_Usuario.Size = new System.Drawing.Size(127, 21);
 			this.txtID_Usuario.TabIndex = 11;
 			// 
 			// txtEmail
 			// 
 			this.txtEmail.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtEmail.Location = new System.Drawing.Point(616, 86);
+			this.txtEmail.Location = new System.Drawing.Point(648, 86);
 			this.txtEmail.Name = "txtEmail";
-			this.txtEmail.Size = new System.Drawing.Size(100, 21);
+			this.txtEmail.Size = new System.Drawing.Size(127, 21);
 			this.txtEmail.TabIndex = 13;
 			// 
 			// txtClave
 			// 
 			this.txtClave.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtClave.Location = new System.Drawing.Point(616, 112);
+			this.txtClave.Location = new System.Drawing.Point(648, 112);
 			this.txtClave.Name = "txtClave";
 			this.txtClave.PasswordChar = '*';
-			this.txtClave.Size = new System.Drawing.Size(100, 21);
+			this.txtClave.Size = new System.Drawing.Size(127, 21);
 			this.txtClave.TabIndex = 14;
 			// 
 			// label_Usuario
@@ -309,7 +298,7 @@
 			this.label_Usuario.AutoSize = true;
 			this.label_Usuario.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label_Usuario.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.label_Usuario.Location = new System.Drawing.Point(560, 63);
+			this.label_Usuario.Location = new System.Drawing.Point(592, 63);
 			this.label_Usuario.Name = "label_Usuario";
 			this.label_Usuario.Size = new System.Drawing.Size(50, 13);
 			this.label_Usuario.TabIndex = 24;
@@ -318,24 +307,25 @@
 			// txtUsuario
 			// 
 			this.txtUsuario.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtUsuario.Location = new System.Drawing.Point(616, 60);
+			this.txtUsuario.Location = new System.Drawing.Point(648, 60);
 			this.txtUsuario.Name = "txtUsuario";
-			this.txtUsuario.Size = new System.Drawing.Size(100, 21);
+			this.txtUsuario.Size = new System.Drawing.Size(127, 21);
 			this.txtUsuario.TabIndex = 12;
 			// 
 			// txtConfirmarClave
 			// 
 			this.txtConfirmarClave.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtConfirmarClave.Location = new System.Drawing.Point(616, 139);
+			this.txtConfirmarClave.Location = new System.Drawing.Point(648, 139);
 			this.txtConfirmarClave.Name = "txtConfirmarClave";
-			this.txtConfirmarClave.Size = new System.Drawing.Size(100, 21);
+			this.txtConfirmarClave.PasswordChar = '*';
+			this.txtConfirmarClave.Size = new System.Drawing.Size(127, 21);
 			this.txtConfirmarClave.TabIndex = 15;
 			// 
 			// label_ConfirmarClave
 			// 
 			this.label_ConfirmarClave.AutoSize = true;
 			this.label_ConfirmarClave.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label_ConfirmarClave.Location = new System.Drawing.Point(511, 142);
+			this.label_ConfirmarClave.Location = new System.Drawing.Point(543, 142);
 			this.label_ConfirmarClave.Name = "label_ConfirmarClave";
 			this.label_ConfirmarClave.Size = new System.Drawing.Size(99, 13);
 			this.label_ConfirmarClave.TabIndex = 27;
@@ -346,7 +336,7 @@
 			this.checkBox_Habilitado.AutoSize = true;
 			this.checkBox_Habilitado.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.checkBox_Habilitado.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.checkBox_Habilitado.Location = new System.Drawing.Point(528, 178);
+			this.checkBox_Habilitado.Location = new System.Drawing.Point(560, 178);
 			this.checkBox_Habilitado.Name = "checkBox_Habilitado";
 			this.checkBox_Habilitado.Size = new System.Drawing.Size(82, 17);
 			this.checkBox_Habilitado.TabIndex = 16;
@@ -357,7 +347,7 @@
 			// btnAceptar
 			// 
 			this.btnAceptar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnAceptar.Location = new System.Drawing.Point(641, 206);
+			this.btnAceptar.Location = new System.Drawing.Point(700, 188);
 			this.btnAceptar.Name = "btnAceptar";
 			this.btnAceptar.Size = new System.Drawing.Size(75, 22);
 			this.btnAceptar.TabIndex = 17;
@@ -371,7 +361,7 @@
 			this.comboBox_Plan.FormattingEnabled = true;
 			this.comboBox_Plan.Location = new System.Drawing.Point(353, 34);
 			this.comboBox_Plan.Name = "comboBox_Plan";
-			this.comboBox_Plan.Size = new System.Drawing.Size(100, 21);
+			this.comboBox_Plan.Size = new System.Drawing.Size(172, 21);
 			this.comboBox_Plan.TabIndex = 8;
 			// 
 			// lbl_Plan
@@ -403,7 +393,7 @@
 			this.comboBox_TipoPersona.ItemHeight = 13;
 			this.comboBox_TipoPersona.Location = new System.Drawing.Point(353, 60);
 			this.comboBox_TipoPersona.Name = "comboBox_TipoPersona";
-			this.comboBox_TipoPersona.Size = new System.Drawing.Size(100, 21);
+			this.comboBox_TipoPersona.Size = new System.Drawing.Size(128, 21);
 			this.comboBox_TipoPersona.TabIndex = 9;
 			// 
 			// lbl_Email_personal
@@ -421,7 +411,7 @@
 			this.txt_Email.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txt_Email.Location = new System.Drawing.Point(97, 112);
 			this.txt_Email.Name = "txt_Email";
-			this.txt_Email.Size = new System.Drawing.Size(100, 21);
+			this.txt_Email.Size = new System.Drawing.Size(129, 21);
 			this.txt_Email.TabIndex = 4;
 			// 
 			// lbl_Telefono
@@ -439,7 +429,7 @@
 			this.txt_Telefono.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txt_Telefono.Location = new System.Drawing.Point(97, 190);
 			this.txt_Telefono.Name = "txt_Telefono";
-			this.txt_Telefono.Size = new System.Drawing.Size(100, 21);
+			this.txt_Telefono.Size = new System.Drawing.Size(129, 21);
 			this.txt_Telefono.TabIndex = 7;
 			// 
 			// txt_Direccion
@@ -447,7 +437,7 @@
 			this.txt_Direccion.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txt_Direccion.Location = new System.Drawing.Point(97, 164);
 			this.txt_Direccion.Name = "txt_Direccion";
-			this.txt_Direccion.Size = new System.Drawing.Size(100, 21);
+			this.txt_Direccion.Size = new System.Drawing.Size(129, 21);
 			this.txt_Direccion.TabIndex = 6;
 			// 
 			// lbl_Direccion
@@ -465,7 +455,7 @@
 			this.txt_FechaNacimiento.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txt_FechaNacimiento.Location = new System.Drawing.Point(97, 138);
 			this.txt_FechaNacimiento.Name = "txt_FechaNacimiento";
-			this.txt_FechaNacimiento.Size = new System.Drawing.Size(100, 21);
+			this.txt_FechaNacimiento.Size = new System.Drawing.Size(129, 21);
 			this.txt_FechaNacimiento.TabIndex = 5;
 			this.txt_FechaNacimiento.Click += new System.EventHandler(this.txt_FechaNacimiento_Click);
 			// 
@@ -495,7 +485,7 @@
 			this.txt_Apellido.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txt_Apellido.Location = new System.Drawing.Point(97, 86);
 			this.txt_Apellido.Name = "txt_Apellido";
-			this.txt_Apellido.Size = new System.Drawing.Size(100, 21);
+			this.txt_Apellido.Size = new System.Drawing.Size(129, 21);
 			this.txt_Apellido.TabIndex = 3;
 			// 
 			// txt_Nombre
@@ -503,7 +493,7 @@
 			this.txt_Nombre.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txt_Nombre.Location = new System.Drawing.Point(97, 60);
 			this.txt_Nombre.Name = "txt_Nombre";
-			this.txt_Nombre.Size = new System.Drawing.Size(100, 21);
+			this.txt_Nombre.Size = new System.Drawing.Size(129, 21);
 			this.txt_Nombre.TabIndex = 2;
 			// 
 			// txt_Legajo
@@ -511,7 +501,7 @@
 			this.txt_Legajo.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txt_Legajo.Location = new System.Drawing.Point(353, 86);
 			this.txt_Legajo.Name = "txt_Legajo";
-			this.txt_Legajo.Size = new System.Drawing.Size(100, 21);
+			this.txt_Legajo.Size = new System.Drawing.Size(128, 21);
 			this.txt_Legajo.TabIndex = 10;
 			// 
 			// txt_ID_Persona
@@ -520,7 +510,7 @@
 			this.txt_ID_Persona.Location = new System.Drawing.Point(97, 34);
 			this.txt_ID_Persona.Name = "txt_ID_Persona";
 			this.txt_ID_Persona.ReadOnly = true;
-			this.txt_ID_Persona.Size = new System.Drawing.Size(100, 21);
+			this.txt_ID_Persona.Size = new System.Drawing.Size(129, 21);
 			this.txt_ID_Persona.TabIndex = 1;
 			// 
 			// lbl_Nombre
@@ -576,7 +566,6 @@
             this.tipo_persona,
             this.desc_plan,
             this.Usuario,
-            this.Clave,
             this.Usuario_Email,
             this.Habilitado});
 			this.dgv_Personas.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -587,121 +576,6 @@
 			this.dgv_Personas.Size = new System.Drawing.Size(1074, 250);
 			this.dgv_Personas.TabIndex = 0;
 			this.dgv_Personas.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_Personas_CellFormatting);
-			// 
-			// ID
-			// 
-			this.ID.DataPropertyName = "id";
-			this.ID.HeaderText = "ID";
-			this.ID.Name = "ID";
-			this.ID.ReadOnly = true;
-			this.ID.Width = 50;
-			// 
-			// legajo
-			// 
-			this.legajo.DataPropertyName = "legajo";
-			this.legajo.HeaderText = "Legajo";
-			this.legajo.Name = "legajo";
-			this.legajo.ReadOnly = true;
-			this.legajo.Width = 50;
-			// 
-			// nombre
-			// 
-			this.nombre.DataPropertyName = "nombre";
-			this.nombre.HeaderText = "Nombre";
-			this.nombre.Name = "nombre";
-			this.nombre.ReadOnly = true;
-			this.nombre.Width = 70;
-			// 
-			// apellido
-			// 
-			this.apellido.DataPropertyName = "apellido";
-			this.apellido.HeaderText = "Apellido";
-			this.apellido.Name = "apellido";
-			this.apellido.ReadOnly = true;
-			this.apellido.Width = 70;
-			// 
-			// fechaNacimiento
-			// 
-			this.fechaNacimiento.DataPropertyName = "fechaNacimiento";
-			this.fechaNacimiento.HeaderText = "Fec nac";
-			this.fechaNacimiento.Name = "fechaNacimiento";
-			this.fechaNacimiento.ReadOnly = true;
-			this.fechaNacimiento.ToolTipText = "Fecha de nacimiento";
-			this.fechaNacimiento.Width = 75;
-			// 
-			// direccion
-			// 
-			this.direccion.DataPropertyName = "direccion";
-			this.direccion.HeaderText = "Direccion";
-			this.direccion.Name = "direccion";
-			this.direccion.ReadOnly = true;
-			// 
-			// telefono
-			// 
-			this.telefono.DataPropertyName = "telefono";
-			this.telefono.HeaderText = "Telefono";
-			this.telefono.Name = "telefono";
-			this.telefono.ReadOnly = true;
-			this.telefono.Width = 70;
-			// 
-			// emailPersonal
-			// 
-			this.emailPersonal.DataPropertyName = "emailpersonal";
-			this.emailPersonal.HeaderText = "Email personal";
-			this.emailPersonal.Name = "emailPersonal";
-			this.emailPersonal.ReadOnly = true;
-			this.emailPersonal.Width = 130;
-			// 
-			// tipo_persona
-			// 
-			this.tipo_persona.DataPropertyName = "tipospersona";
-			this.tipo_persona.HeaderText = "Tipo";
-			this.tipo_persona.Name = "tipo_persona";
-			this.tipo_persona.ReadOnly = true;
-			this.tipo_persona.ToolTipText = "Tipo de persona";
-			this.tipo_persona.Width = 70;
-			// 
-			// desc_plan
-			// 
-			this.desc_plan.DataPropertyName = "Plan_persona.Descripcion";
-			this.desc_plan.HeaderText = "Plan";
-			this.desc_plan.Name = "desc_plan";
-			this.desc_plan.ReadOnly = true;
-			this.desc_plan.Width = 70;
-			// 
-			// Usuario
-			// 
-			this.Usuario.DataPropertyName = "UsuarioPersona.NombreUsuario";
-			this.Usuario.HeaderText = "Usuario";
-			this.Usuario.Name = "Usuario";
-			this.Usuario.ReadOnly = true;
-			this.Usuario.ToolTipText = "Datos para el sistema";
-			this.Usuario.Width = 60;
-			// 
-			// Clave
-			// 
-			this.Clave.DataPropertyName = "UsuarioPersona.Clave";
-			this.Clave.HeaderText = "Clave";
-			this.Clave.Name = "Clave";
-			this.Clave.ReadOnly = true;
-			this.Clave.ToolTipText = "Datos para el sistema";
-			this.Clave.Width = 50;
-			// 
-			// Usuario_Email
-			// 
-			this.Usuario_Email.DataPropertyName = "UsuarioPersona.Email";
-			this.Usuario_Email.HeaderText = "Usuario email";
-			this.Usuario_Email.Name = "Usuario_Email";
-			this.Usuario_Email.ReadOnly = true;
-			// 
-			// Habilitado
-			// 
-			this.Habilitado.DataPropertyName = "UsuarioPersona.Habilitado";
-			this.Habilitado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.Habilitado.HeaderText = "Habilitado";
-			this.Habilitado.Name = "Habilitado";
-			this.Habilitado.ReadOnly = true;
-			this.Habilitado.Width = 70;
 			// 
 			// toolStripCabeceraABMC
 			// 
@@ -718,7 +592,7 @@
             this.btn_Buscar});
 			this.toolStripCabeceraABMC.Location = new System.Drawing.Point(3, 0);
 			this.toolStripCabeceraABMC.Name = "toolStripCabeceraABMC";
-			this.toolStripCabeceraABMC.Size = new System.Drawing.Size(440, 25);
+			this.toolStripCabeceraABMC.Size = new System.Drawing.Size(409, 25);
 			this.toolStripCabeceraABMC.TabIndex = 0;
 			// 
 			// tsbNuevo
@@ -731,6 +605,16 @@
 			this.tsbNuevo.Text = "Nuevo";
 			this.tsbNuevo.ToolTipText = "Nuevo";
 			this.tsbNuevo.Click += new System.EventHandler(this.tsbNuevo_Click);
+			// 
+			// tsbEditar
+			// 
+			tsbEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			tsbEditar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEditar.Image")));
+			tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+			tsbEditar.Name = "tsbEditar";
+			tsbEditar.Size = new System.Drawing.Size(23, 22);
+			tsbEditar.Text = "Editar";
+			tsbEditar.Click += new System.EventHandler(this.tsbEditar_Click);
 			// 
 			// tsbEliminar
 			// 
@@ -785,6 +669,120 @@
 			this.btn_Buscar.Size = new System.Drawing.Size(23, 22);
 			this.btn_Buscar.ToolTipText = "Buscar";
 			this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
+			// 
+			// ID
+			// 
+			this.ID.DataPropertyName = "id";
+			this.ID.HeaderText = "ID";
+			this.ID.Name = "ID";
+			this.ID.ReadOnly = true;
+			this.ID.Width = 50;
+			// 
+			// legajo
+			// 
+			this.legajo.DataPropertyName = "legajo";
+			this.legajo.HeaderText = "Legajo";
+			this.legajo.Name = "legajo";
+			this.legajo.ReadOnly = true;
+			this.legajo.Width = 50;
+			// 
+			// nombre
+			// 
+			this.nombre.DataPropertyName = "nombre";
+			this.nombre.FillWeight = 125F;
+			this.nombre.HeaderText = "Nombre";
+			this.nombre.Name = "nombre";
+			this.nombre.ReadOnly = true;
+			this.nombre.Width = 70;
+			// 
+			// apellido
+			// 
+			this.apellido.DataPropertyName = "apellido";
+			this.apellido.FillWeight = 125F;
+			this.apellido.HeaderText = "Apellido";
+			this.apellido.Name = "apellido";
+			this.apellido.ReadOnly = true;
+			this.apellido.Width = 70;
+			// 
+			// fechaNacimiento
+			// 
+			this.fechaNacimiento.DataPropertyName = "fechaNacimiento";
+			this.fechaNacimiento.FillWeight = 110F;
+			this.fechaNacimiento.HeaderText = "Fec nac";
+			this.fechaNacimiento.Name = "fechaNacimiento";
+			this.fechaNacimiento.ReadOnly = true;
+			this.fechaNacimiento.ToolTipText = "Fecha de nacimiento";
+			this.fechaNacimiento.Width = 75;
+			// 
+			// direccion
+			// 
+			this.direccion.DataPropertyName = "direccion";
+			this.direccion.FillWeight = 125F;
+			this.direccion.HeaderText = "Direccion";
+			this.direccion.Name = "direccion";
+			this.direccion.ReadOnly = true;
+			// 
+			// telefono
+			// 
+			this.telefono.DataPropertyName = "telefono";
+			this.telefono.FillWeight = 125F;
+			this.telefono.HeaderText = "Telefono";
+			this.telefono.Name = "telefono";
+			this.telefono.ReadOnly = true;
+			this.telefono.Width = 70;
+			// 
+			// emailPersonal
+			// 
+			this.emailPersonal.DataPropertyName = "emailpersonal";
+			this.emailPersonal.FillWeight = 150F;
+			this.emailPersonal.HeaderText = "Email personal";
+			this.emailPersonal.Name = "emailPersonal";
+			this.emailPersonal.ReadOnly = true;
+			this.emailPersonal.Width = 130;
+			// 
+			// tipo_persona
+			// 
+			this.tipo_persona.DataPropertyName = "tipospersona";
+			this.tipo_persona.FillWeight = 125F;
+			this.tipo_persona.HeaderText = "Tipo";
+			this.tipo_persona.Name = "tipo_persona";
+			this.tipo_persona.ReadOnly = true;
+			this.tipo_persona.ToolTipText = "Tipo de persona";
+			this.tipo_persona.Width = 70;
+			// 
+			// desc_plan
+			// 
+			this.desc_plan.DataPropertyName = "Plan_persona.Descripcion";
+			this.desc_plan.FillWeight = 125F;
+			this.desc_plan.HeaderText = "Plan";
+			this.desc_plan.Name = "desc_plan";
+			this.desc_plan.ReadOnly = true;
+			this.desc_plan.Width = 70;
+			// 
+			// Usuario
+			// 
+			this.Usuario.DataPropertyName = "UsuarioPersona.NombreUsuario";
+			this.Usuario.HeaderText = "Usuario";
+			this.Usuario.Name = "Usuario";
+			this.Usuario.ReadOnly = true;
+			this.Usuario.ToolTipText = "Datos para el sistema";
+			this.Usuario.Width = 60;
+			// 
+			// Usuario_Email
+			// 
+			this.Usuario_Email.DataPropertyName = "UsuarioPersona.Email";
+			this.Usuario_Email.HeaderText = "Usuario email";
+			this.Usuario_Email.Name = "Usuario_Email";
+			this.Usuario_Email.ReadOnly = true;
+			// 
+			// Habilitado
+			// 
+			this.Habilitado.DataPropertyName = "UsuarioPersona.Habilitado";
+			this.Habilitado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.Habilitado.HeaderText = "Habilitado";
+			this.Habilitado.Name = "Habilitado";
+			this.Habilitado.ReadOnly = true;
+			this.Habilitado.Width = 70;
 			// 
 			// FormPersonas
 			// 
@@ -862,6 +860,7 @@
 		private System.Windows.Forms.Label lbl_Cabecera2;
 		private System.Windows.Forms.Label lbl_Cabecera1;
 		private System.Windows.Forms.MonthCalendar calendar_Nacimiento_ventana;
+		private System.Windows.Forms.Button btn_Actualizar;
 		private System.Windows.Forms.DataGridViewTextBoxColumn ID;
 		private System.Windows.Forms.DataGridViewTextBoxColumn legajo;
 		private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
@@ -873,9 +872,7 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn tipo_persona;
 		private System.Windows.Forms.DataGridViewTextBoxColumn desc_plan;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Clave;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Usuario_Email;
 		private System.Windows.Forms.DataGridViewCheckBoxColumn Habilitado;
-		private System.Windows.Forms.Button btn_Actualizar;
 	}
 }

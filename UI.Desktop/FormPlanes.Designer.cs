@@ -52,7 +52,6 @@
 			this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Plan_Especialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.EspecialidadDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.label_temporal = new System.Windows.Forms.Label();
 			tsbEditar = new System.Windows.Forms.ToolStripButton();
 			this.tsUsuarios.SuspendLayout();
 			this.toolStripContainer_Planes.ContentPanel.SuspendLayout();
@@ -213,7 +212,6 @@
 			this.tableLayoutPanel_.ColumnCount = 1;
 			this.tableLayoutPanel_.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
 			this.tableLayoutPanel_.Controls.Add(this.dgv_Planes, 0, 0);
-			this.tableLayoutPanel_.Controls.Add(this.label_temporal, 0, 1);
 			this.tableLayoutPanel_.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel_.Location = new System.Drawing.Point(0, 0);
 			this.tableLayoutPanel_.Name = "tableLayoutPanel_";
@@ -272,18 +270,6 @@
 			this.EspecialidadDescripcion.ReadOnly = true;
 			this.EspecialidadDescripcion.Width = 190;
 			// 
-			// label_temporal
-			// 
-			this.label_temporal.AutoSize = true;
-			this.label_temporal.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label_temporal.ForeColor = System.Drawing.Color.Gray;
-			this.label_temporal.Location = new System.Drawing.Point(3, 212);
-			this.label_temporal.Name = "label_temporal";
-			this.label_temporal.Size = new System.Drawing.Size(182, 13);
-			this.label_temporal.TabIndex = 1;
-			this.label_temporal.Text = "ABM y Búsqueda en desarrollo";
-			this.label_temporal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
 			// FormPlanes
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -303,7 +289,6 @@
 			this.toolStripContainer_Planes.ResumeLayout(false);
 			this.toolStripContainer_Planes.PerformLayout();
 			this.tableLayoutPanel_.ResumeLayout(false);
-			this.tableLayoutPanel_.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgv_Planes)).EndInit();
 			this.ResumeLayout(false);
 
@@ -333,6 +318,5 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Plan_Especialidad;
 		private System.Windows.Forms.DataGridViewTextBoxColumn EspecialidadDescripcion;
-		private System.Windows.Forms.Label label_temporal;
 	}
 }

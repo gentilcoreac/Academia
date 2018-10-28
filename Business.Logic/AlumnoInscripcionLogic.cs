@@ -70,7 +70,7 @@ namespace Business.Logic
 
 		public bool ValidaFechaInscripcion(Usuario usuarioLogueado)
 		{
-			DateTime fechaLimite = new DateTime(DateTime.Now.Year, 10, 1);
+			DateTime fechaLimite = new DateTime(DateTime.Now.Year, 11, 1);
 			if (fechaLimite >= DateTime.Now)
 			{
 				return true;

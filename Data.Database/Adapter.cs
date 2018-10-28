@@ -28,7 +28,7 @@ namespace Data.Database
 				string temp = ConfigurationManager.ConnectionStrings[consKeyDefaultCnnString].ConnectionString;
 				SqlConn = new SqlConnection(temp);
 				SqlConn.Open();
-			}
+			}    
 
 			protected void CloseConnection()
 			{
@@ -41,6 +41,5 @@ namespace Data.Database
 				throw new Exception("Metodo no implementado");
 			}
 			#endregion
-
 		}
 	}

@@ -254,7 +254,7 @@ namespace UI.Desktop
 			{
 				LimpiarCampos();
 				int ID = ((Business.Entities.Curso)this.dgv_Cursos.SelectedRows[0].DataBoundItem).ID;
-				if (MessageBox.Show("¿Estas seguro que deseas borrarlo? \nSe borrará el curso seleccionado de la grilla y causará inestabilidades en el sistema\nNo podras deshacerlo.", "Advertencia"
+				if (MessageBox.Show("¿Estas seguro que deseas borrarlo? \nSe borrará el curso seleccionado de la grilla y causará posibles inestabilidades en el sistema\nNo podras deshacerlo.", "Advertencia"
 							, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 					== System.Windows.Forms.DialogResult.Yes)
 				{

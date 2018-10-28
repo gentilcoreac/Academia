@@ -33,6 +33,11 @@
 			this.toolStripContainer_Cursos = new System.Windows.Forms.ToolStripContainer();
 			this.tableLayoutPanel_ = new System.Windows.Forms.TableLayoutPanel();
 			this.dgv_AlumnoInscripcion = new System.Windows.Forms.DataGridView();
+			this.ID_Inscripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ID_Alumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ID_Curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Condicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.panel_ABM_Inscripciones = new System.Windows.Forms.Panel();
 			this.txt_Nota = new System.Windows.Forms.TextBox();
 			this.txt_Condicion = new System.Windows.Forms.TextBox();
@@ -57,11 +62,7 @@
 			this.comboBox_TipoBusqueda = new System.Windows.Forms.ToolStripComboBox();
 			this.toolStripTextBox_Busqueda = new System.Windows.Forms.ToolStripTextBox();
 			this.btn_Buscar = new System.Windows.Forms.ToolStripButton();
-			this.ID_Inscripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.ID_Alumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.ID_Curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Condicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.label1 = new System.Windows.Forms.Label();
 			tsbEditar = new System.Windows.Forms.ToolStripButton();
 			this.toolStripContainer_Cursos.ContentPanel.SuspendLayout();
 			this.toolStripContainer_Cursos.TopToolStripPanel.SuspendLayout();
@@ -136,8 +137,45 @@
 			this.dgv_AlumnoInscripcion.TabIndex = 0;
 			this.dgv_AlumnoInscripcion.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_AlumnoInscripcion_CellFormatting);
 			// 
+			// ID_Inscripcion
+			// 
+			this.ID_Inscripcion.DataPropertyName = "ID";
+			this.ID_Inscripcion.HeaderText = "ID Inscripcion";
+			this.ID_Inscripcion.Name = "ID_Inscripcion";
+			this.ID_Inscripcion.ReadOnly = true;
+			// 
+			// ID_Alumno
+			// 
+			this.ID_Alumno.DataPropertyName = "IDAlumno.ID";
+			this.ID_Alumno.HeaderText = "ID Alumno";
+			this.ID_Alumno.Name = "ID_Alumno";
+			this.ID_Alumno.ReadOnly = true;
+			// 
+			// ID_Curso
+			// 
+			this.ID_Curso.DataPropertyName = "IDCurso";
+			this.ID_Curso.HeaderText = "ID Curso";
+			this.ID_Curso.Name = "ID_Curso";
+			this.ID_Curso.ReadOnly = true;
+			this.ID_Curso.Width = 200;
+			// 
+			// Condicion
+			// 
+			this.Condicion.DataPropertyName = "Condicion";
+			this.Condicion.HeaderText = "Condicion";
+			this.Condicion.Name = "Condicion";
+			this.Condicion.ReadOnly = true;
+			// 
+			// Nota
+			// 
+			this.Nota.DataPropertyName = "Nota";
+			this.Nota.HeaderText = "Nota";
+			this.Nota.Name = "Nota";
+			this.Nota.ReadOnly = true;
+			// 
 			// panel_ABM_Inscripciones
 			// 
+			this.panel_ABM_Inscripciones.Controls.Add(this.label1);
 			this.panel_ABM_Inscripciones.Controls.Add(this.txt_Nota);
 			this.panel_ABM_Inscripciones.Controls.Add(this.txt_Condicion);
 			this.panel_ABM_Inscripciones.Controls.Add(this.txt_IDAlumno);
@@ -189,7 +227,7 @@
 			this.comboBox_Curso.FormattingEnabled = true;
 			this.comboBox_Curso.Location = new System.Drawing.Point(395, 25);
 			this.comboBox_Curso.Name = "comboBox_Curso";
-			this.comboBox_Curso.Size = new System.Drawing.Size(243, 21);
+			this.comboBox_Curso.Size = new System.Drawing.Size(267, 21);
 			this.comboBox_Curso.TabIndex = 6;
 			// 
 			// btnAceptar
@@ -223,11 +261,11 @@
 			// lbl_ID_Curso
 			// 
 			this.lbl_ID_Curso.AutoSize = true;
-			this.lbl_ID_Curso.Location = new System.Drawing.Point(317, 28);
+			this.lbl_ID_Curso.Location = new System.Drawing.Point(329, 28);
 			this.lbl_ID_Curso.Name = "lbl_ID_Curso";
-			this.lbl_ID_Curso.Size = new System.Drawing.Size(59, 13);
+			this.lbl_ID_Curso.Size = new System.Drawing.Size(41, 13);
 			this.lbl_ID_Curso.TabIndex = 2;
-			this.lbl_ID_Curso.Text = "ID Curso";
+			this.lbl_ID_Curso.Text = "Curso";
 			// 
 			// lbl_ID_Alumno
 			// 
@@ -266,7 +304,7 @@
             this.btn_Buscar});
 			this.tsUsuarios.Location = new System.Drawing.Point(3, 0);
 			this.tsUsuarios.Name = "tsUsuarios";
-			this.tsUsuarios.Size = new System.Drawing.Size(772, 25);
+			this.tsUsuarios.Size = new System.Drawing.Size(803, 25);
 			this.tsUsuarios.TabIndex = 1;
 			// 
 			// tsbNuevo
@@ -350,41 +388,16 @@
 			this.btn_Buscar.ToolTipText = "Buscar";
 			this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
 			// 
-			// ID_Inscripcion
+			// label1
 			// 
-			this.ID_Inscripcion.DataPropertyName = "ID";
-			this.ID_Inscripcion.HeaderText = "ID Inscripcion";
-			this.ID_Inscripcion.Name = "ID_Inscripcion";
-			this.ID_Inscripcion.ReadOnly = true;
-			// 
-			// ID_Alumno
-			// 
-			this.ID_Alumno.DataPropertyName = "IDAlumno.ID";
-			this.ID_Alumno.HeaderText = "ID Alumno";
-			this.ID_Alumno.Name = "ID_Alumno";
-			this.ID_Alumno.ReadOnly = true;
-			// 
-			// ID_Curso
-			// 
-			this.ID_Curso.DataPropertyName = "IDCurso";
-			this.ID_Curso.HeaderText = "ID Curso";
-			this.ID_Curso.Name = "ID_Curso";
-			this.ID_Curso.ReadOnly = true;
-			this.ID_Curso.Width = 200;
-			// 
-			// Condicion
-			// 
-			this.Condicion.DataPropertyName = "Condicion";
-			this.Condicion.HeaderText = "Condicion";
-			this.Condicion.Name = "Condicion";
-			this.Condicion.ReadOnly = true;
-			// 
-			// Nota
-			// 
-			this.Nota.DataPropertyName = "Nota";
-			this.Nota.HeaderText = "Nota";
-			this.Nota.Name = "Nota";
-			this.Nota.ReadOnly = true;
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Verdana", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+			this.label1.Location = new System.Drawing.Point(392, 49);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(173, 12);
+			this.label1.TabIndex = 11;
+			this.label1.Text = "ID Curso - Comisión - Materia";
 			// 
 			// FormInscripciones
 			// 
@@ -447,5 +460,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn ID_Curso;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Condicion;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Nota;
+		private System.Windows.Forms.Label label1;
 	}
 }
