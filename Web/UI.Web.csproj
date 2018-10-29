@@ -160,6 +160,7 @@
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="ListaUsuarios.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Personas.aspx" />
     <Content Include="Read.aspx" />
     <Content Include="Save.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -250,6 +251,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Personas.aspx.cs">
+      <DependentUpon>Personas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Personas.aspx.designer.cs">
+      <DependentUpon>Personas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Read.aspx.cs">

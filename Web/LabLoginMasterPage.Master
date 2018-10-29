@@ -28,6 +28,9 @@
 						<tr>
 							<td><a href="ListaUsuarios.aspx">Gestión de Usuarios</a></td>
 						</tr>
+						<tr>
+							<td><a href="Personas.aspx">Gestión de Personas</a></td>
+						</tr>
 					</table>
 				</td>
 
