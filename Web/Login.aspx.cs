@@ -19,7 +19,7 @@ namespace Web
         protected void lnkRecordarClave_Click(object sender, EventArgs e)
         {
             //Redireccionar a otra pagina que exista y posea el elemento para mostrar el msj
-            Response.Redirect("~/Default.aspx?msj=Es ud. un usuario muy descuidado, haga memoria... PERRO");
+            Response.Redirect("~/Default.aspx?msj=Es ud. un usuario muy descuidado, haga memoria...");
         }
 
         protected void btnIngresar_Click(object sender, EventArgs e)
@@ -40,9 +40,6 @@ namespace Web
                 else
                 {
                     Response.Write("Usuario y/o contraseña incorrectos");
-
-                    //Se podria crear una clase/metodo en "Util" que sea NOTIFICAR y se le pasen como parametros los textos.
-                    //Asi podemos estandarizar un mensaje con imagen ,texto, logo, etc889
                 }
             }
             catch (Exception ex)
