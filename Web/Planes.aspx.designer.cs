@@ -10,15 +10,24 @@
 namespace Web {
     
     
-    public partial class SiteMaster {
+    public partial class Planes {
         
         /// <summary>
-        /// Control MainContentBase.
+        /// Control grdPlanes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContentBase;
+        protected global::System.Web.UI.WebControls.GridView grdPlanes;
+        
+        /// <summary>
+        /// Control odsPlanes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource odsPlanes;
     }
 }

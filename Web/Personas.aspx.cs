@@ -14,8 +14,7 @@ namespace Web
 
         UsuarioLogic ul = new UsuarioLogic();
         PersonaLogic pl = new PersonaLogic();
-
-
+        Persona PersonaActual = new Persona();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -86,14 +85,14 @@ namespace Web
 
         private void llenaGrilla(int id)
         {
-            //Obtiene el usuario activo seleccionado
-            Business.Logic.UsuarioLogic ul = new Business.Logic.UsuarioLogic();
-            PersonaLogic pl = new PersonaLogic();
-            Business.Entities.Usuario usuarioActivo = new Business.Entities.Usuario();
-            Business.Entities.Persona personaActiva = new Business.Entities.Persona();
 
-            usuarioActivo = ul.GetOne(id);
-            personaActiva = usuarioActivo.IDPersona;
+
+            //Obtiene el usuario activo seleccionado
+            Usuario usuarioActivo = new Usuario();
+            Persona personaActiva = new Persona();
+
+            personaActiva = pl.GetOne(id);
+            usuarioActivo = personaActiva.UsuarioPersona;
 
             //llena la grilla con los datos del usuario traido de la bd
 
@@ -106,28 +105,41 @@ namespace Web
             txtFechaNac.Text = personaActiva.FechaNacimiento.ToString();
             txtEmailPersonal.Text = personaActiva.EmailPersonal.ToString();
 
+            //Tabla de datos institucionales
+            txtLegajo.Text = personaActiva.Legajo.ToString();
+            //Llena los dropdownlists
+            PlanLogic planLogic = new PlanLogic();
+            ddlPlan.DataSource = planLogic.GetAll();
+            ddlPlan.DataValueField = "ID";
+            ddlPlan.DataBind();
+
+            ddlTipoPersona.DataSource = Enum.GetValues(typeof(Persona.TiposPersonas));
+            ddlTipoPersona.DataBind();
+
+
             //Tabla de datos de usuario
             lblIdUsuario.Text = usuarioActivo.ID.ToString();
             txtNombreUsuario.Text = usuarioActivo.NombreUsuario;
             cbHabilitado.Checked = usuarioActivo.Habilitado;
             txtEmailUsuario.Text = usuarioActivo.Email;
 
+            
 
 
-            // Hace el enlace al DataTable contenido en el DataSet
-            ddlPlan.DataSource = pl.GetAll();
-            // Hace el enlace del campo au_id para el valor
-            ddlPlan.DataValueField = "desc_plan";
-            // Llena el DropDownList con los datos de la fuente de datos
-            ddlPlan.DataBind();
 
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
+
+            //pl.Save();
+
+        }
+
+        private void MapearADatos()
+        {
             Usuario usuario = new Usuario();
             Persona pers = new Persona();
-            pl.GetOne(Int32.Parse(lblIdPersona.Text));
 
             usuario.State = (Usuario.States)ModoForm.Modificacion;
             usuario.ID = Int32.Parse(lblIdUsuario.Text);
@@ -145,15 +157,7 @@ namespace Web
             pers.FechaNacimiento = DateTime.Parse(txtFechaNac.Text);
             pers.EmailPersonal = txtEmailPersonal.Text;
 
-            usuario.IDPersona = pers;
-
-            ul.Save(usuario);
-
-        }
-
-        private void MapearADatos()
-        {
-            Usuario usuario = new Usuario();
+            pers.UsuarioPersona = usuario;
         }
     }
 }
