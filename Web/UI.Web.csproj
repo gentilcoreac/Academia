@@ -158,7 +158,7 @@
     <Content Include="LabLoginMasterPage.Master" />
     <Content Include="BasePaginaMaestra.Master" />
     <Content Include="GeneralMasterPage.Master" />
-    <Content Include="WebForm1.aspx" />
+    <Content Include="LoginPaginaMaestra.Master" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="ListaUsuarios.aspx" />
     <Content Include="Login.aspx" />
@@ -196,6 +196,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
+    <Content Include="PersonasEditar.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -211,6 +212,13 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="LoginPaginaMaestra.Master.cs">
+      <DependentUpon>LoginPaginaMaestra.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginPaginaMaestra.Master.designer.cs">
+      <DependentUpon>LoginPaginaMaestra.Master</DependentUpon>
+    </Compile>
     <Compile Include="BasePaginaMaestra.Master.cs">
       <DependentUpon>BasePaginaMaestra.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -313,19 +321,19 @@
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
+    <Compile Include="PersonasEditar.aspx.cs">
+      <DependentUpon>PersonasEditar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PersonasEditar.aspx.designer.cs">
+      <DependentUpon>PersonasEditar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

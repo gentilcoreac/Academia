@@ -1,6 +1,6 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/LabLoginMasterPage.master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Web.Login" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/LoginPaginaMaestra.master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Web.Login" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="PageContent" Runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="LoginContent" Runat="server">
     	<table style="width:100%;">
 			<tr>
 				<td>&nbsp;</td>
@@ -33,13 +33,6 @@
 				<td>
 			<asp:Button ID="btnIngresar" runat="server" Text="Ingresar" OnClick="btnIngresar_Click" />
 				</td>
-			</tr>
-			<tr>
-				<td>
-			<asp:LinkButton ID="lnkRecordarClave" runat="server" Text="Olvidé mi Clave" OnClick="lnkRecordarClave_Click"></asp:LinkButton>
-        		</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
 			</tr>
 		</table>
 </asp:Content>
