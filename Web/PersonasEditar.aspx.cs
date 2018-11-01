@@ -11,13 +11,16 @@ namespace Web
 {
     public partial class PersonasEditar : System.Web.UI.Page
     {
-
+        #region Variables
         private UsuarioLogic ul = new UsuarioLogic();
         private PersonaLogic pl = new PersonaLogic();
         private Persona _PersonaActual = new Persona();
+        private Usuario _UsuarioActual = new Usuario();
         public enum ModoForm { Alta, Baja, Modificacion, Consulta };
-
         private ModoForm _Modo;
+        #endregion
+
+        #region Propiedades
         public ModoForm Modo
         {
             get { return _Modo; }
@@ -25,16 +28,39 @@ namespace Web
         }
 
         public Persona PersonaActual { get => _PersonaActual; set => _PersonaActual = value; }
+        public Usuario UsuarioActual { get => _UsuarioActual; set => _UsuarioActual = value; }
+        #endregion
 
+        #region Disparadores
         protected void Page_Load(object sender, EventArgs e)
         {
             if (PaginaEnEstadoEdicion() && !IsPostBack)
             {
                 int id = Int32.Parse(Request.QueryString["id"]);
-                llenaCampos(id);
+                PersonaActual = pl.GetOne(id);
+                UsuarioActual = PersonaActual.UsuarioPersona;
+                llenaCampos();
             }
         }
 
+        protected void btnGuardar_Click(object sender, EventArgs e)
+        {
+            MapearADatos();
+            pl.Save(PersonaActual);
+            Response.Redirect("~/Personas");
+        }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Personas");
+        }
+        #endregion
+
+        #region Métodos
+        /// <summary>
+        /// Verifica si la página está en estado de edición 
+        /// </summary>
+        /// <returns></returns>
         private bool PaginaEnEstadoEdicion()
         {
             if (Request.QueryString["id"] != null)
@@ -47,29 +73,23 @@ namespace Web
             }
         }
 
-        private void llenaCampos(int id)
+        /// <summary>
+        /// Llena los campos con los datos de la Persona y Usuario previamente traidos de la BD
+        /// </summary>
+        private void llenaCampos()
         {
-            //Obtiene el usuario activo seleccionado
-            Usuario usuarioActivo = new Usuario();
-            Persona personaActiva = new Persona();
-
-            personaActiva = pl.GetOne(id);
-            usuarioActivo = personaActiva.UsuarioPersona;
-
-            //llena la grilla con los datos del usuario traido de la bd
-
             //Tabla de datos de persona
-            lblIdPersona.Text = personaActiva.ID.ToString();
-            txtNombre.Text = personaActiva.Nombre.ToString();
-            txtApellido.Text = personaActiva.Apellido.ToString();
-            txtDireccion.Text = personaActiva.Direccion.ToString();
-            txtTelefono.Text = personaActiva.Telefono.ToString();
-            txtFechaNac.Text = personaActiva.FechaNacimiento.ToString();
-            txtEmailPersonal.Text = personaActiva.EmailPersonal.ToString();
+            lblIdPersona.Text = PersonaActual.ID.ToString();
+            txtNombre.Text = PersonaActual.Nombre.ToString();
+            txtApellido.Text = PersonaActual.Apellido.ToString();
+            txtDireccion.Text = PersonaActual.Direccion.ToString();
+            txtTelefono.Text = PersonaActual.Telefono.ToString();
+            txtFechaNac.Text = PersonaActual.FechaNacimiento.ToString();
+            txtEmailPersonal.Text = PersonaActual.EmailPersonal.ToString();
 
             //Tabla de datos institucionales
-            txtLegajo.Text = personaActiva.Legajo.ToString();
-            //Llena los dropdownlists
+            txtLegajo.Text = PersonaActual.Legajo.ToString();
+            //Llenar los dropdownlists
             PlanLogic planLogic = new PlanLogic();
             ddlPlan.DataSource = planLogic.GetAll();
             ddlPlan.DataValueField = "ID";
@@ -78,58 +98,44 @@ namespace Web
             ddlTipoPersona.DataSource = Enum.GetValues(typeof(Persona.TiposPersonas));
             ddlTipoPersona.DataBind();
 
-            ddlPlan.SelectedValue = personaActiva.Plan_persona.ID.ToString();
-            ddlTipoPersona.SelectedValue = personaActiva.TiposPersona.ToString();
+            ddlPlan.SelectedValue = PersonaActual.Plan_persona.ID.ToString();
+            ddlTipoPersona.SelectedValue = PersonaActual.TiposPersona.ToString();
 
             //Tabla de datos de usuario
-            lblIdUsuario.Text = usuarioActivo.ID.ToString();
-            txtNombreUsuario.Text = usuarioActivo.NombreUsuario;
-            cbHabilitado.Checked = usuarioActivo.Habilitado;
-            txtEmailUsuario.Text = usuarioActivo.Email;
+            lblIdUsuario.Text = PersonaActual.ID.ToString();
+            txtNombreUsuario.Text = UsuarioActual.NombreUsuario;
+            cbHabilitado.Checked = UsuarioActual.Habilitado;
+            txtEmailUsuario.Text = UsuarioActual.Email;
 
         }
 
-        protected void btnGuardar_Click(object sender, EventArgs e)
-        {
-            MapearADatos();
-            pl.Save(PersonaActual);
-            Response.Redirect("~/Personas");
-        }
-
-
+        /// <summary>
+        /// Mapea los datos de los controles actuales del formulario en las propiedades PersonaActual y UsuarioActual
+        /// </summary>
         private void MapearADatos()
         {
-            Usuario usuario = new Usuario();
-            Persona pers = new Persona();
+            UsuarioActual.State = (Usuario.States)ModoForm.Modificacion;
+            UsuarioActual.ID = Int32.Parse(lblIdUsuario.Text);
+            UsuarioActual.NombreUsuario = txtNombreUsuario.Text;
+            UsuarioActual.Habilitado = cbHabilitado.Checked;
+            UsuarioActual.Email = txtEmailUsuario.Text;
+            UsuarioActual.Clave = txtClave.Text;
 
-            usuario.State = (Usuario.States)ModoForm.Modificacion;
-            usuario.ID = Int32.Parse(lblIdUsuario.Text);
-            usuario.NombreUsuario = txtNombreUsuario.Text;
-            usuario.Habilitado = cbHabilitado.Checked;
-            usuario.Email = txtEmailUsuario.Text;
-            usuario.Clave = txtClave.Text;
+            PersonaActual.ID = Int32.Parse(lblIdPersona.Text);
+            PersonaActual.State = (Persona.States)ModoForm.Modificacion;
+            PersonaActual.Nombre = txtNombre.Text;
+            PersonaActual.Apellido = txtApellido.Text;
+            PersonaActual.Direccion = txtDireccion.Text;
+            PersonaActual.Telefono = txtTelefono.Text;
+            PersonaActual.FechaNacimiento = DateTime.Parse(txtFechaNac.Text);
+            PersonaActual.EmailPersonal = txtEmailPersonal.Text;
+            PersonaActual.Legajo = Int32.Parse(txtLegajo.Text);
+            PersonaActual.Plan_persona = new Plan();
+            PersonaActual.Plan_persona.ID = (ddlPlan.SelectedIndex + 1);    //Suma 1 porque el índice seleccionado comienza por 0
+            PersonaActual.TiposPersona = ((Persona.TiposPersonas)ddlTipoPersona.SelectedIndex + 1); //Suma 1 porque el índice seleccionado comienza por 0
+            PersonaActual.UsuarioPersona = UsuarioActual;
 
-            pers.ID = Int32.Parse(lblIdPersona.Text);
-            pers.State = (Persona.States)ModoForm.Modificacion;
-            pers.Nombre = txtNombre.Text;
-            pers.Apellido = txtApellido.Text;
-            pers.Direccion = txtDireccion.Text;
-            pers.Telefono = txtTelefono.Text;
-            pers.FechaNacimiento = DateTime.Parse(txtFechaNac.Text);
-            pers.EmailPersonal = txtEmailPersonal.Text;
-            pers.Legajo = Int32.Parse(txtLegajo.Text);
-            pers.Plan_persona = new Plan();
-            pers.Plan_persona.ID = (ddlPlan.SelectedIndex + 1);
-            pers.TiposPersona = ((Persona.TiposPersonas)ddlTipoPersona.SelectedIndex + 1);
-
-            pers.UsuarioPersona = usuario;
-
-            PersonaActual = pers;
         }
-
-        protected void btnCancelar_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Personas");
-        }
+        #endregion 
     }
 }
