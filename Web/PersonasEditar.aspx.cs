@@ -9,26 +9,30 @@ using System.Web.UI.WebControls;
 
 namespace Web
 {
-    public partial class UsuariosEditar : System.Web.UI.Page
+    public partial class PersonasEditar : System.Web.UI.Page
     {
 
-        UsuarioLogic ul = new UsuarioLogic();
-        PersonaLogic pl = new PersonaLogic();
-        Persona PersonaActual = new Persona();
+        private UsuarioLogic ul = new UsuarioLogic();
+        private PersonaLogic pl = new PersonaLogic();
+        private Persona _PersonaActual = new Persona();
+        public enum ModoForm { Alta, Baja, Modificacion, Consulta };
+
+        private ModoForm _Modo;
+        public ModoForm Modo
+        {
+            get { return _Modo; }
+            set { _Modo = value; }
+        }
+
+        public Persona PersonaActual { get => _PersonaActual; set => _PersonaActual = value; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (PaginaEnEstadoEdicion())
+            if (PaginaEnEstadoEdicion() && !IsPostBack)
             {
                 int id = Int32.Parse(Request.QueryString["id"]);
-                llenaGrilla(id);
+                llenaCampos(id);
             }
-
-            if (IsPostBack)
-            {
-
-            }
-
         }
 
         private bool PaginaEnEstadoEdicion()
@@ -43,7 +47,7 @@ namespace Web
             }
         }
 
-        private void llenaGrilla(int id)
+        private void llenaCampos(int id)
         {
             //Obtiene el usuario activo seleccionado
             Usuario usuarioActivo = new Usuario();
@@ -74,6 +78,9 @@ namespace Web
             ddlTipoPersona.DataSource = Enum.GetValues(typeof(Persona.TiposPersonas));
             ddlTipoPersona.DataBind();
 
+            ddlPlan.SelectedValue = personaActiva.Plan_persona.ID.ToString();
+            ddlTipoPersona.SelectedValue = personaActiva.TiposPersona.ToString();
+
             //Tabla de datos de usuario
             lblIdUsuario.Text = usuarioActivo.ID.ToString();
             txtNombreUsuario.Text = usuarioActivo.NombreUsuario;
@@ -84,10 +91,11 @@ namespace Web
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-
-            //pl.Save();
-
+            MapearADatos();
+            pl.Save(PersonaActual);
+            Response.Redirect("~/Personas");
         }
+
 
         private void MapearADatos()
         {
@@ -109,17 +117,19 @@ namespace Web
             pers.Telefono = txtTelefono.Text;
             pers.FechaNacimiento = DateTime.Parse(txtFechaNac.Text);
             pers.EmailPersonal = txtEmailPersonal.Text;
+            pers.Legajo = Int32.Parse(txtLegajo.Text);
+            pers.Plan_persona = new Plan();
+            pers.Plan_persona.ID = (ddlPlan.SelectedIndex + 1);
+            pers.TiposPersona = ((Persona.TiposPersonas)ddlTipoPersona.SelectedIndex + 1);
 
             pers.UsuarioPersona = usuario;
+
+            PersonaActual = pers;
         }
 
-        public enum ModoForm { Alta, Baja, Modificacion, Consulta };
-
-        private ModoForm _Modo;
-        public ModoForm Modo
+        protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            get { return _Modo; }
-            set { _Modo = value; }
+            Response.Redirect("~/Personas");
         }
     }
 }

@@ -37,11 +37,11 @@
 			</tr>
 		</table>
 </asp:Content>
-<asp:Content ID="Content2" runat="server" contentplaceholderid="head">
+<%--<asp:Content ID="Content2" runat="server" contentplaceholderid="head">
     <style type="text/css">
         .auto-style1 {
             width: 125px;
         }
     </style>
-</asp:Content>
+</asp:Content>--%>
 

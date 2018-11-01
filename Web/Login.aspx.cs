@@ -35,7 +35,7 @@ namespace Web
 
                 if (UsuarioLogueado != null && UsuarioLogueado.NombreUsuario == usuario && UsuarioLogueado.Clave == contrasenia)
                 {
-                    Response.Redirect("~/ListaUsuarios");
+                    Response.Redirect("~/");
                 }
                 else
                 {
