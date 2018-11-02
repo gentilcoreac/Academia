@@ -39,8 +39,12 @@
 			this.Condicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.panel_ABM_Inscripciones = new System.Windows.Forms.Panel();
+			this.lbl_header = new System.Windows.Forms.Label();
+			this.comboBox_Condicion = new System.Windows.Forms.ComboBox();
+			this.txt_FechaLimite = new System.Windows.Forms.TextBox();
+			this.lbl_FechaLimite = new System.Windows.Forms.Label();
+			this.label1 = new System.Windows.Forms.Label();
 			this.txt_Nota = new System.Windows.Forms.TextBox();
-			this.txt_Condicion = new System.Windows.Forms.TextBox();
 			this.txt_IDAlumno = new System.Windows.Forms.TextBox();
 			this.txt_ID_Inscripcion = new System.Windows.Forms.TextBox();
 			this.comboBox_Curso = new System.Windows.Forms.ComboBox();
@@ -62,7 +66,6 @@
 			this.comboBox_TipoBusqueda = new System.Windows.Forms.ToolStripComboBox();
 			this.toolStripTextBox_Busqueda = new System.Windows.Forms.ToolStripTextBox();
 			this.btn_Buscar = new System.Windows.Forms.ToolStripButton();
-			this.label1 = new System.Windows.Forms.Label();
 			tsbEditar = new System.Windows.Forms.ToolStripButton();
 			this.toolStripContainer_Cursos.ContentPanel.SuspendLayout();
 			this.toolStripContainer_Cursos.TopToolStripPanel.SuspendLayout();
@@ -89,11 +92,11 @@
 			// toolStripContainer_Cursos.ContentPanel
 			// 
 			this.toolStripContainer_Cursos.ContentPanel.Controls.Add(this.tableLayoutPanel_);
-			this.toolStripContainer_Cursos.ContentPanel.Size = new System.Drawing.Size(933, 425);
+			this.toolStripContainer_Cursos.ContentPanel.Size = new System.Drawing.Size(933, 475);
 			this.toolStripContainer_Cursos.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.toolStripContainer_Cursos.Location = new System.Drawing.Point(0, 0);
 			this.toolStripContainer_Cursos.Name = "toolStripContainer_Cursos";
-			this.toolStripContainer_Cursos.Size = new System.Drawing.Size(933, 450);
+			this.toolStripContainer_Cursos.Size = new System.Drawing.Size(933, 500);
 			this.toolStripContainer_Cursos.TabIndex = 2;
 			this.toolStripContainer_Cursos.Text = "toolStripContainer1";
 			// 
@@ -111,9 +114,9 @@
 			this.tableLayoutPanel_.Location = new System.Drawing.Point(0, 0);
 			this.tableLayoutPanel_.Name = "tableLayoutPanel_";
 			this.tableLayoutPanel_.RowCount = 2;
-			this.tableLayoutPanel_.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel_.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel_.Size = new System.Drawing.Size(933, 425);
+			this.tableLayoutPanel_.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.94737F));
+			this.tableLayoutPanel_.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57.05263F));
+			this.tableLayoutPanel_.Size = new System.Drawing.Size(933, 475);
 			this.tableLayoutPanel_.TabIndex = 0;
 			// 
 			// dgv_AlumnoInscripcion
@@ -133,7 +136,7 @@
 			this.dgv_AlumnoInscripcion.Name = "dgv_AlumnoInscripcion";
 			this.dgv_AlumnoInscripcion.ReadOnly = true;
 			this.dgv_AlumnoInscripcion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dgv_AlumnoInscripcion.Size = new System.Drawing.Size(927, 206);
+			this.dgv_AlumnoInscripcion.Size = new System.Drawing.Size(927, 198);
 			this.dgv_AlumnoInscripcion.TabIndex = 0;
 			this.dgv_AlumnoInscripcion.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_AlumnoInscripcion_CellFormatting);
 			// 
@@ -175,9 +178,12 @@
 			// 
 			// panel_ABM_Inscripciones
 			// 
+			this.panel_ABM_Inscripciones.Controls.Add(this.lbl_header);
+			this.panel_ABM_Inscripciones.Controls.Add(this.comboBox_Condicion);
+			this.panel_ABM_Inscripciones.Controls.Add(this.txt_FechaLimite);
+			this.panel_ABM_Inscripciones.Controls.Add(this.lbl_FechaLimite);
 			this.panel_ABM_Inscripciones.Controls.Add(this.label1);
 			this.panel_ABM_Inscripciones.Controls.Add(this.txt_Nota);
-			this.panel_ABM_Inscripciones.Controls.Add(this.txt_Condicion);
 			this.panel_ABM_Inscripciones.Controls.Add(this.txt_IDAlumno);
 			this.panel_ABM_Inscripciones.Controls.Add(this.txt_ID_Inscripcion);
 			this.panel_ABM_Inscripciones.Controls.Add(this.comboBox_Curso);
@@ -188,28 +194,66 @@
 			this.panel_ABM_Inscripciones.Controls.Add(this.lbl_ID_Alumno);
 			this.panel_ABM_Inscripciones.Controls.Add(this.lbl_ID_Inscripcion);
 			this.panel_ABM_Inscripciones.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel_ABM_Inscripciones.Location = new System.Drawing.Point(3, 215);
+			this.panel_ABM_Inscripciones.Location = new System.Drawing.Point(3, 207);
 			this.panel_ABM_Inscripciones.Name = "panel_ABM_Inscripciones";
-			this.panel_ABM_Inscripciones.Size = new System.Drawing.Size(927, 207);
+			this.panel_ABM_Inscripciones.Size = new System.Drawing.Size(927, 265);
 			this.panel_ABM_Inscripciones.TabIndex = 1;
+			// 
+			// lbl_header
+			// 
+			this.lbl_header.AutoSize = true;
+			this.lbl_header.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbl_header.Location = new System.Drawing.Point(72, 10);
+			this.lbl_header.Name = "lbl_header";
+			this.lbl_header.Size = new System.Drawing.Size(13, 17);
+			this.lbl_header.TabIndex = 15;
+			this.lbl_header.Text = " ";
+			// 
+			// comboBox_Condicion
+			// 
+			this.comboBox_Condicion.FormattingEnabled = true;
+			this.comboBox_Condicion.Location = new System.Drawing.Point(132, 106);
+			this.comboBox_Condicion.Name = "comboBox_Condicion";
+			this.comboBox_Condicion.Size = new System.Drawing.Size(146, 21);
+			this.comboBox_Condicion.TabIndex = 14;
+			// 
+			// txt_FechaLimite
+			// 
+			this.txt_FechaLimite.Location = new System.Drawing.Point(701, 25);
+			this.txt_FechaLimite.Name = "txt_FechaLimite";
+			this.txt_FechaLimite.Size = new System.Drawing.Size(100, 21);
+			this.txt_FechaLimite.TabIndex = 13;
+			// 
+			// lbl_FechaLimite
+			// 
+			this.lbl_FechaLimite.AutoSize = true;
+			this.lbl_FechaLimite.Location = new System.Drawing.Point(527, 28);
+			this.lbl_FechaLimite.Name = "lbl_FechaLimite";
+			this.lbl_FechaLimite.Size = new System.Drawing.Size(157, 13);
+			this.lbl_FechaLimite.TabIndex = 12;
+			this.lbl_FechaLimite.Text = "Fecha limite de inscripcion";
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Verdana", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+			this.label1.Location = new System.Drawing.Point(130, 204);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(173, 12);
+			this.label1.TabIndex = 11;
+			this.label1.Text = "ID Curso - Comisión - Materia";
 			// 
 			// txt_Nota
 			// 
-			this.txt_Nota.Location = new System.Drawing.Point(132, 129);
+			this.txt_Nota.Location = new System.Drawing.Point(132, 139);
 			this.txt_Nota.Name = "txt_Nota";
 			this.txt_Nota.Size = new System.Drawing.Size(100, 21);
 			this.txt_Nota.TabIndex = 10;
 			// 
-			// txt_Condicion
-			// 
-			this.txt_Condicion.Location = new System.Drawing.Point(132, 99);
-			this.txt_Condicion.Name = "txt_Condicion";
-			this.txt_Condicion.Size = new System.Drawing.Size(100, 21);
-			this.txt_Condicion.TabIndex = 9;
-			// 
 			// txt_IDAlumno
 			// 
-			this.txt_IDAlumno.Location = new System.Drawing.Point(132, 62);
+			this.txt_IDAlumno.Location = new System.Drawing.Point(132, 72);
 			this.txt_IDAlumno.Name = "txt_IDAlumno";
 			this.txt_IDAlumno.Size = new System.Drawing.Size(100, 21);
 			this.txt_IDAlumno.TabIndex = 8;
@@ -217,7 +261,7 @@
 			// txt_ID_Inscripcion
 			// 
 			this.txt_ID_Inscripcion.Enabled = false;
-			this.txt_ID_Inscripcion.Location = new System.Drawing.Point(132, 25);
+			this.txt_ID_Inscripcion.Location = new System.Drawing.Point(132, 40);
 			this.txt_ID_Inscripcion.Name = "txt_ID_Inscripcion";
 			this.txt_ID_Inscripcion.Size = new System.Drawing.Size(100, 21);
 			this.txt_ID_Inscripcion.TabIndex = 7;
@@ -225,14 +269,14 @@
 			// comboBox_Curso
 			// 
 			this.comboBox_Curso.FormattingEnabled = true;
-			this.comboBox_Curso.Location = new System.Drawing.Point(395, 25);
+			this.comboBox_Curso.Location = new System.Drawing.Point(132, 175);
 			this.comboBox_Curso.Name = "comboBox_Curso";
 			this.comboBox_Curso.Size = new System.Drawing.Size(267, 21);
 			this.comboBox_Curso.TabIndex = 6;
 			// 
 			// btnAceptar
 			// 
-			this.btnAceptar.Location = new System.Drawing.Point(525, 127);
+			this.btnAceptar.Location = new System.Drawing.Point(132, 235);
 			this.btnAceptar.Name = "btnAceptar";
 			this.btnAceptar.Size = new System.Drawing.Size(75, 23);
 			this.btnAceptar.TabIndex = 5;
@@ -243,7 +287,7 @@
 			// lbl_Nota
 			// 
 			this.lbl_Nota.AutoSize = true;
-			this.lbl_Nota.Location = new System.Drawing.Point(80, 132);
+			this.lbl_Nota.Location = new System.Drawing.Point(80, 142);
 			this.lbl_Nota.Name = "lbl_Nota";
 			this.lbl_Nota.Size = new System.Drawing.Size(33, 13);
 			this.lbl_Nota.TabIndex = 4;
@@ -252,7 +296,7 @@
 			// lbl_Condicion
 			// 
 			this.lbl_Condicion.AutoSize = true;
-			this.lbl_Condicion.Location = new System.Drawing.Point(50, 99);
+			this.lbl_Condicion.Location = new System.Drawing.Point(50, 109);
 			this.lbl_Condicion.Name = "lbl_Condicion";
 			this.lbl_Condicion.Size = new System.Drawing.Size(63, 13);
 			this.lbl_Condicion.TabIndex = 3;
@@ -261,7 +305,7 @@
 			// lbl_ID_Curso
 			// 
 			this.lbl_ID_Curso.AutoSize = true;
-			this.lbl_ID_Curso.Location = new System.Drawing.Point(329, 28);
+			this.lbl_ID_Curso.Location = new System.Drawing.Point(72, 178);
 			this.lbl_ID_Curso.Name = "lbl_ID_Curso";
 			this.lbl_ID_Curso.Size = new System.Drawing.Size(41, 13);
 			this.lbl_ID_Curso.TabIndex = 2;
@@ -271,7 +315,7 @@
 			// 
 			this.lbl_ID_Alumno.AutoSize = true;
 			this.lbl_ID_Alumno.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-			this.lbl_ID_Alumno.Location = new System.Drawing.Point(45, 65);
+			this.lbl_ID_Alumno.Location = new System.Drawing.Point(45, 75);
 			this.lbl_ID_Alumno.Name = "lbl_ID_Alumno";
 			this.lbl_ID_Alumno.Size = new System.Drawing.Size(68, 13);
 			this.lbl_ID_Alumno.TabIndex = 1;
@@ -280,7 +324,7 @@
 			// lbl_ID_Inscripcion
 			// 
 			this.lbl_ID_Inscripcion.AutoSize = true;
-			this.lbl_ID_Inscripcion.Location = new System.Drawing.Point(26, 28);
+			this.lbl_ID_Inscripcion.Location = new System.Drawing.Point(26, 43);
 			this.lbl_ID_Inscripcion.Name = "lbl_ID_Inscripcion";
 			this.lbl_ID_Inscripcion.Size = new System.Drawing.Size(87, 13);
 			this.lbl_ID_Inscripcion.TabIndex = 0;
@@ -304,7 +348,7 @@
             this.btn_Buscar});
 			this.tsUsuarios.Location = new System.Drawing.Point(3, 0);
 			this.tsUsuarios.Name = "tsUsuarios";
-			this.tsUsuarios.Size = new System.Drawing.Size(803, 25);
+			this.tsUsuarios.Size = new System.Drawing.Size(772, 25);
 			this.tsUsuarios.TabIndex = 1;
 			// 
 			// tsbNuevo
@@ -388,23 +432,12 @@
 			this.btn_Buscar.ToolTipText = "Buscar";
 			this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
 			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Verdana", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-			this.label1.Location = new System.Drawing.Point(392, 49);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(173, 12);
-			this.label1.TabIndex = 11;
-			this.label1.Text = "ID Curso - Comisión - Materia";
-			// 
 			// FormInscripciones
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
-			this.ClientSize = new System.Drawing.Size(933, 450);
+			this.ClientSize = new System.Drawing.Size(933, 500);
 			this.Controls.Add(this.toolStripContainer_Cursos);
 			this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -449,7 +482,6 @@
 		private System.Windows.Forms.Label lbl_ID_Alumno;
 		private System.Windows.Forms.Label lbl_ID_Inscripcion;
 		private System.Windows.Forms.TextBox txt_Nota;
-		private System.Windows.Forms.TextBox txt_Condicion;
 		private System.Windows.Forms.TextBox txt_IDAlumno;
 		private System.Windows.Forms.TextBox txt_ID_Inscripcion;
 		private System.Windows.Forms.ToolStripLabel toolStripLabel_NuevaInscripcion;
@@ -461,5 +493,9 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Condicion;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Nota;
 		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label lbl_FechaLimite;
+		private System.Windows.Forms.TextBox txt_FechaLimite;
+		private System.Windows.Forms.ComboBox comboBox_Condicion;
+		private System.Windows.Forms.Label lbl_header;
 	}
 }

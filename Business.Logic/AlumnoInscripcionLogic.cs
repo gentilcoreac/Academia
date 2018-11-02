@@ -19,9 +19,9 @@ namespace Business.Logic
 
 		public AlumnoInscripcionLogic()
 		{
-
 			AlumnoInscripcionData = new AlumnoInscripcionAdapter();
 		}
+
 		public List<AlumnoInscripcion> GetAll(int ID_Persona)
 		{
 			return AlumnoInscripcionData.GetAll(ID_Persona);
@@ -68,10 +68,9 @@ namespace Business.Logic
 			}
 		}
 
-		public bool ValidaFechaInscripcion(Usuario usuarioLogueado)
+		public bool ValidaFechaInscripcion(Usuario usuarioLogueado, string fechaLimite)
 		{
-			DateTime fechaLimite = new DateTime(DateTime.Now.Year, 11, 1);
-			if (fechaLimite >= DateTime.Now)
+			if (DateTime.Parse(fechaLimite) >= DateTime.Now)
 			{
 				return true;
 			}

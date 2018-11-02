@@ -48,6 +48,12 @@ namespace UI.Desktop
 			Desc_Materia,
 			Desc_Comision
 		}
+		protected enum ValoresEstadoRegularidad
+		{
+			Regular,
+			Libre,
+			Promovido
+		}
 
 		#endregion
 
@@ -73,11 +79,25 @@ namespace UI.Desktop
 			}
 			comboBox_TipoBusqueda.SelectedIndex = 0;
 
+			////Combo Condicion
+			foreach (var item in Enum.GetValues(typeof(ValoresEstadoRegularidad)))
+			{
+				comboBox_Condicion.Items.Add(item);
+			}
+			comboBox_Condicion.SelectedIndex = 0;
+
 			////Combo Materia
 			CursoLogic cursoLogic = new CursoLogic();
 			comboBox_Curso.DisplayMember = "ValorDelToString";
 			comboBox_Curso.ValueMember = "ID";
-			comboBox_Curso.DataSource = cursoLogic.GetAll("MisCursos", UsuarioLogueado.IDPersona.ID.ToString());
+			if (UsuarioLogueado.IDPersona.TiposPersona.Equals(Persona.TiposPersonas.Administrador))
+			{
+				comboBox_Curso.DataSource = cursoLogic.GetAll();
+			}
+			else
+			{
+				comboBox_Curso.DataSource = cursoLogic.GetAll("MisCursos", UsuarioLogueado.IDPersona.ID.ToString());
+			}
 			//comboBox_Curso.SelectedIndex = 0;
 		}
 
@@ -92,10 +112,15 @@ namespace UI.Desktop
 				{
 					this.dgv_AlumnoInscripcion.DataSource = ail.GetAll(comboBox_TipoBusqueda.SelectedItem.ToString(), toolStripTextBox_Busqueda.Text);
 				}
-				else
+				else if (UsuarioLogueado.IDPersona.TiposPersona.Equals(Persona.TiposPersonas.Docente))
 				{
 					this.dgv_AlumnoInscripcion.DataSource = ail.GetAll(comboBox_TipoBusqueda.SelectedItem.ToString(), toolStripTextBox_Busqueda.Text, UsuarioLogueado.IDPersona.ID);
-					VistaAlumnoYProfesor();
+					VistaDocente();
+				}
+				else if (UsuarioLogueado.IDPersona.TiposPersona.Equals(Persona.TiposPersonas.Alumno))
+				{
+					this.dgv_AlumnoInscripcion.DataSource = ail.GetAll(comboBox_TipoBusqueda.SelectedItem.ToString(), toolStripTextBox_Busqueda.Text, UsuarioLogueado.IDPersona.ID);
+					VistaAlumno();
 				}
 			}
 			catch (Exception ex)
@@ -104,26 +129,31 @@ namespace UI.Desktop
 			}
 		}
 
-		private void VistaAlumnoYProfesor()
-		{
-			//Modo = FormInscripciones.ModoForm.Consulta;
-			EStablecerObjetosDisponibles();
-		}
-
-		private void EStablecerObjetosDisponibles()
+		private void VistaAlumno()
 		{
 			txt_IDAlumno.Text = UsuarioLogueado.IDPersona.ID.ToString();
 			txt_IDAlumno.Enabled = false;
 			txt_ID_Inscripcion.Enabled = false;
 			txt_Nota.Enabled = false;
-			txt_Condicion.Enabled = false;
+			comboBox_Condicion.Enabled = false;
+			txt_FechaLimite.Visible = false;
+			lbl_FechaLimite.Visible = false;
 		}
+
+		private void VistaDocente()
+		{
+			txt_ID_Inscripcion.Enabled = false;
+			txt_FechaLimite.Visible = false;
+			lbl_FechaLimite.Visible = false;
+		}
+
 
 		public override void MapearDeDatos()
 		{
 			txt_ID_Inscripcion.Text = AlumnoInscripcionctual.ID.ToString();
 			txt_IDAlumno.Text = AlumnoInscripcionctual.IDAlumno.ID.ToString();
-			txt_Condicion.Text = AlumnoInscripcionctual.Condicion.ToString();
+			comboBox_Condicion.Text = "";
+			comboBox_Condicion.SelectedText = AlumnoInscripcionctual.Condicion.ToString();
 			txt_Nota.Text = AlumnoInscripcionctual.Nota.ToString();
 			comboBox_Curso.SelectedValue = AlumnoInscripcionctual.IDCurso.ID;
 
@@ -151,11 +181,11 @@ namespace UI.Desktop
 			{
 				AlumnoInscripcionctual = new AlumnoInscripcion();
 				AlumnoInscripcionctual.State = Materia.States.New;
-				AlumnoInscripcionctual.ID= Convert.ToInt32(txt_ID_Inscripcion.Text);
+				//AlumnoInscripcionctual.ID= Convert.ToInt32(txt_ID_Inscripcion.Text);
 				Persona persona = new Persona();
 				persona.ID = Convert.ToInt32(txt_IDAlumno.Text);
 				AlumnoInscripcionctual.IDAlumno = persona;
-				AlumnoInscripcionctual.Condicion = (string)txt_Condicion.Text;
+				AlumnoInscripcionctual.Condicion = comboBox_Condicion.SelectedText;
 				AlumnoInscripcionctual.Nota = Convert.ToInt32(txt_Nota.Text);
 				AlumnoInscripcionctual.IDCurso = (Curso)comboBox_Curso.SelectedItem;
 			}
@@ -166,7 +196,7 @@ namespace UI.Desktop
 				Persona persona = new Persona();
 				persona.ID = Convert.ToInt32(txt_IDAlumno.Text);
 				AlumnoInscripcionctual.IDAlumno = persona;
-				AlumnoInscripcionctual.Condicion = (string)txt_Condicion.Text;
+				AlumnoInscripcionctual.Condicion = comboBox_Condicion.SelectedText;
 				AlumnoInscripcionctual.Nota = Convert.ToInt32(txt_Nota.Text);
 				AlumnoInscripcionctual.IDCurso = (Curso)comboBox_Curso.SelectedItem; 
 				
@@ -188,16 +218,14 @@ namespace UI.Desktop
 		public override bool Validar()
 		{
 			AlumnoInscripcionLogic alumnoInscripcioLogic = new AlumnoInscripcionLogic();
-			if (String.IsNullOrEmpty(	this.txt_ID_Inscripcion.Text)
-				|| String.IsNullOrEmpty(this.txt_IDAlumno.Text)
-				|| String.IsNullOrEmpty(this.txt_Condicion.Text)
+			if (String.IsNullOrEmpty(this.txt_IDAlumno.Text)
 				|| String.IsNullOrEmpty(this.txt_Nota.Text))
 			{
 				this.Notificar("Cuidado, revisar", "Por favor, complete todos los campos"
 						, MessageBoxButtons.OK, MessageBoxIcon.Information);
 				return false;
 			}
-			else if (!alumnoInscripcioLogic.ValidaFechaInscripcion(UsuarioLogueado))
+			else if (!alumnoInscripcioLogic.ValidaFechaInscripcion(UsuarioLogueado,txt_FechaLimite.Text))
 			{
 				this.Notificar("Finalizó la inscripción", "Disculpe, pero la fecha de inscripción ya ha finalizado"
 								, MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -224,11 +252,15 @@ namespace UI.Desktop
 		public override void LimpiarCampos()
 		{
 			txt_ID_Inscripcion.Text = "";
-			txt_Condicion.Text = "";
-			txt_Condicion.Text = "";
+			comboBox_Condicion.SelectedIndex = -1;
 			txt_Nota.Text = "";
 		}
 
+		public void InicializarValores()
+		{
+			int anio = DateTime.Now.Year;
+			txt_FechaLimite.Text = anio.ToString()+"-04-01";
+		}
 
 	#endregion
 
@@ -236,7 +268,8 @@ namespace UI.Desktop
 	#region Disparadores
 	private void FormInscripciones_Load(object sender, EventArgs e)
 		{
-
+			btnAceptar.Visible = false;
+			InicializarValores();
 			CompletarComboBox();
 			Listar();
 		}
@@ -247,10 +280,14 @@ namespace UI.Desktop
 			{
 				LimpiarCampos();
 				/////////////////////////////////////////////////////////////////////////////------/////////////////////////////////////////
+				lbl_header.Text = " ";
+				lbl_header.Text = "Inscripción a materia. Seleccione una";
+				btnAceptar.Visible = true;
 				this.txt_Nota.Text = "0";
 				this.txt_Nota.Enabled = false;
-				this.txt_Condicion.Text = "Regular";
-				this.txt_Condicion.Enabled = false;
+				this.comboBox_Condicion.Text = "";
+				this.comboBox_Condicion.SelectedText = "Regular";
+				this.comboBox_Condicion.Enabled = false;
 				////////////////////////////////////////////////////////////////////////------/////////////////////////////////////////
 				Modo = FormInscripciones.ModoForm.Alta;
 				this.btnAceptar.Text = "Agregar";
@@ -271,6 +308,11 @@ namespace UI.Desktop
 			{
 				int ID = ((Business.Entities.AlumnoInscripcion)this.dgv_AlumnoInscripcion.SelectedRows[0].DataBoundItem).ID;
 				Modo = FormInscripciones.ModoForm.Modificacion;
+				lbl_header.Text = " ";
+				lbl_header.Text= "Editar inscripción";
+				this.txt_Nota.Enabled = true;
+				this.comboBox_Condicion.Enabled = true;
+				btnAceptar.Visible = true;
 				this.LimpiarCampos();
 				this.btnAceptar.Text = "Actualizar";
 				AlumnoInscripcionLogic inscripcionLogic = new AlumnoInscripcionLogic();
@@ -289,13 +331,14 @@ namespace UI.Desktop
 			try
 			{
 				LimpiarCampos();
+				lbl_header.Text = " ";
 				int ID = ((Business.Entities.AlumnoInscripcion)this.dgv_AlumnoInscripcion.SelectedRows[0].DataBoundItem).ID;
-				if (MessageBox.Show("¿Estas seguro que deseas borrarlo? \nSe borrará la inscripcion seleccionada de la grilla\nNo podras deshacerlo.", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+				if (MessageBox.Show("¿Estas seguro que deseas borrarlo? \nSe borrará la inscripcion seleccionada de la grilla\nNo podras deshacerlo.", "ADVERTENCIA - ¿ELIMINAR INSCRIPCION?", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 					== System.Windows.Forms.DialogResult.Yes)
 				{
 					Modo = FormInscripciones.ModoForm.Baja;
 					AlumnoInscripcionLogic inscripcionLogic = new AlumnoInscripcionLogic();
-					if (!inscripcionLogic.ValidaFechaInscripcion(UsuarioLogueado))
+					if (!inscripcionLogic.ValidaFechaInscripcion(UsuarioLogueado,txt_FechaLimite.Text))
 					{
 						this.Notificar("Finalizó la inscripción", "Disculpe, pero la fecha para modificar inscripciones ha finalizado"
 										, MessageBoxButtons.OK, MessageBoxIcon.Information);

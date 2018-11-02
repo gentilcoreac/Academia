@@ -41,7 +41,6 @@
 			this.IDMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.DescMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.panel_ABM_Cursos = new System.Windows.Forms.Panel();
-			this.label1 = new System.Windows.Forms.Label();
 			this.label_TextoAyudaComision = new System.Windows.Forms.Label();
 			this.label_TextoAyudaMaterias = new System.Windows.Forms.Label();
 			this.btnAceptar = new System.Windows.Forms.Button();
@@ -201,7 +200,6 @@
 			// 
 			// panel_ABM_Cursos
 			// 
-			this.panel_ABM_Cursos.Controls.Add(this.label1);
 			this.panel_ABM_Cursos.Controls.Add(this.label_TextoAyudaComision);
 			this.panel_ABM_Cursos.Controls.Add(this.label_TextoAyudaMaterias);
 			this.panel_ABM_Cursos.Controls.Add(this.btnAceptar);
@@ -223,15 +221,6 @@
 			this.panel_ABM_Cursos.Name = "panel_ABM_Cursos";
 			this.panel_ABM_Cursos.Size = new System.Drawing.Size(928, 207);
 			this.panel_ABM_Cursos.TabIndex = 1;
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(464, 118);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(298, 26);
-			this.label1.TabIndex = 55;
-			this.label1.Text = "AYUDAR AL USUARIO Y FILTRARLE POR CARRERA \r\nPARA ASI LUEGO SELECCIONAR\r\n";
 			// 
 			// label_TextoAyudaComision
 			// 
@@ -537,6 +526,5 @@
 		private System.Windows.Forms.Button btnAceptar;
 		private System.Windows.Forms.Label label_TextoAyudaComision;
 		private System.Windows.Forms.Label label_TextoAyudaMaterias;
-		private System.Windows.Forms.Label label1;
 	}
 }

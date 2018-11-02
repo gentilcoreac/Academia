@@ -231,8 +231,7 @@ namespace Data.Database
 												INNER JOIN comisiones co ON co.id_plan=pl.id_plan
 												INNER JOIN cursos cu	 ON cu.id_comision=co.id_comision
 												INNER JOIN materias ma	 ON ma.id_materia=cu.id_materia
-												INNER JOIN alumnos_inscripciones ai ON ai.id_alumno=per.id_persona
-																					AND ai.id_curso=cu.id_curso";
+												INNER JOIN alumnos_inscripciones ai ON ai.id_alumno=per.id_persona";
 				SqlCommand cmdAlumnoInscripcion = null;
 				switch (tipoBusqueda)
 				{
