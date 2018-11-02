@@ -1,6 +1,6 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/LabLoginMasterPage.master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Web.Login" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/LoginPaginaMaestra.master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Web.Login" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="PageContent" Runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="LoginContent" Runat="server">
     	<table style="width:100%;">
 			<tr>
 				<td>&nbsp;</td>
@@ -37,11 +37,11 @@
 			</tr>
 		</table>
 </asp:Content>
-<asp:Content ID="Content2" runat="server" contentplaceholderid="head">
+<%--<asp:Content ID="Content2" runat="server" contentplaceholderid="head">
     <style type="text/css">
         .auto-style1 {
             width: 125px;
         }
     </style>
-</asp:Content>
+</asp:Content>--%>
 

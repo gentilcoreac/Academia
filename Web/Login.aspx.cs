@@ -35,8 +35,7 @@ namespace Web
 
                 if (UsuarioLogueado != null && UsuarioLogueado.NombreUsuario == usuario && UsuarioLogueado.Clave == contrasenia)
                 {
-					Session["usuarioLogueado"] = UsuarioLogueado;
-					Response.Redirect("~/Default");
+                    Response.Redirect("~/");
                 }
                 else
                 {
@@ -45,7 +44,7 @@ namespace Web
             }
             catch (Exception ex)
             {
-                Response.Write("<script>alert('Error al ingresar al sistema \n' + ex)</script>"+ex);
+                Response.Write("<script>alert('Error al ingresar al sistema \n' + ex)</script>");
             }
         }
     }
