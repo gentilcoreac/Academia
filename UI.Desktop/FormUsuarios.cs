@@ -68,7 +68,7 @@ namespace UI.Desktop
 			Listar();
 		}
 
-        private void tsbEditar_Click(object sender, EventArgs e)
+		private void tsbEditar_Click(object sender, EventArgs e)
         {
 			int ID = ((Business.Entities.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
 			UsuarioDesktop usuarioDesktop = new UsuarioDesktop(ID,ApplicationForm.ModoForm.Modificacion);

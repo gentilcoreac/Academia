@@ -40,6 +40,8 @@
 			this.ToolStripMenuItem_Comisiones = new System.Windows.Forms.ToolStripMenuItem();
 			this.ToolStripMenuItem_Inscripciones = new System.Windows.Forms.ToolStripMenuItem();
 			this.panel_Principal = new System.Windows.Forms.TableLayoutPanel();
+			this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.inscriptosAñoActualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuPrincipal.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -48,7 +50,8 @@
 			this.menuPrincipal.Font = new System.Drawing.Font("Verdana", 9F);
 			this.menuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem_Archivo,
-            this.ToolStripMenuItem_gestion});
+            this.ToolStripMenuItem_gestion,
+            this.reportesToolStripMenuItem});
 			this.menuPrincipal.Location = new System.Drawing.Point(0, 0);
 			this.menuPrincipal.Name = "menuPrincipal";
 			this.menuPrincipal.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
@@ -147,6 +150,21 @@
 			this.panel_Principal.Size = new System.Drawing.Size(933, 426);
 			this.panel_Principal.TabIndex = 3;
 			// 
+			// reportesToolStripMenuItem
+			// 
+			this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.inscriptosAñoActualToolStripMenuItem});
+			this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+			this.reportesToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+			this.reportesToolStripMenuItem.Text = "Reportes";
+			// 
+			// inscriptosAñoActualToolStripMenuItem
+			// 
+			this.inscriptosAñoActualToolStripMenuItem.Name = "inscriptosAñoActualToolStripMenuItem";
+			this.inscriptosAñoActualToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+			this.inscriptosAñoActualToolStripMenuItem.Text = "Inscriptos año actual";
+			this.inscriptosAñoActualToolStripMenuItem.Click += new System.EventHandler(this.inscriptosAñoActualToolStripMenuItem_Click);
+			// 
 			// FormMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -184,5 +202,7 @@
 		private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_Cursos;
 		private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_Inscripciones;
 		private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_Comisiones;
+		private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem inscriptosAñoActualToolStripMenuItem;
 	}
 }

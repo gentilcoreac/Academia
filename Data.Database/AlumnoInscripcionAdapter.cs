@@ -94,15 +94,16 @@ namespace Data.Database
 			try
 			{
 				this.OpenConnection();
-				string consulta_SelectFrom = @"SELECT ai.id_inscripcion, ai.id_alumno , ai.id_curso, ai.condicion, ai.nota, ma.desc_materia, co.desc_Comision 
-													,per.id_persona
+				string consulta_SelectFrom = @"SELECT ai.id_inscripcion, ai.id_alumno , ai.id_curso, ai.condicion, ai.nota 
+														,cu.cupo,cu.anio_calendario
+														,ma.desc_materia
+														,com.desc_comision
+														,count(id_inscripcion) over(partition by ai.id_curso order by ai.id_curso) as cantidad_inscriptos_actual
 												FROM personas per
-												INNER JOIN planes pl	 ON pl.id_plan=per.id_plan   --se puede ir directamente desde personas a comisiones
-												INNER JOIN comisiones co ON co.id_plan=pl.id_plan
-												INNER JOIN cursos cu	 ON cu.id_comision=co.id_comision
+												INNER JOIN alumnos_inscripciones ai ON ai.id_alumno=per.id_persona									
+												INNER JOIN cursos cu	 ON  ai.id_curso=cu.id_curso
 												INNER JOIN materias ma	 ON ma.id_materia=cu.id_materia
-												INNER JOIN alumnos_inscripciones ai ON ai.id_alumno=per.id_persona
-																					AND ai.id_curso=cu.id_curso ";
+												INNER JOIN comisiones com ON com.id_comision=cu.id_comision ";
 				SqlCommand cmdAlumnoInscripcion = null;
 				switch (tipoBusqueda)
 				{
@@ -189,6 +190,8 @@ namespace Data.Database
 
 					Curso curso = new Curso();
 					curso.ID = Convert.ToInt32(drAlumntoInscripcion["id_curso"]);
+					curso.Cupo = Convert.ToInt32(drAlumntoInscripcion["cupo"]);
+					curso.AnioCalendario = Convert.ToInt32(drAlumntoInscripcion["anio_calendario"]);
 					Materia materia = new Materia();
 					materia.Descripcion = (string)(drAlumntoInscripcion["desc_materia"]);
 					curso.Materia = materia;
@@ -225,13 +228,16 @@ namespace Data.Database
 			try
 			{
 				this.OpenConnection();
-				string consulta_SelectFrom = @"SELECT ai.id_inscripcion, ai.id_alumno , ai.id_curso, ai.condicion, ai.nota, ma.desc_materia, co.desc_Comision 
+				string consulta_SelectFrom = @"SELECT ai.id_inscripcion, ai.id_alumno , ai.id_curso, ai.condicion, ai.nota 
+														,cu.cupo,cu.anio_calendario
+														,ma.desc_materia
+														,com.desc_comision
+														,count(id_inscripcion) over(partition by ai.id_curso order by ai.id_curso) as cantidad_inscriptos_actual
 												FROM personas per
-												INNER JOIN planes pl	 ON pl.id_plan=per.id_plan   --se puede ir directamente desde personas a comisiones
-												INNER JOIN comisiones co ON co.id_plan=pl.id_plan
-												INNER JOIN cursos cu	 ON cu.id_comision=co.id_comision
+												INNER JOIN alumnos_inscripciones ai ON ai.id_alumno=per.id_persona									
+												INNER JOIN cursos cu	 ON  ai.id_curso=cu.id_curso
 												INNER JOIN materias ma	 ON ma.id_materia=cu.id_materia
-												INNER JOIN alumnos_inscripciones ai ON ai.id_alumno=per.id_persona";
+												INNER JOIN comisiones com ON com.id_comision=cu.id_comision";
 				SqlCommand cmdAlumnoInscripcion = null;
 				switch (tipoBusqueda)
 				{
@@ -298,6 +304,9 @@ namespace Data.Database
 
 					Curso curso = new Curso();
 					curso.ID = Convert.ToInt32(drAlumntoInscripcion["id_curso"]);
+					curso.Cupo = Convert.ToInt32(drAlumntoInscripcion["cupo"]);
+					curso.AnioCalendario = Convert.ToInt32(drAlumntoInscripcion["anio_calendario"]);
+
 					Materia materia = new Materia();
 					materia.Descripcion = (string)(drAlumntoInscripcion["desc_materia"]);
 					curso.Materia = materia;

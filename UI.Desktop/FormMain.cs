@@ -127,5 +127,10 @@ namespace UI.Desktop
 			this.panel_Principal.Controls.Add(appComisiones);
 			appComisiones.Show();
 		}
+
+		private void inscriptosAñoActualToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

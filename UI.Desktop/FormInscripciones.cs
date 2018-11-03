@@ -52,7 +52,8 @@ namespace UI.Desktop
 		{
 			Regular,
 			Libre,
-			Promovido
+			Promovido,
+			Inscripto
 		}
 
 		#endregion
@@ -180,7 +181,7 @@ namespace UI.Desktop
 			if (this.Modo == FormInscripciones.ModoForm.Alta)
 			{
 				AlumnoInscripcionctual = new AlumnoInscripcion();
-				AlumnoInscripcionctual.State = Materia.States.New;
+				AlumnoInscripcionctual.State = AlumnoInscripcion.States.New;
 				//AlumnoInscripcionctual.ID= Convert.ToInt32(txt_ID_Inscripcion.Text);
 				Persona persona = new Persona();
 				persona.ID = Convert.ToInt32(txt_IDAlumno.Text);
@@ -191,7 +192,7 @@ namespace UI.Desktop
 			}
 			if (this.Modo == FormInscripciones.ModoForm.Modificacion)
 			{
-				AlumnoInscripcionctual.State = Materia.States.Modified;
+				AlumnoInscripcionctual.State = AlumnoInscripcion.States.Modified;
 				AlumnoInscripcionctual.ID = Convert.ToInt32(txt_ID_Inscripcion.Text);
 				Persona persona = new Persona();
 				persona.ID = Convert.ToInt32(txt_IDAlumno.Text);
@@ -203,7 +204,7 @@ namespace UI.Desktop
 			}
 			if (this.Modo == FormInscripciones.ModoForm.Baja)
 			{
-				AlumnoInscripcionctual.State = Materia.States.Deleted;
+				AlumnoInscripcionctual.State = AlumnoInscripcion.States.Deleted;
 			}
 		}
 
@@ -286,7 +287,7 @@ namespace UI.Desktop
 				this.txt_Nota.Text = "0";
 				this.txt_Nota.Enabled = false;
 				this.comboBox_Condicion.Text = "";
-				this.comboBox_Condicion.SelectedText = "Regular";
+				this.comboBox_Condicion.SelectedText = "Inscripto";
 				this.comboBox_Condicion.Enabled = false;
 				////////////////////////////////////////////////////////////////////////------/////////////////////////////////////////
 				Modo = FormInscripciones.ModoForm.Alta;

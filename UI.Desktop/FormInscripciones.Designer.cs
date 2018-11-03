@@ -33,11 +33,6 @@
 			this.toolStripContainer_Cursos = new System.Windows.Forms.ToolStripContainer();
 			this.tableLayoutPanel_ = new System.Windows.Forms.TableLayoutPanel();
 			this.dgv_AlumnoInscripcion = new System.Windows.Forms.DataGridView();
-			this.ID_Inscripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.ID_Alumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.ID_Curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Condicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.panel_ABM_Inscripciones = new System.Windows.Forms.Panel();
 			this.lbl_header = new System.Windows.Forms.Label();
 			this.comboBox_Condicion = new System.Windows.Forms.ComboBox();
@@ -66,6 +61,14 @@
 			this.comboBox_TipoBusqueda = new System.Windows.Forms.ToolStripComboBox();
 			this.toolStripTextBox_Busqueda = new System.Windows.Forms.ToolStripTextBox();
 			this.btn_Buscar = new System.Windows.Forms.ToolStripButton();
+			this.ID_Curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ID_Inscripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ID_Alumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Condicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.CupoCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.AnioCalendario = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			tsbEditar = new System.Windows.Forms.ToolStripButton();
 			this.toolStripContainer_Cursos.ContentPanel.SuspendLayout();
 			this.toolStripContainer_Cursos.TopToolStripPanel.SuspendLayout();
@@ -92,11 +95,11 @@
 			// toolStripContainer_Cursos.ContentPanel
 			// 
 			this.toolStripContainer_Cursos.ContentPanel.Controls.Add(this.tableLayoutPanel_);
-			this.toolStripContainer_Cursos.ContentPanel.Size = new System.Drawing.Size(933, 475);
+			this.toolStripContainer_Cursos.ContentPanel.Size = new System.Drawing.Size(1158, 475);
 			this.toolStripContainer_Cursos.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.toolStripContainer_Cursos.Location = new System.Drawing.Point(0, 0);
 			this.toolStripContainer_Cursos.Name = "toolStripContainer_Cursos";
-			this.toolStripContainer_Cursos.Size = new System.Drawing.Size(933, 500);
+			this.toolStripContainer_Cursos.Size = new System.Drawing.Size(1158, 500);
 			this.toolStripContainer_Cursos.TabIndex = 2;
 			this.toolStripContainer_Cursos.Text = "toolStripContainer1";
 			// 
@@ -116,7 +119,7 @@
 			this.tableLayoutPanel_.RowCount = 2;
 			this.tableLayoutPanel_.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.94737F));
 			this.tableLayoutPanel_.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57.05263F));
-			this.tableLayoutPanel_.Size = new System.Drawing.Size(933, 475);
+			this.tableLayoutPanel_.Size = new System.Drawing.Size(1158, 475);
 			this.tableLayoutPanel_.TabIndex = 0;
 			// 
 			// dgv_AlumnoInscripcion
@@ -126,55 +129,23 @@
 			this.dgv_AlumnoInscripcion.BackgroundColor = System.Drawing.Color.White;
 			this.dgv_AlumnoInscripcion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgv_AlumnoInscripcion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID_Curso,
             this.ID_Inscripcion,
             this.ID_Alumno,
-            this.ID_Curso,
             this.Condicion,
-            this.Nota});
+            this.Nota,
+            this.CupoCurso,
+            this.Materia,
+            this.AnioCalendario});
 			this.dgv_AlumnoInscripcion.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dgv_AlumnoInscripcion.GridColor = System.Drawing.Color.Gainsboro;
 			this.dgv_AlumnoInscripcion.Location = new System.Drawing.Point(3, 3);
 			this.dgv_AlumnoInscripcion.Name = "dgv_AlumnoInscripcion";
 			this.dgv_AlumnoInscripcion.ReadOnly = true;
 			this.dgv_AlumnoInscripcion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dgv_AlumnoInscripcion.Size = new System.Drawing.Size(927, 198);
+			this.dgv_AlumnoInscripcion.Size = new System.Drawing.Size(1152, 198);
 			this.dgv_AlumnoInscripcion.TabIndex = 0;
 			this.dgv_AlumnoInscripcion.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_AlumnoInscripcion_CellFormatting);
-			// 
-			// ID_Inscripcion
-			// 
-			this.ID_Inscripcion.DataPropertyName = "ID";
-			this.ID_Inscripcion.HeaderText = "ID Inscripcion";
-			this.ID_Inscripcion.Name = "ID_Inscripcion";
-			this.ID_Inscripcion.ReadOnly = true;
-			// 
-			// ID_Alumno
-			// 
-			this.ID_Alumno.DataPropertyName = "IDAlumno.ID";
-			this.ID_Alumno.HeaderText = "ID Alumno";
-			this.ID_Alumno.Name = "ID_Alumno";
-			this.ID_Alumno.ReadOnly = true;
-			// 
-			// ID_Curso
-			// 
-			this.ID_Curso.DataPropertyName = "IDCurso";
-			this.ID_Curso.HeaderText = "ID Curso";
-			this.ID_Curso.Name = "ID_Curso";
-			this.ID_Curso.ReadOnly = true;
-			this.ID_Curso.Width = 200;
-			// 
-			// Condicion
-			// 
-			this.Condicion.DataPropertyName = "Condicion";
-			this.Condicion.HeaderText = "Condicion";
-			this.Condicion.Name = "Condicion";
-			this.Condicion.ReadOnly = true;
-			// 
-			// Nota
-			// 
-			this.Nota.DataPropertyName = "Nota";
-			this.Nota.HeaderText = "Nota";
-			this.Nota.Name = "Nota";
-			this.Nota.ReadOnly = true;
 			// 
 			// panel_ABM_Inscripciones
 			// 
@@ -196,7 +167,7 @@
 			this.panel_ABM_Inscripciones.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel_ABM_Inscripciones.Location = new System.Drawing.Point(3, 207);
 			this.panel_ABM_Inscripciones.Name = "panel_ABM_Inscripciones";
-			this.panel_ABM_Inscripciones.Size = new System.Drawing.Size(927, 265);
+			this.panel_ABM_Inscripciones.Size = new System.Drawing.Size(1152, 265);
 			this.panel_ABM_Inscripciones.TabIndex = 1;
 			// 
 			// lbl_header
@@ -432,12 +403,75 @@
 			this.btn_Buscar.ToolTipText = "Buscar";
 			this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
 			// 
+			// ID_Curso
+			// 
+			this.ID_Curso.DataPropertyName = "IDCurso";
+			this.ID_Curso.HeaderText = "ID Curso";
+			this.ID_Curso.Name = "ID_Curso";
+			this.ID_Curso.ReadOnly = true;
+			this.ID_Curso.Width = 200;
+			// 
+			// ID_Inscripcion
+			// 
+			this.ID_Inscripcion.DataPropertyName = "ID";
+			this.ID_Inscripcion.HeaderText = "ID Inscripcion";
+			this.ID_Inscripcion.Name = "ID_Inscripcion";
+			this.ID_Inscripcion.ReadOnly = true;
+			// 
+			// ID_Alumno
+			// 
+			this.ID_Alumno.DataPropertyName = "IDAlumno.ID";
+			this.ID_Alumno.HeaderText = "ID Alumno";
+			this.ID_Alumno.Name = "ID_Alumno";
+			this.ID_Alumno.ReadOnly = true;
+			// 
+			// Condicion
+			// 
+			this.Condicion.DataPropertyName = "Condicion";
+			this.Condicion.HeaderText = "Condicion";
+			this.Condicion.Name = "Condicion";
+			this.Condicion.ReadOnly = true;
+			// 
+			// Nota
+			// 
+			this.Nota.DataPropertyName = "Nota";
+			this.Nota.HeaderText = "Nota";
+			this.Nota.Name = "Nota";
+			this.Nota.ReadOnly = true;
+			// 
+			// CupoCurso
+			// 
+			this.CupoCurso.DataPropertyName = "IDCurso.Cupo";
+			this.CupoCurso.FillWeight = 120F;
+			this.CupoCurso.HeaderText = "Cupo del curso";
+			this.CupoCurso.Name = "CupoCurso";
+			this.CupoCurso.ReadOnly = true;
+			this.CupoCurso.Width = 120;
+			// 
+			// Materia
+			// 
+			this.Materia.DataPropertyName = "IDCurso.Materia.Descripcion";
+			this.Materia.FillWeight = 200F;
+			this.Materia.HeaderText = "Materia";
+			this.Materia.Name = "Materia";
+			this.Materia.ReadOnly = true;
+			this.Materia.Width = 200;
+			// 
+			// AnioCalendario
+			// 
+			this.AnioCalendario.DataPropertyName = "IDCurso.AnioCalendario";
+			this.AnioCalendario.FillWeight = 130F;
+			this.AnioCalendario.HeaderText = "Año calendario";
+			this.AnioCalendario.Name = "AnioCalendario";
+			this.AnioCalendario.ReadOnly = true;
+			this.AnioCalendario.Width = 130;
+			// 
 			// FormInscripciones
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
-			this.ClientSize = new System.Drawing.Size(933, 500);
+			this.ClientSize = new System.Drawing.Size(1158, 500);
 			this.Controls.Add(this.toolStripContainer_Cursos);
 			this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -487,15 +521,18 @@
 		private System.Windows.Forms.ToolStripLabel toolStripLabel_NuevaInscripcion;
 		private System.Windows.Forms.ToolStripLabel toolStripLabel_EditarInscripcion;
 		private System.Windows.Forms.ToolStripLabel toolStripLabel_EliminarInscripcion;
-		private System.Windows.Forms.DataGridViewTextBoxColumn ID_Inscripcion;
-		private System.Windows.Forms.DataGridViewTextBoxColumn ID_Alumno;
-		private System.Windows.Forms.DataGridViewTextBoxColumn ID_Curso;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Condicion;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Nota;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label lbl_FechaLimite;
 		private System.Windows.Forms.TextBox txt_FechaLimite;
 		private System.Windows.Forms.ComboBox comboBox_Condicion;
 		private System.Windows.Forms.Label lbl_header;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ID_Curso;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ID_Inscripcion;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ID_Alumno;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Condicion;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Nota;
+		private System.Windows.Forms.DataGridViewTextBoxColumn CupoCurso;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Materia;
+		private System.Windows.Forms.DataGridViewTextBoxColumn AnioCalendario;
 	}
 }
