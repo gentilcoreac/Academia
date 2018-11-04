@@ -173,7 +173,7 @@
     <value>True</value>
   </metadata>
   <metadata name="toolStripCabeceraABMC.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 3</value>
+    <value>7, 9</value>
   </metadata>
   <data name="tsbNuevo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -188,13 +188,13 @@
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAG1SURBVDhPlVK/SwJRHI+ItvoroqWtpaXpEFFEELH1ArcD
-        IQVDqEVMOMGhnAQFQYI2HRxyEGlJIxRxaEhwaHBSEfHXOd2n9z3f6elV2Ac+3Pu+9/l83vu+dzuE2WwG
-        olYwbNZ/goRvd9d4vfVpJiKN3+Wb7UJI9HJ1iezxgWYk6uOtAgjGkH+bCSTWdzYGcNZSqZTa7/fnbPw8
-        mUxOuW0Bo5m+xnam0ynC4TCsVitsNhtkWUav15sriiJw+yrAuCuF6JeYzWbR6XTQbrcRCoUQCAQwGo2+
-        AOzxiEUIkZfLOhKJLEOJw+EQbrcbzWaT6nMuN4MtPiQSCaTT6bUAot/vR6lUovEFl5vBFoP5fB4+3+Ie
-        dHO324XT6USr1aL5My7/GYPBQBFFUWuj0WigWq1CkiS9rQ92B7tcasZ4PD5hz9VPJpMQBAF2u117CYvF
-        gnK5TAF1VVUPuXwdLHmfHe8zGo3C6/WiXq9rbbCbR7FYhMvlQi6Xo7lHblkHSxcrlQo8Ho/Ws96/TnoB
-        h8OBeDyusv/hiNtWYEd/isViyGQyJrPOYDCIQqFAp5C4bQUmqG0afufs/hvxxgv2qvns5gAAAABJRU5E
+        IQVDqEVMOHEpJxFBkKBNB4ccRFrSCEUcGhIcGpxURPx1Tvfpfc93enoV9oEP977vfT6f977v3Q5hNpuB
+        qBUMm/WfIOHb3TVeb32aiUjjd/lmuxASvVxdInt8oBmJ+nirAIIx5N9mAon1nY0BnLVUKqX2+/05Gz9P
+        JpNTblvAaKavsZ3pdIpwOAyr1QqbzQZZltHr9eaKogjcvgow7koh+iVms1l0Oh20222EQiEEAgGMRqMv
+        AHs8YhFC5OWyjkQiy1DicDiE2+1Gs9mk+pzLzWCLD4lEAul0ei2A6Pf7USqVaHzB5WawxWA+n4fPt7gH
+        3dztduF0OtFqtWj+jMt/xmAwUERR1NpoNBqoVquQJElv64PdwS6XmjEej0/Yc/WTySQEQYDdbtdewmKx
+        oFwuU0BdVdVDLl8HS95nx/uMRqPwer2o1+taG+zmUSwW4XK5kMvlaO6RW9bB0sVKpQKPx6P1rPevk17A
+        4XAgHo+r7H844rYV2NGfYrEYMpmMyawzGAyiUCjQKSRuW4EJapuG3zm7/wbneQvwNa6vyAAAAABJRU5E
         rkJggg==
 </value>
   </data>
@@ -282,6 +282,6 @@
 </value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>25</value>
+    <value>45</value>
   </metadata>
 </root>

@@ -716,7 +716,7 @@
             this.btn_Buscar});
 			this.toolStripCabeceraABMC.Location = new System.Drawing.Point(3, 0);
 			this.toolStripCabeceraABMC.Name = "toolStripCabeceraABMC";
-			this.toolStripCabeceraABMC.Size = new System.Drawing.Size(409, 25);
+			this.toolStripCabeceraABMC.Size = new System.Drawing.Size(440, 25);
 			this.toolStripCabeceraABMC.TabIndex = 0;
 			// 
 			// tsbNuevo

@@ -30,13 +30,15 @@ namespace Web
                 //Validar nombre de usuario y contraseña
                 string usuario = txtUsuario.Text;
                 string contrasenia = txtClave.Text;
-                Usuario UsuarioLogueado = new Usuario();
+				Usuario UsuarioLogueado;//= new Usuario();
                 UsuarioLogueado = ul.GetLoggedUser(usuario, contrasenia);
 
                 if (UsuarioLogueado != null && UsuarioLogueado.NombreUsuario == usuario && UsuarioLogueado.Clave == contrasenia)
-                {
-                    Response.Redirect("~/");
-                }
+				{
+					Session["UsuarioLogueado"] = UsuarioLogueado;
+					Response.Redirect("/Default.aspx");
+
+				}
                 else
                 {
                     Response.Write("Usuario y/o contraseña incorrectos");
@@ -44,7 +46,7 @@ namespace Web
             }
             catch (Exception ex)
             {
-                Response.Write("<script>alert('Error al ingresar al sistema \n' + ex)</script>");
+                Response.Write("<script>alert('Error al ingresar al sistema \n' +"+ ex+")</script>");
             }
         }
     }

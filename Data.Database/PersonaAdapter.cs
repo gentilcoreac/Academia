@@ -128,7 +128,7 @@ namespace Data.Database
 
 					case "ID":
 								cmdPersonas = new SqlCommand(consulta_SelectFrom
-														+ " WHERE per.id_persona like @ID+'%' ", SqlConn);
+														+ " WHERE per.id_persona = @ID ", SqlConn);
 								cmdPersonas.Parameters.Add("@ID", SqlDbType.VarChar, 50).Value = int.Parse(valorBuscado);
 								break;
 

@@ -54,7 +54,7 @@
                         <li><a runat="server" href="~/">Inicio</a></li>
                         <li><a runat="server" href="~/Personas">Gestión de Personas</a></li>
                         <li><a runat="server" href="~/Planes">Gestión de Planes</a></li>
-						<li><a runat="server" href="Materias.aspx">Gestión de Materias</a></li>
+						<li><a runat="server" href="Materias.aspx">Gestión de Materias</a></li>    
                     </ul>
                 </div>
             </div>
