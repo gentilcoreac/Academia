@@ -58,7 +58,7 @@ namespace Business.Logic
 
 		public bool EstaInscripto(int id_Curso, int id_alumno, int anio_calendario)
 		{
-			if (AlumnoInscripcionData.EstaInscripto(id_Curso, id_alumno, anio_calendario) == 0)              //FALTA AGREGARLE EL CUPO (VALOR DE CURSO ES)
+			if (AlumnoInscripcionData.EstaInscripto(id_Curso, id_alumno, anio_calendario) == 0)             
 			{
 				return true;
 			}
@@ -84,9 +84,9 @@ namespace Business.Logic
 			}
 		}
 
-		public bool HayCuposParaInscribirse(Usuario usuarioLogueado, int id_curso)		//FALTA AGREGARLE EL CUPO (VALOR DE CURSO ES)
+		public bool HayCuposParaInscribirse(Usuario usuarioLogueado, Curso curso)
 		{			
-			if (AlumnoInscripcionData.GetCantInscriptos(id_curso) <= 33)				//FALTA AGREGARLE EL CUPO (VALOR DE CURSO ES)
+			if (AlumnoInscripcionData.GetCantInscriptos(curso.ID) <= curso.Cupo)				//FALTA AGREGARLE EL CUPO (VALOR DE CURSO ES)
 			{
 				return true;
 			}
@@ -98,9 +98,6 @@ namespace Business.Logic
 			{
 				return false;
 			}
-		}
-
-
-		//&& EstaInscripto(inscripcion, DateTime.Now.Year) == 0
+		} 
 	}
 }

@@ -78,11 +78,6 @@
 	             <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" /></td>
 		</tr>
     </table>
-
-                    
-
-    </form>
-     
-
+  </form>
 </body>
 </html>

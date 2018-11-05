@@ -232,7 +232,7 @@ namespace UI.Desktop
 								, MessageBoxButtons.OK, MessageBoxIcon.Information);
 				return false;
 			}
-			else if (!alumnoInscripcioLogic.HayCuposParaInscribirse(UsuarioLogueado, ((Curso)comboBox_Curso.SelectedItem).ID))
+			else if (!alumnoInscripcioLogic.HayCuposParaInscribirse(UsuarioLogueado, (Curso)comboBox_Curso.SelectedItem))
 			{
 				this.Notificar("No hay cupos disponibles", "Disculpe, pero se ha alcanzado el límite de cupos disponibles para el curso "
 					, MessageBoxButtons.OK, MessageBoxIcon.Information);
