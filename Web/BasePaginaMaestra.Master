@@ -15,7 +15,6 @@
 
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
 </head>
 <body>
     <form runat="server">
@@ -34,6 +33,7 @@
                 <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
                 <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
                 <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+
                 <asp:ScriptReference Name="WebFormsBundle" />
                 <%--Site Scripts--%>
             </Scripts>
@@ -63,11 +63,11 @@
             <asp:ContentPlaceHolder ID="MainContentBase" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
+
+        </div>
             <footer>
                 <p>&copy; <%: DateTime.Now.Year %> - TP2 - Academia </p>
             </footer>
-        </div>
-
     </form>
 </body>
 </html>

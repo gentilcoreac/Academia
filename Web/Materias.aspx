@@ -1,9 +1,10 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/BasePaginaMaestra.Master" CodeBehind="Materias.aspx.cs" Inherits="Web.Materias" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContentBase" runat="server">
-        <asp:GridView ID="grdMaterias" runat="server" DataSourceID="odsMaterias" OnRowCommand="grdMaterias_RowCommand" ShowFooter="True" OnSelectedIndexChanged="grdMaterias_SelectedIndexChanged" AutoGenerateColumns="False">
+        <asp:GridView ID="grdMaterias"  CssClass="table"  runat="server" DataSourceID="odsMaterias" OnRowCommand="grdMaterias_RowCommand" ShowFooter="True" AutoGenerateColumns="False">
 			<Columns>
 				<asp:CommandField ShowEditButton="True" />
+				<asp:CommandField ShowDeleteButton="True" />
 				<asp:BoundField DataField="Descripcion" HeaderText="Descripcion" SortExpression="Descripcion" />
 				<asp:BoundField DataField="HSSemanales" HeaderText="HSSemanales" SortExpression="HSSemanales" />
 				<asp:BoundField DataField="HSTotales" HeaderText="HSTotales" SortExpression="HSTotales" />
@@ -11,7 +12,7 @@
 				<asp:BoundField DataField="State" HeaderText="State" SortExpression="State" />
 			</Columns>
 		</asp:GridView>
-		<asp:ObjectDataSource ID="odsMaterias" runat="server" DataObjectTypeName="Business.Entities.Materia" DeleteMethod="Save" SelectMethod="GetAll" TypeName="Business.Logic.MateriaLogic" UpdateMethod="Save" InsertMethod="Save">
+		<asp:ObjectDataSource ID="odsMaterias" runat="server" DataObjectTypeName="Business.Entities.Materia" DeleteMethod="Delete" SelectMethod="GetAll" TypeName="Business.Logic.MateriaLogic" UpdateMethod="Save" InsertMethod="Save">
 		</asp:ObjectDataSource>
         <div>
         </div>

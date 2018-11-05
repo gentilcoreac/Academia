@@ -1,13 +1,18 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/BasePaginaMaestra.Master" CodeBehind="Personas.aspx.cs" Inherits="Web.Personas" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContentBase" runat="server">
-        <asp:GridView ID="grdPersonas" CssClass="table" runat="server" DataSourceID="odsPersonas" OnRowCommand="grdPersonas_RowCommand" ShowFooter="True" OnSelectedIndexChanged="grdPersonas_SelectedIndexChanged">
+    <h2>Gestión de personas</h2>
+  <br>
+
+        <asp:GridView ID="grdPersonas" CssClass="table table-striped" runat="server" DataSourceID="odsPersonas" OnRowCommand="grdPersonas_RowCommand" ShowFooter="True" OnSelectedIndexChanged="grdPersonas_SelectedIndexChanged">
 			<Columns>
 				<asp:HyperLinkField DataNavigateUrlFields="ID" DataNavigateUrlFormatString="PersonasEditar.aspx?id={0}" Text="Editar" />
 			</Columns>
 		</asp:GridView>
-		<asp:ObjectDataSource ID="odsPersonas" runat="server" DataObjectTypeName="Business.Entities.Persona" DeleteMethod="Save" SelectMethod="GetAll" TypeName="Business.Logic.PersonaLogic" UpdateMethod="Save" InsertMethod="Save">
+		<asp:ObjectDataSource ID="odsPersonas" runat="server" DataObjectTypeName="Business.Entities.Persona" DeleteMethod="Delete" SelectMethod="GetAll" TypeName="Business.Logic.PersonaLogic" UpdateMethod="Save" InsertMethod="Save">
 		</asp:ObjectDataSource>
+
+
 <%--		<table class="table table-stripped" id="tblDatosPersona">
 			<tr>
 				<td colspan="2">
@@ -136,6 +141,5 @@
 					<asp:Button ID="btnCancelar" CssClass="btn btn-primary" runat="server" Text="Cancelar" /></td>
 			</tr>
 		</table>--%>
-
 
 </asp:Content>
