@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Reporting.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,7 +21,12 @@ namespace UI.Desktop
         private void FormReporte_Load(object sender, EventArgs e)
         {
 
-            this.reportViewer1.RefreshReport();
+            ReportDataSource rds = new ReportDataSource("inscriptos") 
+        }
+
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

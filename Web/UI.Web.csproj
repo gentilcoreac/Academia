@@ -191,6 +191,7 @@
     <Content Include="Personas.aspx" />
     <Content Include="Planes.aspx" />
     <Content Include="Read.aspx" />
+    <Content Include="ReporteInscriptos.aspx" />
     <Content Include="Save.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -364,6 +365,13 @@
     </Compile>
     <Compile Include="Read.aspx.designer.cs">
       <DependentUpon>Read.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteInscriptos.aspx.cs">
+      <DependentUpon>ReporteInscriptos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteInscriptos.aspx.designer.cs">
+      <DependentUpon>ReporteInscriptos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Save.aspx.cs">
       <DependentUpon>Save.aspx</DependentUpon>
