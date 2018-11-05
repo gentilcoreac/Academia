@@ -10,24 +10,24 @@
 namespace Web {
     
     
-    public partial class Materias {
+    public partial class Cursos {
         
         /// <summary>
-        /// Control grdMaterias.
+        /// Control grdCursos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdMaterias;
+        protected global::System.Web.UI.WebControls.GridView grdCursos;
         
         /// <summary>
-        /// Control odsMaterias.
+        /// Control odsCursos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource odsMaterias;
+        protected global::System.Web.UI.WebControls.ObjectDataSource odsCursos;
     }
 }

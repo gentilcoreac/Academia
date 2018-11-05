@@ -10,24 +10,24 @@
 namespace Web {
     
     
-    public partial class Materias {
+    public partial class Inscripciones {
         
         /// <summary>
-        /// Control grdMaterias.
+        /// Control grdInscripciones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdMaterias;
+        protected global::System.Web.UI.WebControls.GridView grdInscripciones;
         
         /// <summary>
-        /// Control odsMaterias.
+        /// Control odsInscripciones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource odsMaterias;
+        protected global::System.Web.UI.WebControls.ObjectDataSource odsInscripciones;
     }
 }

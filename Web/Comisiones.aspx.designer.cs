@@ -10,24 +10,24 @@
 namespace Web {
     
     
-    public partial class Materias {
+    public partial class Comisiones {
         
         /// <summary>
-        /// Control grdMaterias.
+        /// Control grdComisiones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdMaterias;
+        protected global::System.Web.UI.WebControls.GridView grdComisiones;
         
         /// <summary>
-        /// Control odsMaterias.
+        /// Control odsComisiones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource odsMaterias;
+        protected global::System.Web.UI.WebControls.ObjectDataSource odsComisiones;
     }
 }

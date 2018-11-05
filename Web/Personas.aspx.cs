@@ -18,19 +18,11 @@ namespace Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
-			if (Session["UsuarioLogueado"] != null)
-			{
-				if (PaginaEnEstadoEdicion())
-				{
-					int id = Int32.Parse(Request.QueryString["id"]);
-					//llenaGrilla(id);
-				}
-			}
-			else
-			{
-				Response.Redirect("/login.aspx");
-			}
-
+            if (PaginaEnEstadoEdicion())
+            {
+                int id = Int32.Parse(Request.QueryString["id"]);
+                //llenaGrilla(id);
+            }
         }
 
         protected void grdPersonas_SelectedIndexChanged(object sender, EventArgs e)

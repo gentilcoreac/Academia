@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Business.Entities;
+using Business.Logic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,13 +13,25 @@ namespace Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-			if (Session["UsuarioLogueado"] == null)
-			{ 
-				Response.Redirect("/login.aspx");
-			}
-		}
+            //this.grdMaterias.AutoGenerateColumns = false;
+            //MateriaLogic pl = new MateriaLogic();
+            //if (Session["tipoUsuario"].Equals(Persona.TiposPersonas.Administrador))
+            //{
+            //    grdMaterias.DataSource = pl.GetAll();
+            //}
+        }
 
         protected void grdMaterias_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+
+        }
+
+        protected void grdMaterias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void MapearADatos()
         {
 
         }

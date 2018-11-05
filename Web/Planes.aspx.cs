@@ -11,11 +11,8 @@ namespace Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-			if (Session["UsuarioLogueado"] == null)
-			{
-				Response.Redirect("/login.aspx");
-			}
-		}
+
+        }
 
         protected void grdPlanes_SelectedIndexChanged(object sender, EventArgs e)
         {

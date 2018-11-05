@@ -54,12 +54,16 @@
                         <li><a runat="server" href="~/">Inicio</a></li>
                         <li><a runat="server" href="~/Personas">Gestión de Personas</a></li>
                         <li><a runat="server" href="~/Planes">Gestión de Planes</a></li>
-						<li><a runat="server" href="Materias.aspx">Gestión de Materias</a></li>    
+						<li><a runat="server" href="~/Materias.aspx">Gestión de Materias</a></li>
+						<li><a runat="server" href="~/Inscripciones.aspx">Gestión de Inscripciones</a></li>
+						<li><a runat="server" href="~/Cursos.aspx">Gestión de Cursos</a></li>
+						<li><a runat="server" href="~/Comisiones.aspx">Gestión de Comisiones</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="container body-content">
+			<br />
             <asp:ContentPlaceHolder ID="MainContentBase" runat="server">
             </asp:ContentPlaceHolder>
             <hr />

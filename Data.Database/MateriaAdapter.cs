@@ -76,7 +76,10 @@ namespace Data.Database
 
 					Plan oPlan = new Plan();
 					oPlan.ID = (int)drMaterias["id_plan"];
-					oPlan.Descripcion = (string)drMaterias["desc_plan"];
+                    oPlan.PlanEspecialidad = new Especialidad();
+                    oPlan.PlanEspecialidad.ID = (int)drMaterias["id_especialidad"];
+                    oPlan.PlanEspecialidad.Descripcion = (string)drMaterias["desc_especialidad"];
+                    oPlan.Descripcion = (string)drMaterias["desc_plan"];
 					oMat.Plan = oPlan;
 
 					listaMaterias.Add(oMat);
@@ -172,7 +175,10 @@ namespace Data.Database
 
 					Plan oPlan = new Plan();
 					oPlan.ID = (int)drMaterias["id_plan"];
-					oPlan.Descripcion = (string)drMaterias["desc_plan"];
+                    oPlan.PlanEspecialidad = new Especialidad();
+                    oPlan.PlanEspecialidad.ID = (int)drMaterias["id_especialidad"];
+                    oPlan.PlanEspecialidad.Descripcion = (string)drMaterias["desc_especialidad"];
+                    oPlan.Descripcion = (string)drMaterias["desc_plan"];
 					oMat.Plan = oPlan;
 
 					listaMaterias.Add(oMat);
@@ -227,7 +233,10 @@ namespace Data.Database
 							oMateria.HSTotales = (int)oReader["hs_totales"];
 							Plan oPlan = new Plan();
 							oPlan.ID = (int)oReader["id_plan"];
-							oPlan.Descripcion = (string)oReader["desc_plan"];
+                            oPlan.PlanEspecialidad = new Especialidad();
+                            oPlan.PlanEspecialidad.ID = (int)oReader["id_especialidad"];
+                            oPlan.PlanEspecialidad.Descripcion = (string)oReader["desc_especialidad"];
+                            oPlan.Descripcion = (string)oReader["desc_plan"];
 							oMateria.Plan = oPlan; 
 
 							// Agregamos el objeto a la coleccion de resultados
