@@ -106,7 +106,6 @@ namespace Web
             txtNombreUsuario.Text = UsuarioActual.NombreUsuario;
             cbHabilitado.Checked = UsuarioActual.Habilitado;
             txtEmailUsuario.Text = UsuarioActual.Email;
-
         }
 
         /// <summary>
@@ -134,7 +133,6 @@ namespace Web
             PersonaActual.Plan_persona.ID = (ddlPlan.SelectedIndex + 1);    //Suma 1 porque el índice seleccionado comienza por 0
             PersonaActual.TiposPersona = ((Persona.TiposPersonas)ddlTipoPersona.SelectedIndex + 1); //Suma 1 porque el índice seleccionado comienza por 0
             PersonaActual.UsuarioPersona = UsuarioActual;
-
         }
         #endregion 
     }
