@@ -38,7 +38,12 @@ namespace Web
         #region Disparadores
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (PaginaEnEstadoEdicion() && !IsPostBack)
+
+			if (Session["UsuarioLogueado"] != null)
+			{
+
+
+			if (PaginaEnEstadoEdicion() && !IsPostBack)
             {
                 int id = Int32.Parse(Request.QueryString["id"]);
                 CursoActual = cl.GetOne(id);
@@ -46,6 +51,11 @@ namespace Web
                 ComisionActual = CursoActual.Comision;
                 llenaCampos();
             }
+			}
+			else
+			{
+				Response.Redirect("/login.aspx");
+			}
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)

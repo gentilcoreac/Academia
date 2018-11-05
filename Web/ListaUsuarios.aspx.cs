@@ -18,14 +18,23 @@ namespace Web
 
 
         protected void Page_Load(object sender, EventArgs e)
-        {
-			if (Session["UsuarioLogueado"] != null)
+		{
+			if (Session["UsuarioLogueado"] == null)
 			{
-				if (PaginaEnEstadoEdicion())
+
+				if (Session["UsuarioLogueado"] != null)
 				{
-					int id = Int32.Parse(Request.QueryString["id"]);
-					llenaGrilla(id);
+					if (PaginaEnEstadoEdicion())
+					{
+						int id = Int32.Parse(Request.QueryString["id"]);
+						llenaGrilla(id);
+					}
 				}
+				else
+				{
+					Response.Redirect("/login.aspx");
+				}
+
 			}
 			else
 			{

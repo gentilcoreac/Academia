@@ -18,14 +18,21 @@ namespace Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (((Usuario)Session["UsuarioLogueado"]).IDPersona.TiposPersona.ToString() == "Administrador")
-            {
-                btnNuevo.Visible = true;
-            }
-            else
-            {
-                btnNuevo.Visible = false;
-            }
+			if (Session["UsuarioLogueado"] != null)
+			{
+
+				if (((Usuario)Session["UsuarioLogueado"]).IDPersona.TiposPersona.ToString() == "Administrador")
+				{
+					btnNuevo.Visible = true;
+				}
+				else
+				{
+					btnNuevo.Visible = false;
+				}
+			}else
+			{
+				Response.Redirect("/login.aspx");
+			}
         }
 
         protected void grdPersonas_SelectedIndexChanged(object sender, EventArgs e)

@@ -34,18 +34,28 @@ namespace Web
         #region Disparadores
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (PaginaEnEstadoEdicion() && !IsPostBack)
-            {
-                int id = Int32.Parse(Request.QueryString["id"]);
-                PersonaActual = pl.GetOne(id);
-                UsuarioActual = PersonaActual.UsuarioPersona;
-                llenaCampos();
-            }
+			if (Session["UsuarioLogueado"] != null)
+			{
 
-            if (PaginaEnEstadoAlta() && !IsPostBack)
-            {
-                llenaDropDownLists();
-            }
+
+				if (PaginaEnEstadoEdicion() && !IsPostBack)
+				{
+					int id = Int32.Parse(Request.QueryString["id"]);
+					PersonaActual = pl.GetOne(id);
+					UsuarioActual = PersonaActual.UsuarioPersona;
+					llenaCampos();
+				}
+
+				if (PaginaEnEstadoAlta() && !IsPostBack)
+				{
+					llenaDropDownLists();
+				}
+
+			}
+			else
+			{
+				Response.Redirect("/login.aspx");
+			}
 
         }
 

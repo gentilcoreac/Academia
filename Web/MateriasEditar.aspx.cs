@@ -34,13 +34,22 @@ namespace Web
         #region Disparadores
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (PaginaEnEstadoEdicion() && !IsPostBack)
-            {
-                int id = Int32.Parse(Request.QueryString["id"]);
-                MateriaActual = ml.GetOne(id);
-                PlanActual = MateriaActual.Plan;
-                llenaCampos();
-            }
+			if (Session["UsuarioLogueado"] != null)
+			{
+				if (PaginaEnEstadoEdicion() && !IsPostBack)
+							{
+								int id = Int32.Parse(Request.QueryString["id"]);
+								MateriaActual = ml.GetOne(id);
+								PlanActual = MateriaActual.Plan;
+								llenaCampos();
+							}
+
+			}
+			else
+			{
+				Response.Redirect("/login.aspx");
+			}
+			
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)

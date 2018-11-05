@@ -13,13 +13,11 @@ namespace Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //this.grdMaterias.AutoGenerateColumns = false;
-            //MateriaLogic pl = new MateriaLogic();
-            //if (Session["tipoUsuario"].Equals(Persona.TiposPersonas.Administrador))
-            //{
-            //    grdMaterias.DataSource = pl.GetAll();
-            //}
-        }
+			if (Session["UsuarioLogueado"] == null)
+			{
+				Response.Redirect("/login.aspx");
+			}
+		}
 
         protected void grdMaterias_RowCommand(object sender, GridViewCommandEventArgs e)
         {
