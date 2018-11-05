@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [Academia]    Script Date: 17/9/2018 18:10:46 ******/
+/****** Object:  Database [Academia]    Script Date: 4/11/2018 21:46:06 ******/
 CREATE DATABASE [Academia]
 GO
 ALTER DATABASE [Academia] SET COMPATIBILITY_LEVEL = 110
@@ -68,7 +68,7 @@ ALTER DATABASE [Academia] SET TARGET_RECOVERY_TIME = 0 SECONDS
 GO
 USE [Academia]
 GO
-/****** Object:  Table [dbo].[alumnos_inscripciones]    Script Date: 17/9/2018 18:10:46 ******/
+/****** Object:  Table [dbo].[alumnos_inscripciones]    Script Date: 4/11/2018 21:46:06 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -86,7 +86,7 @@ CREATE TABLE [dbo].[alumnos_inscripciones](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[comisiones]    Script Date: 17/9/2018 18:10:46 ******/
+/****** Object:  Table [dbo].[comisiones]    Script Date: 4/11/2018 21:46:06 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -103,7 +103,7 @@ CREATE TABLE [dbo].[comisiones](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[cursos]    Script Date: 17/9/2018 18:10:46 ******/
+/****** Object:  Table [dbo].[cursos]    Script Date: 4/11/2018 21:46:06 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -121,7 +121,7 @@ CREATE TABLE [dbo].[cursos](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[docentes_cursos]    Script Date: 17/9/2018 18:10:46 ******/
+/****** Object:  Table [dbo].[docentes_cursos]    Script Date: 4/11/2018 21:46:06 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -138,7 +138,7 @@ CREATE TABLE [dbo].[docentes_cursos](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[especialidades]    Script Date: 17/9/2018 18:10:46 ******/
+/****** Object:  Table [dbo].[especialidades]    Script Date: 4/11/2018 21:46:06 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -153,7 +153,7 @@ CREATE TABLE [dbo].[especialidades](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[materias]    Script Date: 17/9/2018 18:10:46 ******/
+/****** Object:  Table [dbo].[materias]    Script Date: 4/11/2018 21:46:06 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -171,7 +171,7 @@ CREATE TABLE [dbo].[materias](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[modulos]    Script Date: 17/9/2018 18:10:46 ******/
+/****** Object:  Table [dbo].[modulos]    Script Date: 4/11/2018 21:46:06 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -187,7 +187,7 @@ CREATE TABLE [dbo].[modulos](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[modulos_usuarios]    Script Date: 17/9/2018 18:10:46 ******/
+/****** Object:  Table [dbo].[modulos_usuarios]    Script Date: 4/11/2018 21:46:06 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -207,7 +207,7 @@ CREATE TABLE [dbo].[modulos_usuarios](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[personas]    Script Date: 17/9/2018 18:10:46 ******/
+/****** Object:  Table [dbo].[personas]    Script Date: 4/11/2018 21:46:06 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -230,7 +230,7 @@ CREATE TABLE [dbo].[personas](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[planes]    Script Date: 17/9/2018 18:10:46 ******/
+/****** Object:  Table [dbo].[planes]    Script Date: 4/11/2018 21:46:06 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -247,7 +247,7 @@ CREATE TABLE [dbo].[planes](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[usuarios]    Script Date: 17/9/2018 18:10:46 ******/
+/****** Object:  Table [dbo].[usuarios]    Script Date: 4/11/2018 21:46:06 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -269,18 +269,23 @@ CREATE TABLE [dbo].[usuarios](
 GO
 SET IDENTITY_INSERT [dbo].[alumnos_inscripciones] ON 
 
-INSERT [dbo].[alumnos_inscripciones] ([id_inscripcion], [id_alumno], [id_curso], [condicion], [nota]) VALUES (1, 3, 8, N'Regular', -1)
-INSERT [dbo].[alumnos_inscripciones] ([id_inscripcion], [id_alumno], [id_curso], [condicion], [nota]) VALUES (2, 13, 8, N'Regular', -1)
-INSERT [dbo].[alumnos_inscripciones] ([id_inscripcion], [id_alumno], [id_curso], [condicion], [nota]) VALUES (3, 13, 15, N'Regular', -1)
+INSERT [dbo].[alumnos_inscripciones] ([id_inscripcion], [id_alumno], [id_curso], [condicion], [nota]) VALUES (2, 13, 8, N'Regular', 8)
+INSERT [dbo].[alumnos_inscripciones] ([id_inscripcion], [id_alumno], [id_curso], [condicion], [nota]) VALUES (3, 13, 15, N'Regular', 5)
+INSERT [dbo].[alumnos_inscripciones] ([id_inscripcion], [id_alumno], [id_curso], [condicion], [nota]) VALUES (10, 3, 17, N'', 9)
+INSERT [dbo].[alumnos_inscripciones] ([id_inscripcion], [id_alumno], [id_curso], [condicion], [nota]) VALUES (13, 3, 8, N'Regular', 0)
+INSERT [dbo].[alumnos_inscripciones] ([id_inscripcion], [id_alumno], [id_curso], [condicion], [nota]) VALUES (1013, 13, 16, N'Regular', 0)
+INSERT [dbo].[alumnos_inscripciones] ([id_inscripcion], [id_alumno], [id_curso], [condicion], [nota]) VALUES (1014, 13, 17, N'', 0)
 SET IDENTITY_INSERT [dbo].[alumnos_inscripciones] OFF
 SET IDENTITY_INSERT [dbo].[comisiones] ON 
 
-INSERT [dbo].[comisiones] ([id_comision], [desc_comision], [anio_especialidad], [id_plan]) VALUES (1, N'101', 1, 1)
-INSERT [dbo].[comisiones] ([id_comision], [desc_comision], [anio_especialidad], [id_plan]) VALUES (3, N'102', 1, 1)
-INSERT [dbo].[comisiones] ([id_comision], [desc_comision], [anio_especialidad], [id_plan]) VALUES (4, N'201', 2, 1)
-INSERT [dbo].[comisiones] ([id_comision], [desc_comision], [anio_especialidad], [id_plan]) VALUES (6, N'202', 2, 1)
-INSERT [dbo].[comisiones] ([id_comision], [desc_comision], [anio_especialidad], [id_plan]) VALUES (7, N'301', 3, 1)
-INSERT [dbo].[comisiones] ([id_comision], [desc_comision], [anio_especialidad], [id_plan]) VALUES (9, N'401', 4, 1)
+INSERT [dbo].[comisiones] ([id_comision], [desc_comision], [anio_especialidad], [id_plan]) VALUES (1, N'ISI 101', 1, 1)
+INSERT [dbo].[comisiones] ([id_comision], [desc_comision], [anio_especialidad], [id_plan]) VALUES (2, N'IQ 101', 1, 3)
+INSERT [dbo].[comisiones] ([id_comision], [desc_comision], [anio_especialidad], [id_plan]) VALUES (3, N'ISI 102', 1, 1)
+INSERT [dbo].[comisiones] ([id_comision], [desc_comision], [anio_especialidad], [id_plan]) VALUES (4, N'ISI 201', 2, 1)
+INSERT [dbo].[comisiones] ([id_comision], [desc_comision], [anio_especialidad], [id_plan]) VALUES (5, N'IQ 201', 2, 3)
+INSERT [dbo].[comisiones] ([id_comision], [desc_comision], [anio_especialidad], [id_plan]) VALUES (6, N'ISI 202', 2, 1)
+INSERT [dbo].[comisiones] ([id_comision], [desc_comision], [anio_especialidad], [id_plan]) VALUES (7, N'ISI 301', 3, 1)
+INSERT [dbo].[comisiones] ([id_comision], [desc_comision], [anio_especialidad], [id_plan]) VALUES (9, N'ISI 401', 4, 1)
 SET IDENTITY_INSERT [dbo].[comisiones] OFF
 SET IDENTITY_INSERT [dbo].[cursos] ON 
 
@@ -288,7 +293,17 @@ INSERT [dbo].[cursos] ([id_curso], [id_materia], [id_comision], [anio_calendario
 INSERT [dbo].[cursos] ([id_curso], [id_materia], [id_comision], [anio_calendario], [cupo]) VALUES (15, 8, 1, 2018, 35)
 INSERT [dbo].[cursos] ([id_curso], [id_materia], [id_comision], [anio_calendario], [cupo]) VALUES (16, 13, 1, 2018, 35)
 INSERT [dbo].[cursos] ([id_curso], [id_materia], [id_comision], [anio_calendario], [cupo]) VALUES (17, 14, 1, 2018, 32)
+INSERT [dbo].[cursos] ([id_curso], [id_materia], [id_comision], [anio_calendario], [cupo]) VALUES (18, 16, 7, 2018, 32)
+INSERT [dbo].[cursos] ([id_curso], [id_materia], [id_comision], [anio_calendario], [cupo]) VALUES (19, 9, 2, 2018, 31)
+INSERT [dbo].[cursos] ([id_curso], [id_materia], [id_comision], [anio_calendario], [cupo]) VALUES (20, 11, 5, 2018, 31)
+INSERT [dbo].[cursos] ([id_curso], [id_materia], [id_comision], [anio_calendario], [cupo]) VALUES (21, 10, 5, 2018, 31)
 SET IDENTITY_INSERT [dbo].[cursos] OFF
+SET IDENTITY_INSERT [dbo].[docentes_cursos] ON 
+
+INSERT [dbo].[docentes_cursos] ([id_dictado], [id_curso], [id_docente], [cargo]) VALUES (2, 8, 1, 1)
+INSERT [dbo].[docentes_cursos] ([id_dictado], [id_curso], [id_docente], [cargo]) VALUES (3, 17, 1, 1)
+INSERT [dbo].[docentes_cursos] ([id_dictado], [id_curso], [id_docente], [cargo]) VALUES (6, 15, 1, 1)
+SET IDENTITY_INSERT [dbo].[docentes_cursos] OFF
 SET IDENTITY_INSERT [dbo].[especialidades] ON 
 
 INSERT [dbo].[especialidades] ([id_especialidad], [desc_especialidad]) VALUES (1, N'Ingeniería en Sistemas de Información')
@@ -299,19 +314,23 @@ SET IDENTITY_INSERT [dbo].[materias] ON
 
 INSERT [dbo].[materias] ([id_materia], [desc_materia], [hs_semanales], [hs_totales], [id_plan]) VALUES (7, N'Álgebra y Geometría', 6, 48, 1)
 INSERT [dbo].[materias] ([id_materia], [desc_materia], [hs_semanales], [hs_totales], [id_plan]) VALUES (8, N'Matemática discreta', 12, 60, 1)
-INSERT [dbo].[materias] ([id_materia], [desc_materia], [hs_semanales], [hs_totales], [id_plan]) VALUES (9, N'Física I', 12, 60, 2)
+INSERT [dbo].[materias] ([id_materia], [desc_materia], [hs_semanales], [hs_totales], [id_plan]) VALUES (9, N'Física I', 12, 60, 1)
 INSERT [dbo].[materias] ([id_materia], [desc_materia], [hs_semanales], [hs_totales], [id_plan]) VALUES (10, N'Motores', 5, 30, 3)
-INSERT [dbo].[materias] ([id_materia], [desc_materia], [hs_semanales], [hs_totales], [id_plan]) VALUES (11, N'Fisica II', 12, 98, 4)
+INSERT [dbo].[materias] ([id_materia], [desc_materia], [hs_semanales], [hs_totales], [id_plan]) VALUES (11, N'Fisica II', 12, 98, 3)
 INSERT [dbo].[materias] ([id_materia], [desc_materia], [hs_semanales], [hs_totales], [id_plan]) VALUES (13, N'Ingeniería y Sociedad', 4, 40, 1)
 INSERT [dbo].[materias] ([id_materia], [desc_materia], [hs_semanales], [hs_totales], [id_plan]) VALUES (14, N'Analisis Matemático I', 6, 60, 1)
 INSERT [dbo].[materias] ([id_materia], [desc_materia], [hs_semanales], [hs_totales], [id_plan]) VALUES (15, N'Análisis Matemático II', 6, 60, 1)
+INSERT [dbo].[materias] ([id_materia], [desc_materia], [hs_semanales], [hs_totales], [id_plan]) VALUES (16, N'.Net', 6, 80, 1)
+INSERT [dbo].[materias] ([id_materia], [desc_materia], [hs_semanales], [hs_totales], [id_plan]) VALUES (17, N'PRUEBA', 123, 123, 1)
 SET IDENTITY_INSERT [dbo].[materias] OFF
 SET IDENTITY_INSERT [dbo].[personas] ON 
 
-INSERT [dbo].[personas] ([id_persona], [nombre], [apellido], [direccion], [telefono], [fecha_nac], [legajo], [tipo_persona], [id_plan], [email_personal]) VALUES (1, N'El profe', N'Profesor', N'Av Oroño 91', N'4555214', CAST(N'1980-06-02T00:00:00.000' AS DateTime), 5132, 2, 1, N'profe@hotmail.com')
-INSERT [dbo].[personas] ([id_persona], [nombre], [apellido], [direccion], [telefono], [fecha_nac], [legajo], [tipo_persona], [id_plan], [email_personal]) VALUES (3, N'Alumno', N'Aprueba', N'Subiría 345', N'45678213', CAST(N'1994-04-25T00:00:00.000' AS DateTime), 42122, 3, 1, N'alumno@hotmail.com')
-INSERT [dbo].[personas] ([id_persona], [nombre], [apellido], [direccion], [telefono], [fecha_nac], [legajo], [tipo_persona], [id_plan], [email_personal]) VALUES (5, N'Admin', N'Manejo todo', N'Grosolandia 111', N'4524463', CAST(N'1990-04-05T00:00:00.000' AS DateTime), -1, 1, 1, N'eladmin@hotmail.com')
-INSERT [dbo].[personas] ([id_persona], [nombre], [apellido], [direccion], [telefono], [fecha_nac], [legajo], [tipo_persona], [id_plan], [email_personal]) VALUES (13, N'Alumno2', N'NoAprueboNunca', N'Bajaria 321', N'987654321', CAST(N'1991-12-25T00:00:00.000' AS DateTime), 422123, 3, 1, N'alumno2@hotmail.com')
+INSERT [dbo].[personas] ([id_persona], [nombre], [apellido], [direccion], [telefono], [fecha_nac], [legajo], [tipo_persona], [id_plan], [email_personal]) VALUES (1, N'Miguel', N'Oliveros Vega', N'Av Oroño 91', N'4555214', CAST(N'1980-06-02T00:00:00.000' AS DateTime), 5132, 2, 1, N'profe@hotmail.com')
+INSERT [dbo].[personas] ([id_persona], [nombre], [apellido], [direccion], [telefono], [fecha_nac], [legajo], [tipo_persona], [id_plan], [email_personal]) VALUES (3, N'Alumno', N'McSystem', N'Av. Software 1010', N'45678213', CAST(N'1994-04-25T00:00:00.000' AS DateTime), 42122, 3, 1, N'alumno@hotmail.com')
+INSERT [dbo].[personas] ([id_persona], [nombre], [apellido], [direccion], [telefono], [fecha_nac], [legajo], [tipo_persona], [id_plan], [email_personal]) VALUES (5, N'Admin', N'Manejo todo', N'Grosolandia 11', N'4524463', CAST(N'1990-04-05T00:00:00.000' AS DateTime), -1, 1, 1, N'eladmin@hotmail.com')
+INSERT [dbo].[personas] ([id_persona], [nombre], [apellido], [direccion], [telefono], [fecha_nac], [legajo], [tipo_persona], [id_plan], [email_personal]) VALUES (13, N'Alumno', N'McQuimic', N'Leucositos 491', N'987654321', CAST(N'1991-12-25T00:00:00.000' AS DateTime), 422123, 3, 3, N'alumno2@hotmail.com')
+INSERT [dbo].[personas] ([id_persona], [nombre], [apellido], [direccion], [telefono], [fecha_nac], [legajo], [tipo_persona], [id_plan], [email_personal]) VALUES (14, N'prueba', N'prueba', N'jjj2', N'564845', CAST(N'2015-02-26T00:00:00.000' AS DateTime), 23133, 3, 1, N'prueba@hotmail.com')
+INSERT [dbo].[personas] ([id_persona], [nombre], [apellido], [direccion], [telefono], [fecha_nac], [legajo], [tipo_persona], [id_plan], [email_personal]) VALUES (15, N'Andres', N'Joaquin', N'Blvd Net 1235', N'3243424', CAST(N'1984-06-12T00:00:00.000' AS DateTime), 76543, 1, 1, N'Andresj@hotmail.com')
 SET IDENTITY_INSERT [dbo].[personas] OFF
 SET IDENTITY_INSERT [dbo].[planes] ON 
 
@@ -326,10 +345,19 @@ SET IDENTITY_INSERT [dbo].[usuarios] ON
 
 INSERT [dbo].[usuarios] ([id_usuario], [nombre_usuario], [clave], [habilitado], [cambia_clave], [id_persona], [email_usuario]) VALUES (1, N'admin', N'123456789', 1, NULL, 5, N'admin@frro.utn.edu.ar')
 INSERT [dbo].[usuarios] ([id_usuario], [nombre_usuario], [clave], [habilitado], [cambia_clave], [id_persona], [email_usuario]) VALUES (2, N'elprofe', N'123456789', 1, NULL, 1, N'prof@frro.utn.edu.ar')
-INSERT [dbo].[usuarios] ([id_usuario], [nombre_usuario], [clave], [habilitado], [cambia_clave], [id_persona], [email_usuario]) VALUES (6, N'alum', N'123456789', 1, NULL, 3, N'alum@frro.utn.edu.ar')
-INSERT [dbo].[usuarios] ([id_usuario], [nombre_usuario], [clave], [habilitado], [cambia_clave], [id_persona], [email_usuario]) VALUES (15, N'alum2', N'123456789', 1, NULL, 13, N'alumno2@frro.utn.edu.ar')
+INSERT [dbo].[usuarios] ([id_usuario], [nombre_usuario], [clave], [habilitado], [cambia_clave], [id_persona], [email_usuario]) VALUES (6, N'alumS', N'123456789', 1, NULL, 3, N'alum@frro.utn.edu.ar')
+INSERT [dbo].[usuarios] ([id_usuario], [nombre_usuario], [clave], [habilitado], [cambia_clave], [id_persona], [email_usuario]) VALUES (15, N'alumQ', N'123456789', 1, NULL, 13, N'alumno2@frro.utn.edu.ar')
+INSERT [dbo].[usuarios] ([id_usuario], [nombre_usuario], [clave], [habilitado], [cambia_clave], [id_persona], [email_usuario]) VALUES (16, N'prueba', N'123456789', 1, NULL, 14, N'asdsda@hotmail.com')
+INSERT [dbo].[usuarios] ([id_usuario], [nombre_usuario], [clave], [habilitado], [cambia_clave], [id_persona], [email_usuario]) VALUES (17, N'aj', N'123456789', 1, NULL, 15, N'aj@frro.utn.edu.ar')
 SET IDENTITY_INSERT [dbo].[usuarios] OFF
-/****** Object:  Index [UnicoCurso]    Script Date: 17/9/2018 18:10:47 ******/
+/****** Object:  Index [Cu_UnicaInscripcionXAnio]    Script Date: 4/11/2018 21:46:06 ******/
+ALTER TABLE [dbo].[alumnos_inscripciones] ADD  CONSTRAINT [Cu_UnicaInscripcionXAnio] UNIQUE NONCLUSTERED 
+(
+	[id_alumno] ASC,
+	[id_curso] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [UnicoCurso]    Script Date: 4/11/2018 21:46:06 ******/
 ALTER TABLE [dbo].[cursos] ADD  CONSTRAINT [UnicoCurso] UNIQUE NONCLUSTERED 
 (
 	[id_materia] ASC,
@@ -340,7 +368,7 @@ GO
 SET ANSI_PADDING ON
 
 GO
-/****** Object:  Index [usuarioUnico]    Script Date: 17/9/2018 18:10:47 ******/
+/****** Object:  Index [usuarioUnico]    Script Date: 4/11/2018 21:46:06 ******/
 ALTER TABLE [dbo].[usuarios] ADD  CONSTRAINT [usuarioUnico] UNIQUE NONCLUSTERED 
 (
 	[nombre_usuario] ASC
@@ -411,7 +439,7 @@ REFERENCES [dbo].[personas] ([id_persona])
 GO
 ALTER TABLE [dbo].[usuarios] CHECK CONSTRAINT [FK_usuarios_personas]
 GO
-/****** Object:  StoredProcedure [dbo].[SP_AgregarCurso]    Script Date: 17/9/2018 18:10:47 ******/
+/****** Object:  StoredProcedure [dbo].[SP_AgregarCurso]    Script Date: 4/11/2018 21:46:06 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -444,7 +472,38 @@ SELECT @@IDENTITY
 
 RETURN 
 GO
-/****** Object:  StoredProcedure [dbo].[SP_AgregarMateria]    Script Date: 17/9/2018 18:10:47 ******/
+/****** Object:  StoredProcedure [dbo].[SP_AgregarInscripcionAlumno]    Script Date: 4/11/2018 21:46:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+create PROCEDURE [dbo].[SP_AgregarInscripcionAlumno]
+(
+	@id_alumno varchar(50),
+	@id_curso int,
+	@condicion nvarchar(10),
+	@nota int
+)
+
+AS
+
+INSERT INTO [dbo].[alumnos_inscripciones]
+(	id_alumno, id_curso, condicion, nota
+)
+VALUES 
+(
+	 @id_alumno
+	,@id_curso
+	,@condicion
+	,@nota 
+)
+
+SELECT @@IDENTITY
+
+RETURN 
+GO
+/****** Object:  StoredProcedure [dbo].[SP_AgregarMateria]    Script Date: 4/11/2018 21:46:06 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -478,7 +537,24 @@ SELECT @@IDENTITY
 
 RETURN 
 GO
-/****** Object:  StoredProcedure [dbo].[SP_Alumnos_Inscripciones_GetAll]    Script Date: 17/9/2018 18:10:47 ******/
+/****** Object:  StoredProcedure [dbo].[SP_AlumnoInscripcionesGetOne]    Script Date: 4/11/2018 21:46:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE  [dbo].[SP_AlumnoInscripcionesGetOne] 
+(
+	@id_inscripcionAlumno int
+)
+AS
+SELECT id_inscripcion, i.id_alumno, i.id_curso, i.condicion, i.nota
+FROM [dbo].[alumnos_inscripciones] i
+inner join personas p	on p.id_persona=i.id_alumno
+inner join cursos c		on c.id_curso=i.id_curso
+WHERE i.id_inscripcion=@id_inscripcionAlumno
+
+GO
+/****** Object:  StoredProcedure [dbo].[SP_Alumnos_Inscripciones_GetAll]    Script Date: 4/11/2018 21:46:06 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -499,7 +575,39 @@ INNER JOIN alumnos_inscripciones ai ON ai.id_alumno=per.id_persona
 									AND ai.id_curso=cu.id_curso 
 WHERE per.id_persona = @id_persona
 GO
-/****** Object:  StoredProcedure [dbo].[SP_CursosGetAll]    Script Date: 17/9/2018 18:10:47 ******/
+/****** Object:  StoredProcedure [dbo].[SP_Cursos]    Script Date: 4/11/2018 21:46:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create PROCEDURE [dbo].[SP_Cursos]
+AS
+SELECT    cur.id_curso
+		, cur.id_materia
+		, cur.id_comision
+		, cur.anio_calendario
+		, cur.cupo
+		, mat.[desc_materia]
+		, mat.hs_semanales
+		, mat.hs_totales
+		, mat.id_plan				as mat_id_plan
+		, com.desc_comision
+		, com.anio_especialidad
+		, com.id_plan				as com_id_plan
+		,COUNT(AI.id_inscripcion) OVER (PARTITION BY AI.ID_CURSO ORDER BY AI.ID_CURSO) AS CANTIDAD_DE_INSCRIPTOS
+		,AI.apellido
+		,AI.nombre
+		,AI.nota
+		,AI.condicion
+FROM cursos	cur
+	INNER JOIN materias		mat	on mat.id_materia=cur.id_materia
+	INNER JOIN comisiones	com on com.id_comision=cur.id_comision
+	LEFT JOIN (select * from alumnos_inscripciones  ai inner join personas p on p.id_persona=ai.id_alumno) AI ON AI.id_curso=cur.id_curso
+				
+
+				
+GO
+/****** Object:  StoredProcedure [dbo].[SP_CursosGetAll]    Script Date: 4/11/2018 21:46:06 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -518,11 +626,13 @@ SELECT    cur.id_curso
 		, com.desc_comision
 		, com.anio_especialidad
 		, com.id_plan				as com_id_plan
+		
 FROM cursos	cur
 	INNER JOIN materias		mat	on mat.id_materia=cur.id_materia
 	INNER JOIN comisiones	com on com.id_comision=cur.id_comision
+
 GO
-/****** Object:  StoredProcedure [dbo].[SP_CursosGetOne]    Script Date: 17/9/2018 18:10:47 ******/
+/****** Object:  StoredProcedure [dbo].[SP_CursosGetOne]    Script Date: 4/11/2018 21:46:06 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -550,7 +660,7 @@ FROM cursos	cur
 	INNER JOIN comisiones	com on com.id_comision=cur.id_comision
 WHERE id_curso=@id_curso
 GO
-/****** Object:  StoredProcedure [dbo].[SP_DeleteCurso]    Script Date: 17/9/2018 18:10:47 ******/
+/****** Object:  StoredProcedure [dbo].[SP_DeleteCurso]    Script Date: 4/11/2018 21:46:06 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -566,7 +676,23 @@ AS
 DELETE FROM cursos
 WHERE id_curso=@id_curso
 GO
-/****** Object:  StoredProcedure [dbo].[SP_DeleteMateria]    Script Date: 17/9/2018 18:10:47 ******/
+/****** Object:  StoredProcedure [dbo].[SP_DeleteInscripcionAlumno]    Script Date: 4/11/2018 21:46:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create PROCEDURE [dbo].[SP_DeleteInscripcionAlumno]
+(
+	@id_inscripcion int
+)
+
+AS
+
+DELETE FROM [dbo].[alumnos_inscripciones]
+WHERE id_inscripcion=@id_inscripcion
+
+GO
+/****** Object:  StoredProcedure [dbo].[SP_DeleteMateria]    Script Date: 4/11/2018 21:46:06 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -582,7 +708,7 @@ DELETE FROM materias
 WHERE id_materia=@id_materia
 
 GO
-/****** Object:  StoredProcedure [dbo].[SP_MateriasGetAll]    Script Date: 17/9/2018 18:10:47 ******/
+/****** Object:  StoredProcedure [dbo].[SP_MateriasGetAll]    Script Date: 4/11/2018 21:46:06 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -595,7 +721,7 @@ FROM [dbo].[materias] m
 	INNER JOIN especialidades e ON e.id_especialidad=p.id_especialidad
 
 GO
-/****** Object:  StoredProcedure [dbo].[SP_MateriasGetOne]    Script Date: 17/9/2018 18:10:47 ******/
+/****** Object:  StoredProcedure [dbo].[SP_MateriasGetOne]    Script Date: 4/11/2018 21:46:06 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -611,7 +737,24 @@ FROM [dbo].[materias] m
 	INNER JOIN especialidades e ON e.id_especialidad=p.id_especialidad
 WHERE id_materia=@id_materia
 GO
-/****** Object:  StoredProcedure [dbo].[SP_UpdateCurso]    Script Date: 17/9/2018 18:10:47 ******/
+/****** Object:  StoredProcedure [dbo].[SP_Planes]    Script Date: 4/11/2018 21:46:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create PROCEDURE [dbo].[SP_Planes]
+AS
+SELECT																 
+ p.id_plan															 
+,p.desc_plan														 
+,e.id_especialidad													 
+,e.desc_especialidad												 
+FROM planes p														 
+INNER JOIN especialidades e ON e.id_especialidad = P.id_especialidad 
+
+				
+GO
+/****** Object:  StoredProcedure [dbo].[SP_UpdateCurso]    Script Date: 4/11/2018 21:46:06 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -634,7 +777,32 @@ SET	id_materia			= @id_materia
 	,cupo				= @cupo				
 WHERE id_curso=@id_curso
 GO
-/****** Object:  StoredProcedure [dbo].[SP_UpdateMateria]    Script Date: 17/9/2018 18:10:47 ******/
+/****** Object:  StoredProcedure [dbo].[SP_UpdateInscripcionAlumno]    Script Date: 4/11/2018 21:46:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+	create PROCEDURE [dbo].[SP_UpdateInscripcionAlumno]
+(
+	@id_inscripcion	int ,
+	@id_alumno	  int ,
+	@id_curso	  int ,
+	@condicion	nvarchar(10),
+	@nota		int
+)
+
+AS
+
+UPDATE [dbo].[alumnos_inscripciones]
+SET	 id_alumno		  =@id_alumno	
+, id_curso		  =@id_curso	
+, condicion		  =@condicion	
+, nota			  =@nota		
+
+
+WHERE id_inscripcion=@id_inscripcion
+GO
+/****** Object:  StoredProcedure [dbo].[SP_UpdateMateria]    Script Date: 4/11/2018 21:46:06 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -657,7 +825,7 @@ SET	desc_materia =@desc_materia
 	,id_plan	 =@id_plan
 WHERE id_materia=@id_materia
 GO
-/****** Object:  StoredProcedure [dbo].[UsuarioGetAll]    Script Date: 17/9/2018 18:10:47 ******/
+/****** Object:  StoredProcedure [dbo].[UsuarioGetAll]    Script Date: 4/11/2018 21:46:06 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -677,7 +845,7 @@ SELECT  id_usuario,
 FROM usuarios
 
 GO
-/****** Object:  StoredProcedure [dbo].[UsuarioGetOne]    Script Date: 17/9/2018 18:10:47 ******/
+/****** Object:  StoredProcedure [dbo].[UsuarioGetOne]    Script Date: 4/11/2018 21:46:06 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
