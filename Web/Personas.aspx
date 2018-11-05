@@ -15,7 +15,7 @@
 				<asp:BoundField DataField="Telefono" HeaderText="Telefono" SortExpression="Telefono" />
 			</Columns>
 		</asp:GridView>
-		<asp:ObjectDataSource ID="odsPersonas" runat="server" DataObjectTypeName="Business.Entities.Persona" DeleteMethod="Save" SelectMethod="GetAll" TypeName="Business.Logic.PersonaLogic" UpdateMethod="Save" InsertMethod="Save">
+		<asp:ObjectDataSource ID="odsPersonas" runat="server" DataObjectTypeName="Business.Entities.Persona" DeleteMethod="Delete" SelectMethod="GetAll" TypeName="Business.Logic.PersonaLogic" UpdateMethod="Save" InsertMethod="Save">
 		</asp:ObjectDataSource>
 <%--		<table class="table table-stripped" id="tblDatosPersona">
 			<tr>

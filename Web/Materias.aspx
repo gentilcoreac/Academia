@@ -12,6 +12,6 @@
 			</Columns>
 		</asp:GridView>
         <div>
-        	<asp:ObjectDataSource ID="odsMaterias" runat="server" DataObjectTypeName="Business.Entities.Materia" DeleteMethod="Save" InsertMethod="Save" SelectMethod="GetAll" TypeName="Business.Logic.MateriaLogic" UpdateMethod="Save"></asp:ObjectDataSource>
+        	<asp:ObjectDataSource ID="odsMaterias" runat="server" DataObjectTypeName="Business.Entities.Materia" DeleteMethod="Delete" InsertMethod="Save" SelectMethod="GetAll" TypeName="Business.Logic.MateriaLogic" UpdateMethod="Save"></asp:ObjectDataSource>
         </div>
 </asp:Content>

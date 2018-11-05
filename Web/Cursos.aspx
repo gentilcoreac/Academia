@@ -12,6 +12,6 @@
 			<asp:BoundField DataField="Cupo" HeaderText="Cupo" SortExpression="Cupo" />
 		</Columns>
 	</asp:GridView>
-	<asp:ObjectDataSource ID="odsCursos" runat="server" DataObjectTypeName="Business.Entities.Curso" DeleteMethod="Save" InsertMethod="Save" SelectMethod="GetAll" TypeName="Business.Logic.CursoLogic" UpdateMethod="Save"></asp:ObjectDataSource>
+	<asp:ObjectDataSource ID="odsCursos" runat="server" DataObjectTypeName="Business.Entities.Curso" DeleteMethod="Delete" InsertMethod="Save" SelectMethod="GetAll" TypeName="Business.Logic.CursoLogic" UpdateMethod="Save"></asp:ObjectDataSource>
 	
 </asp:Content>
