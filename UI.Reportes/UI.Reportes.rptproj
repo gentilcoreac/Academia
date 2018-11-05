@@ -56,7 +56,7 @@
     <DataSource Include="Academia.rds" />
   </ItemGroup>
   <ItemGroup>
-    <Report Include="Reporte cursos e inscriptos.rdl" />
+    <Report Include="ReporteInscriptos.rdl" />
     <Report Include="ReportePlanes.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
