@@ -178,6 +178,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Inscripciones.aspx" />
+    <Content Include="InscripcionesEditar.aspx" />
     <Content Include="LabLoginMasterPage.Master" />
     <Content Include="BasePaginaMaestra.Master" />
     <Content Include="GeneralMasterPage.Master" />
@@ -268,6 +269,13 @@
     </Compile>
     <Compile Include="Inscripciones.aspx.designer.cs">
       <DependentUpon>Inscripciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InscripcionesEditar.aspx.cs">
+      <DependentUpon>InscripcionesEditar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InscripcionesEditar.aspx.designer.cs">
+      <DependentUpon>InscripcionesEditar.aspx</DependentUpon>
     </Compile>
     <Compile Include="LoginPaginaMaestra.Master.cs">
       <DependentUpon>LoginPaginaMaestra.Master</DependentUpon>

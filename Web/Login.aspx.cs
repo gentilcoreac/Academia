@@ -36,6 +36,7 @@ namespace Web
                 if (UsuarioLogueado != null && UsuarioLogueado.NombreUsuario == usuario && UsuarioLogueado.Clave == contrasenia)
 				{
 					Session["UsuarioLogueado"] = UsuarioLogueado;
+                    Session["IDUsuarioLogueado"] = UsuarioLogueado.ID;
 					Response.Redirect("/Default.aspx");
 
 				}

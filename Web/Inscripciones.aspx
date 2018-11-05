@@ -12,12 +12,12 @@
 		</Columns>
 	</asp:GridView>
 	<asp:ObjectDataSource ID="odsInscripciones" runat="server" DataObjectTypeName="Business.Entities.AlumnoInscripcion" DeleteMethod="Save" InsertMethod="Save" SelectMethod="GetAll" TypeName="Business.Logic.AlumnoInscripcionLogic" UpdateMethod="Save">
-		<SelectParameters>
-			<asp:Parameter DefaultValue="Todos" Name="tipoBusqueda" Type="String" />
-			<asp:Parameter Name="busqueda" Type="String" />
-			<asp:SessionParameter Name="ID_Persona" SessionField="UsuarioLogeado.ID" Type="Int32" />
-		</SelectParameters>
 	</asp:ObjectDataSource>
+
+	<asp:Button ID="btnNuevo" CssClass="btn btn-primary" runat="server" Text="Nuevo" />
+
+	<br />
+	
 
 
 

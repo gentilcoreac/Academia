@@ -16,7 +16,7 @@ namespace Web
         private PersonaLogic pl = new PersonaLogic();
         private Persona _PersonaActual = new Persona();
         private Usuario _UsuarioActual = new Usuario();
-        public enum ModoForm { Alta, Baja, Modificacion, Consulta };
+        public enum ModoForm { Baja, Alta, Modificacion, Consulta };
         private ModoForm _Modo;
         #endregion
 
@@ -41,6 +41,12 @@ namespace Web
                 UsuarioActual = PersonaActual.UsuarioPersona;
                 llenaCampos();
             }
+
+            if (PaginaEnEstadoAlta() && !IsPostBack)
+            {
+                llenaDropDownLists();
+            }
+
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
@@ -73,6 +79,18 @@ namespace Web
             }
         }
 
+        private bool PaginaEnEstadoAlta()
+        {
+            if (Request.QueryString["mode"] == "new")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         /// <summary>
         /// Llena los campos con los datos de la Persona y Usuario previamente traidos de la BD
         /// </summary>
@@ -90,14 +108,7 @@ namespace Web
             //Tabla de datos institucionales
             txtLegajo.Text = PersonaActual.Legajo.ToString();
             //Llenar los dropdownlists
-            PlanLogic planLogic = new PlanLogic();
-            ddlPlan.DataSource = planLogic.GetAll();
-            ddlPlan.DataValueField = "ID";
-            ddlPlan.DataBind();
-
-            ddlTipoPersona.DataSource = Enum.GetValues(typeof(Persona.TiposPersonas));
-            ddlTipoPersona.DataBind();
-
+            llenaDropDownLists();
             ddlPlan.SelectedValue = PersonaActual.Plan_persona.ID.ToString();
             ddlTipoPersona.SelectedValue = PersonaActual.TiposPersona.ToString();
 
@@ -108,20 +119,40 @@ namespace Web
             txtEmailUsuario.Text = UsuarioActual.Email;
         }
 
+        private void llenaDropDownLists()
+        {
+            PlanLogic planLogic = new PlanLogic();
+            ddlPlan.DataSource = planLogic.GetAll();
+            ddlPlan.DataValueField = "ID";
+            ddlPlan.DataBind();
+
+            ddlTipoPersona.DataSource = Enum.GetValues(typeof(Persona.TiposPersonas));
+            ddlTipoPersona.DataBind();
+        }
+
         /// <summary>
         /// Mapea los datos de los controles actuales del formulario en las propiedades PersonaActual y UsuarioActual
         /// </summary>
         private void MapearADatos()
         {
-            UsuarioActual.State = (Usuario.States)ModoForm.Modificacion;
-            UsuarioActual.ID = Int32.Parse(lblIdUsuario.Text);
+            if (PaginaEnEstadoEdicion())
+            {
+                UsuarioActual.State = (Usuario.States)ModoForm.Modificacion;
+                PersonaActual.State = (Persona.States)ModoForm.Modificacion;
+                UsuarioActual.ID = Int32.Parse(lblIdUsuario.Text);
+                PersonaActual.ID = Int32.Parse(lblIdPersona.Text);
+            }
+            else if (PaginaEnEstadoAlta())
+            {
+                UsuarioActual.State = (Usuario.States)ModoForm.Alta;
+                PersonaActual.State = (Persona.States)ModoForm.Alta;
+            }
+
             UsuarioActual.NombreUsuario = txtNombreUsuario.Text;
             UsuarioActual.Habilitado = cbHabilitado.Checked;
             UsuarioActual.Email = txtEmailUsuario.Text;
             UsuarioActual.Clave = txtClave.Text;
 
-            PersonaActual.ID = Int32.Parse(lblIdPersona.Text);
-            PersonaActual.State = (Persona.States)ModoForm.Modificacion;
             PersonaActual.Nombre = txtNombre.Text;
             PersonaActual.Apellido = txtApellido.Text;
             PersonaActual.Direccion = txtDireccion.Text;
