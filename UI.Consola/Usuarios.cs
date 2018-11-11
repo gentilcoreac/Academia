@@ -107,8 +107,8 @@ namespace UI.Consola
         public void MostrarDatos(Usuario usr)
         {
             Console.WriteLine("          Usuario {0}", usr.ID);
-            Console.WriteLine("           Nombre {0}", usr.Nombre);
-            Console.WriteLine("         Apellido {0}", usr.Apellido);
+            //Console.WriteLine("           Nombre {0}", usr.Nombre);
+            //Console.WriteLine("         Apellido {0}", usr.Apellido);
             Console.WriteLine("Nombre de usuario {0}", usr.NombreUsuario);
             Console.WriteLine("            Clave {0}", usr.Clave);
             Console.WriteLine("            Email {0}", usr.Email);
@@ -153,10 +153,10 @@ namespace UI.Consola
                 this.MostrarDatos(UsuarioNegocio.GetOne(ID));
 
                 Console.WriteLine("\nIngrese los nuevos valores: ");
-                Console.Write("Nombre: ");
-                usuario.Nombre = Console.ReadLine();
-                Console.Write("Apellido: ");
-                usuario.Apellido = Console.ReadLine();
+                //Console.Write("Nombre: ");
+                //usuario.Nombre = Console.ReadLine();
+                //Console.Write("Apellido: ");
+                //usuario.Apellido = Console.ReadLine();
                 Console.Write("Nombre de usuario: ");
                 usuario.NombreUsuario = Console.ReadLine();
                 Console.Write("Clave: ");
@@ -197,10 +197,10 @@ namespace UI.Consola
                 Console.Clear();
                 Console.WriteLine("Ingrese los valores del nuevo Usuario: ");
                 Console.Write("Nombre: ");
-                usuario.Nombre = Console.ReadLine();
-                Console.Write("Apellido: ");
-                usuario.Apellido = Console.ReadLine();
-                Console.Write("Nombre de usuario: ");
+                //usuario.Nombre = Console.ReadLine();
+                //Console.Write("Apellido: ");
+                //usuario.Apellido = Console.ReadLine();
+                //Console.Write("Nombre de usuario: ");
                 usuario.NombreUsuario = Console.ReadLine();
                 Console.Write("Clave: ");
                 usuario.Clave = Console.ReadLine();

@@ -17,7 +17,7 @@
 				Año Calendario:</td>
 			<td class="auto-style2">
 				<asp:TextBox ID="txtAnioCalendario" runat="server"></asp:TextBox></td>
-		</tr>
+		</tr>   
 		<tr>
 			<td style="width: 150px; height: 23px;" align="right">
 				Cupo:</td>
@@ -37,7 +37,7 @@
 				Materia:</td>
 			<td><asp:DropDownList ID="ddlMateria" runat="server">
 				</asp:DropDownList></td>
-		</tr>
+		</tr>		
 	</table>
 	<div></div>
 	<asp:Button ID="btnGuardar" CssClass="btn btn-primary" runat="server" Text="Guardar" OnClick="btnGuardar_Click" />
