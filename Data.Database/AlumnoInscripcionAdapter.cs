@@ -606,6 +606,41 @@ namespace Data.Database
 			}
 		}
 
+		public DateTime GetFechaLimiteInscripcion()
+		{
+			try
+			{
+				DateTime fechaDefault = DateTime.Parse(DateTime.Now.Year + "-04-01");
+				this.OpenConnection();
+				SqlCommand sqlCommand = new SqlCommand(@"SELECT valor_fecha
+														 FROM [Academia].[dbo].[fecha_limite_inscripcion]", SqlConn);
+				SqlDataReader valorFecha = sqlCommand.ExecuteReader();
+				if (valorFecha.Read())
+				{
+					return DateTime.Parse(valorFecha["valor_fecha"].ToString());
+				}
+				return fechaDefault;
+			}
+			catch (Exception ex)
+			{
+				throw new Exception("Error al obtener la fecha limite  \n\n" + ex);
+			}
+		}
 
+		public void ActualizaFechaLimite(DateTime fecha_limite)
+		{
+			try
+			{
+				this.OpenConnection();
+				SqlCommand sqlCommand = new SqlCommand(@"update [Academia].[dbo].[fecha_limite_inscripcion] 
+														set valor_fecha=@fecha_limite", SqlConn);
+				sqlCommand.Parameters.AddWithValue("@fecha_limite", fecha_limite);
+				sqlCommand.ExecuteNonQuery();
+			}
+			catch (Exception ex)
+			{
+				throw new Exception("Error al actualizar la fecha limite  \n\n" + ex);
+			}
+		}
 	}
 }

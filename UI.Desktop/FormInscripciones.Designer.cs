@@ -33,13 +33,23 @@
 			this.toolStripContainer_Cursos = new System.Windows.Forms.ToolStripContainer();
 			this.tableLayoutPanel_ = new System.Windows.Forms.TableLayoutPanel();
 			this.dgv_AlumnoInscripcion = new System.Windows.Forms.DataGridView();
+			this.ID_Curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ID_Inscripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ID_Alumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Condicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.CupoCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.AnioCalendario = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.panel_ABM_Inscripciones = new System.Windows.Forms.Panel();
+			this.num_Nota = new System.Windows.Forms.NumericUpDown();
+			this.lbl_ParametrosGeneralesHeader = new System.Windows.Forms.Label();
+			this.btn_GuardarFecha = new System.Windows.Forms.Button();
 			this.lbl_header = new System.Windows.Forms.Label();
 			this.comboBox_Condicion = new System.Windows.Forms.ComboBox();
 			this.txt_FechaLimite = new System.Windows.Forms.TextBox();
 			this.lbl_FechaLimite = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
-			this.txt_Nota = new System.Windows.Forms.TextBox();
 			this.txt_IDAlumno = new System.Windows.Forms.TextBox();
 			this.txt_ID_Inscripcion = new System.Windows.Forms.TextBox();
 			this.comboBox_Curso = new System.Windows.Forms.ComboBox();
@@ -61,14 +71,6 @@
 			this.comboBox_TipoBusqueda = new System.Windows.Forms.ToolStripComboBox();
 			this.toolStripTextBox_Busqueda = new System.Windows.Forms.ToolStripTextBox();
 			this.btn_Buscar = new System.Windows.Forms.ToolStripButton();
-			this.ID_Curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.ID_Inscripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.ID_Alumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Condicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.CupoCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.AnioCalendario = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			tsbEditar = new System.Windows.Forms.ToolStripButton();
 			this.toolStripContainer_Cursos.ContentPanel.SuspendLayout();
 			this.toolStripContainer_Cursos.TopToolStripPanel.SuspendLayout();
@@ -76,6 +78,7 @@
 			this.tableLayoutPanel_.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgv_AlumnoInscripcion)).BeginInit();
 			this.panel_ABM_Inscripciones.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.num_Nota)).BeginInit();
 			this.tsUsuarios.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -147,14 +150,79 @@
 			this.dgv_AlumnoInscripcion.TabIndex = 0;
 			this.dgv_AlumnoInscripcion.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_AlumnoInscripcion_CellFormatting);
 			// 
+			// ID_Curso
+			// 
+			this.ID_Curso.DataPropertyName = "IDCurso";
+			this.ID_Curso.HeaderText = "ID Curso";
+			this.ID_Curso.Name = "ID_Curso";
+			this.ID_Curso.ReadOnly = true;
+			this.ID_Curso.Width = 200;
+			// 
+			// ID_Inscripcion
+			// 
+			this.ID_Inscripcion.DataPropertyName = "ID";
+			this.ID_Inscripcion.HeaderText = "ID Inscripcion";
+			this.ID_Inscripcion.Name = "ID_Inscripcion";
+			this.ID_Inscripcion.ReadOnly = true;
+			// 
+			// ID_Alumno
+			// 
+			this.ID_Alumno.DataPropertyName = "IDAlumno.ID";
+			this.ID_Alumno.HeaderText = "ID Alumno";
+			this.ID_Alumno.Name = "ID_Alumno";
+			this.ID_Alumno.ReadOnly = true;
+			// 
+			// Condicion
+			// 
+			this.Condicion.DataPropertyName = "Condicion";
+			this.Condicion.HeaderText = "Condicion";
+			this.Condicion.Name = "Condicion";
+			this.Condicion.ReadOnly = true;
+			// 
+			// Nota
+			// 
+			this.Nota.DataPropertyName = "Nota";
+			this.Nota.HeaderText = "Nota";
+			this.Nota.Name = "Nota";
+			this.Nota.ReadOnly = true;
+			// 
+			// CupoCurso
+			// 
+			this.CupoCurso.DataPropertyName = "IDCurso.Cupo";
+			this.CupoCurso.FillWeight = 120F;
+			this.CupoCurso.HeaderText = "Cupo del curso";
+			this.CupoCurso.Name = "CupoCurso";
+			this.CupoCurso.ReadOnly = true;
+			this.CupoCurso.Width = 120;
+			// 
+			// Materia
+			// 
+			this.Materia.DataPropertyName = "IDCurso.Materia.Descripcion";
+			this.Materia.FillWeight = 200F;
+			this.Materia.HeaderText = "Materia";
+			this.Materia.Name = "Materia";
+			this.Materia.ReadOnly = true;
+			this.Materia.Width = 200;
+			// 
+			// AnioCalendario
+			// 
+			this.AnioCalendario.DataPropertyName = "IDCurso.AnioCalendario";
+			this.AnioCalendario.FillWeight = 130F;
+			this.AnioCalendario.HeaderText = "Año calendario";
+			this.AnioCalendario.Name = "AnioCalendario";
+			this.AnioCalendario.ReadOnly = true;
+			this.AnioCalendario.Width = 130;
+			// 
 			// panel_ABM_Inscripciones
 			// 
+			this.panel_ABM_Inscripciones.Controls.Add(this.num_Nota);
+			this.panel_ABM_Inscripciones.Controls.Add(this.lbl_ParametrosGeneralesHeader);
+			this.panel_ABM_Inscripciones.Controls.Add(this.btn_GuardarFecha);
 			this.panel_ABM_Inscripciones.Controls.Add(this.lbl_header);
 			this.panel_ABM_Inscripciones.Controls.Add(this.comboBox_Condicion);
 			this.panel_ABM_Inscripciones.Controls.Add(this.txt_FechaLimite);
 			this.panel_ABM_Inscripciones.Controls.Add(this.lbl_FechaLimite);
 			this.panel_ABM_Inscripciones.Controls.Add(this.label1);
-			this.panel_ABM_Inscripciones.Controls.Add(this.txt_Nota);
 			this.panel_ABM_Inscripciones.Controls.Add(this.txt_IDAlumno);
 			this.panel_ABM_Inscripciones.Controls.Add(this.txt_ID_Inscripcion);
 			this.panel_ABM_Inscripciones.Controls.Add(this.comboBox_Curso);
@@ -170,6 +238,38 @@
 			this.panel_ABM_Inscripciones.Size = new System.Drawing.Size(1152, 265);
 			this.panel_ABM_Inscripciones.TabIndex = 1;
 			// 
+			// num_Nota
+			// 
+			this.num_Nota.Location = new System.Drawing.Point(132, 140);
+			this.num_Nota.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+			this.num_Nota.Name = "num_Nota";
+			this.num_Nota.Size = new System.Drawing.Size(100, 21);
+			this.num_Nota.TabIndex = 5;
+			// 
+			// lbl_ParametrosGeneralesHeader
+			// 
+			this.lbl_ParametrosGeneralesHeader.AutoSize = true;
+			this.lbl_ParametrosGeneralesHeader.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbl_ParametrosGeneralesHeader.Location = new System.Drawing.Point(611, 10);
+			this.lbl_ParametrosGeneralesHeader.Name = "lbl_ParametrosGeneralesHeader";
+			this.lbl_ParametrosGeneralesHeader.Size = new System.Drawing.Size(160, 17);
+			this.lbl_ParametrosGeneralesHeader.TabIndex = 17;
+			this.lbl_ParametrosGeneralesHeader.Text = "Parámetros generales";
+			// 
+			// btn_GuardarFecha
+			// 
+			this.btn_GuardarFecha.Location = new System.Drawing.Point(909, 41);
+			this.btn_GuardarFecha.Name = "btn_GuardarFecha";
+			this.btn_GuardarFecha.Size = new System.Drawing.Size(98, 23);
+			this.btn_GuardarFecha.TabIndex = 16;
+			this.btn_GuardarFecha.Text = "Guardar fecha";
+			this.btn_GuardarFecha.UseVisualStyleBackColor = true;
+			this.btn_GuardarFecha.Click += new System.EventHandler(this.btn_GuardarFecha_Click);
+			// 
 			// lbl_header
 			// 
 			this.lbl_header.AutoSize = true;
@@ -182,15 +282,16 @@
 			// 
 			// comboBox_Condicion
 			// 
+			this.comboBox_Condicion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboBox_Condicion.FormattingEnabled = true;
 			this.comboBox_Condicion.Location = new System.Drawing.Point(132, 106);
 			this.comboBox_Condicion.Name = "comboBox_Condicion";
 			this.comboBox_Condicion.Size = new System.Drawing.Size(146, 21);
-			this.comboBox_Condicion.TabIndex = 14;
+			this.comboBox_Condicion.TabIndex = 4;
 			// 
 			// txt_FechaLimite
 			// 
-			this.txt_FechaLimite.Location = new System.Drawing.Point(701, 25);
+			this.txt_FechaLimite.Location = new System.Drawing.Point(785, 43);
 			this.txt_FechaLimite.Name = "txt_FechaLimite";
 			this.txt_FechaLimite.Size = new System.Drawing.Size(100, 21);
 			this.txt_FechaLimite.TabIndex = 13;
@@ -198,7 +299,7 @@
 			// lbl_FechaLimite
 			// 
 			this.lbl_FechaLimite.AutoSize = true;
-			this.lbl_FechaLimite.Location = new System.Drawing.Point(527, 28);
+			this.lbl_FechaLimite.Location = new System.Drawing.Point(611, 46);
 			this.lbl_FechaLimite.Name = "lbl_FechaLimite";
 			this.lbl_FechaLimite.Size = new System.Drawing.Size(157, 13);
 			this.lbl_FechaLimite.TabIndex = 12;
@@ -215,19 +316,12 @@
 			this.label1.TabIndex = 11;
 			this.label1.Text = "ID Curso - Comisión - Materia";
 			// 
-			// txt_Nota
-			// 
-			this.txt_Nota.Location = new System.Drawing.Point(132, 139);
-			this.txt_Nota.Name = "txt_Nota";
-			this.txt_Nota.Size = new System.Drawing.Size(100, 21);
-			this.txt_Nota.TabIndex = 10;
-			// 
 			// txt_IDAlumno
 			// 
 			this.txt_IDAlumno.Location = new System.Drawing.Point(132, 72);
 			this.txt_IDAlumno.Name = "txt_IDAlumno";
 			this.txt_IDAlumno.Size = new System.Drawing.Size(100, 21);
-			this.txt_IDAlumno.TabIndex = 8;
+			this.txt_IDAlumno.TabIndex = 3;
 			// 
 			// txt_ID_Inscripcion
 			// 
@@ -235,10 +329,11 @@
 			this.txt_ID_Inscripcion.Location = new System.Drawing.Point(132, 40);
 			this.txt_ID_Inscripcion.Name = "txt_ID_Inscripcion";
 			this.txt_ID_Inscripcion.Size = new System.Drawing.Size(100, 21);
-			this.txt_ID_Inscripcion.TabIndex = 7;
+			this.txt_ID_Inscripcion.TabIndex = 2;
 			// 
 			// comboBox_Curso
 			// 
+			this.comboBox_Curso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboBox_Curso.FormattingEnabled = true;
 			this.comboBox_Curso.Location = new System.Drawing.Point(132, 175);
 			this.comboBox_Curso.Name = "comboBox_Curso";
@@ -403,69 +498,6 @@
 			this.btn_Buscar.ToolTipText = "Buscar";
 			this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
 			// 
-			// ID_Curso
-			// 
-			this.ID_Curso.DataPropertyName = "IDCurso";
-			this.ID_Curso.HeaderText = "ID Curso";
-			this.ID_Curso.Name = "ID_Curso";
-			this.ID_Curso.ReadOnly = true;
-			this.ID_Curso.Width = 200;
-			// 
-			// ID_Inscripcion
-			// 
-			this.ID_Inscripcion.DataPropertyName = "ID";
-			this.ID_Inscripcion.HeaderText = "ID Inscripcion";
-			this.ID_Inscripcion.Name = "ID_Inscripcion";
-			this.ID_Inscripcion.ReadOnly = true;
-			// 
-			// ID_Alumno
-			// 
-			this.ID_Alumno.DataPropertyName = "IDAlumno.ID";
-			this.ID_Alumno.HeaderText = "ID Alumno";
-			this.ID_Alumno.Name = "ID_Alumno";
-			this.ID_Alumno.ReadOnly = true;
-			// 
-			// Condicion
-			// 
-			this.Condicion.DataPropertyName = "Condicion";
-			this.Condicion.HeaderText = "Condicion";
-			this.Condicion.Name = "Condicion";
-			this.Condicion.ReadOnly = true;
-			// 
-			// Nota
-			// 
-			this.Nota.DataPropertyName = "Nota";
-			this.Nota.HeaderText = "Nota";
-			this.Nota.Name = "Nota";
-			this.Nota.ReadOnly = true;
-			// 
-			// CupoCurso
-			// 
-			this.CupoCurso.DataPropertyName = "IDCurso.Cupo";
-			this.CupoCurso.FillWeight = 120F;
-			this.CupoCurso.HeaderText = "Cupo del curso";
-			this.CupoCurso.Name = "CupoCurso";
-			this.CupoCurso.ReadOnly = true;
-			this.CupoCurso.Width = 120;
-			// 
-			// Materia
-			// 
-			this.Materia.DataPropertyName = "IDCurso.Materia.Descripcion";
-			this.Materia.FillWeight = 200F;
-			this.Materia.HeaderText = "Materia";
-			this.Materia.Name = "Materia";
-			this.Materia.ReadOnly = true;
-			this.Materia.Width = 200;
-			// 
-			// AnioCalendario
-			// 
-			this.AnioCalendario.DataPropertyName = "IDCurso.AnioCalendario";
-			this.AnioCalendario.FillWeight = 130F;
-			this.AnioCalendario.HeaderText = "Año calendario";
-			this.AnioCalendario.Name = "AnioCalendario";
-			this.AnioCalendario.ReadOnly = true;
-			this.AnioCalendario.Width = 130;
-			// 
 			// FormInscripciones
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -487,6 +519,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.dgv_AlumnoInscripcion)).EndInit();
 			this.panel_ABM_Inscripciones.ResumeLayout(false);
 			this.panel_ABM_Inscripciones.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.num_Nota)).EndInit();
 			this.tsUsuarios.ResumeLayout(false);
 			this.tsUsuarios.PerformLayout();
 			this.ResumeLayout(false);
@@ -515,7 +548,6 @@
 		private System.Windows.Forms.Label lbl_ID_Curso;
 		private System.Windows.Forms.Label lbl_ID_Alumno;
 		private System.Windows.Forms.Label lbl_ID_Inscripcion;
-		private System.Windows.Forms.TextBox txt_Nota;
 		private System.Windows.Forms.TextBox txt_IDAlumno;
 		private System.Windows.Forms.TextBox txt_ID_Inscripcion;
 		private System.Windows.Forms.ToolStripLabel toolStripLabel_NuevaInscripcion;
@@ -534,5 +566,8 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn CupoCurso;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Materia;
 		private System.Windows.Forms.DataGridViewTextBoxColumn AnioCalendario;
+		private System.Windows.Forms.Button btn_GuardarFecha;
+		private System.Windows.Forms.Label lbl_ParametrosGeneralesHeader;
+		private System.Windows.Forms.NumericUpDown num_Nota;
 	}
 }

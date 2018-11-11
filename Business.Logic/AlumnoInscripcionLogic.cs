@@ -99,5 +99,15 @@ namespace Business.Logic
 				return false;
 			}
 		} 
+
+		public DateTime GetFechaLimiteInscripcion()
+		{
+			return AlumnoInscripcionData.GetFechaLimiteInscripcion();
+		}
+
+		public void ActualizaFechaLimiteInscripcion(DateTime fecha_limite)
+		{
+			AlumnoInscripcionData.ActualizaFechaLimite(fecha_limite);
+		}
 	}
 }

@@ -261,11 +261,11 @@
 			// 
 			this.label_Email.AutoSize = true;
 			this.label_Email.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label_Email.Location = new System.Drawing.Point(581, 89);
+			this.label_Email.Location = new System.Drawing.Point(557, 89);
 			this.label_Email.Name = "label_Email";
-			this.label_Email.Size = new System.Drawing.Size(61, 13);
+			this.label_Email.Size = new System.Drawing.Size(85, 13);
 			this.label_Email.TabIndex = 25;
-			this.label_Email.Text = "Email Usr";
+			this.label_Email.Text = "Email Usuario";
 			// 
 			// label_Clave
 			// 
@@ -367,6 +367,7 @@
 			// 
 			// comboBox_Plan
 			// 
+			this.comboBox_Plan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboBox_Plan.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.comboBox_Plan.FormattingEnabled = true;
 			this.comboBox_Plan.Location = new System.Drawing.Point(353, 34);
@@ -716,7 +717,7 @@
             this.btn_Buscar});
 			this.toolStripCabeceraABMC.Location = new System.Drawing.Point(3, 0);
 			this.toolStripCabeceraABMC.Name = "toolStripCabeceraABMC";
-			this.toolStripCabeceraABMC.Size = new System.Drawing.Size(440, 25);
+			this.toolStripCabeceraABMC.Size = new System.Drawing.Size(409, 25);
 			this.toolStripCabeceraABMC.TabIndex = 0;
 			// 
 			// tsbNuevo

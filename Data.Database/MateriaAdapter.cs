@@ -17,10 +17,12 @@ namespace Data.Database
 			try
 			{
 				this.OpenConnection();
-				string consulta_SelectFrom = "SELECT m.id_materia, m.desc_materia, m.hs_semanales, m.hs_totales				"
-											+ "					,p.id_plan, p.desc_plan										"
-											+ "FROM [dbo].[materias] m														"
-											+ "	INNER JOIN planes p ON p.id_plan=m.id_plan								";
+				string consulta_SelectFrom = @"	SELECT m.id_materia, m.desc_materia, m.hs_semanales, m.hs_totales		
+																	,p.id_plan, p.desc_plan		
+																,esp.id_especialidad, esp.desc_especialidad								
+												FROM [dbo].[materias] m													
+													INNER JOIN planes p ON p.id_plan=m.id_plan						
+													inner join especialidades esp on esp.id_especialidad=p.id_especialidad ";
 				SqlCommand cmdMaterias = null;
 				switch (tipoBusqueda)
 				{
@@ -106,12 +108,14 @@ namespace Data.Database
 			try
 			{
 				this.OpenConnection();
-				string consulta_SelectFrom = "SELECT m.id_materia, m.desc_materia, m.hs_semanales, m.hs_totales				"
-											+ "					,p.id_plan, p.desc_plan										"
-											+ "					,per.id_persona												"
-											+ "FROM [dbo].[materias] m														"
-											+ "	INNER JOIN planes p ON p.id_plan=m.id_plan									"
-											+ "	INNER JOIN personas per ON per.id_plan=p.id_plan							";
+				string consulta_SelectFrom = @" SELECT m.id_materia, m.desc_materia, m.hs_semanales, m.hs_totales
+																	,p.id_plan, p.desc_plan							
+																	,per.id_persona							
+																	,esp.id_especialidad, esp.desc_especialidad		
+												FROM [dbo].[materias] m											
+													INNER JOIN planes p ON p.id_plan=m.id_plan						
+													INNER JOIN personas per ON per.id_plan=p.id_plan	
+													inner join especialidades esp on esp.id_especialidad=p.id_especialidad ";
 				SqlCommand cmdMaterias = null;
 				switch (tipoBusqueda)
 				{

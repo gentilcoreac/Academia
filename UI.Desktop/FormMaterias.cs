@@ -121,7 +121,6 @@ namespace UI.Desktop
 			num_HSSemanales.Text = MateriaActual.HSSemanales.ToString();
 			num_HSTotales.Text = MateriaActual.HSTotales.ToString();
 			comboBox_Plan.SelectedValue = MateriaActual.Plan.ID;
-
 			switch (Modo)
 			{
 				case FormMaterias.ModoForm.Alta:
@@ -150,7 +149,6 @@ namespace UI.Desktop
 				MateriaActual.Descripcion = txt_DescripcionMateria.Text;
 				MateriaActual.HSSemanales = Convert.ToInt32(num_HSSemanales.Text);
 				MateriaActual.HSTotales = Convert.ToInt32(num_HSTotales.Text);
-
 				MateriaActual.Plan = (Plan)comboBox_Plan.SelectedItem;
 			}
 			if (this.Modo == FormMaterias.ModoForm.Modificacion)
@@ -160,7 +158,6 @@ namespace UI.Desktop
 				MateriaActual.Descripcion = txt_DescripcionMateria.Text;
 				MateriaActual.HSSemanales = Convert.ToInt32(num_HSSemanales.Text);
 				MateriaActual.HSTotales = Convert.ToInt32(num_HSTotales.Text);
-
 				MateriaActual.Plan = (Plan)comboBox_Plan.SelectedItem;
 			}
 			if (this.Modo == FormMaterias.ModoForm.Baja)

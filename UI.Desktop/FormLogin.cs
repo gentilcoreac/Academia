@@ -40,19 +40,21 @@ namespace UI.Desktop
 					UsuarioLogueado = new Business.Entities.Usuario();
 					UsuarioLogueado = ul.GetLoggedUser(usuario, contrasenia);
 
-					/*	MessageBox.Show("Usuario y/o contraseña correctos" + Usuario.Apellido, "Login"
-							, MessageBoxButtons.OK, MessageBoxIcon.Error);
-							*/
 					if (UsuarioLogueado != null && UsuarioLogueado.NombreUsuario == usuario && UsuarioLogueado.Clave == contrasenia)
 					{
 						this.DialogResult = DialogResult.OK;
 					}
 					else
 					{
-						MessageBox.Show("Usuario y/o contraseña incorrectos", "Login"
+						MessageBox.Show("Usuario y/o contraseña incorrectos", "Verifique sus datos"
 							, MessageBoxButtons.OK, MessageBoxIcon.Error);
 						
 					}
+				}
+				else
+				{
+					MessageBox.Show("Debe ingresar un usuario y una contraseña para poder ingresar al sistema" ,"Por favor, complete los campos"							
+									, MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
 			}catch(Exception ex)
 			{

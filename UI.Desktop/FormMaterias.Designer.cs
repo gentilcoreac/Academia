@@ -264,6 +264,7 @@
 			// 
 			// comboBox_Plan
 			// 
+			this.comboBox_Plan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboBox_Plan.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.comboBox_Plan.FormattingEnabled = true;
 			this.comboBox_Plan.Location = new System.Drawing.Point(440, 40);

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -135,10 +136,12 @@ namespace UI.Desktop
 			txt_IDAlumno.Text = UsuarioLogueado.IDPersona.ID.ToString();
 			txt_IDAlumno.Enabled = false;
 			txt_ID_Inscripcion.Enabled = false;
-			txt_Nota.Enabled = false;
+			num_Nota.Enabled = false;
 			comboBox_Condicion.Enabled = false;
 			txt_FechaLimite.Visible = false;
 			lbl_FechaLimite.Visible = false;
+			btn_GuardarFecha.Visible = false;
+			lbl_ParametrosGeneralesHeader.Visible = false;
 		}
 
 		private void VistaDocente()
@@ -146,6 +149,8 @@ namespace UI.Desktop
 			txt_ID_Inscripcion.Enabled = false;
 			txt_FechaLimite.Visible = false;
 			lbl_FechaLimite.Visible = false;
+			btn_GuardarFecha.Visible = false;
+			lbl_ParametrosGeneralesHeader.Visible = false;
 		}
 
 
@@ -153,9 +158,8 @@ namespace UI.Desktop
 		{
 			txt_ID_Inscripcion.Text = AlumnoInscripcionctual.ID.ToString();
 			txt_IDAlumno.Text = AlumnoInscripcionctual.IDAlumno.ID.ToString();
-			comboBox_Condicion.Text = "";
 			comboBox_Condicion.SelectedText = AlumnoInscripcionctual.Condicion.ToString();
-			txt_Nota.Text = AlumnoInscripcionctual.Nota.ToString();
+			num_Nota.Text = AlumnoInscripcionctual.Nota.ToString();
 			comboBox_Curso.SelectedValue = AlumnoInscripcionctual.IDCurso.ID;
 
 			switch (Modo)
@@ -186,8 +190,8 @@ namespace UI.Desktop
 				Persona persona = new Persona();
 				persona.ID = Convert.ToInt32(txt_IDAlumno.Text);
 				AlumnoInscripcionctual.IDAlumno = persona;
-				AlumnoInscripcionctual.Condicion = comboBox_Condicion.SelectedText;
-				AlumnoInscripcionctual.Nota = Convert.ToInt32(txt_Nota.Text);
+				AlumnoInscripcionctual.Condicion = this.comboBox_Condicion.SelectedItem.ToString(); 
+				AlumnoInscripcionctual.Nota = Convert.ToInt32(num_Nota.Text);
 				AlumnoInscripcionctual.IDCurso = (Curso)comboBox_Curso.SelectedItem;
 			}
 			if (this.Modo == FormInscripciones.ModoForm.Modificacion)
@@ -197,10 +201,9 @@ namespace UI.Desktop
 				Persona persona = new Persona();
 				persona.ID = Convert.ToInt32(txt_IDAlumno.Text);
 				AlumnoInscripcionctual.IDAlumno = persona;
-				AlumnoInscripcionctual.Condicion = comboBox_Condicion.SelectedText;
-				AlumnoInscripcionctual.Nota = Convert.ToInt32(txt_Nota.Text);
-				AlumnoInscripcionctual.IDCurso = (Curso)comboBox_Curso.SelectedItem; 
-				
+				AlumnoInscripcionctual.Condicion = comboBox_Condicion.SelectedItem.ToString();
+				AlumnoInscripcionctual.Nota = Convert.ToInt32(num_Nota.Text);
+				AlumnoInscripcionctual.IDCurso = (Curso)comboBox_Curso.SelectedItem; 				
 			}
 			if (this.Modo == FormInscripciones.ModoForm.Baja)
 			{
@@ -220,28 +223,24 @@ namespace UI.Desktop
 		{
 			AlumnoInscripcionLogic alumnoInscripcioLogic = new AlumnoInscripcionLogic();
 			if (String.IsNullOrEmpty(this.txt_IDAlumno.Text)
-				|| String.IsNullOrEmpty(this.txt_Nota.Text))
+				|| String.IsNullOrEmpty(this.num_Nota.Text))
 			{
-				this.Notificar("Cuidado, revisar", "Por favor, complete todos los campos"
-						, MessageBoxButtons.OK, MessageBoxIcon.Information);
+				this.Notificar("Cuidado, revisar", "Por favor, complete todos los campos", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				return false;
 			}
 			else if (!alumnoInscripcioLogic.ValidaFechaInscripcion(UsuarioLogueado,txt_FechaLimite.Text))
 			{
-				this.Notificar("Finalizó la inscripción", "Disculpe, pero la fecha de inscripción ya ha finalizado"
-								, MessageBoxButtons.OK, MessageBoxIcon.Information);
+				this.Notificar("Finalizó la inscripción", "Disculpe, pero la fecha de inscripción ya ha finalizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				return false;
 			}
 			else if (!alumnoInscripcioLogic.HayCuposParaInscribirse(UsuarioLogueado, (Curso)comboBox_Curso.SelectedItem))
 			{
-				this.Notificar("No hay cupos disponibles", "Disculpe, pero se ha alcanzado el límite de cupos disponibles para el curso "
-					, MessageBoxButtons.OK, MessageBoxIcon.Information);
+				this.Notificar("No hay cupos disponibles", "Disculpe, pero se ha alcanzado el límite de cupos disponibles para el curso ", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				return false; 
 			}
 			else if (this.Modo.Equals(ModoForm.Alta) && !alumnoInscripcioLogic.EstaInscripto(((Curso)comboBox_Curso.SelectedItem).ID, int.Parse(txt_IDAlumno.Text) ,DateTime.Now.Year))
 			{
-				this.Notificar("Cuidado, revisar", "Usted ya se encuentra inscripto al curso. Por favor, fíjese si seleccionó el curso correcto"
-					, MessageBoxButtons.OK, MessageBoxIcon.Information);
+				this.Notificar("Cuidado, revisar", "Usted ya se encuentra inscripto al curso. Por favor, fíjese si seleccionó el curso correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				return false;
 			}
 			else
@@ -254,19 +253,20 @@ namespace UI.Desktop
 		{
 			txt_ID_Inscripcion.Text = "";
 			comboBox_Condicion.SelectedIndex = -1;
-			txt_Nota.Text = "";
+			comboBox_Curso.SelectedIndex = -1;
+			num_Nota.Value=0;
 		}
 
 		public void InicializarValores()
 		{
-			int anio = DateTime.Now.Year;
-			txt_FechaLimite.Text = anio.ToString()+"-04-01";
+			AlumnoInscripcionLogic ail = new AlumnoInscripcionLogic();
+			this.txt_FechaLimite.Text = ail.GetFechaLimiteInscripcion().ToString("dd/MM/yyyy", CultureInfo.InvariantCulture); 
 		}
 
 	#endregion
 
 
-	#region Disparadores
+		#region Disparadores
 	private void FormInscripciones_Load(object sender, EventArgs e)
 		{
 			btnAceptar.Visible = false;
@@ -279,17 +279,15 @@ namespace UI.Desktop
 		{
 			try
 			{
-				LimpiarCampos();
-				/////////////////////////////////////////////////////////////////////////////------/////////////////////////////////////////
+				LimpiarCampos(); 
 				lbl_header.Text = " ";
 				lbl_header.Text = "Inscripción a materia. Seleccione una";
 				btnAceptar.Visible = true;
-				this.txt_Nota.Text = "0";
-				this.txt_Nota.Enabled = false;
-				this.comboBox_Condicion.Text = "";
-				this.comboBox_Condicion.SelectedText = "Inscripto";
-				this.comboBox_Condicion.Enabled = false;
-				////////////////////////////////////////////////////////////////////////------/////////////////////////////////////////
+				this.num_Nota.Value = 0;
+				//this.comboBox_Condicion.Text = "";
+				//this.comboBox_Condicion.SelectedText = "Inscripto";
+				this.comboBox_Condicion.SelectedItem = ValoresEstadoRegularidad.Inscripto;
+				this.comboBox_Condicion.Enabled = false; 
 				Modo = FormInscripciones.ModoForm.Alta;
 				this.btnAceptar.Text = "Agregar";
 				AlumnoInscripcionLogic inscripcionLogic = new AlumnoInscripcionLogic();
@@ -311,7 +309,8 @@ namespace UI.Desktop
 				Modo = FormInscripciones.ModoForm.Modificacion;
 				lbl_header.Text = " ";
 				lbl_header.Text= "Editar inscripción";
-				this.txt_Nota.Enabled = true;
+				this.num_Nota.Enabled = true;
+				this.comboBox_Condicion.Text = "";
 				this.comboBox_Condicion.Enabled = true;
 				btnAceptar.Visible = true;
 				this.LimpiarCampos();
@@ -382,6 +381,20 @@ namespace UI.Desktop
 		{
 			Listar();
 		}
+		private void btn_GuardarFecha_Click(object sender, EventArgs e)
+		{
+			DateTime dt = DateTime.Now;
+			if (!DateTime.TryParse(txt_FechaLimite.Text, CultureInfo.CreateSpecificCulture("es-AR"), DateTimeStyles.None, out dt))
+			{
+				this.Notificar("Cuidado, revisar", "Formato de fecha invalido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			}
+			else
+			{
+				AlumnoInscripcionLogic inscripcionLogic = new AlumnoInscripcionLogic();
+				inscripcionLogic.ActualizaFechaLimiteInscripcion(DateTime.Parse(txt_FechaLimite.Text));
+				this.Notificar("Guardado correctamente", "Se ha actualizado correctamente la fecha limíte de inscripción", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			}
+		}
 		#endregion
 
 
@@ -391,5 +404,6 @@ namespace UI.Desktop
 			Util.FormatoCelda.FormatoCeldaParaObjects(sender, e, this.dgv_AlumnoInscripcion);
 		}
 		#endregion
+
 	}
 }

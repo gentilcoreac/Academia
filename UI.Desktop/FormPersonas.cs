@@ -7,6 +7,7 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business.Entities;
@@ -254,6 +255,7 @@ namespace UI.Desktop
 		/// <remarks></remarks>
 		public override bool Validar()
 		{
+			DateTime dt = DateTime.Now;
 			if (String.IsNullOrEmpty(this.txt_Apellido.Text) 
 				|| String.IsNullOrEmpty(this.txt_Nombre.Text) 
 				|| String.IsNullOrEmpty(this.txt_Direccion.Text) 
@@ -267,32 +269,42 @@ namespace UI.Desktop
 				|| String.IsNullOrEmpty(this.txtEmail.Text) 
 				|| String.IsNullOrEmpty(this.txtClave.Text))
 			{
-				this.Notificar("Cuidado, revisar", "Por favor, complete todos los campos"
-						,  MessageBoxButtons.OK, MessageBoxIcon.Information);
+				this.Notificar("Cuidado, revisar", "Por favor, complete todos los campos",  MessageBoxButtons.OK, MessageBoxIcon.Information);
 				return false;
 			}
 			else if (!Util.Campo.IsValidEmail(this.txt_Email.Text))
 			{
-				this.Notificar("Cuidado, revisar", "Formato de email personal incorrecto"
-						,  MessageBoxButtons.OK, MessageBoxIcon.Information);
+				this.Notificar("Cuidado, revisar", "Formato de email personal incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				return false;
+			}
+			else if (!DateTime.TryParse(txt_FechaNacimiento.Text, CultureInfo.CreateSpecificCulture("es-AR"), DateTimeStyles.None,out dt))
+			{
+				this.Notificar("Cuidado, revisar", "Formato de fecha invalido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				return false;
+			}
+			else if (!Regex.IsMatch(txt_Legajo.Text, "[1-9][0-9]*"))															
+			{
+				this.Notificar("Cuidado, revisar", "El legajo debe teber un valor númerico mayor a cero", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				return false;
+			}
+			else if (!Regex.IsMatch(txt_Telefono.Text, "[1-9][0-9]*"))
+			{
+				this.Notificar("Cuidado, revisar", "El teléfono debe tener un valor númerico", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				return false;
 			}
 			else if (this.txtClave.Text.Length < 8)
 			{
-				this.Notificar("Cuidado, revisar", "La contraseña debe tener 8 o más caracteres"
-						, MessageBoxButtons.OK, MessageBoxIcon.Information);
+				this.Notificar("Cuidado, revisar", "La contraseña debe tener 8 o más caracteres", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				return false;
 			}
 			else if (this.txtClave.Text != this.txtConfirmarClave.Text)
 			{
-				this.Notificar("Cuidado, revisar", "No coincide la clave con su clave de confirmación"
-					, MessageBoxButtons.OK, MessageBoxIcon.Information);
+				this.Notificar("Cuidado, revisar", "No coincide la clave con su clave de confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				return false;
 			}
 			else if (!Util.Campo.IsValidEmail(this.txtEmail.Text))
 			{
-				this.Notificar( "Cuidado, revisar", "Formato de email de usuario incorrecto"
-					,MessageBoxButtons.OK, MessageBoxIcon.Information);
+				this.Notificar( "Cuidado, revisar", "Formato de email de usuario incorrecto",MessageBoxButtons.OK, MessageBoxIcon.Information);
 				return false;
 			}
 			else

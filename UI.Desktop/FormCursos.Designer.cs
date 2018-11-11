@@ -256,6 +256,7 @@
 			// 
 			// comboBox_Comision
 			// 
+			this.comboBox_Comision.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboBox_Comision.FormattingEnabled = true;
 			this.comboBox_Comision.Location = new System.Drawing.Point(414, 37);
 			this.comboBox_Comision.Name = "comboBox_Comision";
@@ -283,6 +284,7 @@
 			// 
 			// comboBox_Materia
 			// 
+			this.comboBox_Materia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboBox_Materia.FormattingEnabled = true;
 			this.comboBox_Materia.Location = new System.Drawing.Point(675, 37);
 			this.comboBox_Materia.Name = "comboBox_Materia";
