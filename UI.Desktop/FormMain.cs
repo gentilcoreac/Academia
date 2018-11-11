@@ -130,7 +130,13 @@ namespace UI.Desktop
 
 		private void inscriptosAñoActualToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-
+            FormReportePlanes formReporte = new FormReportePlanes();
+            formReporte.Show();
 		}
-	}
+
+        private void planesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
