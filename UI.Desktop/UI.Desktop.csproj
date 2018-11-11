@@ -156,6 +156,18 @@
     <Compile Include="FormPlanes.Designer.cs">
       <DependentUpon>FormPlanes.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormReporteCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReporteCursos.Designer.cs">
+      <DependentUpon>FormReporteCursos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportePlanes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportePlanes.Designer.cs">
+      <DependentUpon>FormReportePlanes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +209,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPlanes.resx">
       <DependentUpon>FormPlanes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReporteCursos.resx">
+      <DependentUpon>FormReporteCursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReportePlanes.resx">
+      <DependentUpon>FormReportePlanes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUsuarios.resx">
       <DependentUpon>FormUsuarios.cs</DependentUpon>
