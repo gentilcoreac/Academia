@@ -34,10 +34,8 @@ namespace Web
         #region Disparadores
         protected void Page_Load(object sender, EventArgs e)
         {
-			if (Session["UsuarioLogueado"] != null)
+			if ( Session["UsuarioLogueado"] != null)
 			{
-
-
 				if (PaginaEnEstadoEdicion() && !IsPostBack)
 				{
 					int id = Int32.Parse(Request.QueryString["id"]);
@@ -45,18 +43,15 @@ namespace Web
 					UsuarioActual = PersonaActual.UsuarioPersona;
 					llenaCampos();
 				}
-
 				if (PaginaEnEstadoAlta() && !IsPostBack)
 				{
 					llenaDropDownLists();
 				}
-
 			}
 			else
 			{
 				Response.Redirect("/login.aspx");
 			}
-
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)

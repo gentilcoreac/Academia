@@ -16,6 +16,9 @@ namespace Web
 			if (Session["UsuarioLogueado"] == null)
 			{
 				Response.Redirect("/login.aspx");
+			}else if(!((Usuario)Session["UsuarioLogueado"]).IDPersona.TiposPersona.Equals(Persona.TiposPersonas.Administrador))
+			{
+				Response.Redirect("/Materias.aspx");
 			}
 		}
 

@@ -1,39 +1,39 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MateriasEditar.aspx.cs" MasterPageFile="~/BasePaginaMaestra.Master" Inherits="Web.MateriasEditar" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContentBase" runat="server">
-	<table border="1">
+ <table class="table table-stripped" id="tblDatosPersona">
 		<tr>
 			<td align="center" colspan="2" style="height: 21px">
 				<asp:Label ID="lblTablaMateria" runat="server" Text="Datos materia"></asp:Label></td>
 		</tr>
 		<tr>
-			<td style="width: 150px" align="right">
+			<td style="width: 150px; height: 47px;" align="right">
 				Id Materia: </td>
-			<td class="auto-style2">
+			<td class="auto-style2" style="height: 47px">
 				<asp:Label ID="lblIdMateria" runat="server"></asp:Label>
 		</tr>
 		<tr>
-			<td style="width: 150px" align="right">
+			<td style="width: 150px; height: 48px;" align="right">
 				Descripción:</td>
-			<td class="auto-style2">
+			<td class="auto-style2" style="height: 48px">
 				<asp:TextBox ID="txtDescripcion" runat="server"></asp:TextBox></td>
 		</tr>
 		<tr>
-			<td style="width: 150px" align="right">
+			<td style="width: 150px; height: 48px;" align="right">
 				Horas semanales:</td>
-			<td class="auto-style2">
-				<asp:TextBox ID="txtHsSemanales" runat="server"></asp:TextBox></td>
+			<td class="auto-style2" style="height: 48px">
+				<asp:TextBox ID="txtHsSemanales" runat="server" type="number"></asp:TextBox></td>
 		</tr>
 		<tr>
-			<td style="width: 150px" align="right">
+			<td style="width: 150px; height: 49px;" align="right">
 				Horas totales:</td>
-			<td class="auto-style2">
-				<asp:TextBox ID="txtHorasTotales" runat="server"></asp:TextBox></td>
+			<td class="auto-style2" style="height: 49px">
+				<asp:TextBox ID="txtHorasTotales" runat="server" type="number"></asp:TextBox></td>
 		</tr>
 		<tr>
-			<td style="width: 150px" align="right">
+			<td style="width: 150px; height: 49px;" align="right">
 				Plan:</td>
-			<td class="auto-style1">
+			<td class="auto-style1" style="height: 49px">
 				<asp:DropDownList ID="ddlPlan" runat="server">
 				</asp:DropDownList>
 			</td>

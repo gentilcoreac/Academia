@@ -34,16 +34,23 @@ namespace Web
         #region Disparadores
         protected void Page_Load(object sender, EventArgs e)
         {
+			//((Usuario)Session["UsuarioLogueado"]).IDPersona.TiposPersona.Equals(Persona.TiposPersonas.Administrador)
+			Usuario usuarioLogueado = (Usuario)Session["UsuarioLogueado"];
+
+
 			if (Session["UsuarioLogueado"] != null)
 			{
-				if (PaginaEnEstadoEdicion() && !IsPostBack)
-							{
-								int id = Int32.Parse(Request.QueryString["id"]);
-								MateriaActual = ml.GetOne(id);
-								PlanActual = MateriaActual.Plan;
-								llenaCampos();
-							}
-
+				if (usuarioLogueado.IDPersona.TiposPersona.Equals(Persona.TiposPersonas.Administrador))
+				{
+					if (PaginaEnEstadoEdicion() && !IsPostBack)
+					{
+						int id = Int32.Parse(Request.QueryString["id"]);
+						MateriaActual = ml.GetOne(id);
+						PlanActual = MateriaActual.Plan;
+						llenaCampos();
+					}
+				}
+				
 			}
 			else
 			{
