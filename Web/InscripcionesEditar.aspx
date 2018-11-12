@@ -1,48 +1,43 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/BasePaginaMaestra.Master" CodeFile="InscripcionesEditar.aspx.cs" Inherits="Web.InscripcionesEditar" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContentBase">
-       <div class="container">
-		<div class="row">
-			<div class="col-sm">
-				<table class="table table-stripped" id="tblDatosPersona" style="height: 187px">
-					<tr>
-						<td colspan="2" style="height: 41px">
-							<asp:Label ID="lblTablaPersona" runat="server" Text="Datos personales"></asp:Label></td>
-					</tr>
-					<tr>
-						<td style="width: 225px; height: 47px;">
-							Id inscripcion: </td>
-						<td style="height: 47px">
-							<asp:Label ID="lblIdInscripcion" runat="server"></asp:Label>
-					</tr>
-					<tr>
-						<td style="width: 225px">
-							ID Alumno:</td>
-						<td>
-							<asp:TextBox ID="txtAlumno" runat="server"></asp:TextBox></td>
-					</tr>
-					<tr>
-						<td style="width: 225px">
-							ID Curso:</td>
-						<td>
-							<asp:TextBox ID="txtCurso" runat="server"></asp:TextBox></td>
-					</tr>
-                    <tr>
-						<td style="width: 225px">
-							Nota:</td>
-						<td>
-							<asp:TextBox ID="txtNota" runat="server" type="number"></asp:TextBox></td>
-					</tr>
-                    <tr>
-						<td style="width: 225px">
-							Condicion:</td>
-						<td>
-							<asp:TextBox ID="txtCondicion" runat="server"></asp:TextBox></td>
-					</tr>
-				</table>
-			</div>
+	<table border="1">
+		<tr>
+			<td align="center" colspan="2" style="height: 21px">
+				<asp:Label ID="lblTablaInscripcion" runat="server" Text="Datos Inscripcion"></asp:Label></td>
+		</tr>
+		<tr>
+			<td style="width: 150px" align="right">
+				ID Inscripcion: </td>
+			<td class="auto-style2">
+				<asp:Label ID="lblIdInscripcion" runat="server"></asp:Label></td>
+		</tr>
+		<tr>
+			<td style="width: 150px" align="right">
+				ID Alumno:</td>
+			<td class="auto-style2">
+				<asp:Label ID="lblIdAlumno" runat="server"></asp:Label></td>
+		</tr>   
+		<tr>
+			<td style="width: 150px; height: 23px;" align="right">
+				ID Curso:</td>
+			<td class="auto-style1" style="height: 23px">
+				<asp:Label ID="lblIdCurso" runat="server"></asp:Label></td>
+		</tr>
+		<tr>
+			<td style="width: 150px" align="right">
+				Condicion:</td>
+			<td><asp:DropDownList ID="ddlCondicion" runat="server">
+				</asp:DropDownList></td>
 
-	<asp:Button ID="btnGuardar" CssClass="btn btn-success" runat="server" Text="Guardar" OnClick="btnGuardar_Click" />
-	<asp:Button ID="btnCancelar" CssClass="btn btn-secondary" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" />
-       </div>
+		</tr>
+		<tr>
+			<td style="width: 150px" align="right">
+				Nota:</td>
+			<td><asp:TextBox runat="server" ID="txtNota"></asp:TextBox></td>
+		</tr>		
+	</table>
+	<div></div>
+	<asp:Button ID="btnGuardar" CssClass="btn btn-primary" runat="server" Text="Guardar" OnClick="btnGuardar_Click" />
+	<asp:Button ID="btnCancelar" CssClass="btn btn-primary" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" />
 </asp:Content>

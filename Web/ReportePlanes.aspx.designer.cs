@@ -10,7 +10,7 @@
 namespace Web {
     
     
-    public partial class ReporteInscriptos {
+    public partial class ReportePlanes {
         
         /// <summary>
         /// Control ReportViewer1.

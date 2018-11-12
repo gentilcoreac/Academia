@@ -31,7 +31,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>id plan</Value>
+                              <Value>ID Plan</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
@@ -65,7 +65,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>desc plan</Value>
+                              <Value>Plan</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
@@ -99,7 +99,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>id especialidad</Value>
+                              <Value>ID Especialidad</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
@@ -133,7 +133,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>desc especialidad</Value>
+                              <Value>Especialidad</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
@@ -309,7 +309,7 @@
         <Top>0.31433cm</Top>
         <Left>0.68474cm</Left>
         <Height>1.49104cm</Height>
-        <Width>16.82625cm</Width>
+        <Width>16.82624cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
