@@ -793,7 +793,7 @@ namespace UI.Desktop {
             this.DataSetName = "AcademiaDataSet";
             this.Prefix = "";
             this.Namespace = "http://tempuri.org/AcademiaDataSet.xsd";
-            this.EnforceConstraints = true;
+            this.EnforceConstraints = false;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tablealumnos_inscripciones = new alumnos_inscripcionesDataTable();
             base.Tables.Add(this.tablealumnos_inscripciones);

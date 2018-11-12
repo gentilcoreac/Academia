@@ -10,34 +10,16 @@
 namespace Web {
     
     
-    public partial class InscripcionesEditar {
+    public partial class CursosEditar {
         
         /// <summary>
-        /// Control lblTablaInscripcion.
+        /// Control lblTablaMateria.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTablaInscripcion;
-        
-        /// <summary>
-        /// Control lblIdInscripcion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblIdInscripcion;
-        
-        /// <summary>
-        /// Control lblIdAlumno.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblIdAlumno;
+        protected global::System.Web.UI.WebControls.Label lblTablaMateria;
         
         /// <summary>
         /// Control lblIdCurso.
@@ -49,22 +31,40 @@ namespace Web {
         protected global::System.Web.UI.WebControls.Label lblIdCurso;
         
         /// <summary>
-        /// Control ddlCondicion.
+        /// Control txtAnioCalendario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlCondicion;
+        protected global::System.Web.UI.WebControls.TextBox txtAnioCalendario;
         
         /// <summary>
-        /// Control txtNota.
+        /// Control txtCupo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNota;
+        protected global::System.Web.UI.WebControls.TextBox txtCupo;
+        
+        /// <summary>
+        /// Control ddlComision.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlComision;
+        
+        /// <summary>
+        /// Control ddlMateria.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlMateria;
         
         /// <summary>
         /// Control btnGuardar.

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/BasePaginaMaestra.Master" CodeBehind="CursosEditar.aspx.cs" Inherits="Web.CursosEditar" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CursosEditar.aspx.cs"  MasterPageFile="~/BasePaginaMaestra.Master" Inherits="Web.CursosEditar" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContentBase">
 	<table border="1">
@@ -7,9 +7,9 @@
 				<asp:Label ID="lblTablaMateria" runat="server" Text="Datos Curso"></asp:Label></td>
 		</tr>
 		<tr>
-			<td style="width: 150px" align="right">
+			<td style="width: 150px; height: 21px;" align="right">
 				ID Curso: </td>
-			<td class="auto-style2">
+			<td class="auto-style2" style="height: 21px">
 				<asp:Label ID="lblIdCurso" runat="server"></asp:Label>
 		</tr>
 		<tr>

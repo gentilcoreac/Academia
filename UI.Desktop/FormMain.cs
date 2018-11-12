@@ -130,13 +130,24 @@ namespace UI.Desktop
 
 		private void inscriptosAñoActualToolStripMenuItem_Click(object sender, EventArgs e)
 		{
+            panel_Principal.Controls.Clear();
             FormReporteCursos formReporteCursos = new FormReporteCursos();
+            formReporteCursos.TopLevel = false;
+            formReporteCursos.AutoScroll = false;
+            this.panel_Principal.Controls.Add(formReporteCursos);
             formReporteCursos.Show();
-		}
+
+
+
+        }
 
         private void planesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            panel_Principal.Controls.Clear();
             FormReportePlanes formReportePlanes = new FormReportePlanes();
+            formReportePlanes.TopLevel = false;
+            formReportePlanes.AutoScroll = false;
+            this.panel_Principal.Controls.Add(formReportePlanes);
             formReportePlanes.Show();
         }
     }

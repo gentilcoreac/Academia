@@ -20,6 +20,7 @@ namespace UI.Desktop
         private void FormReporteCursos_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'AcademiaDataSet.SP_Cursos' Puede moverla o quitarla según sea necesario.
+            AcademiaDataSet.EnforceConstraints = false;
             this.SP_CursosTableAdapter.Fill(this.AcademiaDataSet.SP_Cursos);
 
             this.reportViewer1.RefreshReport();
