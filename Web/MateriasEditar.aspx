@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MateriasEditar.aspx.cs" MasterPageFile="~/BasePaginaMaestra.Master" Inherits="Web.MateriasEditar" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="MateriasEditar.aspx.cs" MasterPageFile="~/BasePaginaMaestra.Master" Inherits="Web.MateriasEditar" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContentBase" runat="server">
  <table class="table table-stripped" id="tblDatosPersona">
