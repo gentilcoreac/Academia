@@ -47,6 +47,7 @@ public partial class CursosEditar : System.Web.UI.Page
 						MateriaActual = CursoActual.Materia;
 						ComisionActual = CursoActual.Comision;
 						llenaCampos();
+						EstableceAño();
 					}
 				}
 				else
@@ -86,7 +87,7 @@ public partial class CursosEditar : System.Web.UI.Page
 			}
 
 			/// <summary>
-			/// Llena los campos con los datos de la Persona y Usuario previamente traidos de la BD
+			/// Llena los campos con los datos del curso previamente traidos de la BD
 			/// </summary>
 			private void llenaCampos()
 			{
@@ -95,7 +96,7 @@ public partial class CursosEditar : System.Web.UI.Page
 				txtCupo.Text = CursoActual.Cupo.ToString();
 
 				//Llenar los dropdownlists
-				ddlComision.DataSource = comLogic.GetAll();
+				ddl_Comision.DataSource = comLogic.GetAll();
 				ddlComision.DataValueField = "ID";
 				ddlComision.DataTextField = "Descripcion";
 				ddlComision.DataBind();
@@ -106,7 +107,6 @@ public partial class CursosEditar : System.Web.UI.Page
 				ddlMateria.DataTextField = "Descripcion";
 				ddlMateria.DataBind();
 				ddlMateria.SelectedValue = MateriaActual.ID.ToString();
-
 			}
 
 			/// <summary>
@@ -123,6 +123,11 @@ public partial class CursosEditar : System.Web.UI.Page
 				CursoActual.Materia = new Materia();
 				CursoActual.Materia.ID = Int32.Parse(ddlMateria.SelectedValue);
 			}
-			#endregion
+
+			private void EstableceAño()
+			{
+				txtAnioCalendario.Text = DateTime.Today.Year.ToString();
+			}
+	#endregion
 
 }

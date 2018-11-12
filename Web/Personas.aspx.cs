@@ -11,7 +11,6 @@ namespace Web
 {
     public partial class Personas : System.Web.UI.Page
     {
-
         UsuarioLogic ul = new UsuarioLogic();
         PersonaLogic pl = new PersonaLogic();
         Persona PersonaActual = new Persona();
@@ -20,7 +19,6 @@ namespace Web
         {
 			if (Session["UsuarioLogueado"] != null)
 			{
-
 				if (((Usuario)Session["UsuarioLogueado"]).IDPersona.TiposPersona.ToString() == "Administrador")
 				{
 					btnNuevo.Visible = true;
