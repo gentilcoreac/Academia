@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/BasePaginaMaestra.Master" CodeBehind="PersonasEditar.aspx.cs" Inherits="Web.PersonasEditar" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/BasePaginaMaestra.Master" CodeFile="PersonasEditar.aspx.cs" Inherits="Web.PersonasEditar" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContentBase">
 	<div class="container">

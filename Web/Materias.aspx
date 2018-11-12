@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/BasePaginaMaestra.Master" CodeBehind="Materias.aspx.cs" Inherits="Web.Materias" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/BasePaginaMaestra.Master" CodeFile="Materias.aspx.cs" Inherits="Web.Materias" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContentBase" runat="server">
 		<asp:GridView ID="grdMaterias" CssClass="table" runat="server" DataSourceID="odsMaterias" OnRowCommand="grdMaterias_RowCommand" OnSelectedIndexChanged="grdMaterias_SelectedIndexChanged" AutoGenerateColumns="False">
