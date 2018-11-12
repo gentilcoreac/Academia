@@ -16,7 +16,7 @@ namespace Web
         private PersonaLogic pl = new PersonaLogic();
         private Persona _PersonaActual = new Persona();
         private Usuario _UsuarioActual = new Usuario();
-        public enum ModoForm { Baja, Alta, Modificacion, Consulta };
+        public enum ModoForm { Alta, Baja, Modificacion, Consulta };
         private ModoForm _Modo;
         #endregion
 
@@ -45,7 +45,7 @@ namespace Web
 				}
 				if (PaginaEnEstadoAlta() && !IsPostBack)
 				{
-					llenaDropDownLists();
+					LlenaDropDownLists();
 				}
 			}
 			else
@@ -113,7 +113,7 @@ namespace Web
             //Tabla de datos institucionales
             txtLegajo.Text = PersonaActual.Legajo.ToString();
             //Llenar los dropdownlists
-            llenaDropDownLists();
+            LlenaDropDownLists();
             ddlPlan.SelectedValue = PersonaActual.Plan_persona.ID.ToString();
             ddlTipoPersona.SelectedValue = PersonaActual.TiposPersona.ToString();
 
@@ -124,7 +124,7 @@ namespace Web
             txtEmailUsuario.Text = UsuarioActual.Email;
         }
 
-        private void llenaDropDownLists()
+        private void LlenaDropDownLists()
         {
             PlanLogic planLogic = new PlanLogic();
             ddlPlan.DataSource = planLogic.GetAll();
@@ -170,6 +170,11 @@ namespace Web
             PersonaActual.TiposPersona = ((Persona.TiposPersonas)ddlTipoPersona.SelectedIndex + 1); //Suma 1 porque el índice seleccionado comienza por 0
             PersonaActual.UsuarioPersona = UsuarioActual;
         }
-        #endregion 
+        #endregion
+
+        protected void ddlPlan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

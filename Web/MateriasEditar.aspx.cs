@@ -47,9 +47,14 @@ namespace Web
 						int id = Int32.Parse(Request.QueryString["id"]);
 						MateriaActual = ml.GetOne(id);
 						PlanActual = MateriaActual.Plan;
-						llenaCampos();
+						LlenaCampos();
 					}
-				}
+
+                    if (PaginaEnEstadoAlta() && !IsPostBack)
+                    {
+                        LlenaDropDownList();
+                    }
+                }
 				
 			}
 			else
@@ -89,24 +94,40 @@ namespace Web
             }
         }
 
+        private bool PaginaEnEstadoAlta()
+        {
+            if (Request.QueryString["mode"] == "new")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         /// <summary>
         /// Llena los campos con los datos de la Persona y Usuario previamente traidos de la BD
         /// </summary>
-        private void llenaCampos()
+        private void LlenaCampos()
         {
             lblIdMateria.Text = MateriaActual.ID.ToString();
             txtDescripcion.Text = MateriaActual.Descripcion.ToString();
             txtHsSemanales.Text = MateriaActual.HSSemanales.ToString();
             txtHorasTotales.Text = MateriaActual.HSTotales.ToString();
 
-            //Llenar el dropdownlist
+            LlenaDropDownList();
+            //Selecciona el valor actual del DDL traido de la BD
+            ddlPlan.SelectedValue = MateriaActual.Plan.ID.ToString();
+        }
+
+        private void LlenaDropDownList()
+        {
             PlanLogic planLogic = new PlanLogic();
             ddlPlan.DataSource = planLogic.GetAll();
             ddlPlan.DataValueField = "ID";
             ddlPlan.DataTextField = "WebDesc";
             ddlPlan.DataBind();
-
-            ddlPlan.SelectedValue = MateriaActual.Plan.ID.ToString();
         }
 
         /// <summary>

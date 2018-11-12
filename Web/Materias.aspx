@@ -14,4 +14,6 @@
         <div>
         	<asp:ObjectDataSource ID="odsMaterias" runat="server" DataObjectTypeName="Business.Entities.Materia" DeleteMethod="Delete" InsertMethod="Save" SelectMethod="GetAll" TypeName="Business.Logic.MateriaLogic" UpdateMethod="Save"></asp:ObjectDataSource>
         </div>
+
+	<asp:Button ID="btnNuevo" CssClass="btn btn-primary" runat="server" Text="Nuevo" OnClick="btnNuevo_Click" />
 </asp:Content>

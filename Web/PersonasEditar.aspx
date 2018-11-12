@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/BasePaginaMaestra.Master" CodeBehind="PersonasEditar.aspx.cs" Inherits="Web.PersonasEditar" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContentBase">
-    <div class="container">
+	<div class="container">
 		<div class="row">
 			<div class="col-sm">
 				<table class="table table-stripped" id="tblDatosPersona">
@@ -13,43 +13,43 @@
 						<td style="width: 225px">
 							Id Persona: </td>
 						<td>
-							<asp:Label ID="lblIdPersona" runat="server" type="number"></asp:Label>
+							<asp:Label ID="lblIdPersona" runat="server" type="number" ></asp:Label>
 					</tr>
 					<tr>
 						<td style="width: 225px">
 							Nombre:</td>
 						<td>
-							<asp:TextBox ID="txtNombre" runat="server"></asp:TextBox></td>
+							<asp:TextBox ID="txtNombre" CssClass="form-control" runat="server"></asp:TextBox></td>
 					</tr>
 					<tr>
 						<td style="width: 225px">
 							Apellido:</td>
 						<td>
-							<asp:TextBox ID="txtApellido" runat="server"></asp:TextBox></td>
+							<asp:TextBox ID="txtApellido" CssClass="form-control" runat="server"></asp:TextBox></td>
 					</tr>
 					<tr>
 						<td style="width: 225px">
 							Dirección:</td>
 						<td>
-							<asp:TextBox ID="txtDireccion" runat="server"></asp:TextBox></td>
+							<asp:TextBox ID="txtDireccion" CssClass="form-control" runat="server"></asp:TextBox></td>
 					</tr>
 					<tr>
 						<td style="width: 225px">
 							Teléfono:</td>
 						<td>
-							<asp:TextBox ID="txtTelefono" runat="server" type="number"></asp:TextBox></td>
+							<asp:TextBox ID="txtTelefono" CssClass="form-control" runat="server" type="number"></asp:TextBox></td>
 					</tr>
 					<tr>
 						<td style="width: 225px">
 							Fecha de Nacimiento:</td>
 						<td class="auto-style2">
-							<asp:TextBox ID="txtFechaNac" runat="server" type="date"></asp:TextBox></td>
+							<asp:TextBox ID="txtFechaNac" CssClass="form-control" runat="server" type="date"></asp:TextBox></td>
 					</tr>
 					<tr>
 						<td style="width: 225px">
 							Email Personal:</td>
 						<td>
-							<asp:TextBox ID="txtEmailPersonal" runat="server" type="email"></asp:TextBox></td>
+							<asp:TextBox ID="txtEmailPersonal" CssClass="form-control" runat="server" type="email"></asp:TextBox></td>
 					</tr>
 				</table>
 			</div>
@@ -57,7 +57,7 @@
 				<table class="table table-stripped" id="tblDatosSistema">
 					<tr>
 						<td colspan="2">
-							<asp:Label ID="Label1" runat="server" Text="Datos para el sistema"></asp:Label></td>
+							<asp:Label ID="lblDatosSistema" runat="server" Text="Datos para el sistema"></asp:Label></td>
 					</tr>
 					<tr>
 						<td style="width: 225px">
@@ -69,27 +69,27 @@
 						<td style="width: 225px">
 							Usuario:</td>
 						<td>
-							<asp:TextBox ID="txtNombreUsuario" runat="server" Text="Nombre Usuario: "></asp:TextBox></td>
+							<asp:TextBox ID="txtNombreUsuario" CssClass="form-control" runat="server" Text="Nombre Usuario: "></asp:TextBox></td>
 					</tr>
 					<tr>
 						<td style="width: 225px">
 							Clave:</td>
 	                
 						<td>
-							<asp:TextBox ID="txtClave" runat="server"></asp:TextBox></td>
+							<asp:TextBox ID="txtClave" CssClass="form-control" runat="server"></asp:TextBox></td>
 					</tr>
 					<tr>
 						<td style="width: 225px; height: 50px;">
 							Confirmar Clave</td>
 						<td style="height: 50px">
-							<asp:TextBox ID="txtConfirmaClave" runat="server"></asp:TextBox></td>
+							<asp:TextBox ID="txtConfirmaClave" CssClass="form-control" runat="server"></asp:TextBox></td>
 					</tr>
 					<tr>
 						<td style="width: 225px; height: 50px;">
 							Habilitado</td>
 						<td style="height: 50px">
 
-							<asp:CheckBox ID="cbHabilitado" runat="server" />
+							<asp:CheckBox CssClass="form-check-input" ID="cbHabilitado" runat="server" />
 
 						</td>
 					</tr>
@@ -97,7 +97,7 @@
 						<td style="width: 225px; height: 50px;">
 							Email Usuario:</td>
 						<td style="height: 50px">
-							<asp:TextBox ID="txtEmailUsuario" runat="server" type="email"></asp:TextBox></td>
+							<asp:TextBox ID="txtEmailUsuario" CssClass="form-control" runat="server" type="email"></asp:TextBox></td>
 					</tr>
 				</table>
 			</div>
@@ -111,13 +111,13 @@
 						<td style="width: 227px; height: 49px;">
 							Legajo:</td>
 						<td style="height: 49px">
-							<asp:TextBox ID="txtLegajo" runat="server" type="number"></asp:TextBox></td>
+							<asp:TextBox ID="txtLegajo" CssClass="form-control" runat="server" type="number"></asp:TextBox></td>
 					</tr>
 					<tr>
 						<td style="width: 227px; height: 50px;">
 							Tipo de Persona:</td>
 						<td style="height: 50px">
-							<asp:DropDownList ID="ddlTipoPersona" runat="server">
+							<asp:DropDownList ID="ddlTipoPersona" CssClass="form-control" runat="server">
 							</asp:DropDownList>
 						</td>
 					</tr>
@@ -125,7 +125,7 @@
 						<td style="width: 227px; height: 50px;">
 							Plan:</td>
 						<td style="height: 50px">
-							<asp:DropDownList ID="ddlPlan" runat="server">
+							<asp:DropDownList ID="ddlPlan" CssClass="form-control" runat="server" OnSelectedIndexChanged="ddlPlan_SelectedIndexChanged">
 							</asp:DropDownList>
 						</td>
 					</tr>

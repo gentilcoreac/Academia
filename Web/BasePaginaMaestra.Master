@@ -39,29 +39,41 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" runat="server" href="~/">Academia</a>
-                </div>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+			<a class="navbar-brand" runat="server" href="~/">Academia</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
                 <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Inicio</a></li>
-                        <li><a runat="server" href="~/Personas">Gestión de Personas</a></li>
-                        <li><a runat="server" href="~/Planes">Gestión de Planes</a></li>
-						<li><a runat="server" href="~/Materias.aspx">Gestión de Materias</a></li>
-						<li><a runat="server" href="~/Inscripciones.aspx">Gestión de Inscripciones</a></li>
-						<li><a runat="server" href="~/Cursos.aspx">Gestión de Cursos</a></li>
-						<li><a runat="server" href="~/Comisiones.aspx">Gestión de Comisiones</a></li>
+                    <ul class="navbar-nav mr-auto">
+						      <li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownGestion" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								  Gestión
+								</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdownGestion">
+									<a class="dropdown-item" runat="server" href="~/">Inicio</a>
+									<a class="dropdown-item" runat="server" href="~/Personas">Personas</a>
+									<a class="dropdown-item" runat="server" href="~/Planes">Planes</a>
+									<a class="dropdown-item" runat="server" href="~/Materias.aspx">Materias</a>
+									<a class="dropdown-item" runat="server" href="~/Inscripciones.aspx">Inscripciones</a>
+									<a class="dropdown-item" runat="server" href="~/Cursos.aspx">Cursos</a>
+									<a class="dropdown-item" runat="server" href="~/Comisiones.aspx">Comisiones</a>
+								</div>
+							  </li>
+
+						      <li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownReportes" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								  Reportes
+								</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdownReportes">
+									<a class="dropdown-item" runat="server" href="~/ReporteInscriptos.aspx">Cursos e Inscriptos</a>
+									<a class="dropdown-item" runat="server" href="~/ReportePlanes.aspx">Planes</a>
+								</div>
+							  </li>
                     </ul>
                 </div>
-            </div>
-        </div>
+        </nav>
+
         <div class="container body-content">
 			<br />
             <asp:ContentPlaceHolder ID="MainContentBase" runat="server">

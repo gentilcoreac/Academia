@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/BasePaginaMaestra.Master" CodeBehind="InscripcionesEditar.aspx.cs" Inherits="Web.InscripcionesEditar" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContentBase">
-	<table border="1">
+	<table class="table" border="1">
 		<tr>
 			<td align="center" colspan="2" style="height: 21px">
 				<asp:Label ID="lblTablaInscripcion" runat="server" Text="Datos Inscripcion"></asp:Label></td>
@@ -27,14 +27,14 @@
 		<tr>
 			<td style="width: 150px" align="right">
 				Condicion:</td>
-			<td><asp:DropDownList ID="ddlCondicion" runat="server">
+			<td><asp:DropDownList class="form-control" ID="ddlCondicion" runat="server">
 				</asp:DropDownList></td>
 
 		</tr>
 		<tr>
 			<td style="width: 150px" align="right">
 				Nota:</td>
-			<td><asp:TextBox runat="server" ID="txtNota"></asp:TextBox></td>
+			<td><asp:TextBox runat="server" class="form-control" type="number" min="1" max="10" step="1" pattern="\d+" ID="txtNota"></asp:TextBox></td>
 		</tr>		
 	</table>
 	<div></div>

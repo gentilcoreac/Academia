@@ -41,15 +41,13 @@ namespace Web
         {
             if (Session["UsuarioLogueado"] != null)
             {
-
-
                 if (PaginaEnEstadoEdicion() && !IsPostBack)
                 {
                     int id = Int32.Parse(Request.QueryString["id"]);
                     InscripcionActual = ail.GetOne(id);
                     PersonaActual = pl.GetOne(InscripcionActual.IDAlumno.ID);
                     CursoActual = cl.GetOne(InscripcionActual.IDCurso.ID);
-                    llenaCampos();
+                    LlenaCampos();
                 }
 
                 if (PaginaEnEstadoAlta() && !IsPostBack)
@@ -110,7 +108,7 @@ namespace Web
         /// <summary>
         /// Llena los campos con los datos de la Persona y Usuario previamente traidos de la BD
         /// </summary>
-        private void llenaCampos()
+        private void LlenaCampos()
         {
             lblIdInscripcion.Text = InscripcionActual.ID.ToString();
             lblIdAlumno.Text = PersonaActual.ID.ToString();

@@ -14,4 +14,6 @@
 	</asp:GridView>
 	<asp:ObjectDataSource ID="odsCursos" runat="server" DataObjectTypeName="Business.Entities.Curso" DeleteMethod="Delete" InsertMethod="Save" SelectMethod="GetAll" TypeName="Business.Logic.CursoLogic" UpdateMethod="Save"></asp:ObjectDataSource>
 	
+	<asp:Button ID="btnNuevo" CssClass="btn btn-primary" runat="server" Text="Nuevo" OnClick="btnNuevo_Click" />
+
 </asp:Content>

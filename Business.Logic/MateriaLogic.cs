@@ -40,7 +40,12 @@ namespace Business.Logic
 			return MateriaData.GetOne(ID);
 		}
 
-		public void Save(Materia materia)
+        public List<Materia> GetMateriasDisponibles(int id_comision)
+        {
+            return MateriaData.GetMateriasDisponibles(id_comision);
+        }
+
+        public void Save(Materia materia)
 		{
 			MateriaData.Save(materia);
 		}

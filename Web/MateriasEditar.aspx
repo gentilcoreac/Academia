@@ -22,13 +22,13 @@
 			<td style="width: 150px; height: 48px;" align="right">
 				Horas semanales:</td>
 			<td class="auto-style2" style="height: 48px">
-				<asp:TextBox ID="txtHsSemanales" runat="server" type="number"></asp:TextBox></td>
+				<asp:TextBox ID="txtHsSemanales" runat="server" min="1" step="1" type="number"></asp:TextBox></td>
 		</tr>
 		<tr>
 			<td style="width: 150px; height: 49px;" align="right">
 				Horas totales:</td>
 			<td class="auto-style2" style="height: 49px">
-				<asp:TextBox ID="txtHorasTotales" runat="server" type="number"></asp:TextBox></td>
+				<asp:TextBox ID="txtHorasTotales" runat="server" min="1" step="1" type="number"></asp:TextBox></td>
 		</tr>
 		<tr>
 			<td style="width: 150px; height: 49px;" align="right">

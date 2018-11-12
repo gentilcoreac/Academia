@@ -10,7 +10,7 @@
 namespace Web {
     
     
-    public partial class SiteMaster {
+    public partial class BasePaginaMaestra {
         
         /// <summary>
         /// Control MainContentBase.

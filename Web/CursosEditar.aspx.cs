@@ -48,8 +48,13 @@ namespace Web
                     CursoActual = cl.GetOne(id);
                     MateriaActual = CursoActual.Materia;
                     ComisionActual = CursoActual.Comision;
-                    llenaCampos();
+                    LlenaCampos();
+                }
+
+                if (PaginaEnEstadoAlta() && !IsPostBack)
+                {
                     EstableceAño();
+                    LlenaDropDownList();
                 }
             }
             else
@@ -88,26 +93,30 @@ namespace Web
             }
         }
 
+        private bool PaginaEnEstadoAlta()
+        {
+            if (Request.QueryString["mode"] == "new")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         /// <summary>
         /// Llena los campos con los datos del curso previamente traidos de la BD
         /// </summary>
-        private void llenaCampos()
+        private void LlenaCampos()
         {
             lblIdCurso.Text = CursoActual.ID.ToString();
             txtAnioCalendario.Text = CursoActual.AnioCalendario.ToString();
             txtCupo.Text = CursoActual.Cupo.ToString();
 
-            //Llenar los dropdownlists
-            ddlComision.DataSource = comLogic.GetAll();
-            ddlComision.DataValueField = "ID";
-            ddlComision.DataTextField = "Descripcion";
-            ddlComision.DataBind();
+            LlenaDropDownList();
+            //Asigna valores actuales a los DDL
             ddlComision.SelectedValue = ComisionActual.ID.ToString();
-
-            ddlMateria.DataSource = ml.GetAll();
-            ddlMateria.DataValueField = "ID";
-            ddlMateria.DataTextField = "Descripcion";
-            ddlMateria.DataBind();
             ddlMateria.SelectedValue = MateriaActual.ID.ToString();
         }
 
@@ -116,8 +125,16 @@ namespace Web
         /// </summary>
         private void MapearADatos()
         {
-            CursoActual.State = (Curso.States)ModoForm.Modificacion;
-            CursoActual.ID = Int32.Parse(lblIdCurso.Text);
+            if (PaginaEnEstadoEdicion())
+            {
+                CursoActual.State = (Curso.States)ModoForm.Modificacion;
+                CursoActual.ID = Int32.Parse(lblIdCurso.Text);
+            }
+            else if (PaginaEnEstadoAlta())
+            {
+                CursoActual.State = (Curso.States)ModoForm.Alta;
+            }
+            
             CursoActual.AnioCalendario = Int32.Parse(txtAnioCalendario.Text);
             CursoActual.Cupo = Int32.Parse(txtCupo.Text);
             CursoActual.Comision = new Comision();
@@ -126,11 +143,31 @@ namespace Web
             CursoActual.Materia.ID = Int32.Parse(ddlMateria.SelectedValue);
         }
 
+        private void LlenaDropDownList()
+        {
+            ddlComision.DataSource = comLogic.GetAll();
+            ddlComision.DataValueField = "ID";
+            ddlComision.DataTextField = "Descripcion";
+            ddlComision.DataBind();
+
+            ddlMateria.DataSource = ml.GetMateriasDisponibles(Int32.Parse(ddlComision.SelectedValue));
+            ddlMateria.DataValueField = "ID";
+            ddlMateria.DataTextField = "Descripcion";
+            ddlMateria.DataBind();
+        }
+
         private void EstableceAño()
         {
             txtAnioCalendario.Text = DateTime.Today.Year.ToString();
         }
         #endregion
 
+        protected void ddlComision_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ddlMateria.DataSource = ml.GetMateriasDisponibles(Int32.Parse(ddlComision.SelectedValue));
+            ddlMateria.DataValueField = "ID";
+            ddlMateria.DataTextField = "Descripcion";
+            ddlMateria.DataBind();
+        }
     }
 }

@@ -179,7 +179,6 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Inscripciones.aspx" />
     <Content Include="InscripcionesEditar.aspx" />
-    <Content Include="LabLoginMasterPage.Master" />
     <Content Include="BasePaginaMaestra.Master" />
     <Content Include="GeneralMasterPage.Master" />
     <Content Include="LoginPaginaMaestra.Master" />
@@ -207,7 +206,6 @@
     <Content Include="Planes.aspx" />
     <Content Include="ReporteInscriptos.aspx" />
     <Content Include="ReportePlanes.aspx" />
-    <Content Include="Save.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -329,13 +327,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="LabLoginMasterPage.Master.cs">
-      <DependentUpon>LabLoginMasterPage.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="LabLoginMasterPage.Master.designer.cs">
-      <DependentUpon>LabLoginMasterPage.Master</DependentUpon>
-    </Compile>
     <Compile Include="ListaUsuarios.aspx.cs">
       <DependentUpon>ListaUsuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -397,13 +388,6 @@
     </Compile>
     <Compile Include="ReportePlanes.aspx.designer.cs">
       <DependentUpon>ReportePlanes.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Save.aspx.cs">
-      <DependentUpon>Save.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Save.aspx.designer.cs">
-      <DependentUpon>Save.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

@@ -32,9 +32,9 @@ namespace Web
             
         }
 
-        private void MapearADatos()
+        protected void btnNuevo_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/MateriasEditar.aspx?mode=new");
         }
     }
 }

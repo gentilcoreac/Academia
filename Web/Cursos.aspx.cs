@@ -17,5 +17,10 @@ namespace Web
 				Response.Redirect("/login.aspx");
 			}
 		}
+
+        protected void btnNuevo_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/CursosEditar.aspx?mode=new");
+        }
     }
 }
