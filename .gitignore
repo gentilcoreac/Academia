@@ -3,3 +3,5 @@
 ################################################################################
 
 /Business.Entities/obj
+/Business.Entities/bin/Debug
+/.vs

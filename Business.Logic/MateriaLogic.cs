@@ -21,6 +21,14 @@ namespace Business.Logic
 			MateriaData = new MateriaAdapter();
 		}
 
+		public List<Materia> GetMateriasDisponibles(int id_comision)
+
+		{
+
+			return MateriaData.GetMateriasDisponibles(id_comision);
+
+		}
+
 		public List<Materia> GetAll()
 		{
 			return MateriaData.GetAll();
