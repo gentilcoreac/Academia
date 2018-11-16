@@ -17,27 +17,27 @@
 			<td style="width: 150px; height: 33px;" align="right">
 				Año Calendario:</td>
 			<td class="auto-style2" style="height: 23px">
-				<asp:TextBox ID="txtAnioCalendario" runat="server" type="number"></asp:TextBox>
+				<asp:TextBox ID="txtAnioCalendario" class="form-control" runat="server" type="number"></asp:TextBox>
             </td>
 		</tr>   
 		<tr>
 			<td style="width: 150px; height: 33px;" align="right">
 				Cupo:</td>
 			<td class="auto-style1" style="height: 23px" >
-				<asp:TextBox ID="txtCupo" runat="server" type="number"></asp:TextBox>
+				<asp:TextBox ID="txtCupo" class="form-control" runat="server" type="number"></asp:TextBox>
 			</td>
 		</tr>
 		<tr>
 			<td style="width: 150px; height: 33px;" align="right">
-				ComComision:</td>
-			<td style="height: 33px"><asp:DropDownList ID="ddlComision" runat="server">
+				Comision:</td>
+			<td style="height: 33px"><asp:DropDownList AutoPostBack="true" class="form-control" ID="ddlComision" runat="server" OnSelectedIndexChanged="ddlComision_SelectedIndexChanged">
 				</asp:DropDownList></td>
 
 		</tr>
 		<tr>
 			<td style="width: 150px; height: 33px;" align="right">
-				Materia:>
-			<td style="height: 34px"><asp:DropDownList ID="ddlMateria" runat="server">
+				Materia:
+			<td style="height: 34px"><asp:DropDownList ID="ddlMateria" class="form-control" runat="server">
 				</asp:DropDownList></td>
 		</tr>		
 	</table>

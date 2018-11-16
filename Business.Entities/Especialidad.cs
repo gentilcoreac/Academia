@@ -15,5 +15,10 @@ namespace Business.Entities
             get { return _Descripcion; }
             set { _Descripcion = value; }
         }
+
+        override public string ToString()
+        {
+            return Descripcion;
+        }
     }
 }

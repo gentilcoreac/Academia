@@ -1,7 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/PaginaMaestro.Master" CodeFile="InscripcionesEditar.aspx.cs" Inherits="Web.InscripcionesEditar" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/BasePaginaMaestra.Master" CodeFile="InscripcionesEditar.aspx.cs" Inherits="Web.InscripcionesEditar" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContentBase">
-                <table class="table table-stripped" id="tblDatosInscripcion">
+	<table class="table" border="1">
 		<tr>
 			<td align="center" colspan="2" style="height: 21px">
 				<asp:Label ID="lblTablaInscripcion" runat="server" Text="Datos Inscripcion"></asp:Label></td>
@@ -13,29 +13,28 @@
 				<asp:Label ID="lblIdInscripcion" runat="server"></asp:Label></td>
 		</tr>
 		<tr>
-			<td style="width: 150px; height: 21px;" align="right">
+			<td style="width: 150px" align="right">
 				ID Alumno:</td>
-			<td class="auto-style2" style="height: 21px">
+			<td class="auto-style2">
 				<asp:Label ID="lblIdAlumno" runat="server"></asp:Label></td>
 		</tr>   
 		<tr>
 			<td style="width: 150px; height: 23px;" align="right">
 				ID Curso:</td>
 			<td class="auto-style1" style="height: 23px">
-				<asp:TextBox ID="txt_Curso" runat="server" style="margin-bottom: 0" type="number"></asp:TextBox>
-            </td>
+				<asp:Label ID="lblIdCurso" runat="server"></asp:Label></td>
 		</tr>
 		<tr>
 			<td style="width: 150px" align="right">
 				Condicion:</td>
-			<td><asp:DropDownList ID="ddlCondicion" runat="server">
+			<td><asp:DropDownList class="form-control" ID="ddlCondicion" runat="server">
 				</asp:DropDownList></td>
 
 		</tr>
 		<tr>
 			<td style="width: 150px" align="right">
 				Nota:</td>
-			<td><asp:TextBox runat="server" ID="txtNota" type="number" Enabled="False"></asp:TextBox></td>
+			<td><asp:TextBox runat="server" class="form-control" type="number" min="1" max="10" step="1" pattern="\d+" ID="txtNota"></asp:TextBox></td>
 		</tr>		
 	</table>
 	<div></div>

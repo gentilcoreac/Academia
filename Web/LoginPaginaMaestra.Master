@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Web.BasePaginaMaestra" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="LoginPaginaMaestra.Master.cs" Inherits="Web.SiteMaster" %>
 
 <!DOCTYPE html>
 
@@ -15,6 +15,7 @@
 
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
 </head>
 <body>
     <form runat="server">
@@ -33,57 +34,33 @@
                 <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
                 <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
                 <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
-
                 <asp:ScriptReference Name="WebFormsBundle" />
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
 
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+		<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
 			<a class="navbar-brand" runat="server" href="~/">Academia</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 			</button>
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav mr-auto">
-						      <li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownGestion" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								  Gestión
-								</a>
-								<div class="dropdown-menu" aria-labelledby="navbarDropdownGestion">
-									<a class="dropdown-item" runat="server" href="~/">Inicio</a>
-									<a class="dropdown-item" runat="server" href="~/Personas">Personas</a>
-									<a class="dropdown-item" runat="server" href="~/Planes">Planes</a>
-									<a class="dropdown-item" runat="server" href="~/Materias.aspx">Materias</a>
-									<a class="dropdown-item" runat="server" href="~/Inscripciones.aspx">Inscripciones</a>
-									<a class="dropdown-item" runat="server" href="~/Cursos.aspx">Cursos</a>
-									<a class="dropdown-item" runat="server" href="~/Comisiones.aspx">Comisiones</a>
-								</div>
-							  </li>
-
-						      <li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownReportes" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								  Reportes
-								</a>
-								<div class="dropdown-menu" aria-labelledby="navbarDropdownReportes">
-									<a class="dropdown-item" runat="server" href="~/ReporteInscriptos.aspx">Cursos e Inscriptos</a>
-									<a class="dropdown-item" runat="server" href="~/ReportePlanes.aspx">Planes</a>
-								</div>
-							  </li>
+                        <li class="nav-item active"><a class="nav-link" runat="server" href="~/">Login</a></li>
                     </ul>
                 </div>
         </nav>
 
+		<br />
         <div class="container body-content">
-			<br />
-            <asp:ContentPlaceHolder ID="MainContentBase" runat="server">
+            <asp:ContentPlaceHolder ID="LoginContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
-
-        </div>
             <footer>
                 <p>&copy; <%: DateTime.Now.Year %> - TP2 - Academia </p>
             </footer>
+        </div>
+
     </form>
 </body>
 </html>

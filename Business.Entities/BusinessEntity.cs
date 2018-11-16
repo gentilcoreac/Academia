@@ -30,8 +30,8 @@ namespace Business.Entities
 
         public enum States
         {
-            Deleted,
             New,
+            Deleted,
             Modified,
             Unmodified
         }

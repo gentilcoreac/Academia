@@ -100,8 +100,6 @@ namespace Data.Database
 			return listaMaterias;
 		}
 
-
-
 		public List<Materia> GetAll(string tipoBusqueda, string valorBuscado,  int ID_Persona)
 		{
 			List<Materia> listaMaterias = new List<Materia>();
@@ -200,8 +198,6 @@ namespace Data.Database
 			}
 			return listaMaterias;
 		}
-
-
 
 		public List<Materia> GetAll()
 		{
@@ -344,9 +340,45 @@ namespace Data.Database
 		}
 
 
+        public List<Materia> GetMateriasDisponibles(int id_comision)
+        {
+            List<Materia> materiasDisponibles = new List<Materia>();
 
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdMateria = new SqlCommand("SELECT c.id_comision, m.id_materia, m.desc_materia FROM comisiones c " +
+                                                        " INNER JOIN materias m " +
+                                                        " ON m.id_plan = c.id_plan " +
+                                                        " LEFT JOIN cursos cu " +
+                                                        " ON c.id_comision = cu.id_comision AND m.id_materia = cu.id_materia " +
+                                                        " WHERE  id_curso IS NULL AND c.id_comision = @id_comision", SqlConn);
+                cmdMateria.Parameters.Add("@id_comision",SqlDbType.Int).Value = id_comision;
+                SqlDataReader drMateria = cmdMateria.ExecuteReader();
+                while (drMateria.Read())
+                {
+                    Materia oMateria = new Materia();
+                    oMateria.ID = (int)drMateria["id_materia"];
+                    oMateria.Descripcion = (string)drMateria["desc_materia"];
 
-		public int Agregar(Materia materia)
+                    materiasDisponibles.Add(oMateria);
+                }
+                drMateria.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception Excepcion = new Exception("Error al recuperar las materias disponibles\n\n", Ex);
+                throw Excepcion;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+
+            return materiasDisponibles;
+        }
+
+        public int Agregar(Materia materia)
 		{
 			try
 			{
@@ -386,7 +418,6 @@ namespace Data.Database
 				this.CloseConnection();
 			}
 		}
-
 
 		public void Update(Materia materia)
 		{
@@ -466,8 +497,6 @@ namespace Data.Database
 				this.CloseConnection();
 			}
 		}
-
-
 
 		public void Save(Materia materia)
 		{

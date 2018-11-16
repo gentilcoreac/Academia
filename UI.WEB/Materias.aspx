@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/PaginaMaestro.Master" CodeFile="Materias.aspx.cs" Inherits="Web.Materias" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/BasePaginaMaestra.Master" CodeFile="Materias.aspx.cs" Inherits="Web.Materias" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContentBase" runat="server">
 		<asp:GridView ID="grdMaterias" CssClass="table" runat="server" DataSourceID="odsMaterias" OnRowCommand="grdMaterias_RowCommand" OnSelectedIndexChanged="grdMaterias_SelectedIndexChanged" AutoGenerateColumns="False">
@@ -14,6 +14,6 @@
         <div>
         	<asp:ObjectDataSource ID="odsMaterias" runat="server" DataObjectTypeName="Business.Entities.Materia" DeleteMethod="Delete" InsertMethod="Save" SelectMethod="GetAll" TypeName="Business.Logic.MateriaLogic" UpdateMethod="Save"></asp:ObjectDataSource>
         </div>
-    
+
 	<asp:Button ID="btnNuevo" CssClass="btn btn-primary" runat="server" Text="Nuevo" OnClick="btnNuevo_Click" />
 </asp:Content>
